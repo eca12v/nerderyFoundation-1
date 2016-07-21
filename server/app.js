@@ -5,8 +5,13 @@ var bodyParser = require('body-parser');
 app.use( bodyParser.json() );
 var mongoose = require('mongoose');
 // 27017 is default mongo port
-mongoose.connect(process.env.PORT || 'localhost:27017/nerdery_foundation');
-
+mongoose.connect('mongodb://teamNerd:nerdery99@ds027175.mlab.com:27175/nerdery_foundation', function(err,db){
+    if (!err){
+        console.log('Connected to database: nerdery_foundation');
+    } else{
+        console.dir(err);
+    }
+});
 // var connectDB = connection string goes here;
 // mongoose.connect(connectDB);
 
