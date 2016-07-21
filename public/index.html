@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
     <title>Nerdery Foundation</title>
   </head>
-  <body>
+  <body ng-controller="indexController">
 
     Hello Friends.
 
     Testing the anna branch.
     <form class="form-horizontal" action="/test" type="post">
-<fieldset>
+    <fieldset>
 
 <!-- Form Name -->
 <legend>New Group Submission Form</legend>
@@ -41,7 +41,7 @@
 
   </div>
 </div>
-<button type="submit" name="button"></button>
+<button type="button" name="button" ng-click=submit() >Submit Group</button>
 </fieldset>
 </form>
 
