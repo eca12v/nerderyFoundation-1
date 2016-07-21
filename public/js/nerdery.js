@@ -14,7 +14,7 @@ $scope.submit = function(){
 
   $http({
     method: 'POST',
-    url: '/group/createGroup',
+    url: '/groups/createGroup',
     data: newGroup
   });
 };//end of submit group function
