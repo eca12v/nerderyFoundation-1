@@ -22,7 +22,7 @@ router.post('/createGroup', function (req, res) {
       console.log(err);
       res.sendStatus(500);
     } else {
-      res.json(newSound);
+      res.json(newGroup);
     }
   });
 });//end of post createGroup
