@@ -2,8 +2,8 @@ var mongoose = require('mongoose');
 
 var groupSchema = mongoose.Schema({
   groupName: {type: String, unique: true, required: true},
-  groupUrl: String,
-  contactName: String
+  groupURL: String,
+  groupContact: String
 });
 
 var Group = mongoose.model('Group', groupSchema);

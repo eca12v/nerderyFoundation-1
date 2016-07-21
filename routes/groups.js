@@ -14,7 +14,7 @@ router.post('/createGroup', function (req, res) {
   var newGroup = new group({
     groupName: req.body.groupName,
     groupURL: req.body.groupURL,
-    groupContact: req.body.contactName
+    groupContact: req.body.groupContact
   });
 
   newGroup.save(function(err) {
