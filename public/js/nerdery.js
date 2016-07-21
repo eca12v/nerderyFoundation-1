@@ -4,12 +4,27 @@ myApp.controller([function() {
 
 console.log( 'under myApp.config' );
 
- $routeProvider
-   .when('/index', {
-     templateUrl: '/views/pages/index.html',
-     controller: "indexController"
-   })
-   .otherwise({
-     redirectTo: '/home'
-   });
+$scope.submit = function(){
+  console.log( 'submit clicked' );
+  var newGroup = {
+    groupName: $scope.groupNameIn,
+    groupURL: $scope.groupUrlIn,
+    groupContact: $scope.contactNameIn
+  };
+
+  $http({
+    method: 'POST',
+    url: '/group/createGroup',
+    data: newGroup
+  });
+};//end of submit group function
+ //
+ // $routeProvider
+ //   .when('/index', {
+ //     templateUrl: '/views/pages/index.html',
+ //     controller: "indexController"
+ //   })
+ //   .otherwise({
+ //     redirectTo: '/home'
+ //   });
  }]);//end of myapp confug
