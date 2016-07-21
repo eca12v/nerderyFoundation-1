@@ -10,12 +10,13 @@ router.use(bodyParser.urlencoded({ extended: true }));
 
 
 router.post('/createGroup', function (req, res) {
+  console.log(req.body);
   var groupToAdd = {
     groupName: req.body.groupName,
     groupURL: req.body.groupURL,
     contactName: req.body.contactName
   };
-  var newGroup = groups(groupToAdd);
+  var newGroup = group(groupToAdd);
   newGroup.save();
 });//end of post createGroup
 

@@ -1,6 +1,7 @@
 var myApp = angular.module( 'myApp', []);
 /// Routes ///
-myApp.controller( "indexController", [function() {
+myApp.controller( "indexController", ['$scope', '$http',
+function($scope, $http) {
 
 console.log( 'under myApp.config' );
 
