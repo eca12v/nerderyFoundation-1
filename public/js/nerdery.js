@@ -1,6 +1,6 @@
 var myApp = angular.module( 'myApp', []);
 /// Routes ///
-myApp.controller( "indexController" [function() {
+myApp.controller( "indexController", [function() {
 
 console.log( 'under myApp.config' );
 
