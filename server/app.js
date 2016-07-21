@@ -10,6 +10,10 @@ mongoose.connect(process.env.PORT || 'localhost:27017/nerdery_foundation');
 // var connectDB = connection string goes here;
 // mongoose.connect(connectDB);
 
+var groups = require('../routes/groups');
+
+app.use('/groups', groups);
+
 // spin up server
 app.listen( process.env.PORT || 8080, function( req, res ){
   console.log( 'listening on 8080' );
