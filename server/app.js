@@ -16,8 +16,10 @@ mongoose.connect('mongodb://teamNerd:nerdery99@ds027175.mlab.com:27175/nerdery_f
 // mongoose.connect(connectDB);
 
 var groups = require('../routes/groups');
+var users = require('../routes/users');
 
 app.use('/groups', groups);
+app.use('/users', users);
 
 // spin up server
 app.listen( process.env.PORT || 8080, function( req, res ){
