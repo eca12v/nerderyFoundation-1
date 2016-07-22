@@ -20,12 +20,24 @@ $scope.submit = function(){
   });
 };//end of submit group function
  //
- // $routeProvider
- //   .when('/index', {
- //     templateUrl: '/views/pages/index.html',
- //     controller: "indexController"
- //   })
- //   .otherwise({
- //     redirectTo: '/home'
- //   });
+ $routeProvider
+   .when('/index', {
+     templateUrl: '/views/pages/index.html',
+     controller: "IndexController"
+   })
+   .when('/home', {
+     templateUrl: '/views/pages/home.html',
+     controller: "HomeController"
+   })
+   .when('/groupLeader', {
+     templateUrl: '/views/pages/groupLeader.html',
+     controller: "GroupLeaderController"
+   })
+   .when('/admin', {
+     templateUrl: '/views/pages/admin.html',
+     controller: "AdminController"
+   })
+   .otherwise({
+     redirectTo: '/home'
+   });
  }]);//end of myapp confug
