@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-var groupSchema = mongoose.Schema({
+var groupSchema = new Schema({
   groupName: {type: String, unique: true, required: true},
   groupURL: String,
   groupContact: String
