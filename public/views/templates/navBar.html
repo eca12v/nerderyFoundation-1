@@ -1,5 +1,9 @@
 <!-- <a href ="#groupLeader"></a> -->
-<a href ="#logIn"> Log In</a>
-<a href ="#signUp"> Sign Up</a>
+<a href ="/#/login"> Log In</a>
 <a href ="#home"> Home </a>
 <a href ="#groupLeader"> Group Leader </a>
+
+<div id="auth" ng-controller="LoginCtrl">
+  <span ng-show="isAuthenticated">User is logged in</span>
+  <a ng-show="isAuthenticated" href="#" ng-click="logout()">Logout</a>
+</div>
