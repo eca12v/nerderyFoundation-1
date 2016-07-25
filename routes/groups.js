@@ -9,6 +9,7 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 
 router.post('/createGroup', function (req, res) {
+console.log('inside groups.js add group ');
   console.log(req.body);
 
   var newGroup = new group({
@@ -16,8 +17,10 @@ router.post('/createGroup', function (req, res) {
     groupURL: req.body.groupURL,
     groupContact: req.body.groupContact
   });
-
+  
+console.log( 'newGroup: ', newGroup );
   newGroup.save(function(err) {
+
     if(err) {
       console.log(err);
       res.sendStatus(500);
