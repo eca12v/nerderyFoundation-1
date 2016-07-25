@@ -30,4 +30,21 @@ console.log( 'newGroup: ', newGroup );
   });
 });//end of post createGroup
 
+router.delete('/deleteGroup/:groupId', function(req, res){
+  console.log('In /deleteGroup/:groupId: ', req.params.groupId);
+  var id = req.params.groupId;
+  group.findOne({'_id': id}, function(err, groupon){
+    if(err){
+      console.log('/deleteGroup error: ', err);
+    }else{
+      group.remove({'_id': id}, function(err){
+        if(err){
+          console.log('remove group error: ', err);
+        }else{
+        }
+      });
+    }
+  });
+});
+
 module.exports = router;

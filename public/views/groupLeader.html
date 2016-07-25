@@ -51,9 +51,24 @@
 </fieldset>
 </form>
 </div>
+<div>
+  <table>
+  <thead>
+   <tr>
+     <th>Name</th>
+     <th>URL</th>
+     <th>Contact</th>
+   </tr>
+ </thead>
+ <tbody>
+   <tr ng-repeat="record in groups">
 
-<ul ng-repeat="">
-
-</ul>
-
+     <td>{{ record.groupName }}</td>
+     <td>{{ record.groupURL }}</td>
+     <td>{{ record.groupContact }}</td>
+     <td> <input type="button" value="Remove" class="btn btn-primary" ng-click = "banana($index);"/> </td>
+   </tr>
+ </tbody>
+</table>
+</div>
 <!-- </body> -->

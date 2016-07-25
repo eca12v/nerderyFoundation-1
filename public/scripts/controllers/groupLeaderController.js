@@ -12,9 +12,23 @@ console.log( 'loaded GroupLeaderController');
 $scope.groups = [];
 
 $scope.status = '';
+
+$scope.banana = function(index){
+  var groupToDelete = $scope.groups[index];
+  console.log('groupToDelete: ', groupToDelete);
+  var groupId = groupToDelete._id;
+console.log('grouId: ', groupId);
+  $http({
+     method: 'DELETE',
+     url: '/groups/deleteGroup/' + groupId,
+   });
+  $scope.groups.splice(index, 1);
+};
+
 //submit function to add group
 $scope.submit = function(){
   console.log( 'submit clicked' );
+
 
 //forms object with new group info
   var newGroup = {
@@ -29,8 +43,9 @@ $scope.submit = function(){
   groupFactory.submit( newGroup )
   .then(function(response){
     // console.log( 'group submitted: ', newGroup);
+    console.log('response: ', response.data);
     $scope.status = 'group submitted successfully!';
-    $scope.groups.push(newGroup);
+    $scope.groups.push(response.data);
   }, function(error){
     $scope.status = 'swing and a miss';
 
