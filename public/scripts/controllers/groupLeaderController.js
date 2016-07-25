@@ -1,5 +1,5 @@
 console.log('group leader cont has arrived');
-myApp.controller( 'GroupLeaderController', ['$scope', '$http', '$location', '$rootScope', function( $scope, $http, $location, $rootScope ){
+myApp.controller( 'GroupLeaderController', ['$scope', '$http', '$location', '$rootScope', 'grouApp', function( $scope, $http, $location, $rootScope, groupApp ){
 console.log( 'loaded GroupLeaderController');
 
 //create array to put new groups into

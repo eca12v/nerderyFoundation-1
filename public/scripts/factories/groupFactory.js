@@ -1,11 +1,11 @@
-angular.mobule( )
-.factory('GroupFactory', ['$http', function($http) {
+//angular.module( 'groupApp' )
+myApp.factory('GroupFactory', ['$http', function($http) {
   console.log( 'groupfactory loaded');
 
   //  var URL = '';
    var GroupFactory = {};
 
-   GroupFactory.addGroup = function ( newGroup ) {
+   var addGroup = function ( newGroup ) {
        return $http.post('/groups/');
    };
 
