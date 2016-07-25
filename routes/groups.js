@@ -17,7 +17,7 @@ console.log('inside groups.js add group ');
     groupURL: req.body.groupURL,
     groupContact: req.body.groupContact
   });
-  
+
 console.log( 'newGroup: ', newGroup );
   newGroup.save(function(err) {
 

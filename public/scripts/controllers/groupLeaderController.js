@@ -1,10 +1,8 @@
 console.log('group leader cont has arrived');
-<<<<<<< HEAD
-myApp.controller( 'GroupLeaderController', ['$scope', '$http', '$location', '$rootScope', 'grouApp', function( $scope, $http, $location, $rootScope, groupApp ){
-=======
+
 // angular.module( 'groupLink' )
 myApp.controller( 'GroupLeaderController', [ 'groupFactory', '$scope', '$http', '$location', '$rootScope',  function( groupFactory, $scope,  $http, $location, $rootScope ){
->>>>>>> 315f1675c7c2c62afcc7f009af50cd186a5c93c6
+
 console.log( 'loaded GroupLeaderController');
 
 //////---------
