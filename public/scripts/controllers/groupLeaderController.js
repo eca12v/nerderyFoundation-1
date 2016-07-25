@@ -1,6 +1,10 @@
 console.log('group leader cont has arrived');
-myApp.controller( 'GroupLeaderController', ['$scope', '$http', '$location', '$rootScope', function( $scope, $http, $location, $rootScope ){
+// angular.module( 'groupLink' )
+myApp.controller( 'GroupLeaderController', [ 'groupFactory', '$scope', '$http', '$location', '$rootScope',  function( groupFactory, $scope,  $http, $location, $rootScope ){
 console.log( 'loaded GroupLeaderController');
+
+//////---------
+//////---------
 
 //create array to put new groups into
 $scope.groups = [];
@@ -16,17 +20,20 @@ $scope.submit = function(){
     groupURL: $scope.groupUrlIn,
     groupContact: $scope.contactNameIn
   };
+
+  console.log( 'group submitted: ', newGroup);
+
 //this doesnt work yet 7/21/16
-//   GroupFactory.submit( newGroup )
-//   .then(function(response){
-//     console.log( 'group submitted');
-//     $scope.status = 'group submitted successfully!';
-//     $scope.group.push(newGroup);
-//   }, function(error){
-//     $scope.status = 'swing and a miss';
-//
-//   }
-// );
+  groupFactory.submit( newGroup )
+  .then(function(response){
+    // console.log( 'group submitted: ', newGroup);
+    $scope.status = 'group submitted successfully!';
+    $scope.groups.push(newGroup);
+  }, function(error){
+    $scope.status = 'swing and a miss';
+
+  }
+);
 
 };//end of submit
 

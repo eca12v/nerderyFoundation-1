@@ -1,14 +1,16 @@
-angular.mobule( )
-.factory('GroupFactory', ['$http', function($http) {
+// angular.module( 'groupLink' )
+
+myApp.factory( 'groupFactory', ['$http', function($http) {
   console.log( 'groupfactory loaded');
 
   //  var URL = '';
-   var GroupFactory = {};
+   var groupFactory = {};
 
-   GroupFactory.addGroup = function ( newGroup ) {
-       return $http.post('/groups/');
+groupFactory.submit = function ( newGroup ) {
+  console.log( 'in factory, newGroup: ', newGroup);
+       return $http.post('/groups/createGroup', newGroup);
    };
 
-return dataFactory;
+return groupFactory;
 
 }]); //end of Group Factory
