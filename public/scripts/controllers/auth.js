@@ -1,9 +1,15 @@
 angular.module('Authorization', ['satellizer']).
 
 controller('LoginCtrl', ['$scope', '$auth', '$location',
-  function($scope, $auth, $location) {
+  function($scope, $auth, $location, $authProvider) {
 
   $scope.isAuthenticated = $auth.isAuthenticated();
+
+  $scope.currentUser = $auth.getPayload();
+
+  $scope.authenticate = function(provider) {
+      $auth.authenticate(provider);
+    };
 
   console.log($scope.isAuthenticated);
 

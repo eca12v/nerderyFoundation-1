@@ -1,6 +1,6 @@
 var myApp = angular.module( 'myApp', ['ngRoute', 'satellizer', 'Authorization'] );
 /// Routes ///
-myApp.config(['$routeProvider', function($routeProvider) {
+myApp.config(['$routeProvider', '$authProvider', function($routeProvider, $authProvider) {
 
 $routeProvider
    .when('/index', {
@@ -25,7 +25,13 @@ $routeProvider
      redirectTo: 'home'
    });
 
+   $authProvider.google({
+        clientId: '125382478230-3n8qqoeugab70kluqqm1o3hleh6acbcc.apps.googleusercontent.com',
+        redirectUri: 'http://localhost:8080/auth/google'
+      });
+
  }]);//end of myapp config
+
 
 myApp.run(function($rootScope, $window, $auth) {
     if ($auth.isAuthenticated()) {
