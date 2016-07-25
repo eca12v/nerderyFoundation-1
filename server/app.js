@@ -9,15 +9,24 @@ require('../models/Users');
 require('../passport/config');
 
 // 27017 is default mongo port
+
 var connectionString = 'mongodb://localhost:27017/nerdery';
 var connectionStringMLab = 'mongodb://teamNerd:nerdery99@ds027175.mlab.com:27175/nerdery_foundation';
 mongoose.connect(connectionString, function(err,db){
+
     if (!err){
         console.log('Connected to database: nerdery_foundation');
     } else{
         console.dir(err);
     }
 });
+// mongoose.connect('mongodb://teamNerd:nerdery99@ds027175.mlab.com:27175/nerdery_foundation', function(err,db){
+//     if (!err){
+//         console.log('Connected to database: nerdery_foundation');
+//     } else{
+//         console.dir(err);
+//     }
+// });
 // var connectDB = connection string goes here;
 // mongoose.connect(connectDB);
 

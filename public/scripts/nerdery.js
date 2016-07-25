@@ -1,6 +1,8 @@
 var myApp = angular.module( 'myApp', ['ngRoute', 'satellizer', 'Authorization'] );
 /// Routes ///
+
 myApp.config(['$routeProvider', '$authProvider', function($routeProvider, $authProvider) {
+
 
 $routeProvider
    .when('/index', {
