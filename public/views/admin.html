@@ -1,3 +1,38 @@
-<body>
-  hello
-</body>
+<div class="container">
+  <h1>Admin Page</h1>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <md-content class="md-padding">
+          <md-card>
+            <md-card-title>
+              <h2>Groups Awaiting Approval: </h2>
+            </md-card-title>
+            <md-card-content>
+              <md-card ng-repeat="group in groups">
+                <span>Group Name: {{group.groupName}}</span>
+                <span>Group URL: {{group.groupURL}}</span>
+                <button ng-click="approve(group._id, $index)">Approve Group</button>
+              </md-card>
+            </md-card-content>
+          </md-card>
+
+          <md-card>
+            <md-card-title>
+              <h2>Group Contacts: </h2>
+            </md-card-title>
+            <md-card-content>
+
+            </md-card-content>
+          </md-card>
+
+          <md-card>
+            <md-card-title>
+              <h2>Groups: </h2>
+            </md-card-title>
+            <md-card-content>
+
+            </md-card-content>
+          </md-card>
+    </div>
+  </div>

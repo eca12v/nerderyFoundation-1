@@ -1,20 +1,35 @@
+myApp.factory( 'groupFactory', ['$http',
+  function($http) {
+    console.log( 'groupfactory loaded');
+    var groups = {
+      groups: []
+    };
 
-// angular.module( 'groupLink' )
+    groups.getApprovedGroups = function () {
+      return $http.get('groups/getApprovedGroups').success(function(data) {
+        console.log(data);
+				angular.copy(data, groups.groups);
+			});
+     };
 
-myApp.factory( 'groupFactory', ['$http', function($http) {
+    groups.getUnapprovedGroups = function () {
+      return $http.get('groups/getUnapprovedGroups').success(function(data) {
+        console.log(data);
+				angular.copy(data, groups.groups);
+			});
+     };
 
-  console.log( 'groupfactory loaded');
-
-  //  var URL = '';
-   var groupFactory = {};
-
-
-groupFactory.submit = function ( newGroup ) {
-  console.log( 'in factory, newGroup: ', newGroup);
-       return $http.post('/groups/createGroup', newGroup);
-
+     groups.approveGroup = function(id) {
+       return $http.put('groups/approveGroup/' + id).success(function(data) {
+         console.log(data);
+     });
    };
 
-return groupFactory;
-
-}]); //end of Group Factory
+    groups.submit = function ( newGroup ) {
+      console.log( 'in factory, newGroup: ', newGroup);
+      return $http.post('/groups/createGroup', newGroup);
+     };
+     console.log(groups);
+     return groups;
+   }
+]); //end of Group Factory
