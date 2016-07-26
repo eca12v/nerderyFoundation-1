@@ -1,6 +1,5 @@
 console.log('group leader cont has arrived');
 
-// angular.module( 'groupLink' )
 myApp.controller( 'GroupLeaderController', [ 'groupFactory', '$scope', '$http', '$location', '$rootScope',  function( groupFactory, $scope,  $http, $location, $rootScope ){
 
 console.log( 'loaded GroupLeaderController');
@@ -13,6 +12,7 @@ $scope.groups = [];
 
 $scope.status = '';
 
+//deletes group 
 $scope.banana = function(index){
   var groupToDelete = $scope.groups[index];
   console.log('groupToDelete: ', groupToDelete);
@@ -25,11 +25,11 @@ console.log('grouId: ', groupId);
   $scope.groups.splice(index, 1);
 };
 
+
+
 //submit function to add group
 $scope.submit = function(){
   console.log( 'submit clicked' );
-
-
 //forms object with new group info
   var newGroup = {
     groupName: $scope.groupNameIn,
@@ -39,7 +39,7 @@ $scope.submit = function(){
 
   console.log( 'group submitted: ', newGroup);
 
-//this doesnt work yet 7/21/16
+//
   groupFactory.submit( newGroup )
   .then(function(response){
     // console.log( 'group submitted: ', newGroup);
