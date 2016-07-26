@@ -1,4 +1,4 @@
-var myApp = angular.module( 'myApp', ['ngRoute', 'satellizer', 'Authorization'] );
+var myApp = angular.module( 'myApp', ['ngRoute', 'ngMaterial', 'satellizer', 'Authorization'] );
 /// Routes ///
 
 myApp.config(['$routeProvider', '$authProvider', function($routeProvider, $authProvider) {
@@ -10,14 +10,20 @@ $routeProvider
     //  controller: 'IndexController'
    })
    .when('/home', {
-     templateUrl: '../views/home.html'
+     templateUrl: '../views/home.html',
+     controller: 'HomeController'
+   })
+   .when('/groups/:groupName', {
+     templateUrl: '/views/group.html',
+     controller: 'GroupController'
    })
    .when('/groupLeader', {
      templateUrl: '/views/groupLeader.html',
      controller: 'GroupLeaderController'
    })
    .when('/admin', {
-     templateUrl: '/views/admin.html'
+     templateUrl: '/views/admin.html',
+     controller: 'AdminController'
    })
    .when('/login', {
      templateUrl: '/views/login.html',

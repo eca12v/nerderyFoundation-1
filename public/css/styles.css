@@ -1,0 +1,18 @@
+#main-search {
+  width: 50%;
+  margin: auto;
+}
+
+#filter-box {
+  height: 100%;
+}
+
+.group-tile {
+  height: 300px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+md-checkbox {
+  display: block;
+}

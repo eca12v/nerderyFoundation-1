@@ -2,66 +2,38 @@
 <html ng-app="myApp">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+
     <title>Nerdery Foundation</title>
-    <script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
-    <script type="text/javascript" src="./bower_components/angular/angular-routes.min.js"></script>
-<!-- public/bower_components/angular/angular-routes.min.js -->
-    <script src="./scripts/nerdery.js" charset="utf-8"></script>
 
-    <script src="./bower_components/satellizer/dist/satellizer.js" charset="utf-8"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script type="text/javascript" src="/scripts/factories/groupFactory.js"></script>
-
-    <script type="text/javascript" src="/scripts/controllers/adminController.js"></script>
-    <script type="text/javascript" src="/scripts/controllers/groupLeaderController.js"></script>
-    <script type="text/javascript" src="/scripts/controllers/homeController.js"></script>
-    <script type="text/javascript" src="/scripts/controllers/displayCtrl.js"></script>
-    <script src="/scripts/controllers/auth.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="css/styles.css">
   </head>
 
-
   <body>
+
     <div class="navWrap">
       <div class = "navBar" ng-include="'/views/templates/navBar.html'"></div>
     </div>
 
-    Hello Friends.
-    Testing the anna branch.
-    <form class="form-horizontal" action="/test" type="post">
-<fieldset>
+    <main ng-view></main>
 
-<!-- Form Name -->
-<legend>New Group Submission Form</legend>
+    <script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="./scripts/nerdery.js" charset="utf-8"></script>
+    <script src="./bower_components/satellizer/dist/satellizer.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/scripts/factories/groupFactory.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/adminController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/groupLeaderController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/homeController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/displayCtrl.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/groupController.js"></script>
+    <script src="/scripts/controllers/auth.js" charset="utf-8"></script>
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="groupNameIn">Group Name</label>
-  <div class="col-md-4">
-  <input id="groupNameIn" name="groupNameIn" type="text" placeholder="Group Name" class="form-control input-md" required="">
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="groupUrlIn">Group URL</label>
-  <div class="col-md-4">
-  <input id="groupUrlIn" name="groupUrlIn" type="text" placeholder="URL" class="form-control input-md" required="">
-
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="contactNameIn">Contact Name</label>
-  <div class="col-md-4">
-  <input id="contactNameIn" name="contactNameIn" type="text" placeholder="Name" class="form-control input-md" required="">
-
-  </div>
-</div>
-<button type="submit" name="button"></button>
-</fieldset>
-</form>
   </body>
-
 </html>

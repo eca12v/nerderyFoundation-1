@@ -1,5 +1,55 @@
-<body ng-controller = "HomeController">
-  <div class="home">
-    HI IM HOME
+<div id="page-container" class="container-fluid">
+
+  <div class="jumbotron">
+    <h1>Nerdery Foundation Developer Network</h1>
+    <p>Connecting new and relocated developers to the local tech user groups.</p>
   </div>
-</body>
+
+<div class="row">
+  <div class="col-sm-3">
+    <md-content class="md-padding">
+      <md-card id="filter-box">
+        <md-card-content>
+          <h2>Filter Groups: </h2>
+          <fieldset class="standard">
+            <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
+              Javascript
+            </md-checkbox>
+            <md-checkbox ng-model="data.cb2" aria-label="Checkbox 1">
+              Angular
+            </md-checkbox>
+            <md-checkbox ng-model="data.cb3" aria-label="Checkbox 1">
+              Node
+            </md-checkbox>
+            <md-checkbox ng-model="data.cb4" aria-label="Checkbox 1">
+              Meteor
+            </md-checkbox>
+          </fieldset>
+        </md-card-content>
+      </md-card>
+    </div>
+    <div class="col-sm-9">
+      <md-content class="md-padding">
+        <div class="col-sm-4" ng-repeat="group in groups">
+          <a ng-href="/#/groups/{{group.groupName}}">
+            <md-card class="group-tile" >
+              <md-card-title>
+                <md-card-title-text>
+                  <span class="md-headline">{{group.groupName}}</span>
+                  <span class="md-subhead">{{group.groupURL}}</span>
+                </md-card-title-text>
+                <md-card-title-media>
+                  <div class="md-media-sm card-media"></div>
+                </md-card-title-media>
+              </md-card-title>
+              <md-card-actions layout="row" layout-align="end center">
+                <!-- <md-button>Action 1</md-button>
+                <md-button>Action 2</md-button> -->
+              </md-card-actions>
+            </md-card>
+          </a>
+
+        </div>
+      </md-content>
+    </div>
+  </div>
