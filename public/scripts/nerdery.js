@@ -23,6 +23,10 @@ $routeProvider
      templateUrl: '/views/login.html',
      controller: 'LoginCtrl'
    })
+   .when('/display', {
+     templateUrl: '/views/display.html',
+     controller: 'DisplayCtrl'
+   })
    .otherwise({
      redirectTo: 'home'
    });
