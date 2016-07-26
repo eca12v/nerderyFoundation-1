@@ -1,7 +1,11 @@
-myApp.controller( 'HomeController', ['factory', '$scope', '$http', '$location', '$rootScope', 
-function( $scope, $http, $location, $rootScope ){
+myApp.controller( 'HomeController', ['$scope', '$http', '$location', 'groupFactory',
+function( $scope, $http, $location, groupFactory){
 console.log( 'loaded homeController');
 
+groupFactory.getApprovedGroups().then(function(response) {
+  $scope.groups = response.data;
+  console.log($scope.groups);
+});
 
 
 

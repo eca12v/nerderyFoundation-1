@@ -1,3 +1,4 @@
+
 li{
   list-style-type: none;
 }
@@ -42,4 +43,23 @@ li{
 .layout-column  .flex-66 {
   max-width: 100%;
   max-height: calc(200% / 3);
+=======
+#main-search {
+  width: 50%;
+  margin: auto;
+}
+
+#filter-box {
+  height: 100%;
+}
+
+.group-tile {
+  height: 300px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+md-checkbox {
+  display: block;
+
 }
