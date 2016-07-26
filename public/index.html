@@ -26,12 +26,42 @@
       <div class = "navBar" ng-include="'/views/templates/navBar.html'"></div>
     </div>
 
-
-  <!-- <div ng-view> </div> -->
-<main ng-view></main>
-
+    Hello Friends.
+    Testing the anna branch.
     <form class="form-horizontal" action="/test" type="post">
-    <fieldset>
+<fieldset>
 
-</body>
+<!-- Form Name -->
+<legend>New Group Submission Form</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="groupNameIn">Group Name</label>
+  <div class="col-md-4">
+  <input id="groupNameIn" name="groupNameIn" type="text" placeholder="Group Name" class="form-control input-md" required="">
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="groupUrlIn">Group URL</label>
+  <div class="col-md-4">
+  <input id="groupUrlIn" name="groupUrlIn" type="text" placeholder="URL" class="form-control input-md" required="">
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="contactNameIn">Contact Name</label>
+  <div class="col-md-4">
+  <input id="contactNameIn" name="contactNameIn" type="text" placeholder="Name" class="form-control input-md" required="">
+
+  </div>
+</div>
+<button type="submit" name="button"></button>
+</fieldset>
+</form>
+  </body>
+
 </html>
