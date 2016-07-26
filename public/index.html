@@ -2,35 +2,36 @@
 <html ng-app="myApp">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+
     <title>Nerdery Foundation</title>
-    <script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
-    <script type="text/javascript" src="./bower_components/angular/angular-routes.min.js"></script>
-<!-- public/bower_components/angular/angular-routes.min.js -->
-    <script src="./scripts/nerdery.js" charset="utf-8"></script>
 
-    <script src="./bower_components/satellizer/dist/satellizer.js" charset="utf-8"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script type="text/javascript" src="/scripts/factories/groupFactory.js"></script>
-
-    <script type="text/javascript" src="/scripts/controllers/adminController.js"></script>
-    <script type="text/javascript" src="/scripts/controllers/groupLeaderController.js"></script>
-    <script type="text/javascript" src="/scripts/controllers/homeController.js"></script>
-    <script src="/scripts/controllers/auth.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="css/styles.css">
   </head>
 
-
   <body>
+
     <div class="navWrap">
       <div class = "navBar" ng-include="'/views/templates/navBar.html'"></div>
     </div>
 
+    <main ng-view></main>
 
-  <!-- <div ng-view> </div> -->
-<main ng-view></main>
+    <script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="./scripts/nerdery.js" charset="utf-8"></script>
+    <script src="./bower_components/satellizer/dist/satellizer.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/scripts/factories/groupFactory.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/adminController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/groupLeaderController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/homeController.js"></script>
+      <script src="/scripts/controllers/auth.js" charset="utf-8"></script>
 
-    <form class="form-horizontal" action="/test" type="post">
-    <fieldset>
-
-</body>
+  </body>
 </html>
