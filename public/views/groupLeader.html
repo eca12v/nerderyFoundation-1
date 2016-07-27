@@ -75,6 +75,12 @@
           <md-option ng-repeat="size in membershipSizes" value="{{size}}">{{size}}</md-option>
         </md-select>
         </md-input-container>
+        <div class="form-group">
+          <label for="file">File:</label>
+          <input type="file" name="file" id="file" ng-model="file" ngf-select ngf-max-size="25MB" required/>
+        </div>
+
+
         <button type="button" name="button" ng-click=submit() >Submit Group</button>
       </form>
     </div>

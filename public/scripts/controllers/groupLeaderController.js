@@ -1,6 +1,6 @@
 console.log('group leader cont has arrived');
 
-myApp.controller( 'GroupLeaderController',  [ 'groupFactory', '$scope', '$http', '$location', '$rootScope',  function( groupFactory, $scope,  $http, $location, $authProvider, $rootScope ){
+myApp.controller( 'GroupLeaderController',  [ 'groupFactory', '$scope', '$http', '$location', '$rootScope', 'Upload',  function( groupFactory, $scope,  $http, $location, $authProvider, $rootScope, Upload ){
 
 console.log( 'loaded GroupLeaderController');
 // $mdIconProvider.icon('md-close', 'img/icons/ic_close_24px.svg', 24);
