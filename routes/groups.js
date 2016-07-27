@@ -5,6 +5,13 @@ var Group = require('../models/Groups');
 
 var router = express.Router();
 
+// require to upload images
+var multer = require('multer');
+var fs = require('fs');
+var multerS3 = require('multer-s3');
+var aws = require('aws-sdk');
+var s3 = new aws.S3();
+
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 
@@ -109,6 +116,26 @@ router.delete('/deleteGroup/:groupId', function(req, res){
       });
     }
   });
+});
+
+// for uploading photos
+var upload = multer({
+  storage: multerS3({
+    s3: s3,
+    bucket: 'prime-digital-academy-playbow',
+    acl: 'public-read',
+    metadata: function (req, file, cb) {
+      cb(null, {fieldName: file.fieldname});
+    },
+    key: function (req, file, cb) {
+      // file name generation
+      cb(null, Date.now().toString());
+    }
+  })
+}); // end multer upload
+
+router.post('/uploads', upload.single('file'), function(req, res){
+res.send(req.file);
 });
 
 module.exports = router;

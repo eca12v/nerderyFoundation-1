@@ -54,7 +54,7 @@
         <md-select ng-model="freqOfMeeting">
         <md-option ng-repeat="option in meetingFreq" value="{{option}}">{{option}}</md-option>
       </md-select>
-        
+
         </md-input-container>
         <div layout-gt-sm="row">
           <md-input-container class="md-block" flex-gt-sm>
@@ -80,10 +80,10 @@
           <md-option ng-repeat="size in membershipSizes" value="{{size}}">{{size}}</md-option>
         </md-select>
         </md-input-container>
-        <div class="form-group">
+        <md-input-container class="md-block">
           <label for="file">File:</label>
           <input type="file" name="file" id="file" ng-model="file" ngf-select ngf-max-size="25MB" required/>
-        </div>
+        </md-input-container>
 
 
         <button type="button" name="button" ng-click=submit() >Submit Group</button>

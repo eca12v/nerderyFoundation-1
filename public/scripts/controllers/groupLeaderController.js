@@ -51,6 +51,23 @@ console.log('grouId: ', groupId);
 //submit function to add group
 $scope.submit = function(){
   console.log( 'submit clicked' );
+  if($scope.form.file.$valid && $scope.file){
+    $scope.upload($scope.file);
+    $scope.postGroup();
+  }else{$scope.postGroup();}
+}; //end submit function
+
+$scope.upload = function(file){
+  Upload.upload({
+    url: '/groups/uploads',
+    data: {
+      file: file,
+      'groupName': $scope.groupNameIn
+    }
+  });
+}; //end upload function
+
+$scope.postGroup = function(){
 //forms object with new group info
   var newGroup = {
 
@@ -70,7 +87,6 @@ $scope.submit = function(){
     eventInfo: $scope.eventInfo,
     sizeOfMembership: $scope.sizeOfMembership
   };
-
   console.log( 'group submitted: ', newGroup);
 
 //
@@ -83,9 +99,9 @@ $scope.submit = function(){
   }, function(error){
     $scope.status = 'swing and a miss';
 
-  }
-);
+  });
 
-};//end of submit
+
+};//end of postGroup
 
 }]); //end adminController
