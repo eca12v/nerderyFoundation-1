@@ -67,6 +67,7 @@ $scope.submit = function(){
     affiliationURL: $scope.affiliationURL,
     eventInfo: $scope.eventInfo,
     sizeOfMembership: $scope.sizeOfMembership
+    
   };
 
   console.log( 'group submitted: ', newGroup);
