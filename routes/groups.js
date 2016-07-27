@@ -66,7 +66,7 @@ console.log('inside groups.js add group ');
   var newGroup = new Group({
     name: req.body.name,
     groupURL: req.body.groupURL,
-    groupContact: req.body.groupContact,
+    groupContact: req.body.contact,
     contactEmail: req.body.contactEmail,
     description: req.body.description,
     location: req.body.location,
