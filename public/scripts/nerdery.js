@@ -30,7 +30,7 @@ $routeProvider
      templateUrl: '/views/login.html',
      controller: 'LoginCtrl'
    })
-   .when('/display', {
+   .when('/display/:groupName', {
      templateUrl: '/views/display.html',
      controller: 'DisplayCtrl'
    })

@@ -8,4 +8,6 @@ groupFactory.getGroup($routeParams.groupName).then(function(response) {
 });
 
 
+
+
 }]); //end displayController
