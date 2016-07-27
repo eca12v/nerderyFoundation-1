@@ -3,6 +3,4 @@ console.log( 'loaded DisplayController');
 
 
 
-
-
 }]); //end displayController
