@@ -3,11 +3,23 @@ var Schema = mongoose.Schema;
 
 
 var groupSchema = mongoose.Schema({
-  groupName: {type: String, unique: true, required: true },
+  name: {type: String, unique: true, required: true },
   groupURL: String,
   groupContact: String,
+  contactEmail: String,
+  description: String,
+  location: String,
+  activities: {type: Array},
+  technologies: {type: Array},
+  tags: {type: Array},
+  freqOfMeeting: String,
+  sizeOfMeeting: String,
+  affiliations: String,
+  affiliationURL: String,
+  eventInfo: String,
+  sizeOfMembership: String,
   approved: {type: Boolean, default: false},
-  created: Date
+  created: Date,
 });
 
 var Group = mongoose.model('Group', groupSchema);
