@@ -22,18 +22,13 @@ $scope.meetingSizes = [
   "50-100",
   "100-500"
 ];
-
-$scope.technologies = [
-    {
-        'name' : 'jQuery',
-    },
-      {
-        'name' : 'Java',
-      },
-      {
-        'name' : '',
-      }
-    ];
+$scope.meetingFreq = [
+  "Weekly",
+  "Biweekly",
+  "Monthly",
+  "Quarterly",
+  "Annually"
+];
 
 
 $scope.status = '';
