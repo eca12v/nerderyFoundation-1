@@ -1,2144 +1,770 @@
 [
   {
     "Technology": ".NET",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": ".NET",
-    "Skill": "App Development",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": ".NET",
-    "Skill": "App Development",
-    "Subskill": "Windows Communication Foundation",
-    "": ""
-  },
-  {
-    "Technology": ".NET",
-    "Skill": "App Development",
-    "Subskill": "Windows Forms",
-    "": ""
-  },
-  {
-    "Technology": ".NET",
-    "Skill": "App Development",
-    "Subskill": "Windows Phone",
-    "": ""
-  },
-  {
-    "Technology": ".NET",
-    "Skill": "App Development",
-    "Subskill": "Windows Presentation Foundation",
-    "": ""
-  },
-  {
-    "Technology": ".NET",
-    "Skill": "App Development",
-    "Subskill": "WinRT/Windows 8",
-    "": ""
-  },
-  {
-    "Technology": "CMS",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "CMS",
-    "Skill": "Ektron",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "CMS",
-    "Skill": "Kentico",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "CMS",
-    "Skill": "Sharepoint",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "CMS",
-    "Skill": "Sitecore",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "CMS",
-    "Skill": "Sitefinity",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "CMS",
-    "Skill": "Umbraco",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Frameworks",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Frameworks",
-    "Skill": "ASP.Net",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Frameworks",
-    "Skill": "ASP.Net",
-    "Subskill": "ASP.Net MVC",
-    "": ""
-  },
-  {
-    "Technology": "Frameworks",
-    "Skill": "ASP.Net",
-    "Subskill": "ASP.Net Web API",
-    "": ""
-  },
-  {
-    "Technology": "Frameworks",
-    "Skill": "ASP.Net",
-    "Subskill": "ASP.Net WebForms",
-    "": ""
-  },
-  {
-    "Technology": "Frameworks",
-    "Skill": "ASP.Net",
-    "Subskill": "SignalR",
-    "": ""
-  },
-  {
-    "Technology": "Frameworks",
-    "Skill": "Compact Framework",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Frameworks",
-    "Skill": "Silverlight",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Languages",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Languages",
-    "Skill": "C#",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Languages",
-    "Skill": "F#",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Languages",
-    "Skill": "VB.NET",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Client-Side",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Client-Side",
-    "Skill": "Accessibility",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Client-Side",
-    "Skill": "Accessibility",
-    "Subskill": "ADA",
-    "": ""
-  },
-  {
-    "Technology": "Client-Side",
-    "Skill": "Accessibility",
-    "Subskill": "Section 508",
-    "": ""
-  },
-  {
-    "Technology": "Client-Side",
-    "Skill": "Accessibility",
-    "Subskill": "WCAG",
-    "": ""
-  },
-  {
-    "Technology": "Client-Side",
-    "Skill": "Analytics",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Client-Side",
-    "Skill": "Analytics",
-    "Subskill": "Fireclick",
-    "": ""
-  },
-  {
-    "Technology": "Client-Side",
-    "Skill": "Analytics",
-    "Subskill": "Google Analytics",
-    "": ""
-  },
-  {
-    "Technology": "Client-Side",
-    "Skill": "Analytics",
-    "Subskill": "Omniture",
-    "": ""
-  },
-  {
-    "Technology": "Client-Side",
-    "Skill": "Analytics",
-    "Subskill": "WebTrends",
-    "": ""
-  },
-  {
-    "Technology": "CSS",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "CSS",
-    "Skill": "Frameworks",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "CSS",
-    "Skill": "Frameworks",
-    "Subskill": "Twitter Bootstrap",
-    "": ""
-  },
-  {
-    "Technology": "CSS",
-    "Skill": "Frameworks",
-    "Subskill": "Zurb Foundation",
-    "": ""
-  },
-  {
-    "Technology": "CSS",
-    "Skill": "Parallax",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "CSS",
-    "Skill": "Preprocessors",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "CSS",
-    "Skill": "Preprocessors",
-    "Subskill": "LESS",
-    "": ""
-  },
-  {
-    "Technology": "CSS",
-    "Skill": "Preprocessors",
-    "Subskill": "PostCSS",
-    "": ""
-  },
-  {
-    "Technology": "CSS",
-    "Skill": "Preprocessors",
-    "Subskill": "SASS",
-    "": ""
-  },
-  {
-    "Technology": "CSS",
-    "Skill": "Responsive Web Design",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "CSS",
-    "Skill": "Responsive Web Design",
-    "Subskill": "Responsive images",
-    "": ""
-  },
-  {
-    "Technology": "Graphics",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Graphics",
-    "Skill": "2D",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Graphics",
-    "Skill": "2D",
-    "Subskill": "Canvas",
-    "": ""
-  },
-  {
-    "Technology": "Graphics",
-    "Skill": "2D",
-    "Subskill": "D3",
-    "": ""
-  },
-  {
-    "Technology": "Graphics",
-    "Skill": "2D",
-    "Subskill": "SVG",
-    "": ""
-  },
-  {
-    "Technology": "Graphics",
-    "Skill": "3D",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Graphics",
-    "Skill": "3D",
-    "Subskill": "Three.js",
-    "": ""
-  },
-  {
-    "Technology": "Graphics",
-    "Skill": "3D",
-    "Subskill": "WebGL",
-    "": ""
-  },
-  {
-    "Technology": "HTML",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "HTML",
-    "Skill": "Microdata",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "HTML",
-    "Skill": "Microdata",
-    "Subskill": "RDFa",
-    "": ""
-  },
-  {
-    "Technology": "HTML",
-    "Skill": "Microdata",
-    "Subskill": "schema.org",
-    "": ""
-  },
-  {
-    "Technology": "HTML",
-    "Skill": "Microformats",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "HTML",
-    "Skill": "Microformats",
-    "Subskill": "microformats2",
-    "": ""
-  },
-  {
-    "Technology": "Integration",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Integration",
-    "Skill": ".NET",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Integration",
-    "Skill": ".NET",
-    "Subskill": "Razor",
-    "": ""
-  },
-  {
-    "Technology": "Integration",
-    "Skill": ".NET",
-    "Subskill": "WebForms",
-    "": ""
-  },
-  {
-    "Technology": "Integration",
-    "Skill": "JVM",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Integration",
-    "Skill": "JVM",
-    "Subskill": "FreeMarker",
-    "": ""
-  },
-  {
-    "Technology": "Integration",
-    "Skill": "JVM",
-    "Subskill": "JSP",
-    "": ""
-  },
-  {
-    "Technology": "Integration",
-    "Skill": "JVM",
-    "Subskill": "Thymeleaf",
-    "": ""
-  },
-  {
-    "Technology": "Integration",
-    "Skill": "JVM",
-    "Subskill": "Twirl",
-    "": ""
-  },
-  {
-    "Technology": "Integration",
-    "Skill": "JVM",
-    "Subskill": "Velocity",
-    "": ""
-  },
-  {
-    "Technology": "Integration",
-    "Skill": "PHP",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Integration",
-    "Skill": "PHP",
-    "Subskill": "Twig",
-    "": ""
-  },
-  {
-    "Technology": "Integration",
-    "Skill": "Ruby",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Integration",
-    "Skill": "Ruby",
-    "Subskill": "ERB",
-    "": ""
-  },
-  {
-    "Technology": "JavaScript",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "JavaScript",
-    "Skill": "APIs",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "JavaScript",
-    "Skill": "APIs",
-    "Subskill": "DOM",
-    "": ""
-  },
-  {
-    "Technology": "JavaScript",
-    "Skill": "APIs",
-    "Subskill": "HTML5 Audio",
-    "": ""
-  },
-  {
-    "Technology": "JavaScript",
-    "Skill": "APIs",
-    "Subskill": "HTML5 Video",
-    "": ""
-  },
-  {
-    "Technology": "JavaScript",
-    "Skill": "APIs",
-    "Subskill": "Web Components",
-    "": ""
-  },
-  {
-    "Technology": "JavaScript",
-    "Skill": "APIs",
-    "Subskill": "WebSockets",
-    "": ""
-  },
-  {
-    "Technology": "Frameworks",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Frameworks",
-    "Skill": "Alt",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Frameworks",
-    "Skill": "Angular 1.x",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Frameworks",
-    "Skill": "Angular 2.x",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Frameworks",
-    "Skill": "Aurelia",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Frameworks",
-    "Skill": "Backbone",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Frameworks",
-    "Skill": "Dojo",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Frameworks",
-    "Skill": "Ember",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Frameworks",
-    "Skill": "jQuery Mobile",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Frameworks",
-    "Skill": "Knockout",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Frameworks",
-    "Skill": "Meteor",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Frameworks",
-    "Skill": "Polymer",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Frameworks",
-    "Skill": "Ractive",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Frameworks",
-    "Skill": "React",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Frameworks",
-    "Skill": "Redux",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Frameworks",
-    "Skill": "Riot",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Frameworks",
-    "Skill": "Vue",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Libraries",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Libraries",
-    "Skill": "Bacon",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Libraries",
-    "Skill": "Browserify",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Libraries",
-    "Skill": "Google Maps",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Libraries",
-    "Skill": "immutable.js",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Libraries",
-    "Skill": "jQuery",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Libraries",
-    "Skill": "jQuery UI",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Libraries",
-    "Skill": "JSPM",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Libraries",
-    "Skill": "Leaflet",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Libraries",
-    "Skill": "RequireJS",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Libraries",
-    "Skill": "rx.js",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Libraries",
-    "Skill": "Webpack",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Node",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Node",
-    "Skill": "Express",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Node",
-    "Skill": "Hapi",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Node",
-    "Skill": "Restify",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Preprocessors",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Preprocessors",
-    "Skill": "Babel",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Preprocessors",
-    "Skill": "CoffeeScript",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Preprocessors",
-    "Skill": "TypeScript",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Task Runners",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Task Runners",
-    "Skill": "Grunt",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Task Runners",
-    "Skill": "Gulp",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Templates",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Templates",
-    "Skill": "Dust",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Templates",
-    "Skill": "Handlebars",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Templates",
-    "Skill": "Mustache",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Templates",
-    "Skill": "Nunjucks",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Unit Testing",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Unit Testing",
-    "Skill": "Jasmine",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Unit Testing",
-    "Skill": "Karma",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Unit Testing",
-    "Skill": "Mocha",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Unit Testing",
-    "Skill": "Testem",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "SEO",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "SEO",
-    "Skill": "Meta data",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Data Security",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Social Media",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Business Architecture",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Business Intelligence",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Technical Architecture",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Cloud Hosting",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Cloud Hosting",
-    "Subskill": "Amazon Web Services",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Cloud Hosting",
-    "Subskill": "Azure",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Cloud Hosting",
-    "Subskill": "Google Cloud Platform",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Cloud Hosting",
-    "Subskill": "Heroku",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Cloud Hosting",
-    "Subskill": "Rackspace",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "DevOps",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "DevOps",
-    "Subskill": "Appveyor",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "DevOps",
-    "Subskill": "Bamboo",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "DevOps",
-    "Subskill": "Capistrano",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "DevOps",
-    "Subskill": "Circle CI",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "DevOps",
-    "Subskill": "DeployBot",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "DevOps",
-    "Subskill": "Jenkins",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Virtualization",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Virtualization",
-    "Subskill": "Ansible",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Virtualization",
-    "Subskill": "Chef",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Virtualization",
-    "Subskill": "Docker",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Virtualization",
-    "Subskill": "Puppet",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Virtualization",
-    "Subskill": "Vagrant",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Payment Processing",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Payment Processing",
-    "Subskill": "Authorize.net",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Payment Processing",
-    "Subskill": "PayPal",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Version Control Systems",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Version Control Systems",
-    "Subskill": "CVS",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Version Control Systems",
-    "Subskill": "Git",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Version Control Systems",
-    "Subskill": "Mercurial",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Version Control Systems",
-    "Subskill": "Subversion",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Version Control Systems",
-    "Subskill": "Team Foundation Server",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Web Servers",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Web Servers",
-    "Subskill": "Apache",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Web Servers",
-    "Subskill": "IIS",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Web Servers",
-    "Subskill": "JBoss / WildFly",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Web Servers",
-    "Subskill": "Nginx",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Web Servers",
-    "Subskill": "Tomcat",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Web Servers",
-    "Subskill": "WebLogic",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Web Servers",
-    "Subskill": "WebSphere",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Data Science",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Data Science",
-    "Subskill": "Hadoop",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Data Science",
-    "Subskill": "R",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Data Science",
-    "Subskill": "Spark",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Databases",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Databases",
-    "Subskill": "NoSQL",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Databases",
-    "Subskill": "Cassandra",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Databases",
-    "Subskill": "Elasticsearch",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Databases",
-    "Subskill": "MongoDb",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Databases",
-    "Subskill": "RavenDB",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Databases",
-    "Subskill": "Redis",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Databases",
-    "Subskill": "RethinkDB",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Databases",
-    "Subskill": "Solr",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "RDBMS",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "RDBMS",
-    "Subskill": "MySQL",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "RDBMS",
-    "Subskill": "Oracle",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "RDBMS",
-    "Subskill": "Postgres",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "RDBMS",
-    "Subskill": "SQL Server",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Services",
-    "Subskill": "SSIS / SSRS / SSAS",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Message Queues",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Message Queues",
-    "Subskill": "ActiveMQ",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Message Queues",
-    "Subskill": "Kafka",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Message Queues",
-    "Subskill": "RabbitMQ",
-    "": ""
-  },
-  {
-    "Technology": "Cross-Discipline",
-    "Skill": "Message Queues",
-    "Subskill": "Sidekiq",
-    "": ""
-  },
-  {
-    "Technology": "JVM",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "JVM",
-    "Skill": "CMS",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "JVM",
-    "Skill": "CMS",
-    "Subskill": "Adobe Experience Manager",
-    "": ""
-  },
-  {
-    "Technology": "JVM",
-    "Skill": "CMS",
-    "Subskill": "DotCMS",
-    "": ""
-  },
-  {
-    "Technology": "JVM",
-    "Skill": "CMS",
-    "Subskill": "HippoCMS",
-    "": ""
-  },
-  {
-    "Technology": "JVM",
-    "Skill": "CMS",
-    "Subskill": "LifeRay",
-    "": ""
-  },
-  {
-    "Technology": "JVM",
-    "Skill": "CMS",
-    "Subskill": "WCS",
-    "": ""
-  },
-  {
-    "Technology": "JVM",
-    "Skill": "Frameworks",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "JVM",
-    "Skill": "Frameworks",
-    "Subskill": "GWT",
-    "": ""
-  },
-  {
-    "Technology": "JVM",
-    "Skill": "Frameworks",
-    "Subskill": "JEE",
-    "": ""
-  },
-  {
-    "Technology": "JVM",
-    "Skill": "Frameworks",
-    "Subskill": "JPA / Hibernate",
-    "": ""
-  },
-  {
-    "Technology": "JVM",
-    "Skill": "Frameworks",
-    "Subskill": "Play",
-    "": ""
-  },
-  {
-    "Technology": "JVM",
-    "Skill": "Frameworks",
-    "Subskill": "Spring",
-    "": ""
-  },
-  {
-    "Technology": "JVM",
-    "Skill": "Frameworks",
-    "Subskill": "Spring Security",
-    "": ""
-  },
-  {
-    "Technology": "JVM",
-    "Skill": "Frameworks",
-    "Subskill": "Struts",
-    "": ""
-  },
-  {
-    "Technology": "JVM",
-    "Skill": "Languages",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "JVM",
-    "Skill": "Languages",
-    "Subskill": "Clojure",
-    "": ""
-  },
-  {
-    "Technology": "JVM",
-    "Skill": "Languages",
-    "Subskill": "Groovy/Grails",
-    "": ""
-  },
-  {
-    "Technology": "JVM",
-    "Skill": "Languages",
-    "Subskill": "Java",
-    "": ""
-  },
-  {
-    "Technology": "JVM",
-    "Skill": "Languages",
-    "Subskill": "Scala",
-    "": ""
-  },
-  {
-    "Technology": "Mobile",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Mobile",
-    "Skill": "Android",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Mobile",
-    "Skill": "Android",
-    "Subskill": "Android Pay",
-    "": ""
-  },
-  {
-    "Technology": "Mobile",
-    "Skill": "Android",
-    "Subskill": "Android TV",
-    "": ""
-  },
-  {
-    "Technology": "Mobile",
-    "Skill": "Android",
-    "Subskill": "Android Wear",
-    "": ""
-  },
-  {
-    "Technology": "Mobile",
-    "Skill": "Cross-Platform",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Mobile",
-    "Skill": "Cross-Platform",
-    "Subskill": "Appcelerator",
-    "": ""
-  },
-  {
-    "Technology": "Mobile",
-    "Skill": "Cross-Platform",
-    "Subskill": "Ionic",
-    "": ""
-  },
-  {
-    "Technology": "Mobile",
-    "Skill": "Cross-Platform",
-    "Subskill": "PhoneGap",
-    "": ""
-  },
-  {
-    "Technology": "Mobile",
-    "Skill": "Cross-Platform",
-    "Subskill": "React Native",
-    "": ""
-  },
-  {
-    "Technology": "Mobile",
-    "Skill": "Cross-Platform",
-    "Subskill": "Telerik",
-    "": ""
-  },
-  {
-    "Technology": "Mobile",
-    "Skill": "Cross-Platform",
-    "Subskill": "Xamarin",
-    "": ""
-  },
-  {
-    "Technology": "Mobile",
-    "Skill": "iOS",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Mobile",
-    "Skill": "iOS",
-    "Subskill": "ApplePay",
-    "": ""
-  },
-  {
-    "Technology": "Mobile",
-    "Skill": "iOS",
-    "Subskill": "HealthKit",
-    "": ""
-  },
-  {
-    "Technology": "Mobile",
-    "Skill": "iOS",
-    "Subskill": "Objective-C",
-    "": ""
-  },
-  {
-    "Technology": "Mobile",
-    "Skill": "iOS",
-    "Subskill": "Swift",
-    "": ""
-  },
-  {
-    "Technology": "Mobile",
-    "Skill": "iOS",
-    "Subskill": "tvOS",
-    "": ""
-  },
-  {
-    "Technology": "Mobile",
-    "Skill": "iOS",
-    "Subskill": "WatchKit",
-    "": ""
-  },
-  {
-    "Technology": "Game Development",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Game Development",
-    "Skill": "Graphics API",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Game Development",
-    "Skill": "Graphics API",
-    "Subskill": "DirectX",
-    "": ""
-  },
-  {
-    "Technology": "Game Development",
-    "Skill": "Graphics API",
-    "Subskill": "OpenGL",
-    "": ""
-  },
-  {
-    "Technology": "Game Development",
-    "Skill": "Phaser",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Game Development",
-    "Skill": "Unity",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Languages",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Languages",
-    "Skill": "ActionScript",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Languages",
-    "Skill": "ASP Classic",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Languages",
-    "Skill": "C/C++",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Languages",
-    "Skill": "ColdFusion",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Languages",
-    "Skill": "Erlang",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Languages",
-    "Skill": "GoLang",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Languages",
-    "Skill": "Haskell",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Languages",
-    "Skill": "Perl",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Languages",
-    "Skill": "Python",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Languages",
-    "Skill": "Python",
-    "Subskill": "Django",
-    "": ""
-  },
-  {
-    "Technology": "PHP",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "PHP",
-    "Skill": "CMS",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "PHP",
-    "Skill": "CMS",
-    "Subskill": "Craft",
-    "": ""
-  },
-  {
-    "Technology": "PHP",
-    "Skill": "CMS",
-    "Subskill": "Drupal",
-    "": ""
-  },
-  {
-    "Technology": "PHP",
-    "Skill": "CMS",
-    "Subskill": "ExpressionEngine",
-    "": ""
-  },
-  {
-    "Technology": "PHP",
-    "Skill": "CMS",
-    "Subskill": "Magento",
-    "": ""
-  },
-  {
-    "Technology": "PHP",
-    "Skill": "CMS",
-    "Subskill": "OroCRM",
-    "": ""
-  },
-  {
-    "Technology": "PHP",
-    "Skill": "CMS",
-    "Subskill": "WordPress",
-    "": ""
-  },
-  {
-    "Technology": "PHP",
-    "Skill": "Frameworks",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "PHP",
-    "Skill": "Frameworks",
-    "Subskill": "CakePHP",
-    "": ""
-  },
-  {
-    "Technology": "PHP",
-    "Skill": "Frameworks",
-    "Subskill": "CodeIgniter",
-    "": ""
-  },
-  {
-    "Technology": "PHP",
-    "Skill": "Frameworks",
-    "Subskill": "Laravel",
-    "": ""
-  },
-  {
-    "Technology": "PHP",
-    "Skill": "Frameworks",
-    "Subskill": "Symfony2",
-    "": ""
-  },
-  {
-    "Technology": "PHP",
-    "Skill": "Frameworks",
-    "Subskill": "Yii",
-    "": ""
-  },
-  {
-    "Technology": "PHP",
-    "Skill": "Frameworks",
-    "Subskill": "Zend Framework 1",
-    "": ""
-  },
-  {
-    "Technology": "PHP",
-    "Skill": "Frameworks",
-    "Subskill": "Zend Framework 2",
-    "": ""
-  },
-  {
-    "Technology": "PHP",
-    "Skill": "Services",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "PHP",
-    "Skill": "Services",
-    "Subskill": "Testing (PHPUnit, Behat, PHPSpec)",
-    "": ""
-  },
-  {
-    "Technology": "Project Management",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Project Management",
-    "Skill": "Agile Methodology",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Project Management",
-    "Skill": "Scrum Master",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Project Management",
-    "Skill": "Six Sigma",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Quality Assurance/QA",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Quality Assurance/QA",
-    "Skill": "Accessibility",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Quality Assurance/QA",
-    "Skill": "Security",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Quality Assurance/QA",
-    "Skill": "Security",
-    "Subskill": "OWASP",
-    "": ""
-  },
-  {
-    "Technology": "Quality Assurance/QA",
-    "Skill": "Security",
-    "Subskill": "PCI Compliance",
-    "": ""
-  },
-  {
-    "Technology": "Ruby",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Ruby",
-    "Skill": "Frameworks",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Ruby",
-    "Skill": "Frameworks",
-    "Subskill": "ActiveAdmin",
-    "": ""
-  },
-  {
-    "Technology": "Ruby",
-    "Skill": "Frameworks",
-    "Subskill": "Padrino",
-    "": ""
-  },
-  {
-    "Technology": "Ruby",
-    "Skill": "Frameworks",
-    "Subskill": "Ruby On Rails",
-    "": ""
-  },
-  {
-    "Technology": "Ruby",
-    "Skill": "Frameworks",
-    "Subskill": "Sinatra",
-    "": ""
-  },
-  {
-    "Technology": "Ruby",
-    "Skill": "Services",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Ruby",
-    "Skill": "Services",
-    "Subskill": "RSpec",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Active Directory",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "AIX",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Databases",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Databases",
-    "Subskill": "MySQL",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Databases",
-    "Subskill": "MySQL Cluster",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Databases",
-    "Subskill": "NoSQL",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Databases",
-    "Subskill": "Oracle",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Databases",
-    "Subskill": "Postgres",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Databases",
-    "Subskill": "SQL Server",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "DNS",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "DNS",
-    "Subskill": "Bind 9",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "DNS",
-    "Subskill": "Microsoft DNS",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Email",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Email",
-    "Subskill": "Exim",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Email",
-    "Subskill": "Google Mail, Postini",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Email",
-    "Subskill": "Lotus Domino Server",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Email",
-    "Subskill": "Microsoft Exchange",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Email",
-    "Subskill": "Postfix",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Email",
-    "Subskill": "Sendmail",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Flash Media Server",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Java & Tomcat",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "LDAP",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Linux",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Networking",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Firewall Management",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Firewall Management",
-    "Subskill": "Cisco",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Firewall Management",
-    "Subskill": "iptables",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Firewall Management",
-    "Subskill": "Microsoft Windows",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Firewall Management",
-    "Subskill": "SonicWall",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Firewall Management",
-    "Subskill": "ufw",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "RAID",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Shell Scripting",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Shell Scripting",
-    "Subskill": "Bash / csh",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Shell Scripting",
-    "Subskill": "Microsoft Powershell",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "SSL Installs",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Virtualization",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Virtualization",
-    "Subskill": "KVM on Linux",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Virtualization",
-    "Subskill": "Microsoft Hyper-V",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Virtualization",
-    "Subskill": "Oracle VirtualBox",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Virtualization",
-    "Subskill": "VMWare",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Web",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Web",
-    "Subskill": "Amazon Web Services",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Web",
-    "Subskill": "Apache",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Web",
-    "Subskill": "Azure",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Web",
-    "Subskill": "Microsoft IIS",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Web",
-    "Subskill": "Nginx",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Web",
-    "Subskill": "Rackspace",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Windows Desktop",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "Systems Administration",
-    "Skill": "Windows Server",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "User Experience/UX",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "User Experience/UX",
-    "Skill": "Accessibility",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "User Experience/UX",
-    "Skill": "Branding",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "User Experience/UX",
-    "Skill": "Business Discovery",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "User Experience/UX",
-    "Skill": "Business Strategy",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "User Experience/UX",
-    "Skill": "Content Strategy",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "User Experience/UX",
-    "Skill": "Game Design",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "User Experience/UX",
-    "Skill": "Information Architecture",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "User Experience/UX",
-    "Skill": "Interaction Design",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "User Experience/UX",
-    "Skill": "Mobile App Design",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "User Experience/UX",
-    "Skill": "Responsive / Adaptive Design",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "User Experience/UX",
-    "Skill": "Usability Testing",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "User Experience/UX",
-    "Skill": "User Research",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "User Experience/UX",
-    "Skill": "Visual Design",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  },
-  {
-    "Technology": "",
-    "Skill": "",
-    "Subskill": "",
-    "": ""
-  }
+    "Skills": [
+      {
+        "Skill": "App Development",
+        "Subskills": ["Windows Communication Foundation",
+          "Windows Forms", "Windows Phone",
+          "Windows Presentation Foundation",
+          "WinRT/Windows 8"]
+      }
+    ]
+    },
+    {
+      "Technology": "CMS",
+      "Skills": [
+        {
+          "Skill": "Ektron",
+          "Subskills": ""
+        },
+        {
+          "Skill": "Kentico",
+          "Subskills": ""
+        },
+        {
+          "Skill": "Sharepoint",
+          "Subskills": ""
+        },
+        {
+          "Skill": "Sitecore",
+          "Subskills": ""
+        },
+        {
+          "Skill": "Sitefinity",
+          "Subskills": ""
+        },
+        {
+          "Skill": "Umbraco",
+          "Subskills": ""
+        }
+      ]
+    },
+    {
+      "Technology": "Frameworks",
+      "Skills": [
+        {
+          "Skill": "ASP.Net",
+          "Subskills": ["ASP.Net MVC", "ASP.Net Web API", "ASP.Net WebForms",
+            "SignalR"]
+        },
+        {
+          "Skill": ["Compact Framework", "Silverlight"]
+        }
+      ]
+    },
+    {
+      "Technology": "Languages",
+      "Skills": [
+        {
+          "Skill": "C#",
+          "Subskill": ""
+        },
+        {
+          "Skill": "F#",
+          "Subskill": ""
+        },
+        {
+          "Skill": "VB.NET",
+          "Subskill": ""
+        }
+      ]
+    },
+    {
+      "Technology": "Client-Side",
+      "Skills": [
+        {
+          "Skill": "Accessibility",
+          "Subskill": ["ADA", "Section 508", "WCAG"]
+        },
+        {
+          "Skill": "Analytics",
+          "Subskill": ["Fireclick", "Google Analytics", "Omniture", "WebTrends"]
+        }
+      ]
+    },
+    {
+      "Technology": "CSS",
+      "Skills": [
+        {
+          "Skill": "Frameworks",
+          "Subskill": ["Twitter Bootstrap", "Zurb Foundation"]
+        },
+        {
+          "Skill": "Parallax",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Preporcessors",
+          "Subskill": ["LESS", "PostCSS", "SASS"]
+        },
+        {
+          "Skill": "Responsive Web Design",
+          "Subskill": "Responsive Images",
+        }
+      ]
+    },
+    {
+      "Technology": "CSS",
+      "Skills": [
+        {
+          "Skill": "2D",
+          "Subskill": ["Canvas", "D3", "SVG"],
+        },
+        {
+          "Skill": "3D",
+          "Subskill": ["Three.js", "WebGL"],
+        }
+      ]
+    },
+    {
+      "Technology": "HTML",
+      "Skills": [
+        {
+          "Skill": "Microdata",
+          "Subskill": ["RDFa", "schema.org"],
+        },
+        {
+          "Skill": "Microformats",
+          "Subskill": "microformats2",
+        }
+      ]
+    },
+    {
+      "Technology": "Integration",
+      "Skills": [
+        {
+          "Skill": ".NET",
+          "Subskill": ["Razor", "WebForms"]
+        },
+        {
+          "Skill": "JVM",
+          "Subskill": ["FreeMarker", "JSP", "Thymeleaf", "Twirl", "Velocity"]
+        },
+        {
+          "Skill": "PHP",
+          "Subskill": "Twig",
+        },
+        {
+          "Skill": "Ruby",
+          "Subskill": "ERB",
+        }
+      ]
+    },
+    {
+      "Technology": "JavaScript",
+      "Skills": [
+        {
+          "Skill": "APIs",
+          "Subskill": ["DOM", "HTML5 Audio", "HTML5 Video", "Web Components", "WebSockets"]
+        }
+      ]
+    },
+    {
+      "Technology": "Frameworks",
+      "Skills": [
+        {
+          "Skill": "Angular 1.x",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Angular 2.x",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Aurelia",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Backbone",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Dojo",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Ember",
+          "Subskill": "",
+        },
+        {
+          "Skill": "jQuery Mobile",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Knockout",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Meteor",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Polymer",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Ractive",
+          "Subskill": "",
+        },
+        {
+          "Skill": "React",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Redux",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Riot",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Vue",
+          "Subskill": "",
+        },
+      ]
+    },
+    {
+      "Technology": "Libraries",
+      "Skills": [
+        {
+          "Skill": "Bacon",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Browserify",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Google Maps",
+          "Subskill": "",
+        },
+        {
+          "Skill": "immutable.js",
+          "Subskill": "",
+        },
+        {
+          "Skill": "jQuery",
+          "Subskill": "",
+        },
+        {
+          "Skill": "jQuery UI",
+          "Subskill": "",
+        },
+        {
+          "Skill": "JSPM",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Leaflet",
+          "Subskill": "",
+        },
+        {
+          "Skill": "RequireJS",
+          "Subskill": "",
+        },
+        {
+          "Skill": "rx.js",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Webpack",
+          "Subskill": "",
+        }
+      ]
+    },
+    {
+      "Technology": "Node",
+      "Skills": [
+        {
+          "Skill": "Express",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Hapi",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Restify",
+          "Subskill": "",
+        }
+      ]
+    },
+    {
+      "Technology": "Preprocessors",
+      "Skills": [
+        {
+          "Skill": "Babel",
+          "SubSkill": ""
+        },
+        {
+          "Skill": "CoffeeScript",
+          "Subskill": "",
+        },
+        {
+          "Skill": "TypeScript",
+          "Subskill": "",
+        }
+      ]
+    },
+    {
+      "Technology": "Task Runners",
+      "Skills": [
+        {
+          "Skill": "Grunt",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Gulp",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Gulp",
+          "Subskill": "",
+        }
+      ]
+    },
+    {
+      "Technology": "Templates",
+      "Skills": [
+        {
+          "Skill": "Dust",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Handlebars",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Mustache",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Nunjucks",
+          "Subskill": "",
+        }
+      ]
+    },
+    {
+      "Technology": "Unit Testing",
+      "Skills": [
+        {
+          "Skill": "Jasmine",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Karma",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Mocah",
+          "Subskill": "",
+        },
+        {
+          "Skill": "Testem",
+          "Subskill": "",
+        }
+      ]
+    },
+    {
+      "Technology": "SEO",
+      "Skills": [
+        {
+          "Skill": "Meta data",
+          "Subskill": "",
+        }
+      ]
+    },
+    {
+      "Technology": "Data Security",
+      "Skills": [
+        {
+          "Skill": "",
+          "Subskill": "",
+        }
+      ]
+    },
+    {
+      "Technology": "Social Media",
+      "Skills": [
+        {
+          "Skill": "",
+          "Subskill": "",
+        }
+      ]
+    },
+    {
+      "Technology": "Business Architecture",
+      "Skills": [
+        {
+          "Skill": "",
+          "Subskill": "",
+        }
+      ]
+    },
+    {
+      "Technology": "Business Intelligence",
+      "Skills": [
+        {
+          "Skill": "",
+          "Subskill": "",
+        }
+      ]
+    },
+    {
+      "Technology": "Technical Architecture",
+      "Skills": [
+        {
+          "Skill": "",
+          "Subskill": "",
+        }
+      ]
+    },
+    {
+      "Technology": "Cross-Discipline",
+      "Skills": [
+        {
+          "Skill": "Cloud Hosting",
+          "Subskill": ["Amazon Web Services", "Azure", "Google Cloud Platform",
+          "Heroku", "Rackspace"],
+        },
+        {
+          "Skill": "DevOps",
+          "Subskill": ["Bamboo", "Capistrano", "Circle CI", "DeployBot",
+          "Jenkins"]
+        },
+        {
+          "Skill": "Virtualization",
+          "Subskill": ["Ansible", "Chef", "Docker", "Puppet", "Vagrant"]
+        },
+        {
+          "Skill": "Payment Processing",
+          "Subskill": ["Authorize.net", "PayPal"],
+        },
+        {
+          "Skill": "Version Control Systems",
+          "Subskill": ["CVS", "Git", "Mercurial", "Subversion", "Team Foundation Server"],
+        },
+        {
+          "Skill": "Web Servers",
+          "Subskill": ["Apache", "IIS", "JBoss / WildFly", "Nginx", "Tomcat", "WebLogic",
+          "WebSphere"],
+        },
+        {
+          "Skill": "Data Science",
+          "Subskill": ["Hadoop", "R", "Spark"],
+        },
+        {
+          "Skill": "Databases",
+          "Subskill": ["NoSQL", "Cassandra", "Elasticsearch", "MongoDb", "RavenDB",
+          "Redis", "RethinkDB", "Solr"],
+        },
+        {
+          "Skill": "RDBMS",
+          "Subskill": ["MySQL", "Oracle", "Postgress", "SQL Server"],
+        },
+        {
+          "Skill": "Services",
+          "Subskill": "SSIS / SSRS / SSAS",
+        },
+        {
+          "Skill": "Message Queues",
+          "Subskill": ["ActiveMQ", "Kafka", "RabbitMQ", "Sidekiq"],
+        }
+      ]
+    },
+    {
+      "Technology": "JVM",
+      "Skills": [
+        {
+          "Skill": "CMS",
+          "Subskill": ["Adobe Experience Manager", "DotCMS", "HippoCMS", "LifeRay", "WCS"]
+        },
+        {
+          "Skill": "Frameworks",
+          "Subskill": ["JPA / Hibernate", "Play", "Spring", "Spring Security", "Struts"]
+        },
+        {
+          "Skill": "Languages",
+          "Subskill": ["Clojure", "Groovy/Grails", "Java", "Scala"]
+        }
+      ]
+    },
+    {
+      "Technology": "Mobile",
+      "Skills": [
+        {
+          "Skill": "Android",
+          "Subskill": ["Android Pay", "Android TV", "Android Wear"]
+        },
+        {
+          "Skill": "Cross-Platform",
+          "Subskill": ["Appcelerator", "Ionic", "PhoneGap", "React Native", "Telerik",
+          "Xamarin"]
+        },
+        {
+          "Skill": "iOS",
+          "Subskill": ["ApplePay", "HealthKit", "Objective-C", "Swift", "tvOS", "WatchKit"]
+        }
+      ]
+    },
+    {
+      "Technology": "Game Development",
+      "Skills": [
+        {
+          "Skill": "Graphics API",
+          "Subskill": ["DirectX", "OpenGL"]
+        },
+        {
+          "Skill": "Phaser",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Unity",
+          "Subskill": ""
+        }
+      ]
+    },
+    {
+      "Technology": "Languages",
+      "Skills": [
+        {
+          "Skill": "ActionScript",
+          "Subskill": ""
+        },
+        {
+          "Skill": "ASP Classic",
+          "Subskill": ""
+        },
+        {
+          "Skill": "C/C++",
+          "Subskill": ""
+        },
+        {
+          "Skill": "ColdFusion",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Erlang",
+          "Subskill": ""
+        },
+        {
+          "Skill": "GoLang",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Haskell",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Perl",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Python",
+          "Subskill": "Django"
+        }
+      ]
+    },
+    {
+      "Technology": "PHP",
+      "Skills": [
+        {
+          "Skill": "CMS",
+          "Subskill": ["Craft", "Drupal", "ExpressionEngine", "Magento", "OroCRM",
+          "WordPress"]
+        },
+        {
+          "Skill": "Frameworks",
+          "Subskill": ["CakePHP", "CodeIgniter", "Laravel", "Symfony2", "Yii", "Zend Framework 1",
+          "Zend Framework 2"]
+        },
+        {
+          "Skill": "Services",
+          "Subskill": "Testing (PHPUnit, Behat, PHPSpec)"
+        }
+      ]
+    },
+    {
+      "Technology": "Project Management",
+      "Skills": [
+        {
+          "Skill": "Agile Methodology",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Scrum Master",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Six Sigma",
+          "Subskill": ""
+        }
+      ]
+    },
+    {
+      "Technology": "Quality Assurance/QA",
+      "Skills": [
+        {
+          "Skill": "Accessibility",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Security",
+          "Subskill": ["OWASP", "PCI Compliance"]
+        }
+      ]
+    },
+    {
+      "Technology": " Ruby",
+      "Skills": [
+        {
+          "Skill": "Frameworks",
+          "Subskill": ["ActiveAdmin", "Padrino", "Ruby on Rails", "Sinatra"]
+        },
+        {
+          "Skill": "Services",
+          "Subskill": "RSpec"
+        }
+      ]
+    },
+    {
+      "Technology": "Systems Administration",
+      "Skills": [
+        {
+          "Skill": "Active Dirctory",
+          "Subskill": ""
+        },
+        {
+          "Skill": "AIX",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Databases",
+          "Subskill": ["MySQL", "MySQL Cluster", "NoSQL", "Oracle", "Postgress",
+          "SQL Server"]
+        },
+        {
+          "Skill": "DNS",
+          "Subskill": ["Bind 9", "Microsoft DNS"]
+        },
+        {
+          "Skill": "Email",
+          "Subskill": ["Exim", "Google Mail, Postini", "Lotus Domino Server", "Microsoft Exchange",
+          "Postfix", "Sendmail"]
+        },
+        {
+          "Skill": "Flash Media Server",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Java & Tomcat",
+          "Subskill": ""
+        },
+        {
+          "Skill": "LDAP",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Linux",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Networking",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Firewall Management",
+          "Subskill": ["Cisco", "iptables", "Microsoft Windows", "SonicWall",
+          "ufw"]
+        },
+        {
+          "Skill": "RAID",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Shell Scripting",
+          "Subskill": ["Bash / csh", "Microsoft Powershell"]
+        },
+        {
+          "Skill": "SSL Installs",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Virtualization",
+          "Subskill": ["KVM on Linux", "Microsoft Hyper-V", "Oracle VirtualBox", "VMWare"]
+        },
+        {
+          "Skill": "Web",
+          "Subskill": ["Amazon Web Services", "Apache", "Azure", "Microsoft IIS",
+          "Nginx", "Rackspace"]
+        },
+        {
+          "Skill": "Windows Desktop",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Windows Server",
+          "Subskill": ""
+        }
+      ]
+    },
+    {
+      "Technology": "User Experience/UX",
+      "Skills": [
+        {
+          "Skill": "Accessibility",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Branding",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Business Discovery",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Business Strategy",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Content Strategy",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Game Design",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Information Architecture",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Interaction Design",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Mobile App Design",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Responsive / Adaptive Design",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Usability Testing",
+          "Subskill": ""
+        },
+        {
+          "Skill": "User Research",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Visual Design",
+          "Subskill": ""
+        }
+      ]
+    }
 ]

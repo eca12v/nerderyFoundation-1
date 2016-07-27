@@ -64,9 +64,22 @@ console.log('inside groups.js add group ');
   console.log(req.body);
 
   var newGroup = new Group({
-    groupName: req.body.groupName,
+    name: req.body.name,
     groupURL: req.body.groupURL,
-    groupContact: req.body.groupContact
+    groupContact: req.body.groupContact,
+    contactEmail: req.body.contactEmail,
+    description: req.body.description,
+    location: req.body.location,
+    activities: req.body.activities,
+    technologies: req.body.technologies,
+    tags: req.body.tags,
+    freqOfMeeting: req.body.freqOfMeeting,
+    sizeOfMeeting: req.body.sizeOfMeeting,
+    affiliations: req.body.affiliations,
+    affiliationURL: req.body.affiliationURL,
+    eventInfo: req.body.eventInfo,
+    sizeOfMembership: req.body.sizeOfMembership
+
   });
 
 console.log( 'newGroup: ', newGroup );
