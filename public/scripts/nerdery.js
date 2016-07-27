@@ -14,6 +14,10 @@ $routeProvider
      templateUrl: '../views/home.html',
      controller: 'HomeController'
    })
+   .when('/groups/:groupName', {
+     templateUrl: '/views/group.html',
+     controller: 'GroupController'
+   })
    .when('/groupLeader', {
      templateUrl: '/views/groupLeader.html',
      controller: 'GroupLeaderController'

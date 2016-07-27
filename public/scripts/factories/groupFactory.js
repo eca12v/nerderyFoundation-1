@@ -25,6 +25,13 @@ myApp.factory( 'groupFactory', ['$http',
      });
    };
 
+   groups.getGroup = function(groupName) {
+     return $http.get('groups/getGroup/' + groupName).success(function(data) {
+       console.log(data);
+       angular.copy(data, groups.groups);
+     });
+   };
+
     groups.submit = function ( newGroup ) {
       console.log( 'in factory, newGroup: ', newGroup);
       return $http.post('/groups/createGroup', newGroup);
