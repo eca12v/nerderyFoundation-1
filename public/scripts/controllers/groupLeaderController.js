@@ -2,26 +2,20 @@ console.log('group leader cont has arrived');
 
 myApp.controller( 'GroupLeaderController', [ 'groupFactory', '$scope', '$http', '$location', '$rootScope',  function( groupFactory, $scope,  $http, $location, $authProvider, $rootScope ){
 
-console.log( 'loaded GroupLeaderController');
-// $mdIconProvider.icon('md-close', 'img/icons/ic_close_24px.svg', 24);
-//////---------
-//////---------
+  console.log( 'loaded GroupLeaderController');
 
-var self = this;
+  var self = this;
   self.readonly = false;
   self.selectedItem = null;
   self.searchText = null;
   self.querySearch = querySearch;
-  self.vegetables = loadVegetables();
-  self.selectedVegetables = [];
-  self.roSelectedVegetables = angular.copy(self.selectedVegetables);
-  self.numberChips = [];
-  self.numberChips2 = [];
-  self.numberBuffer = '';
+  self.technologies = loadTechnologies();
+  self.selectedTech = [];
+  self.roSelectedTech = angular.copy(self.selectedTech);
   self.autocompleteDemoRequireMatch = true;
   self.transformChip = transformChip;
-  self.fruitNames = ['Beer', 'Pizza'];
-  self.roFruitNames = angular.copy(self.fruitNames);
+  self.tagNames = ['Beer', 'Pizza'];
+  self.roTagNames = angular.copy(self.tagNames);
   /**
    * Return the proper object when the append is called.
    */
@@ -34,10 +28,10 @@ var self = this;
     return { name: chip, type: 'new' };
   }
   /**
-   * Search for vegetables.
+   * Search for Tech.
    */
   function querySearch (query) {
-    var results = query ? self.vegetables.filter(createFilterFor(query)) : [];
+    var results = query ? self.technologies.filter(createFilterFor(query)) : [];
     return results;
   }
   /**
@@ -50,7 +44,7 @@ var self = this;
           (vegetable._lowertype.indexOf(lowercaseQuery) === 0);
     };
   }
-  function loadVegetables() {
+  function loadTechnologies() {
     var veggies = [
       {
         'name': 'AngularJS',
@@ -133,7 +127,7 @@ $scope.submit = function(){
     location: $scope.location,
     activities:$scope.activities,
     technologies: $scope.technologies,
-    tags: self.roFruitNames,
+    tags: self.roTagNames,
     freqOfMeeting: $scope.freqOfMeeting,
     sizeOfMeeting: $scope.sizeOfMeeting,
     affiliations: $scope.affiliations,
