@@ -5,6 +5,15 @@
     <p>Connecting new and relocated developers to the local tech user groups.</p>
   </div>
 
+  <md-content class="md-no-momentum">
+  <md-input-container id="main-search" class="md-icon-float md-block">
+    <!-- Use floating label instead of placeholder -->
+    <label>Search</label>
+    <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"><i class="material-icons">search</i></md-icon>
+    <input ng-model="filterStr" type="text">
+  </md-input-container>
+</md-content>
+
 <div class="row">
   <div class="col-sm-3">
     <md-content class="md-padding">
@@ -30,7 +39,7 @@
     </div>
     <div class="col-sm-9">
       <md-content class="md-padding">
-        <div class="col-sm-4" ng-repeat="group in groups">
+        <div class="col-sm-4" ng-repeat="group in groups | filter: filterStr">
           <a ng-href="/#/groups/{{group.groupName}}">
             <md-card class="group-tile" >
               <md-card-title>
