@@ -1,5 +1,5 @@
 <!-- <body> -->
-<div>
+<div ng-controller="GroupLeaderController">
 
 <!-- <form class="form-horizontal" action="/test" type="post">
 <fieldset>
@@ -40,16 +40,21 @@
         </div>
 <!-- THIS NEEDS TO HAVE PRE SELECTED TAGS -->
         <md-input-container class="md-block">
-          <md-chips ng-model="technologies" name="technologies" readonly="ctrl.readonly" md-max-chips="5">
+          <!-- <md-chips ng-model="technologies" name="technologies" readonly="ctrl.readonly" md-max-chips="5">
         <md-chip-template>
-        <strong>{{$chip}}</strong>
-
-      </md-chip-template>
-    </md-chips>
+        <strong>{{$chip}}</strong> -->
+        <ng-autocomplete md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
+          <span md-highlight-text="searchText">{{item.display}}</span>
+        </ng-autocomplete>
+              <br/>
     </md-input-container>
 <!-- THIS NEEDS TO BE A DROP DOWN WITH SELECTED FREQUENCIES     -->
         <md-input-container md-no-float class="md-block">
-          <input ng-model="freqOfMeeting" placeholder="Frequency of Meetings">
+          <label>freqOfMeeting</label>
+        <md-select ng-model="freqOfMeeting">
+        <md-option ng-repeat="option in meetingFreq" value="{{option}}">{{option}}</md-option>
+      </md-select>
+        
         </md-input-container>
         <div layout-gt-sm="row">
           <md-input-container class="md-block" flex-gt-sm>

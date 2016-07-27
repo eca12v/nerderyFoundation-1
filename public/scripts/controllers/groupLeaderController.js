@@ -1,6 +1,6 @@
 console.log('group leader cont has arrived');
 
-myApp.controller( 'GroupLeaderController',  [ 'groupFactory', '$scope', '$http', '$location', '$rootScope',  function( groupFactory, $scope,  $http, $location, $authProvider, $rootScope ){
+myApp.controller( 'GroupLeaderController', [ 'groupFactory', '$scope', '$http', '$location', '$rootScope',  function( groupFactory, $scope,  $http, $location, $authProvider, $rootScope ){
 
 console.log( 'loaded GroupLeaderController');
 // $mdIconProvider.icon('md-close', 'img/icons/ic_close_24px.svg', 24);
@@ -22,37 +22,14 @@ $scope.meetingSizes = [
   "50-100",
   "100-500"
 ];
+$scope.meetingFreq = [
+  "Weekly",
+  "Biweekly",
+  "Monthly",
+  "Quarterly",
+  "Annually"
+];
 
-function DemoCtrl () {
-    var self = this;
-
-    self.readonly = false;
-
-    // Lists of fruit names and Vegetable objects
-    self.techNames = ['Angular', 'jQuery', 'JavaScript'];
-    self.roTechNames = angular.copy(self.techNames);
-    self.editableTechNames = angular.copy(self.techNames);
-
-    self.tags = [];
-    self.techObjs = [
-      {
-        'name' : 'jQuery',
-      },
-      {
-        'name' : 'Java',
-      },
-      {
-        'name' : '',
-      }
-    ];
-
-    self.newTech = function(chip) {
-      return {
-        name: chip,
-        type: 'unknown'
-      };
-    };
-  }
 
 $scope.status = '';
 
@@ -108,22 +85,5 @@ $scope.submit = function(){
 );
 
 };//end of submit
-$scope.user = {
-      title: 'Developer',
-      email: 'ipsum@lorem.com',
-      firstName: '',
-      lastName: '',
-      company: 'Google',
-      address: '1600 Amphitheatre Pkwy',
-      city: 'Mountain View',
-      state: 'CA',
-      biography: 'Loves kittens, snowboarding, and can type at 130 WPM.\n\nAnd rumor has it she bouldered up Castle Craig!',
-      postalCode: '94043'
-    };
-    $scope.states = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
-    'MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI ' +
-    'WY').split(' ').map(function(state) {
-        return {abbrev: state};
-      });
 
 }]); //end adminController
