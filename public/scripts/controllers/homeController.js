@@ -8,18 +8,18 @@ groupFactory.getApprovedGroups().then(function(response) {
 });
 
 
-//DOESN'T WORK YET/////////////////
+// DOESN'T WORK YET/////////////////
 
-// $http.get({
-//   method: "GET",
-//   url: '/public/tech.json',
-// })
-// .then(function (response) {
-//   $scope.tech = response.data;
-//   console.log($scope.tech);
-// }, function myError(response) {
-//   $scope.tech = response.statusText;
-// });//End of http call
+$http({
+  method: "GET",
+  url: '/tech.json',
+})
+.then(function (response) {
+  $scope.tech = response.data;
+  console.log($scope.tech);
+}, function myError(response) {
+  $scope.tech = response.statusText;
+});//End of http call
 
 
 }]); //end homeController
