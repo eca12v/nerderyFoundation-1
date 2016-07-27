@@ -1,89 +1,124 @@
 <!-- <body> -->
-<div ng-controller="GroupLeaderController">
+<div ng-controller="GroupLeaderController as ctrl">
 
 <!-- <form class="form-horizontal" action="/test" type="post">
 <fieldset>
 <!Form Name -->
-<md-content layout-gt-sm="row" layout-padding>
-    <div>
-      <md-input-container>
-        <label>Group Name</label>
-        <input ng-model="groupNameIn">
-      </md-input-container>
-      <md-input-container>
-        <label>Email</label>
-        <input ng-model="contactEmail" type="email">
-      </md-input-container>
-    </div>
-  </md-content>
-  <md-content layout-padding>
-    <div>
-      <form name="">
-        <div layout-gt-xs="row">
-          <md-input-container class="md-block" flex-gt-xs>
-            <label>Contact Name</label>
-            <input ng-model="contactNameIn">
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2 well">
+    <md-content layout-gt-sm="row" layout-padding>
+        <div>
+          <md-input-container>
+            <label>Group Name</label>
+            <input ng-model="groupNameIn">
           </md-input-container>
-          <md ng-model="description" md-placeholder="Description">
-          </md>
-        </div>
-        <div layout-gt-sm="row">
-          <md-input-container class="md-block" flex-gt-sm>
-            <label>Location</label>
-            <input ng-model="location">
-          </md-input-container>
-<!-- THIS NEEDS TO HAVE TAGS USER CREATED -->
-          <md-input-container class="md-block" flex-gt-sm>
-            <label>Activities</label>
-            <input ng-model="activities">
+          <md-input-container>
+            <label>Email</label>
+            <input ng-model="contactEmail" type="email">
           </md-input-container>
         </div>
-<!-- THIS NEEDS TO HAVE PRE SELECTED TAGS -->
-        <md-input-container class="md-block">
-          <!-- <md-chips ng-model="technologies" name="technologies" readonly="ctrl.readonly" md-max-chips="5">
+      </md-content>
+      <md-content layout-padding>
+        <div>
+          <form name="">
+            <div layout-gt-xs="row">
+              <md-input-container class="md-block" flex-gt-xs>
+                <label>Contact Name</label>
+                <input ng-model="contactNameIn">
+              </md-input-container>
+              <md ng-model="description" md-placeholder="Description">
+              </md>
+            </div>
+            <div layout-gt-sm="row">
+              <md-input-container class="md-block" flex-gt-sm>
+                <label>Location</label>
+                <input ng-model="location">
+              </md-input-container>
+    <!-- THIS NEEDS TO HAVE TAGS USER CREATED -->
+              <md-input-container class="md-block" flex-gt-sm>
+                <label>Activities</label>
+                <input ng-model="activities">
+              </md-input-container>
+            </div>
+    <!-- THIS NEEDS TO HAVE PRE SELECTED TAGS -->
+            <md-input-container class="md-block">
+              <!-- <md-chips ng-model="technologies" name="technologies" readonly="ctrl.readonly" md-max-chips="5">
+            <md-chip-template>
+            <strong>{{$chip}}</strong> -->
+            <ng-autocomplete md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
+              <span md-highlight-text="searchText">{{item.display}}</span>
+            </ng-autocomplete>
+                  <br/>
+        </md-input-container>
+
+    <form name="fruitForm">
+      <md-chips ng-model="ctrl.roFruitNames" name="fruitName" readonly="ctrl.readonly" md-max-chips="5" secondary-placeholder="New Tag">>
         <md-chip-template>
-        <strong>{{$chip}}</strong> -->
-        <ng-autocomplete md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
-          <span md-highlight-text="searchText">{{item.display}}</span>
-        </ng-autocomplete>
-              <br/>
-    </md-input-container>
-<!-- THIS NEEDS TO BE A DROP DOWN WITH SELECTED FREQUENCIES     -->
-        <md-input-container md-no-float class="md-block">
-          <label>freqOfMeeting</label>
-        <md-select ng-model="freqOfMeeting">
-        <md-option ng-repeat="option in meetingFreq" value="{{option}}">{{option}}</md-option>
-      </md-select>
-        
-        </md-input-container>
-        <div layout-gt-sm="row">
-          <md-input-container class="md-block" flex-gt-sm>
-            <label>sizeOfMeeting</label>
-            <md-select ng-model="sizeOfMeeting">
-            <md-option ng-repeat="option in meetingSizes" value="{{option}}">{{option}}</md-option>
+          <strong>{{$chip}}</strong>
+        </md-chip-template>
+      </md-chips>
+
+    </form>
+    <br/>
+          <!-- <h2 class="md-title">Select what <code>technologies</code> your group covers. -->
+          <md-chips ng-model="ctrl.selectedVegetables" md-autocomplete-snap
+              md-transform-chip="ctrl.transformChip($chip)"
+              md-require-match="ctrl.autocompleteDemoRequireMatch">
+      <md-autocomplete
+          md-selected-item="ctrl.selectedItem"
+          md-search-text="ctrl.searchText"
+          md-items="item in ctrl.querySearch(ctrl.searchText)"
+          md-item-text="item.name"
+          placeholder="Add A Technology">
+        <span md-highlight-text="ctrl.searchText">{{item.name}} :: {{item.type}}</span>
+      </md-autocomplete>
+      <md-chip-template>
+        <span>
+          <strong>{{$chip.name}}</strong>
+          <em>({{$chip.type}})</em>
+        </span>
+      </md-chip-template>
+    </md-chips>
+    <p>{{ctrl.roFruitNames}}</p>
+    <p>{{ctrl.selectedVegetables}}</p>
+    <!-- THIS NEEDS TO BE A DROP DOWN WITH SELECTED FREQUENCIES     -->
+            <md-input-container md-no-float class="md-block">
+              <label>freqOfMeeting</label>
+            <md-select ng-model="freqOfMeeting">
+            <md-option ng-repeat="option in meetingFreq" value="{{option}}">{{option}}</md-option>
           </md-select>
-          </md-input-container>
 
-          <md-input-container class="md-block" flex-gt-sm>
-            <label>affiliations</label>
-            <input ng-model="affiliations">
-          </md-input-container>
+            </md-input-container>
+            <div layout-gt-sm="row">
+              <md-input-container class="md-block" flex-gt-sm>
+                <label>sizeOfMeeting</label>
+                <md-select ng-model="sizeOfMeeting">
+                <md-option ng-repeat="option in meetingSizes" value="{{option}}">{{option}}</md-option>
+              </md-select>
+              </md-input-container>
 
-          <md-input-container class="md-block" flex-gt-sm>
-            <label>affiliationURL</label>
-            <input name="affiliationURL" ng-model="affiliationURL" placeholder="National Affiliation Website"
-          </md-input-container>
+              <md-input-container class="md-block" flex-gt-sm>
+                <label>affiliations</label>
+                <input ng-model="affiliations">
+              </md-input-container>
+
+              <md-input-container class="md-block" flex-gt-sm>
+                <label>affiliationURL</label>
+                <input name="affiliationURL" ng-model="affiliationURL" placeholder="National Affiliation Website"
+              </md-input-container>
+            </div>
+            <md-input-container class="md-block">
+              <label>sizeOfMembership</label>
+              <md-select ng-model="sizeOfMembership">
+              <md-option ng-repeat="size in membershipSizes" value="{{size}}">{{size}}</md-option>
+            </md-select>
+            </md-input-container>
+            <button type="button" name="button" ng-click=submit() >Submit Group</button>
+          </form>
         </div>
-        <md-input-container class="md-block">
-          <label>sizeOfMembership</label>
-          <md-select ng-model="sizeOfMembership">
-          <md-option ng-repeat="size in membershipSizes" value="{{size}}">{{size}}</md-option>
-        </md-select>
-        </md-input-container>
-        <button type="button" name="button" ng-click=submit() >Submit Group</button>
-      </form>
+      </md-content>
     </div>
-  </md-content>
+  </div>
 
 
 <!-- <legend>New Group Submission Form</legend> -->
