@@ -1,6 +1,6 @@
 console.log('group leader cont has arrived');
 
-myApp.controller( 'GroupLeaderController',  [ 'groupFactory', '$scope', '$http', '$location', '$rootScope',  function( groupFactory, $scope,  $http, $location, $authProvider, $rootScope ){
+myApp.controller( 'GroupLeaderController', [ 'groupFactory', '$scope', '$http', '$location', '$rootScope',  function( groupFactory, $scope,  $http, $location, $authProvider, $rootScope ){
 
 console.log( 'loaded GroupLeaderController');
 // $mdIconProvider.icon('md-close', 'img/icons/ic_close_24px.svg', 24);
@@ -23,21 +23,10 @@ $scope.meetingSizes = [
   "100-500"
 ];
 
-function DemoCtrl () {
-    var self = this;
-
-    self.readonly = false;
-
-    // Lists of fruit names and Vegetable objects
-    self.techNames = ['Angular', 'jQuery', 'JavaScript'];
-    self.roTechNames = angular.copy(self.techNames);
-    self.editableTechNames = angular.copy(self.techNames);
-
-    self.tags = [];
-    self.techObjs = [
-      {
+$scope.technologies = [
+    {
         'name' : 'jQuery',
-      },
+    },
       {
         'name' : 'Java',
       },
@@ -46,13 +35,6 @@ function DemoCtrl () {
       }
     ];
 
-    self.newTech = function(chip) {
-      return {
-        name: chip,
-        type: 'unknown'
-      };
-    };
-  }
 
 $scope.status = '';
 
@@ -108,4 +90,5 @@ $scope.submit = function(){
 );
 
 };//end of submit
+
 }]); //end adminController
