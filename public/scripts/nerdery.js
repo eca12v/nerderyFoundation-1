@@ -1,8 +1,9 @@
 var myApp = angular.module( 'myApp', ['ngRoute', 'ngMaterial', 'satellizer', 'Authorization'] );
 /// Routes ///
 
-myApp.config(['$routeProvider', '$authProvider', function($routeProvider, $authProvider) {
+myApp.config(['$routeProvider', '$authProvider', '$mdIconProvider',  function( $routeProvider, $authProvider, $mdIconProvider ) {
 
+$mdIconProvider.icon('md-close', 'img/icons/ic_close_24px.svg', 24);
 
 $routeProvider
    .when('/index', {
