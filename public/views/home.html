@@ -115,11 +115,11 @@
     <div class="col-sm-9">
       <md-content class="md-padding">
         <div class="col-sm-4" ng-repeat="group in groups | filter: filterStr">
-          <a ng-href="/#/groups/{{group.groupName}}">
+          <a ng-href="/#/groups/{{group.name}}">
             <md-card class="group-tile" >
               <md-card-title>
                 <md-card-title-text>
-                  <span class="md-headline">{{group.groupName}}</span>
+                  <span class="md-headline">{{group.name}}</span>
                   <span class="md-subhead">{{group.groupURL}}</span>
                 </md-card-title-text>
                 <md-card-title-media>
