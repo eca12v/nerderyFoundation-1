@@ -20,7 +20,7 @@ $routeProvider
    })
    .when('/groupLeader', {
      templateUrl: '/views/groupLeader.html',
-     controller: 'GroupLeaderController'
+     controller: 'GroupLeaderController as ctrl'
    })
    .when('/admin', {
      templateUrl: '/views/admin.html',
