@@ -21,91 +21,26 @@
         <md-card-content>
           <h2>Filter Groups: </h2>
           <fieldset class="standard">
-            <md-checkbox ng-model="NET" aria-label="Checkbox 1">
-              <strong>.NET</strong>
+            <md-checkbox ng-model="Tech" aria-label="Checkbox 1">
+              <strong>Technologies</strong>
             </md-checkbox>
-              <div ng-show="NET" >
-                <md-checkbox aria-label="Checkbox 2">
-                  Windows Communication Foundation
+            <div ng-show="Tech">
+
+            <md-checkbox ng-repeat="tech in tech.Technologies track by $index" ng-model="subskills" aria-label="Checkbox 1">
+              <strong>{{tech.Technology}}</strong>
+              <div ng-show="subskills" >
+                <md-checkbox ng-repeat="skill in tech.Skills track by $index" ng-model="subSubskills" aria-label="2">
+                  {{skill.Skill}}
+                  <div ng-show="subSubskills">
+                    <md-checkbox ng-repeat="subskills in skill.Subskill track by $index" aria-label="3">
+                      {{subskills}}
+                    </md-checkbox>
+                  </div>
                 </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Windows Forms
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Windows Phone
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Windows Presentation
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  WinRT/Windows 8
-                </md-checkbox>
-              </div>
-            <md-checkbox ng-model="businessArch" aria-label="Checkbox 1">
-              <strong>Business Architecture</strong>
             </md-checkbox>
-            <md-checkbox ng-model="businessIntel" aria-label="Checkbox 1">
-              <strong>Business Intelligence</strong>
-            </md-checkbox>
-            <md-checkbox ng-model="clientSide" aria-label="Checkbox 1">
-              <strong>Client-Side</strong>
-            </md-checkbox>
-              <div ng-show="clientSide">
-                <md-checkbox ng-model="accessibility" aria-label="Checkbox 2">
-                  Accessibility
-                </md-checkbox>
-                <md-checkbox ng-model="analytics" aria-label="Checkbox 2">
-                  Analytics
-                </md-checkbox>
+
               </div>
-              <div ng-show="accessibility">
-                <md-checkbox aria-label="Checkbox 2">
-                  ADA
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Section 508
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  WCAG
-                </md-checkbox>
-              </div>
-              <div ng-show="analytics">
-                <md-checkbox aria-label="Checkbox 2">
-                  Fireclick
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Google Analytics
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Omniture
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  WebTrends
-                </md-checkbox>
-              </div>
-            <md-checkbox ng-model="cms" aria-label="Checkbox 1">
-              <strong>CMS</strong>
-            </md-checkbox>
-              <div ng-show="cms">
-                <md-checkbox aria-label="Checkbox 2">
-                  Ektron
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Kentico
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Sharepoint
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Sitecore
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Sitefinity
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Umbraco
-                </md-checkbox>
-              </div>
+            </div>
           </fieldset>
         </md-card-content>
       </md-card>
@@ -138,13 +73,4 @@
   </div>
 
 
-  <!-- Pat here are some loops to get started with -->
-  <div ng-repeat="tech in tech.Technologies">
-    <p>{{tech.Technology}}</p>
-    <ul>
-      <li ng-repeat="skill in tech.Skills">{{skill.Skill}}<li>
-  </div>
-
-  <hr>
-
-  {{tech}}
+{{tech}}

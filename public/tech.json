@@ -5,7 +5,7 @@
     "Skills": [
       {
         "Skill": "App Development",
-        "Subskills": ["Windows Communication Foundation",
+        "Subskill": ["Windows Communication Foundation",
           "Windows Forms", "Windows Phone",
           "Windows Presentation Foundation",
           "WinRT/Windows 8"]
@@ -17,27 +17,27 @@
       "Skills": [
         {
           "Skill": "Ektron",
-          "Subskills": ""
+          "Subskill": ""
         },
         {
           "Skill": "Kentico",
-          "Subskills": ""
+          "Subskill": ""
         },
         {
           "Skill": "Sharepoint",
-          "Subskills": ""
+          "Subskill": ""
         },
         {
           "Skill": "Sitecore",
-          "Subskills": ""
+          "Subskill": ""
         },
         {
           "Skill": "Sitefinity",
-          "Subskills": ""
+          "Subskill": ""
         },
         {
           "Skill": "Umbraco",
-          "Subskills": ""
+          "Subskill": ""
         }
       ]
     },
@@ -46,11 +46,16 @@
       "Skills": [
         {
           "Skill": "ASP.Net",
-          "Subskills": ["ASP.Net MVC", "ASP.Net Web API", "ASP.Net WebForms",
+          "Subskill": ["ASP.Net MVC", "ASP.Net Web API", "ASP.Net WebForms",
             "SignalR"]
         },
         {
-          "Skill": ["Compact Framework", "Silverlight"]
+          "Skill": "Compact Framework",
+          "Subskill": ""
+        },
+        {
+          "Skill": "Silverlight",
+          "Subskill": ""
         }
       ]
     },
@@ -106,7 +111,7 @@
       ]
     },
     {
-      "Technology": "CSS",
+      "Technology": "Graphics",
       "Skills": [
         {
           "Skill": "2D",
