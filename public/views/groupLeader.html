@@ -1,12 +1,15 @@
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2 well">
     <md-content>
-
       <md-input-container class="md-block" flex-gt-sm>
         <label>Group Name</label>
         <input ng-model="groupNameIn">
       </md-input-container>
-
+      <div class="form-group">
+        <div ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 800, height: 800}">
+          <button class="btn">Select a profile picture</button>
+            <span class="fileSelect">File: {{file.$ngfName}} </span>
+        </div>
       <md-input-container flex-gt-xs>
         <label>Contact Name</label>
         <input ng-model="contactNameIn">

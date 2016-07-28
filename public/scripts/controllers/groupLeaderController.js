@@ -116,6 +116,15 @@ console.log('grouId: ', groupId);
 //submit function to add group
 $scope.submit = function(){
   console.log( 'submit clicked' );
+  Upload.upload ({
+          url: '/uploads',
+          data: {
+            file: file,
+            'user': $scope.user,
+            'comment': $scope.comment
+          } // end data
+        }).then(function(response){
+
 //forms object with new group info
   var newGroup = {
 
@@ -151,7 +160,7 @@ $scope.submit = function(){
 
   }
 );
-
+});
 };//end of submit
 
 }]); //end adminController

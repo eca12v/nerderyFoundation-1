@@ -39,5 +39,5 @@ myApp.factory( 'groupFactory', ['$http',
      console.log(groups);
      return groups;
    }
-   
+
 ]); //end of Group Factory
