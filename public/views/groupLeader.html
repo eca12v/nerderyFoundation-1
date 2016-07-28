@@ -26,33 +26,10 @@
             <label>Location</label>
             <input ng-model="location">
           </md-input-container>
+
           <md-input-container class="md-block" flex-gt-sm>
             <label>Activities</label>
             <input ng-model="activities">
-          </md-input-container>
-
-
-    <md-input-container md-no-float class="md-block" flex-gt-sm>
-          <label>freqOfMeeting</label>
-        <md-select ng-model="freqOfMeeting">
-        <md-option ng-repeat="option in meetingFreq" value="{{option}}">{{option}}</md-option>
-      </md-select>
-    </md-input-container>
-
-
-        <md-input-container md-no-float class="md-block">
-          <label>freqOfMeeting</label>
-        <md-select ng-model="freqOfMeeting">
-        <md-option ng-repeat="option in meetingFreq" value="{{option}}">{{option}}</md-option>
-        </md-select>
-
-        </md-input-container>
-
-          <md-input-container class="md-block" flex-gt-sm>
-            <label>sizeOfMeeting</label>
-            <md-select ng-model="sizeOfMeeting">
-            <md-option ng-repeat="option in meetingSizes" value="{{option}}">{{option}}</md-option>
-          </md-select>
           </md-input-container>
 
           <md-chips ng-model="ctrl.roTagNames" name="tagName" readonly="ctrl.readonly" md-max-chips="5" placeholder="Add A Descriptive Tag" secondary-placeholder="New Tag">>
