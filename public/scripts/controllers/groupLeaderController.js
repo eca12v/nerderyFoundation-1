@@ -2,10 +2,77 @@ console.log('group leader cont has arrived');
 
 myApp.controller( 'GroupLeaderController', [ 'groupFactory', '$scope', '$http', '$location', '$rootScope',  function( groupFactory, $scope,  $http, $location, $authProvider, $rootScope ){
 
-console.log( 'loaded GroupLeaderController');
-// $mdIconProvider.icon('md-close', 'img/icons/ic_close_24px.svg', 24);
-//////---------
-//////---------
+  console.log( 'loaded GroupLeaderController');
+
+  var self = this;
+  self.readonly = false;
+  self.selectedItem = null;
+  self.searchText = null;
+  self.querySearch = querySearch;
+  self.technologies = loadTechnologies();
+  self.selectedTech = [];
+  self.roSelectedTech = angular.copy(self.selectedTech);
+  self.autocompleteDemoRequireMatch = true;
+  self.transformChip = transformChip;
+  self.tagNames = ['Beer', 'Pizza'];
+  self.roTagNames = angular.copy(self.tagNames);
+  /**
+   * Return the proper object when the append is called.
+   */
+  function transformChip(chip) {
+    // If it is an object, it's already a known chip
+    if (angular.isObject(chip)) {
+      return chip;
+    }
+    // Otherwise, create a new one
+    return { name: chip, type: 'new' };
+  }
+  /**
+   * Search for Tech.
+   */
+  function querySearch (query) {
+    var results = query ? self.technologies.filter(createFilterFor(query)) : [];
+    return results;
+  }
+  /**
+   * Create filter function for a query string
+   */
+  function createFilterFor(query) {
+    var lowercaseQuery = angular.lowercase(query);
+    return function filterFn(vegetable) {
+      return (vegetable._lowername.indexOf(lowercaseQuery) === 0) ||
+          (vegetable._lowertype.indexOf(lowercaseQuery) === 0);
+    };
+  }
+  function loadTechnologies() {
+    var veggies = [
+      {
+        'name': 'AngularJS',
+        'type': 'Javascript'
+      },
+      {
+        'name': 'Node.js',
+        'type': 'Javascript'
+      },
+      {
+        'name': '.NET',
+        'type': 'Web Technology'
+      },
+      {
+        'name': 'SASS',
+        'type': 'CSS'
+      },
+      {
+        'name': 'Blah',
+        'type': 'Blah'
+      }
+    ];
+    return veggies.map(function (veg) {
+      veg._lowername = veg.name.toLowerCase();
+      veg._lowertype = veg.type.toLowerCase();
+      return veg;
+    });
+  }
 
 //create array to put new groups into
 $scope.groups = [];
@@ -60,7 +127,7 @@ $scope.submit = function(){
     location: $scope.location,
     activities:$scope.activities,
     technologies: $scope.technologies,
-    tags: $scope.tags,
+    tags: self.roTagNames,
     freqOfMeeting: $scope.freqOfMeeting,
     sizeOfMeeting: $scope.sizeOfMeeting,
     affiliations: $scope.affiliations,
