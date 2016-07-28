@@ -140,4 +140,13 @@
     </div>
   </div>
 
-  <!-- {{tech}} -->
+  <!-- Pat here are some loops to get started with -->
+  <div ng-repeat="tech in tech.Technologies">
+    <p>{{tech.Technology}}</p>
+    <ul>
+      <li ng-repeat="skill in tech.Skills">{{skill.Skill}}<li>
+  </div>
+
+  <hr>
+
+  {{tech}}
