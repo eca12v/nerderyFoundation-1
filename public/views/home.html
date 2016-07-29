@@ -6,11 +6,35 @@
   </div>
   <h3>{{techStr}}</h3>
   <md-content class="md-no-momentum">
-  <md-input-container id="main-search" class="md-icon-float md-block">
+  <md-input-container id="main-search" class="md-icon-float">
     <!-- Use floating label instead of placeholder -->
     <label>Search</label>
     <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"><i class="material-icons">search</i></md-icon>
     <input ng-model="filterStr" type="text">
+  </md-input-container>
+
+  <md-input-container id="tech-search" class="md-icon-float">
+    <select class="form-control select-team" ng-model="tObj" data-ng-change="changeOverallTech(tObj)">
+      <label>Technology</label>
+                    <option value=""></option>
+                    <option ng-repeat="t in tech.Technologies" value={{t.Technology}} >{{t.Technology}}</option>
+                  </select>
+  </md-input-container>
+
+  <md-input-container id="location-search" class="md-icon-float">
+    <select class="form-control" ng-model="locationStr">
+      <label>Location: </label>
+                    <option value=""></option>
+                    <option ng-repeat="l in location" value={{l}} >{{l}}</option>
+                  </select>
+  </md-input-container>
+
+  <md-input-container id="size-search" class="md-icon-float">
+    <select class="form-control" ng-model="sizeStr">
+      <label>Typical Meeting Size: </label>
+                    <option value=""></option>
+                    <option ng-repeat="s in typicalSize" value={{s}} >{{s}}</option>
+                  </select>
   </md-input-container>
 </md-content>
 
@@ -19,24 +43,33 @@
     <md-content class="md-padding">
       <md-card id="filter-box">
         <md-card-content>
-          <h2>Filter Groups: </h2>
-          <label>Biweekly</label><input  type="checkbox" data-ng-model="Biweekly" ng-true-value="{state: true, val: 'Biweekly'}"  data-ng-false-value="{state: false, val: 'Biweekly'}" ng-click="changeTechStr(Biweekly)"/><br/>
+          <h3>Filter: {{selectedTech}}</h3>
+          <div ng-repeat="tech in tech.Technologies">
+            <div ng-show="selectedTech == tech.Technology" ng-repeat="skill in tech.Skills">
+              <md-checkbox
+              value={{skill.Skill}} data-ng-click="changeTechStr(skill.Skill)" aria-label="Checkbox 1">
+                <strong>{{skill.Skill}}</strong>
+              </md-checkbox>
+            </div>
+          </div>
+        <hr>
+          <!-- <label>Biweekly</label><input  type="checkbox" data-ng-model="Biweekly" ng-true-value="{state: true, val: 'Biweekly'}"  data-ng-false-value="{state: false, val: 'Biweekly'}" ng-click="changeTechStr(Biweekly)"/><br/>
 <label>Stuff</label><input  type="checkbox" ng-model="Stuff" ng-true-value="{state: true, val: 'Stuff'}"  data-ng-false-value="{state: false, val: 'Stuff'}" ng-click="changeTechStr(Stuff)"/><br/>
 <p>{{Stuff}}</p>
-<p>{{Biweekly}}</p>
-          <fieldset class="standard">
+<p>{{Biweekly}}</p> -->
+          <!-- <fieldset class="standard">
             <md-checkbox ng-repeat="t in tech.Technologies"
-            value={{t.Technology}} data-ng-click="changeTechStr(t)" aria-label="Checkbox 1">
+            value={{t.Technology}} data-ng-click="changeTechStr(t.Technology)" aria-label="Checkbox 1">
               <strong>{{t.Technology}}</strong>
             </md-checkbox>
-          </fieldset>
+          </fieldset> -->
         </md-card-content>
       </md-card>
     </div>
 
     <div class="col-sm-9">
       <md-content class="md-padding">
-        <div class="col-sm-4" ng-repeat="group in groups | multiWordFilter: techStr">
+        <div class="col-sm-4" ng-repeat="group in groups | multiWordFilter: techStr | filter: locationStr | filter: sizeStr | filter: filterStr">
           <a class="group-link" ng-href="/#/groups/{{group.name}}">
             <md-card class="group-tile" >
               <md-card-title>
@@ -60,14 +93,15 @@
           </a>
 
         </div>
+        <h3 ng-show="(groups| multiWordFilter: techStr | filter: locationStr | filter: sizeStr | filter: filterStr).length == 0">Unfortunately, no local tech user groups fit your current criteria!</h3>
       </md-content>
     </div>
   </div>
 
   <!-- Pat here are some loops to get started with -->
-  <div ng-repeat="tech in tech.Technologies">
+  <!-- <div ng-repeat="tech in tech.Technologies">
     <input type="checkbox">{{tech.Technology}}
-    <div ng-repeat="skill in tech.Skills">
+    <div ng-show="selectedTech == tech.Technology" ng-repeat="skill in tech.Skills">
       <input type="checkbox">{{skill.Skill}}
         <div ng-repeat="sub in skill.Subskills">
           <input type="checkbox">{{sub}}
@@ -75,6 +109,4 @@
       </div>
   </div>
 
-  <hr>
-
-  {{techs}}
+  <hr> -->

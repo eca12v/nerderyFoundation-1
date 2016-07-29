@@ -88,6 +88,14 @@
       "Technology": "CSS",
       "Skills": [
         {
+          "Skill": "2D",
+          "Subskill": ["Canvas", "D3", "SVG"]
+        },
+        {
+          "Skill": "3D",
+          "Subskill": ["Three.js", "WebGL"]
+        },
+        {
           "Skill": "Frameworks",
           "Subskill": ["Twitter Bootstrap", "Zurb Foundation"]
         },
@@ -102,19 +110,6 @@
         {
           "Skill": "Responsive Web Design",
           "Subskill": "Responsive Images"
-        }
-      ]
-    },
-    {
-      "Technology": "CSS",
-      "Skills": [
-        {
-          "Skill": "2D",
-          "Subskill": ["Canvas", "D3", "SVG"]
-        },
-        {
-          "Skill": "3D",
-          "Subskill": ["Three.js", "WebGL"]
         }
       ]
     },
