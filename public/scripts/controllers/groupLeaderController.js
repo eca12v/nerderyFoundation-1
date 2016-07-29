@@ -1,9 +1,9 @@
 console.log('group leader cont has arrived');
 
-myApp.controller( 'GroupLeaderController', [ 'groupFactory', '$scope', '$http', '$location', '$rootScope',  function( groupFactory, $scope,  $http, $location, $authProvider, $rootScope ){
+myApp.controller( 'GroupLeaderController', [ 'groupFactory', '$scope', '$http', '$location', '$rootScope', 'techData',  function( groupFactory, $scope,  $http, $location, $authProvider, $rootScope, techData ){
 
   console.log( 'loaded GroupLeaderController');
-
+  console.log(techData);
   var self = this;
   self.readonly = false;
   self.selectedItem = null;
@@ -45,28 +45,7 @@ myApp.controller( 'GroupLeaderController', [ 'groupFactory', '$scope', '$http', 
     };
   }
   function loadTechnologies() {
-    var veggies = [
-      {
-        'name': 'AngularJS',
-        'type': 'Javascript'
-      },
-      {
-        'name': 'Node.js',
-        'type': 'Javascript'
-      },
-      {
-        'name': '.NET',
-        'type': 'Web Technology'
-      },
-      {
-        'name': 'SASS',
-        'type': 'CSS'
-      },
-      {
-        'name': 'Blah',
-        'type': 'Blah'
-      }
-    ];
+    var veggies = techData;
     return veggies.map(function (veg) {
       veg._lowername = veg.name.toLowerCase();
       veg._lowertype = veg.type.toLowerCase();
@@ -96,6 +75,8 @@ $scope.meetingFreq = [
   "Quarterly",
   "Annually"
 ];
+
+
 
 
 $scope.status = '';
@@ -134,7 +115,7 @@ $scope.submit = function(){
     affiliationURL: $scope.affiliationURL,
     eventInfo: $scope.eventInfo,
     sizeOfMembership: $scope.sizeOfMembership
-    
+
   };
 
   console.log( 'group submitted: ', newGroup);
