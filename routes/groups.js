@@ -8,6 +8,24 @@ var router = express.Router();
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 
+
+router.put('/editGroup/:id', function(req, res) {
+  console.log('inside router edit, id: ', req.params.id);
+  Group.findOne({'_id': req.params.id}, function(err, group) {
+    if(err) {
+      console.log('/editGroup error: ', err);
+    } else {
+      group.save(function(err) {
+        if(err) {
+          console.log(err);
+          res.sendStatus(500);
+        } else {
+          res.json(group);
+        }
+      });
+    }
+  });
+});//end of edit
 router.get('/getApprovedGroups', function(req, res) {
   Group.find({'approved': true}).sort({created: 'desc'}).exec(function(err, groups) {
     if(err) {
