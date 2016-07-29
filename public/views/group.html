@@ -4,5 +4,15 @@
 <h3>Meeting Frequency: {{group.freqOfMeeting}}</h3>
 <h3>Typical Meeting Size: {{group.sizeOfMeeting}}</h3>
 <h3>Tags: </h3>
-<span ng-repeat="tag in group.tags"> {{tag}} </span>
+<span> {{tag}} </span>
 <!-- {{group}} -->
+<div>Name: <a href="#" editable-text="group.name">{{ group.name || 'empty' }}</a></div>
+<div>Group Contact: <a href="#" editable-text="group.groupContact" e-step="5">{{ group.groupContact || 'empty' }}</a></div>
+<div>Contact Email: <a href="#" editable-email="group.contactEmail"> {{ group.contactEmail || 'empty' }}</a></div>
+<div>Location: <a href="#" editable-text="group.location">{{ group.location || 'empty' }}</a></div>
+<div>Meeting Frequency: <a href="#" editable-select="group.freqOfMeeting">{{ group.freqOfMeeting || 'empty' }}</a></div>
+<div>Meeting size: <a href="#" editable-select="group.sizeOfMeeting">{{ user.date || 'empty' }}</a></div>
+<div>Size of membership: <a href="#" editable-select="group.sizeOfMembership">{{ user.time || 'empty' }}</a></div>
+<div>Tags: <a href="#" editable-text="group.tag">{{ group.tags || 'empty' }}</a></div>
+
+</div>
