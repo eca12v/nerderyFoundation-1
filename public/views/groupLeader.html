@@ -6,10 +6,10 @@
         <input ng-model="groupNameIn">
       </md-input-container>
       <div class="form-group">
-        <div ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 800, height: 800}">
+        <!-- <div ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 800, height: 800}">
           <button class="btn">Select a profile picture</button>
             <span class="fileSelect">File: {{file.$ngfName}} </span>
-        </div>
+        </div> -->
       <md-input-container flex-gt-xs>
         <label>Contact Name</label>
         <input ng-model="contactNameIn">
@@ -19,11 +19,10 @@
         <label>Contact Email</label>
         <input ng-model="contactEmail" type="email">
       </md-input-container>
-
-
-
-          <md ng-model="description" md-placeholder="Description">
-          </md>
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>Description</label>
+        <input ng-model="description">
+      </md-input-container>
 
           <md-input-container class="md-block" flex-gt-sm>
             <label>Location</label>
