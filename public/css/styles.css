@@ -43,9 +43,10 @@ li{
 .layout-column  .flex-66 {
   max-width: 100%;
   max-height: calc(200% / 3);
-=======
+}
+
 #main-search {
-  width: 50%;
+  width: 75%;
   margin: auto;
 }
 
@@ -62,4 +63,12 @@ li{
 md-checkbox {
   display: block;
 
+}
+
+.group-link,
+.group-link:hover,
+.group-link:active,
+.group-link:focus {
+  text-decoration: none;
+  color: black;
 }

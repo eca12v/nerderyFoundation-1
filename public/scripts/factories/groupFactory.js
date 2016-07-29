@@ -26,6 +26,7 @@ myApp.factory( 'groupFactory', ['$http',
    };
 
    groups.getGroup = function(groupName) {
+     console.log(groupName);
      return $http.get('groups/getGroup/' + groupName).success(function(data) {
        console.log('in getGroup in factory, data: ', data, groups);
        angular.copy(data, groups.groups);

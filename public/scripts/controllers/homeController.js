@@ -2,6 +2,8 @@ myApp.controller( 'HomeController', ['$scope', '$http', '$location', 'groupFacto
 function( $scope, $http, $location, groupFactory){
 console.log( 'loaded homeController');
 
+$scope.filterStr = "Monthly";
+
 groupFactory.getApprovedGroups().then(function(response) {
   $scope.groups = response.data;
   console.log($scope.groups);

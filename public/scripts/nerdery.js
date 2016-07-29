@@ -20,7 +20,28 @@ $routeProvider
    })
    .when('/groupLeader', {
      templateUrl: '/views/groupLeader.html',
-     controller: 'GroupLeaderController as ctrl'
+     controller: 'GroupLeaderController as ctrl',
+     resolve: {
+            techData: function($http){
+              // var techData = {};
+              return $http({
+                method: "GET",
+                url: '/tech.json',
+              }).then(function (response) {
+                return response.data;
+              });
+              //   angular.copy(response.data, techData);
+              //   techData = response.data;
+              // .then(function (response) {
+              //   angular.copy(response.data, techData);
+              //   techData = response.data;
+              //   console.log(response.data);
+              // }, function myError(response) {
+              // });//End of http call
+              // console.log(techData);
+              // return techData;
+        }
+      }
    })
    .when('/admin', {
      templateUrl: '/views/admin.html',
