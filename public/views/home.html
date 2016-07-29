@@ -22,9 +22,9 @@
           <h2>Filter Groups: </h2>
           <fieldset class="standard">
             <md-checkbox ng-model="NET" aria-label="Checkbox 1">
-              .NET
+              <strong>.NET</strong>
             </md-checkbox>
-              <div ng-show="NET">
+              <div ng-show="NET" >
                 <md-checkbox aria-label="Checkbox 2">
                   Windows Communication Foundation
                 </md-checkbox>
@@ -42,13 +42,13 @@
                 </md-checkbox>
               </div>
             <md-checkbox ng-model="businessArch" aria-label="Checkbox 1">
-              Business Architecture
+              <strong>Business Architecture</strong>
             </md-checkbox>
             <md-checkbox ng-model="businessIntel" aria-label="Checkbox 1">
-              Business Intelligence
+              <strong>Business Intelligence</strong>
             </md-checkbox>
             <md-checkbox ng-model="clientSide" aria-label="Checkbox 1">
-              Client-Side
+              <strong>Client-Side</strong>
             </md-checkbox>
               <div ng-show="clientSide">
                 <md-checkbox ng-model="accessibility" aria-label="Checkbox 2">
@@ -84,7 +84,7 @@
                 </md-checkbox>
               </div>
             <md-checkbox ng-model="cms" aria-label="Checkbox 1">
-              CMS
+              <strong>CMS</strong>
             </md-checkbox>
               <div ng-show="cms">
                 <md-checkbox aria-label="Checkbox 2">
@@ -106,28 +106,28 @@
                   Umbraco
                 </md-checkbox>
               </div>
-            <md-checkbox ng-model="" aria-label="Checkbox 1">
-              
-            </md-checkbox>
-
           </fieldset>
         </md-card-content>
       </md-card>
     </div>
+
     <div class="col-sm-9">
       <md-content class="md-padding">
         <div class="col-sm-4" ng-repeat="group in groups | filter: filterStr">
-          <a ng-href="/#/groups/{{group.groupName}}">
+          <a class="group-link" ng-href="/#/groups/{{group.name}}">
             <md-card class="group-tile" >
               <md-card-title>
                 <md-card-title-text>
-                  <span class="md-headline">{{group.groupName}}</span>
-                  <span class="md-subhead">{{group.groupURL}}</span>
+                  <span class="md-headline">{{group.name}}</span>
                 </md-card-title-text>
                 <md-card-title-media>
                   <div class="md-media-sm card-media"></div>
                 </md-card-title-media>
               </md-card-title>
+              <md-card-content>
+                <p>{{group.location}}</p>
+                <p>{{group.freqOfMeeting}}</p>
+              </md-card-content>
               <md-card-actions layout="row" layout-align="end center">
                 <!-- <md-button>Action 1</md-button>
                 <md-button>Action 2</md-button> -->
@@ -139,3 +139,18 @@
       </md-content>
     </div>
   </div>
+
+  <!-- Pat here are some loops to get started with -->
+  <div ng-repeat="tech in tech.Technologies">
+    <input type="checkbox">{{tech.Technology}}
+    <div ng-repeat="skill in tech.Skills">
+      <input type="checkbox">{{skill.Skill}}
+        <div ng-repeat="sub in skill.Subskills">
+          <input type="checkbox">{{sub}}
+        </div>
+      </div>
+  </div>
+
+  <hr>
+
+  {{tech}}

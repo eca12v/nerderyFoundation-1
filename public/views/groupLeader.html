@@ -1,250 +1,130 @@
-<!-- <body> -->
-<div ng-controller="GroupLeaderController">
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2 well">
+    <md-content>
 
-<!-- <form class="form-horizontal" action="/test" type="post">
-<fieldset>
-<!Form Name -->
-<md-content layout-gt-sm="row" layout-padding>
-    <div>
-      <md-input-container>
+      <md-input-container class="md-block" flex-gt-sm>
         <label>Group Name</label>
         <input ng-model="groupNameIn">
       </md-input-container>
-      <md-input-container>
-        <label>Email</label>
+
+      <md-input-container flex-gt-xs>
+        <label>Contact Name</label>
+        <input ng-model="contactNameIn">
+      </md-input-container>
+
+      <md-input-container flex-gt-sm>
+        <label>Contact Email</label>
         <input ng-model="contactEmail" type="email">
       </md-input-container>
-    </div>
-  </md-content>
-  <md-content layout-padding>
-    <div>
-      <form name="form">
-        <div layout-gt-xs="row">
-          <md-input-container class="md-block" flex-gt-xs>
-            <label>Contact Name</label>
-            <input ng-model="contactNameIn">
-          </md-input-container>
+
+
+
+
           <md ng-model="description" md-placeholder="Description">
           </md>
-        </div>
-        <div layout-gt-sm="row">
+
           <md-input-container class="md-block" flex-gt-sm>
             <label>Location</label>
             <input ng-model="location">
           </md-input-container>
-<!-- THIS NEEDS TO HAVE TAGS USER CREATED -->
+
           <md-input-container class="md-block" flex-gt-sm>
             <label>Activities</label>
             <input ng-model="activities">
           </md-input-container>
-        </div>
-<!-- THIS NEEDS TO HAVE PRE SELECTED TAGS -->
-        <md-input-container class="md-block">
-          <!-- <md-chips ng-model="technologies" name="technologies" readonly="ctrl.readonly" md-max-chips="5">
-        <md-chip-template>
-        <strong>{{$chip}}</strong> -->
-        <ng-autocomplete md-selected-item="selectedItem" md-search-text="searchText" md-items="item in getMatches(searchText)" md-item-text="item.display">
-          <span md-highlight-text="searchText">{{item.display}}</span>
-        </ng-autocomplete>
-              <br/>
-    </md-input-container>
-<!-- THIS NEEDS TO BE A DROP DOWN WITH SELECTED FREQUENCIES     -->
-        <md-input-container md-no-float class="md-block">
-          <label>freqOfMeeting</label>
-        <md-select ng-model="freqOfMeeting">
-        <md-option ng-repeat="option in meetingFreq" value="{{option}}">{{option}}</md-option>
-      </md-select>
 
-        </md-input-container>
-        <div layout-gt-sm="row">
-          <md-input-container class="md-block" flex-gt-sm>
-            <label>sizeOfMeeting</label>
-            <md-select ng-model="sizeOfMeeting">
-            <md-option ng-repeat="option in meetingSizes" value="{{option}}">{{option}}</md-option>
-          </md-select>
-          </md-input-container>
+          <md-chips ng-model="ctrl.roTagNames" name="tagName" readonly="ctrl.readonly" md-max-chips="5" placeholder="Add A Descriptive Tag" secondary-placeholder="New Tag">>
+            <md-chip-template>
+              <strong>{{$chip}}</strong>
+            </md-chip-template>
+          </md-chips>
+
+        <md-chips ng-model="ctrl.selectedTech" md-autocomplete-snap
+            md-transform-chip="ctrl.transformChip($chip)"
+            md-require-match="ctrl.autocompleteDemoRequireMatch">
+          <md-autocomplete
+            md-selected-item="ctrl.selectedItem"
+            md-search-text="ctrl.searchText"
+            md-items="item in ctrl.querySearch(ctrl.searchText)"
+            md-item-text="item.name"
+            placeholder="Add A Technology Tag">
+            <span md-highlight-text="ctrl.searchText">{{item.name}} :: {{item.type}}</span>
+          </md-autocomplete>
+          <md-chip-template>
+            <span>
+              <strong>{{$chip.name}}</strong>
+              <em>({{$chip.type}})</em>
+            </span>
+          </md-chip-template>
+        </md-chips>
+        <!-- <p>{{ctrl.roTagNames}}</p>
+        <p>{{ctrl.selectedTech}}</p> -->
+
+
 
           <md-input-container class="md-block" flex-gt-sm>
-            <label>affiliations</label>
+            <label>Affiliations</label>
             <input ng-model="affiliations">
           </md-input-container>
 
           <md-input-container class="md-block" flex-gt-sm>
             <label>affiliationURL</label>
-            <input name="affiliationURL" ng-model="affiliationURL" placeholder="National Affiliation Website"
+            <input name="affiliationURL" ng-model="affiliationURL" placeholder="National Affiliation Website">
           </md-input-container>
+
+
+          <md-input-container flex-gt-sm>
+            <label>sizeOfMembership</label>
+            <md-select ng-model="sizeOfMembership">
+            <md-option ng-repeat="size in membershipSizes" value="{{size}}">{{size}}</md-option>
+            </md-select>
+          </md-input-container>
+
+          <md-input-container flex-gt-sm>
+            <label>freqOfMeeting</label>
+            <md-select ng-model="freqOfMeeting">
+            <md-option ng-repeat="option in meetingFreq" value="{{option}}">{{option}}</md-option>
+          </md-select>
+          </md-input-container>
+
+            <md-input-container flex-gt-sm>
+              <label>sizeOfMeeting</label>
+              <md-select ng-model="sizeOfMeeting">
+              <md-option ng-repeat="option in meetingSizes" value="{{option}}">{{option}}</md-option>
+              </md-select>
+            </md-input-container>
+
+            <br>
+
+          <button type="button" name="button" ng-click=submit() >Submit Group</button>
         </div>
-        <md-input-container class="md-block">
-          <label>sizeOfMembership</label>
-          <md-select ng-model="sizeOfMembership">
-          <md-option ng-repeat="size in membershipSizes" value="{{size}}">{{size}}</md-option>
-        </md-select>
-        </md-input-container>
-        <md-input-container class="md-block">
-          <div class="button" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
-            ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100"
-            ngf-resize="{width: 100, height: 100}">Select</div>
-          <!-- <label for="file">File:</label>
-          <input ngf-select type="file" name="file" id="file" ng-model="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB"/> -->
-        </md-input-container>
-
-
-        <button type="button" name="button" ng-click=submit() >Submit Group</button>
-      </form>
+      </md-content>
     </div>
-  </md-content>
+  </div>
 
 
 <!-- <legend>New Group Submission Form</legend> -->
 <!-- Text input-->
-<!-- <div class="row">
-  <div class="form-group">
-  <label class="col-md-4 control-label" for="groupNameIn"> Group Name </label>
-  <div class="col-md-4">
-  <input id="groupNameIn" ng-model="groupNameIn" name="groupNameIn" type="text" placeholder="Group Name" class="form-control input-md" required="">
-  </div>
-</div>
-</div> -->
-
-<!-- Text input-->
-<!-- <div class="row">
-<div class="form-group">
-  <label class="col-md-4 control-label" for="contactNameIn">Contact Name</label>
-  <div class="col-md-4">
-  <input id="contactNameIn" ng-model="contactNameIn" name="contactNameIn" type="text" placeholder="Name" class="form-control input-md" required="">
-  </div>
-  </div>
-</div>
-
-<!- Text input-->
-<!-- <div class="row">
-<div class="form-group">
-  <label class="col-md-4 control-label" for="contactEmail">Contact's Email: </label>
-  <div class="col-md-4">
-  <input id="contactEmail" ng-model="contactEmail" name="contactEmail" type="text" placeholder="Contact Email" class="form-control input-md" required="">
-  </div>
-</div>
-</div>
-<!-Text input-->
-<!-- <div class="row">
-  <div class="form-group">
-  <label class="col-md-4 control-label" for="description">Brief Description</label>
-  <div class="col-md-4">
-  <input id="description" ng-model="description" name="description" textarea rows="4" cols="50" placeholder="Description" class="form-control input-md" required="">
-  </div>
-</div>
-</div> -->
-
-
-<!-- Text input-->
-<!-- <div class="row">
-<div class="form-group">
-  <label class="col-md-4 control-label" for="groupUrlIn">Group URL</label>
-  <div class="col-md-4">
-  <input id="groupUrlIn" ng-model="groupUrlIn" name="groupUrlIn" type="text" placeholder="URL" class="form-control input-md" required="">
-  </div>
-</div>
-</div>  -->
-
-<!-- MAKE ME A DROPDOWN WITH THE LIST OF GEOGRAPHIC AREAS -->
-<!-- <div class="row">
-<div class="form-group">
-  <label class="col-md-4 control-label" for="location">Location</label>
-  <div class="col-md-4">
-  <input id="groupUrlIn" ng-model="location" name="location" type="text" placeholder="location" class="form-control input-md" required="">
-  </div>
-</div>
-</div>
-
-<div class="row">
-<div class="form-group">
-  <label class="col-md-4 control-label" for="activities">Activities</label>
-  <div class="col-md-4">
-  <input id="activities" ng-model="activities" name="activities" type="text" placeholder="activities" class="form-control input-md" required="">
-  </div>
-</div>
-</div> -->
-<!--
-<div class="row">
-<div class="form-group">
-  <md-list>
-  <md-list-item class="col-md-4" ng-repeat="item in technologies" for="technologies">Technologies </md-list-item>
-</md-list>
-  <div class="col-md-4">
-  <input id="technologies" ng-model="technologies" name="technologies" type="text" placeholder="technologies" class="form-control input-md" required="">
-  </div>
-
-</div>
-</div>
-
-<div class="row">
-<div class="form-group">
-  <label class="col-md-4 control-label" for="freqOfMeeting">Frequency of Meetings</label>
-  <div class="col-md-4">
-  <input id="freqOfMeeting" ng-model="freqOfMeeting" name="freqOfMeeting" type="text" placeholder="frequency of meetings" class="form-control input-md" required="">
-  </div>
-</div> -->
-<!-- </div>
-<div class="row">
-<div class="form-group">
-  <label class="col-md-4 control-label" for="size">Size of Meetings</label>
-  <div class="col-md-4">
-  <input id="sizeOfMeeting" ng-model="sizeOfMeeting" name="sizeOfMeeting" type="text" placeholder="size of meetings" class="form-control input-md" required="">
-  </div>
-</div>
-</div>
-
-<div class="row">
-<div class="form-group">
-  <label class="col-md-4 control-label" for="affiliations">National Affiliations</label>
-  <div class="col-md-4">
-  <input id="affiliations" ng-model="affiliations" name="affiliations" type="text" placeholder="affiliations" class="form-control input-md" required="">
-  </div>
-</div>
-</div> -->
-<!--
-<div class="row">
-<div class="form-group">
-  <label class="col-md-4 control-label" for="affiliationURL">Website of National Group</label>
-  <div class="col-md-4">
-  <input id="affiliationURL" ng-model="affiliationURL" name="affiliationURL" type="text" placeholder="affiliationURL" class="form-control input-md" required="">
-  </div>
-</div>
-</div>  -->
-<!--
-<div class="row">
-<div class="form-group">
-  <label class="col-md-4 control-label" for="sizeOfMembership">Size of Membership</label>
-  <div class="col-md-4">
-  <input id="sizeOfMembership" ng-model="sizeOfMembership" name="sizeOfMembership" type="text" placeholder="sizeOfMembership" class="form-control input-md" required="">
-  </div>
-</div>
-</div>
-<button type="button" name="button" ng-click=submit() >Submit Group</button>
-</fieldset>
-</form>
-</div> -->
-
 <div class="displayGroup">
   <div class="jumbotron vertical-center">
     <div class="container-fluid text-center">
      <div class="row">
-      <div class=".col-md-4>
+      <div class="col-md-4">
        <div class="top-bg"></div>
-       <div class="col-md-5 iPhone-features text-center" ng-repeat="record in groups">
+       <div class="col-md-5" ng-repeat="record in groups">
        <h1>{{ record.name }}</h1>
           <ul class="top-features">
               <span><i class="simple_bg top-features-bg"></i></span>
-              <p><strong>Tech Tags</strong><br> record.tag {{  record.tag  }} </p>
+              <p><strong>Group Contact</strong><br> {{  record.groupContact  }} </p>
 
               <span><i class="simple_bg top-features-bg"></i></span>
-              <p><strong>Description</strong><br> {{ record.description }}</p>
+              <p><strong>Location</strong><br> {{ record.location }}</p>
 
               <span><i class="simple_bg top-features-bg"></i></span>
-              <p><strong>Meetings</strong><br></p>
+              <p><strong>Frequency of Meetings</strong><br> {{record.freqOfMeeting }}</p>
 
               <span><i class="simple_bg top-features-bg"></i></span>
-              <p><strong>Contact This Group</strong><br>Contact Info Here</p>
+              <p><strong>Contact Info</strong><br>Contact Info Here</p>
 
             <a href="some website" class="btn-primary btn h2 lightBlue get-Started-btn">Go to Group website</a>
             <h6 class="get-Started-sub-btn"></h6>
@@ -256,6 +136,4 @@
   </div>
 </div>
 
-
-</div>
-<!-- </body> -->
+{{tech}}

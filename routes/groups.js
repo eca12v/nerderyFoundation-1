@@ -38,7 +38,7 @@ router.get('/getUnapprovedGroups', function(req, res) {
 });
 
 router.get('/getGroup/:groupName', function(req, res) {
-  Group.findOne({'groupName': req.params.groupName}, function(err, group) {
+  Group.findOne({'name': req.params.groupName}, function(err, group) {
     if(err) {
       console.log('/getGroup error: ', err);
       res.sendStatus(500);
@@ -73,7 +73,7 @@ console.log('inside groups.js add group ');
   var newGroup = new Group({
     name: req.body.name,
     groupURL: req.body.groupURL,
-    groupContact: req.body.groupContact,
+    groupContact: req.body.contact,
     contactEmail: req.body.contactEmail,
     description: req.body.description,
     location: req.body.location,
