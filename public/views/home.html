@@ -4,7 +4,7 @@
     <h1>Nerdery Foundation Developer Network</h1>
     <p>Connecting new and relocated developers to the local tech user groups.</p>
   </div>
-
+  <h3>{{techStr}}</h3>
   <md-content class="md-no-momentum">
   <md-input-container id="main-search" class="md-icon-float md-block">
     <!-- Use floating label instead of placeholder -->
@@ -20,8 +20,8 @@
       <md-card id="filter-box">
         <md-card-content>
           <h2>Filter Groups: </h2>
-          <label>Biweekly</label><input  type="checkbox" ng-model="Biweekly" ng-true-value="'Biweekly'"  data-ng-false-value='' ng-click=""/><br/>
-<label>Stuff</label><input  type="checkbox" ng-model="Stuff" ng-true-value="'stuff'"  data-ng-false-value=''/><br/>
+          <label>Biweekly</label><input  type="checkbox" ng-model="Biweekly" ng-true-value="{state: true, val: 'Biweekly'}"  data-ng-false-value="{state: false, val: 'Biweekly'}" ng-click="changeTechStr(Biweekly)"/><br/>
+<label>Stuff</label><input  type="checkbox" ng-model="Stuff" ng-true-value="{state: true, val: 'Stuff'}"  data-ng-false-value="{state: false, val: 'Stuff'}" ng-click="changeTechStr(Stuff)"/><br/>
 <p>{{Stuff}}</p>
 <p>{{Biweekly}}</p>
           <fieldset class="standard">

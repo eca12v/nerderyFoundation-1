@@ -45,7 +45,28 @@ myApp.controller( 'GroupLeaderController', [ 'groupFactory', '$scope', '$http', 
     };
   }
   function loadTechnologies() {
-    var veggies = techData;
+    var veggies = [
+  {
+    'name': '.NET',
+    'type': 'Brassica'
+  },
+  {
+    'name': 'CMS',
+    'type': 'Brassica'
+  },
+  {
+    'name': '.NET',
+    'type': 'Umbelliferous'
+  },
+  {
+    'name': 'CMS',
+    'type': 'Composite'
+  },
+  {
+    'name': 'CMS',
+    'type': 'Goosefoot'
+  }
+];
     return veggies.map(function (veg) {
       veg._lowername = veg.name.toLowerCase();
       veg._lowertype = veg.type.toLowerCase();

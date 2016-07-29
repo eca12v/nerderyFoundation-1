@@ -5,7 +5,15 @@ console.log( 'loaded homeController');
 $scope.techStr = '';
 
 $scope.changeTechStr =  function(tech) {
-  $scope.techStr += ' ' + tech + ' ';
+  if (tech.state) {
+    console.log("checked");
+    $scope.techStr += ' ' + tech.val + ' ';
+  } else {
+    console.log("unchecked");
+    var newStr = $scope.techStr.replace(tech.val, "");
+    console.log(newStr);
+    $scope.techStr = newStr;
+  }
 };
 // $scope.techFilter = function() {
 //   return $scope.Biweekly && $scope.Stuff;
