@@ -16,28 +16,22 @@
       "Technology": "CMS",
       "Skills": [
         {
-          "Skill": "Ektron",
-          "Subskill": ""
+          "Skill": "Ektron"
         },
         {
-          "Skill": "Kentico",
-          "Subskill": ""
+          "Skill": "Kentico"
         },
         {
-          "Skill": "Sharepoint",
-          "Subskill": ""
+          "Skill": "Sharepoint"
         },
         {
-          "Skill": "Sitecore",
-          "Subskill": ""
+          "Skill": "Sitecore"
         },
         {
-          "Skill": "Sitefinity",
-          "Subskill": ""
+          "Skill": "Sitefinity"
         },
         {
-          "Skill": "Umbraco",
-          "Subskill": ""
+          "Skill": "Umbraco"
         }
       ]
     },
@@ -50,12 +44,10 @@
             "SignalR"]
         },
         {
-          "Skill": "Compact Framework",
-          "Subskill": ""
+          "Skill": "Compact Framework"
         },
         {
-          "Skill": "Silverlight",
-          "Subskill": ""
+          "Skill": "Silverlight"
         }
       ]
     },
@@ -63,16 +55,13 @@
       "Technology": "Languages",
       "Skills": [
         {
-          "Skill": "C#",
-          "Subskill": ""
+          "Skill": "C#"
         },
         {
-          "Skill": "F#",
-          "Subskill": ""
+          "Skill": "F#"
         },
         {
-          "Skill": "VB.NET",
-          "Subskill": ""
+          "Skill": "VB.NET"
         }
       ]
     },
@@ -97,8 +86,7 @@
           "Subskill": ["Twitter Bootstrap", "Zurb Foundation"]
         },
         {
-          "Skill": "Parallax",
-          "Subskill": ""
+          "Skill": "Parallax"
         },
         {
           "Skill": "Preporcessors",
@@ -106,7 +94,7 @@
         },
         {
           "Skill": "Responsive Web Design",
-          "Subskill": "Responsive Images"
+          "Subskill": ["Responsive Images"]
         }
       ]
     },
@@ -132,7 +120,7 @@
         },
         {
           "Skill": "Microformats",
-          "Subskill": "microformats2"
+          "Subskill": ["microformats2"]
         }
       ]
     },
@@ -149,11 +137,11 @@
         },
         {
           "Skill": "PHP",
-          "Subskill": "Twig"
+          "Subskill": ["Twig"]
         },
         {
           "Skill": "Ruby",
-          "Subskill": "ERB"
+          "Subskill": ["ERB"]
         }
       ]
     },
@@ -170,64 +158,49 @@
       "Technology": "Frameworks",
       "Skills": [
         {
-          "Skill": "Angular 1.x",
-          "Subskill": ""
+          "Skill": "Angular 1.x"
         },
         {
-          "Skill": "Angular 2.x",
-          "Subskill": ""
+          "Skill": "Angular 2.x"
         },
         {
-          "Skill": "Aurelia",
-          "Subskill": ""
+          "Skill": "Aurelia"
         },
         {
-          "Skill": "Backbone",
-          "Subskill": ""
+          "Skill": "Backbone"
         },
         {
-          "Skill": "Dojo",
-          "Subskill": ""
+          "Skill": "Dojo"
         },
         {
-          "Skill": "Ember",
-          "Subskill": ""
+          "Skill": "Ember"
         },
         {
-          "Skill": "jQuery Mobile",
-          "Subskill": ""
+          "Skill": "jQuery Mobile"
         },
         {
-          "Skill": "Knockout",
-          "Subskill": ""
+          "Skill": "Knockout"
         },
         {
-          "Skill": "Meteor",
-          "Subskill": ""
+          "Skill": "Meteor"
         },
         {
-          "Skill": "Polymer",
-          "Subskill": ""
+          "Skill": "Polymer"
         },
         {
-          "Skill": "Ractive",
-          "Subskill": ""
+          "Skill": "Ractive"
         },
         {
-          "Skill": "React",
-          "Subskill": ""
+          "Skill": "React"
         },
         {
-          "Skill": "Redux",
-          "Subskill": ""
+          "Skill": "Redux"
         },
         {
-          "Skill": "Riot",
-          "Subskill": ""
+          "Skill": "Riot"
         },
         {
-          "Skill": "Vue",
-          "Subskill": ""
+          "Skill": "Vue"
         }
       ]
     },
@@ -235,48 +208,37 @@
       "Technology": "Libraries",
       "Skills": [
         {
-          "Skill": "Bacon",
-          "Subskill": ""
+          "Skill": "Bacon"
         },
         {
-          "Skill": "Browserify",
-          "Subskill": ""
+          "Skill": "Browserify"
         },
         {
-          "Skill": "Google Maps",
-          "Subskill": ""
+          "Skill": "Google Maps"
         },
         {
-          "Skill": "immutable.js",
-          "Subskill": ""
+          "Skill": "immutable.js"
         },
         {
-          "Skill": "jQuery",
-          "Subskill": ""
+          "Skill": "jQuery"
         },
         {
-          "Skill": "jQuery UI",
-          "Subskill": ""
+          "Skill": "jQuery UI"
         },
         {
-          "Skill": "JSPM",
-          "Subskill": ""
+          "Skill": "JSPM"
         },
         {
-          "Skill": "Leaflet",
-          "Subskill": ""
+          "Skill": "Leaflet"
         },
         {
-          "Skill": "RequireJS",
-          "Subskill": ""
+          "Skill": "RequireJS"
         },
         {
-          "Skill": "rx.js",
-          "Subskill": ""
+          "Skill": "rx.js"
         },
         {
-          "Skill": "Webpack",
-          "Subskill": ""
+          "Skill": "Webpack"
         }
       ]
     },
@@ -284,16 +246,13 @@
       "Technology": "Node",
       "Skills": [
         {
-          "Skill": "Express",
-          "Subskill": ""
+          "Skill": "Express"
         },
         {
-          "Skill": "Hapi",
-          "Subskill": ""
+          "Skill": "Hapi"
         },
         {
-          "Skill": "Restify",
-          "Subskill": ""
+          "Skill": "Restify"
         }
       ]
     },
@@ -301,16 +260,13 @@
       "Technology": "Preprocessors",
       "Skills": [
         {
-          "Skill": "Babel",
-          "SubSkill": ""
+          "Skill": "Babel"
         },
         {
-          "Skill": "CoffeeScript",
-          "Subskill": ""
+          "Skill": "CoffeeScript"
         },
         {
-          "Skill": "TypeScript",
-          "Subskill": ""
+          "Skill": "TypeScript"
         }
       ]
     },
@@ -318,16 +274,13 @@
       "Technology": "Task Runners",
       "Skills": [
         {
-          "Skill": "Grunt",
-          "Subskill": ""
+          "Skill": "Grunt"
         },
         {
-          "Skill": "Gulp",
-          "Subskill": ""
+          "Skill": "Gulp"
         },
         {
-          "Skill": "Gulp",
-          "Subskill": ""
+          "Skill": "Gulp"
         }
       ]
     },
@@ -335,20 +288,16 @@
       "Technology": "Templates",
       "Skills": [
         {
-          "Skill": "Dust",
-          "Subskill": ""
+          "Skill": "Dust"
         },
         {
-          "Skill": "Handlebars",
-          "Subskill": ""
+          "Skill": "Handlebars"
         },
         {
-          "Skill": "Mustache",
-          "Subskill": ""
+          "Skill": "Mustache"
         },
         {
-          "Skill": "Nunjucks",
-          "Subskill": ""
+          "Skill": "Nunjucks"
         }
       ]
     },
@@ -356,20 +305,16 @@
       "Technology": "Unit Testing",
       "Skills": [
         {
-          "Skill": "Jasmine",
-          "Subskill": ""
+          "Skill": "Jasmine"
         },
         {
-          "Skill": "Karma",
-          "Subskill": ""
+          "Skill": "Karma"
         },
         {
-          "Skill": "Mocah",
-          "Subskill": ""
+          "Skill": "Mocah"
         },
         {
-          "Skill": "Testem",
-          "Subskill": ""
+          "Skill": "Testem"
         }
       ]
     },
@@ -377,8 +322,7 @@
       "Technology": "SEO",
       "Skills": [
         {
-          "Skill": "Meta data",
-          "Subskill": ""
+          "Skill": "Meta data"
         }
       ]
     },
@@ -523,12 +467,10 @@
           "Subskill": ["DirectX", "OpenGL"]
         },
         {
-          "Skill": "Phaser",
-          "Subskill": ""
+          "Skill": "Phaser"
         },
         {
-          "Skill": "Unity",
-          "Subskill": ""
+          "Skill": "Unity"
         }
       ]
     },
@@ -536,40 +478,32 @@
       "Technology": "Languages",
       "Skills": [
         {
-          "Skill": "ActionScript",
-          "Subskill": ""
+          "Skill": "ActionScript"
         },
         {
-          "Skill": "ASP Classic",
-          "Subskill": ""
+          "Skill": "ASP Classic"
         },
         {
-          "Skill": "C/C++",
-          "Subskill": ""
+          "Skill": "C/C++"
         },
         {
-          "Skill": "ColdFusion",
-          "Subskill": ""
+          "Skill": "ColdFusion"
         },
         {
-          "Skill": "Erlang",
-          "Subskill": ""
+          "Skill": "Erlang"
         },
         {
-          "Skill": "GoLang",
-          "Subskill": ""
+          "Skill": "GoLang"
         },
         {
-          "Skill": "Haskell",
-          "Subskill": ""
+          "Skill": "Haskell"
         },
         {
-          "Skill": "Perl",
-          "Subskill": ""
+          "Skill": "Perl"
         },
         {
           "Skill": "Python",
-          "Subskill": "Django"
+          "Subskill": ["Django"]
         }
       ]
     },
@@ -588,7 +522,7 @@
         },
         {
           "Skill": "Services",
-          "Subskill": "Testing (PHPUnit, Behat, PHPSpec)"
+          "Subskill": ["Testing (PHPUnit, Behat, PHPSpec)"]
         }
       ]
     },
@@ -596,16 +530,13 @@
       "Technology": "Project Management",
       "Skills": [
         {
-          "Skill": "Agile Methodology",
-          "Subskill": ""
+          "Skill": "Agile Methodology"
         },
         {
-          "Skill": "Scrum Master",
-          "Subskill": ""
+          "Skill": "Scrum Master"
         },
         {
-          "Skill": "Six Sigma",
-          "Subskill": ""
+          "Skill": "Six Sigma"
         }
       ]
     },
@@ -613,8 +544,7 @@
       "Technology": "Quality Assurance/QA",
       "Skills": [
         {
-          "Skill": "Accessibility",
-          "Subskill": ""
+          "Skill": "Accessibility"
         },
         {
           "Skill": "Security",
@@ -631,7 +561,7 @@
         },
         {
           "Skill": "Services",
-          "Subskill": "RSpec"
+          "Subskill": ["RSpec"]
         }
       ]
     },
@@ -639,12 +569,10 @@
       "Technology": "Systems Administration",
       "Skills": [
         {
-          "Skill": "Active Dirctory",
-          "Subskill": ""
+          "Skill": "Active Dirctory"
         },
         {
-          "Skill": "AIX",
-          "Subskill": ""
+          "Skill": "AIX"
         },
         {
           "Skill": "Databases",
@@ -661,24 +589,19 @@
           "Postfix", "Sendmail"]
         },
         {
-          "Skill": "Flash Media Server",
-          "Subskill": ""
+          "Skill": "Flash Media Server"
         },
         {
-          "Skill": "Java & Tomcat",
-          "Subskill": ""
+          "Skill": "Java & Tomcat"
         },
         {
-          "Skill": "LDAP",
-          "Subskill": ""
+          "Skill": "LDAP"
         },
         {
-          "Skill": "Linux",
-          "Subskill": ""
+          "Skill": "Linux"
         },
         {
-          "Skill": "Networking",
-          "Subskill": ""
+          "Skill": "Networking"
         },
         {
           "Skill": "Firewall Management",
@@ -686,16 +609,14 @@
           "ufw"]
         },
         {
-          "Skill": "RAID",
-          "Subskill": ""
+          "Skill": "RAID"
         },
         {
           "Skill": "Shell Scripting",
           "Subskill": ["Bash / csh", "Microsoft Powershell"]
         },
         {
-          "Skill": "SSL Installs",
-          "Subskill": ""
+          "Skill": "SSL Installs"
         },
         {
           "Skill": "Virtualization",
@@ -707,12 +628,10 @@
           "Nginx", "Rackspace"]
         },
         {
-          "Skill": "Windows Desktop",
-          "Subskill": ""
+          "Skill": "Windows Desktop"
         },
         {
-          "Skill": "Windows Server",
-          "Subskill": ""
+          "Skill": "Windows Server"
         }
       ]
     },
@@ -720,56 +639,43 @@
       "Technology": "User Experience/UX",
       "Skills": [
         {
-          "Skill": "Accessibility",
-          "Subskill": ""
+          "Skill": "Accessibility"
         },
         {
-          "Skill": "Branding",
-          "Subskill": ""
+          "Skill": "Branding"
         },
         {
-          "Skill": "Business Discovery",
-          "Subskill": ""
+          "Skill": "Business Discovery"
         },
         {
-          "Skill": "Business Strategy",
-          "Subskill": ""
+          "Skill": "Business Strategy"
         },
         {
-          "Skill": "Content Strategy",
-          "Subskill": ""
+          "Skill": "Content Strategy"
         },
         {
-          "Skill": "Game Design",
-          "Subskill": ""
+          "Skill": "Game Design"
         },
         {
-          "Skill": "Information Architecture",
-          "Subskill": ""
+          "Skill": "Information Architecture"
         },
         {
-          "Skill": "Interaction Design",
-          "Subskill": ""
+          "Skill": "Interaction Design"
         },
         {
-          "Skill": "Mobile App Design",
-          "Subskill": ""
+          "Skill": "Mobile App Design"
         },
         {
-          "Skill": "Responsive / Adaptive Design",
-          "Subskill": ""
+          "Skill": "Responsive / Adaptive Design"
         },
         {
-          "Skill": "Usability Testing",
-          "Subskill": ""
+          "Skill": "Usability Testing"
         },
         {
-          "Skill": "User Research",
-          "Subskill": ""
+          "Skill": "User Research"
         },
         {
-          "Skill": "Visual Design",
-          "Subskill": ""
+          "Skill": "Visual Design"
         }
       ]
     }

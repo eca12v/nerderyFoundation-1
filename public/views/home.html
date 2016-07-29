@@ -26,20 +26,90 @@
             </md-checkbox>
             <div ng-show="Tech">
 
-            <md-checkbox ng-repeat="tech in tech.Technologies track by $index" ng-model="subskills" aria-label="Checkbox 1">
+              <md-checkbox ng-model="NET" aria-label="Checkbox">
+                .NET
+              </md-checkbox>
+                <div ng-show="NET">
+                  <md-checkbox ng-model="appDev" aria-label="Checkbox">
+                    App Development
+                  </md-checkbox>
+                </div>
+                <div ng-show="appDev">
+                  <md-checkbox aria-label="Checkbox">
+                    Windows Communication
+                  </md-checkbox>
+                  <md-checkbox aria-label="Checkbox">
+                    Windows Forms
+                  </md-checkbox>
+                  <md-checkbox aria-label="Checkbox">
+                    Windows Phone
+                  </md-checkbox>
+                  <md-checkbox aria-label="Checkbox">
+                    Windows Presentation Foundation
+                  </md-checkbox>
+                  <md-checkbox aria-label="Checkbox">
+                    WinRT/Windows 8
+                  </md-checkbox>
+                </div>
+              <md-checkbox aria-label="Checkbox">
+                Business Architecture
+              </md-checkbox>
+              <md-checkbox aria-label="Checkbox">
+                Business Intelligence
+              </md-checkbox>
+              <md-checkbox ng-model="clientSide" aria-label="Checkbox">
+                Client-Side
+              </md-checkbox>
+              <div ng-show="clientSide">
+                <md-checkbox ng-model="accessibility" aria-label="Checkbox">
+                  Accessibility
+                </md-checkbox>
+                <md-checkbox ng-model="analytics" aria-label="Checkbox">
+                  Analytics
+                </md-checkbox>
+              </div>
+                <div ng-show="accessibility">
+                  <md-checkbox aria-label="Checkbox">
+                    ADA
+                  </md-checkbox>
+                  <md-checkbox aria-label="Checkbox">
+                    Section 508
+                  </md-checkbox>
+                  <md-checkbox aria-label="Checkbox">
+                    WCAG
+                  </md-checkbox>
+                </div>
+                <div ng-show="analytics">
+                  <md-checkbox aria-label="Checkbox">
+                    Fireclick
+                  </md-checkbox>
+                  <md-checkbox aria-label="Checkbox">
+                    Google Analytics
+                  </md-checkbox>
+                  <md-checkbox aria-label="Checkbox">
+                    Omniture
+                  </md-checkbox>
+                  <md-checkbox aria-label="Checkbox">
+                    WebTrends
+                  </md-checkbox>
+                </div>
+
+
+
+
+            <!-- <md-checkbox ng-repeat="tech in tech.Technologies track by $index" ng-model="subskills" aria-label="Checkbox 1">
               <strong>{{tech.Technology}}</strong>
-              <div ng-show="subskills" >
-                <md-checkbox ng-repeat="skill in tech.Skills track by $index" ng-model="subSubskills" aria-label="2">
+              <div ng-show="subskills">
+                <md-checkbox ng-repeat="skill in tech.Skills track by $index" ng-model="subSubskills" aria-label="Checkbox 2">
                   {{skill.Skill}}
                   <div ng-show="subSubskills">
-                    <md-checkbox ng-repeat="subskills in skill.Subskill track by $index" aria-label="3">
+                    <md-checkbox ng-repeat="subskills in skill.Subskill track by $index" aria-label="Checkbox 3">
                       {{subskills}}
                     </md-checkbox>
                   </div>
                 </md-checkbox>
-            </md-checkbox>
+            </md-checkbox> -->
 
-              </div>
             </div>
           </fieldset>
         </md-card-content>
@@ -71,6 +141,3 @@
       </md-content>
     </div>
   </div>
-
-
-{{tech}}

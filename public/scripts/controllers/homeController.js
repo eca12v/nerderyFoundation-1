@@ -7,6 +7,8 @@ groupFactory.getApprovedGroups().then(function(response) {
   console.log($scope.groups);
 });
 
+$scope.subskills = false;
+$scope.subSubskills = false;
 
 // DOESN'T WORK YET/////////////////
 
@@ -16,7 +18,6 @@ $http({
 })
 .then(function (response) {
   $scope.tech = response.data;
-  console.log($scope.tech);
 }, function myError(response) {
   $scope.tech = response.statusText;
 });//End of http call
