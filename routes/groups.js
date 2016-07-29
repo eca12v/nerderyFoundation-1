@@ -31,11 +31,12 @@ router.get('/getUnapprovedGroups', function(req, res) {
 });
 
 router.get('/getGroup/:groupName', function(req, res) {
-  Group.findOne({'groupName': req.params.groupName}, function(err, group) {
+  Group.findOne({'groupName': req.params.name}, function(err, group) {
     if(err) {
       console.log('/getGroup error: ', err);
       res.sendStatus(500);
     } else {
+      console.log('in router.get, returning group: ', group);
       res.json(group);
     }
   });
