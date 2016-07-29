@@ -1,8 +1,25 @@
 <h1>{{group.name}}</h1>
 <h2>Group Contact: {{group.groupContact}}</h2>
-<h3>Location: {{group.location}}</h3>
+<h3>Email: {{group.contactEmail}}</h3>
+<!-- <h3>Area Served: {{group.areaServed}}</h3> -->
+<!-- <h3>Meeting Location: {{group.location}}</h3> could be listed as "varies" or "see Website", or a regular meeting place -->
 <h3>Meeting Frequency: {{group.freqOfMeeting}}</h3>
 <h3>Typical Meeting Size: {{group.sizeOfMeeting}}</h3>
+<h3>Website: {{group.groupURL}}</h3>
+
+
+
+
+<h3>Activities: {{group.activities}}</h3>
+<h3>Technologies: {{group.technologies}}</h3>
+
+
+<h3>Affiliations: {{group.affiliations}}</h3>
+
+<h3>Affiliation URL: {{group.affiliationURL}}</h3>
+
 <h3>Tags: </h3>
 <span ng-repeat="tag in group.tags">{{tag}} </span>
+
+<h3>Description: {{group.description}}</h3>
 <!-- {{group}} -->
