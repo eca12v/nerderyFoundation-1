@@ -5,12 +5,13 @@ console.log( 'loaded homeController');
 $scope.techStr = '';
 
 $scope.changeTechStr =  function(tech) {
-  if (tech.state) {
-    console.log("checked");
-    $scope.techStr += ' ' + tech.val + ' ';
+  console.log(tech);
+  var sub = $scope.techStr.indexOf(tech.Technology);
+  console.log(sub);
+  if (sub == -1) {
+    $scope.techStr += ' ' + tech.Technology + ' ';
   } else {
-    console.log("unchecked");
-    var newStr = $scope.techStr.replace(tech.val, "");
+    var newStr = $scope.techStr.replace(tech.Technology, "");
     console.log(newStr);
     $scope.techStr = newStr;
   }
@@ -37,6 +38,65 @@ $http({
 }, function myError(response) {
   $scope.tech = response.statusText;
 });//End of http call
+
+$scope.techs = {"Technologies":
+[
+  {
+    "Technology": ".NET",
+    "Skills": [
+      {
+        "Skill": "App Development",
+        "Subskills": ["Windows Communication Foundation",
+          "Windows Forms", "Windows Phone",
+          "Windows Presentation Foundation",
+          "WinRT/Windows 8"]
+      }
+    ]
+    },
+    {
+      "Technology": "CMS",
+      "Skills": [
+        {
+          "Skill": "Ektron",
+          "Subskills": ""
+        },
+        {
+          "Skill": "Kentico",
+          "Subskills": ""
+        },
+        {
+          "Skill": "Sharepoint",
+          "Subskills": ""
+        },
+        {
+          "Skill": "Sitecore",
+          "Subskills": ""
+        },
+        {
+          "Skill": "Sitefinity",
+          "Subskills": ""
+        },
+        {
+          "Skill": "Umbraco",
+          "Subskills": ""
+        }
+      ]
+    },
+    {
+      "Technology": "Frameworks",
+      "Skills": [
+        {
+          "Skill": "ASP.Net",
+          "Subskills": ["ASP.Net MVC", "ASP.Net Web API", "ASP.Net WebForms",
+            "SignalR"]
+        },
+        {
+          "Skill": ["Compact Framework", "Silverlight"]
+        }
+      ]
+    }
+  ]
+};
 
 
 }]) //end homeController

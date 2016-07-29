@@ -20,96 +20,15 @@
       <md-card id="filter-box">
         <md-card-content>
           <h2>Filter Groups: </h2>
-          <label>Biweekly</label><input  type="checkbox" ng-model="Biweekly" ng-true-value="{state: true, val: 'Biweekly'}"  data-ng-false-value="{state: false, val: 'Biweekly'}" ng-click="changeTechStr(Biweekly)"/><br/>
+          <label>Biweekly</label><input  type="checkbox" data-ng-model="Biweekly" ng-true-value="{state: true, val: 'Biweekly'}"  data-ng-false-value="{state: false, val: 'Biweekly'}" ng-click="changeTechStr(Biweekly)"/><br/>
 <label>Stuff</label><input  type="checkbox" ng-model="Stuff" ng-true-value="{state: true, val: 'Stuff'}"  data-ng-false-value="{state: false, val: 'Stuff'}" ng-click="changeTechStr(Stuff)"/><br/>
 <p>{{Stuff}}</p>
 <p>{{Biweekly}}</p>
           <fieldset class="standard">
-            <md-checkbox ng-model="NET" aria-label="Checkbox 1">
-              <strong>.NET</strong>
+            <md-checkbox ng-repeat="t in tech.Technologies"
+            value={{t.Technology}} data-ng-click="changeTechStr(t)" aria-label="Checkbox 1">
+              <strong>{{t.Technology}}</strong>
             </md-checkbox>
-              <div ng-show="NET" >
-                <md-checkbox aria-label="Checkbox 2">
-                  Windows Communication Foundation
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Windows Forms
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Windows Phone
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Windows Presentation
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  WinRT/Windows 8
-                </md-checkbox>
-              </div>
-            <md-checkbox ng-model="businessArch" aria-label="Checkbox 1">
-              <strong>Business Architecture</strong>
-            </md-checkbox>
-            <md-checkbox ng-model="businessIntel" aria-label="Checkbox 1">
-              <strong>Business Intelligence</strong>
-            </md-checkbox>
-            <md-checkbox ng-model="clientSide" aria-label="Checkbox 1">
-              <strong>Client-Side</strong>
-            </md-checkbox>
-              <div ng-show="clientSide">
-                <md-checkbox ng-model="accessibility" aria-label="Checkbox 2">
-                  Accessibility
-                </md-checkbox>
-                <md-checkbox ng-model="analytics" aria-label="Checkbox 2">
-                  Analytics
-                </md-checkbox>
-              </div>
-              <div ng-show="accessibility">
-                <md-checkbox aria-label="Checkbox 2">
-                  ADA
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Section 508
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  WCAG
-                </md-checkbox>
-              </div>
-              <div ng-show="analytics">
-                <md-checkbox aria-label="Checkbox 2">
-                  Fireclick
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Google Analytics
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Omniture
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  WebTrends
-                </md-checkbox>
-              </div>
-            <md-checkbox ng-model="cms" aria-label="Checkbox 1">
-              <strong>CMS</strong>
-            </md-checkbox>
-              <div ng-show="cms">
-                <md-checkbox aria-label="Checkbox 2">
-                  Ektron
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Kentico
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Sharepoint
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Sitecore
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Sitefinity
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Umbraco
-                </md-checkbox>
-              </div>
           </fieldset>
         </md-card-content>
       </md-card>
@@ -158,4 +77,4 @@
 
   <hr>
 
-  {{tech}}
+  {{techs}}
