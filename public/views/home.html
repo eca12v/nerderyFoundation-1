@@ -20,6 +20,10 @@
       <md-card id="filter-box">
         <md-card-content>
           <h2>Filter Groups: </h2>
+          <label>Biweekly</label><input  type="checkbox" ng-model="Biweekly" ng-true-value="'Biweekly'"  data-ng-false-value='' ng-click=""/><br/>
+<label>Stuff</label><input  type="checkbox" ng-model="Stuff" ng-true-value="'stuff'"  data-ng-false-value=''/><br/>
+<p>{{Stuff}}</p>
+<p>{{Biweekly}}</p>
           <fieldset class="standard">
             <md-checkbox ng-model="NET" aria-label="Checkbox 1">
               <strong>.NET</strong>
@@ -113,7 +117,7 @@
 
     <div class="col-sm-9">
       <md-content class="md-padding">
-        <div class="col-sm-4" ng-repeat="group in groups | filter: filterStr">
+        <div class="col-sm-4" ng-repeat="group in groups | multiWordFilter: techStr">
           <a class="group-link" ng-href="/#/groups/{{group.name}}">
             <md-card class="group-tile" >
               <md-card-title>
@@ -125,6 +129,7 @@
                 </md-card-title-media>
               </md-card-title>
               <md-card-content>
+                {{group}}
                 <p>{{group.location}}</p>
                 <p>{{group.freqOfMeeting}}</p>
               </md-card-content>
