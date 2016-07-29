@@ -73,7 +73,21 @@ $scope.upload = function(file){
     url: '/groups/uploads',
     data: {
       file: file,
-      'groupName': $scope.groupNameIn
+      name: $scope.groupNameIn,
+      groupURL: $scope.groupUrlIn,
+      contact: $scope.contactNameIn,
+      contactEmail: $scope.contactEmail,
+      description: $scope.description,
+      location: $scope.location,
+      activities:$scope.activities,
+      technologies: $scope.technologies,
+      tags: $scope.tags,
+      freqOfMeeting: $scope.freqOfMeeting,
+      sizeOfMeeting: $scope.sizeOfMeeting,
+      affiliations: $scope.affiliations,
+      affiliationURL: $scope.affiliationURL,
+      eventInfo: $scope.eventInfo,
+      sizeOfMembership: $scope.sizeOfMembership
     }
   }).then(function (resp) {
             console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
