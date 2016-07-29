@@ -122,7 +122,7 @@ router.delete('/deleteGroup/:groupId', function(req, res){
 var upload = multer({
   storage: multerS3({
     s3: s3,
-    bucket: 'prime-digital-academy-playbow',
+    bucket: 'nerdery-foundation-bucket',
     acl: 'public-read',
     metadata: function (req, file, cb) {
       cb(null, {fieldName: file.fieldname});

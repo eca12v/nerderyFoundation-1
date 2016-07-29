@@ -48,13 +48,20 @@ console.log('grouId: ', groupId);
   $scope.groups.splice(index, 1);
 };
 
+//global for uploading functions
+$scope.file = '';
+$scope.uploads = [];
+
 //submit function to add group
 $scope.submit = function(){
   console.log( 'submit clicked' );
+  console.log('file: ', $scope.file);
   if($scope.form.file.$valid && $scope.file){
     $scope.upload($scope.file);
-    $scope.postGroup();
-  }else{$scope.postGroup();}
+    console.log('in submit function');
+    // $scope.postGroup();
+  }
+  // else{$scope.postGroup();}
 }; //end submit function
 
 $scope.upload = function(file){
@@ -65,9 +72,9 @@ $scope.upload = function(file){
       'groupName': $scope.groupNameIn
     }
   });
-}; //end upload function
+// }; //end upload function
 
-$scope.postGroup = function(){
+// $scope.postGroup = function(){
 //forms object with new group info
   var newGroup = {
 
