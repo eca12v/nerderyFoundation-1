@@ -1,7 +1,7 @@
 console.log('group leader cont has arrived');
 
 
-myApp.controller( 'GroupLeaderController',  [ 'groupFactory', '$scope', '$http', '$location', '$rootScope', 'Upload',  function( groupFactory, $scope,  $http, $location, $authProvider, $rootScope, Upload ){
+myApp.controller( 'GroupLeaderController',  [ 'Upload', 'groupFactory', '$scope', '$http', '$location', '$rootScope',   function( Upload, groupFactory, $scope,  $http, $location, $authProvider, $rootScope  ){
 
 
 console.log( 'loaded GroupLeaderController');
@@ -56,6 +56,8 @@ $scope.uploads = [];
 $scope.submit = function(){
   console.log( 'submit clicked' );
   console.log('file: ', $scope.file);
+  console.log('group name: ', $scope.groupNameIn);
+  console.log( 'Upload', Upload );
   if($scope.form.file.$valid && $scope.file){
     $scope.upload($scope.file);
     console.log('in submit function');
@@ -65,17 +67,27 @@ $scope.submit = function(){
 }; //end submit function
 
 $scope.upload = function(file){
+  console.log( 'in uploader:', file );
+  console.log( 'Upload', Upload );
   Upload.upload({
     url: '/groups/uploads',
     data: {
       file: file,
       'groupName': $scope.groupNameIn
     }
-  });
-// }; //end upload function
+  }).then(function (resp) {
+            console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
+        }, function (resp) {
+            console.log('Error status: ' + resp.status);
+        }, function (evt) {
+            var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+            console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
+        });
 
-// $scope.postGroup = function(){
-//forms object with new group info
+}; //end upload function
+
+$scope.postGroup = function(){
+// //forms object with new group info
   var newGroup = {
 
     name: $scope.groupNameIn,

@@ -135,6 +135,9 @@ var upload = multer({
 }); // end multer upload
 
 router.post('/uploads', upload.single('file'), function(req, res){
+  console.log('file: ', req.file);
+  console.log('location: ', req.file.location);
+  console.log('name: ', req.body.groupName);
 res.send(req.file);
 });
 
