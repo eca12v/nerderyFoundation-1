@@ -1,23 +1,45 @@
 
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2 well">
+    <md-content>
+      <md-input-container class="md-block" flex-gt-sm input >
+        <div>Name: <a href="#" editable-text="group.name">{{ group.name || 'empty' }}</a></div>
+    </md-input-container>
 
+<md-input-container input ng-model="groupContact">
+<div>Group Contact: <a href="#" editable-text="group.groupContact" e-step="5">{{ group.groupContact || 'empty' }}</a></div>
+</md-input-container>
 
-<div>Group Name: <a href="#" editable-text="group.name">{{ group.name || 'empty' }}</a></div>
-<div>Contact Name: <a href="#" editable-text="group.groupContact">{{ group.groupContact || 'empty' }}</a></div>
-<div>Email: <a href="#" editable-email="group.contactEmail">{{ group.contactEmail || 'empty' }}</a></div>
+<md-input-container input ng-model="contactEmail">
+<div>Contact Email: <a href="#" editable-email="group.contactEmail"> {{ group.contactEmail || 'empty' }}</a></div>
+</md-input-container>
+
+<md-input-container input ng-model="location">
 <div>Location: <a href="#" editable-text="group.location">{{ group.location || 'empty' }}</a></div>
-<div>Meeting Frequency: <a href="#" editable-text="group.freqOfMeeting">{{ group.freqOfMeeting || 'empty' }}</a></div>
-<div>Typical Meeting Size: <a href="#" editable-text="group.sizeOfMeeting">{{ group.sizeOfMeeting || 'empty' }}</a></div>
-<div>Tags: <a href="#" editable-text="group.tags">{{ group.tags || 'empty' }}</a></div>
-<!-- <md-input-container flex-gt-sm> -->
-<label>sizeOfMembership</label>
-<select ng-model="sizeOfMembership">
-  < ng-repeat="size in membershipSizes" value="{{size}}"> {{size}}</option>
-</select>
-<!-- </md-input-container> -->
-<h2>Group Contact: {{group.groupContact}}</h2>
-<h3>Location: {{group.location}}</h3>
-<h3>Meeting Frequency: {{group.freqOfMeeting}}</h3>
-<h3>Typical Meeting Size: {{group.sizeOfMeeting}}</h3>
-<h3>Tags: </h3>
-<span ng-repeat="tag in group.tags"> {{tag}} </span>
-<!-- {{group}} -->
+
+</md-input-container>
+
+<md-input-container ng-model="freqOfMeeting">
+<div>Meeting Frequency: <a href="#" editable-select="group.freqOfMeeting">{{ group.freqOfMeeting || 'empty' }}</a></div>
+</md-input-container>
+
+<md-input-container input ng-model="sizeOfMeeting"
+<div>Meeting size: <a href="#" editable-select="group.sizeOfMeeting">{{ user.date || 'empty' }}</a></div>
+</md-input-container>
+
+<md-input-container ng-model="sizeOfMembership">
+<div>Size of membership: <a href="#" editable-select="group.sizeOfMembership">{{ user.time || 'empty' }}</a></div>
+
+</md-input-container>
+
+<md-input-container>
+<div>Tags: <a href="#" editable-text="group.tag">{{ group.tags || 'empty' }}</a></div>
+<input ng-model="tags">
+</md-input-container>
+
+</div>
+<button type="button" name="button" ng-click=submit() >Submit Group</button>
+<button type="button" name="button" ng-click=banana() >Delete</button>
+<button type="button" name="button" ng-click='edit(group._id, $index)' >Edit</button>
+
+</div>
