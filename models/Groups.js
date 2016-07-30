@@ -11,6 +11,7 @@ var groupSchema = mongoose.Schema({
   location: String,
   activities: {type: Array},
   technologies: {type: Array},
+  coreTechnologies: {type: Array},
   tags: {type: Array},
   freqOfMeeting: String,
   sizeOfMeeting: String,
