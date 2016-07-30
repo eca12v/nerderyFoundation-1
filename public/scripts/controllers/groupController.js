@@ -1,4 +1,4 @@
-myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScope', 'groupFactory', '$routeParams', function( $scope, $http, $location, $rootScope, groupFactory, $routeParams ){
+myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScope', 'groupFactory', '$routeParams', '$mdSidenav', function( $scope, $http, $location, $rootScope, groupFactory, $routeParams, $mdSidenav ){
 
   groupFactory.getGroup($routeParams.groupName).then(function(response) {
 		$scope.group = response.data;
@@ -61,20 +61,20 @@ myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScop
   });
 };
 
-$scope.openNavRight = function(navID){
+$scope.openNavRight = function(){
   console.log('in openNavRight');
-  return function() {
+
        // Component lookup should always be available since we are not using `ng-if`
-       $mdSidenav(navID)
+       $mdSidenav('right')
          .toggle()
          .then(function () {
            $log.debug("toggle " + navID + " is done");
          });
      };
-   };
+
 
    $scope.isOpenRight = function(){
    return $mdSidenav('right').isOpen();
  };
- 
+
 }]); //end controller
