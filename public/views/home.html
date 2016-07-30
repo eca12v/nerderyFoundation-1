@@ -50,6 +50,12 @@
               value={{skill.Skill}} data-ng-click="changeTechStr(skill.Skill)" aria-label="Checkbox 1">
                 <strong>{{skill.Skill}}</strong>
               </md-checkbox>
+              <div class="sub" ng-show="selectedSubTech == skill.Skill" ng-repeat="sub in skill.Subskill">
+                <md-checkbox
+                value={{sub}} data-ng-click="changeSubTechStr(sub)" aria-label="Checkbox 1">
+                  <strong>{{sub}}</strong>
+                </md-checkbox>
+              </div>
             </div>
           </div>
         <hr>

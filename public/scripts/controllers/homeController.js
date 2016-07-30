@@ -3,6 +3,7 @@ function( $scope, $http, $location, groupFactory){
 console.log( 'loaded homeController');
 
 $scope.selectedTech = '';
+$scope.selectedSubTech = '';
 $scope.techStr = '';
 $scope.overallTechStr = '';
 
@@ -26,6 +27,22 @@ $scope.changeTechStr =  function(tech) {
   var sub = $scope.techStr.indexOf(tech);
   console.log(sub);
   if (sub == -1) {
+    $scope.selectedSubTech = tech;
+    $scope.techStr += ' ' + tech + ' ';
+  } else {
+    $scope.selectedSubTech = '';
+    var newStr = $scope.techStr.replace(tech, "");
+    console.log(newStr);
+    $scope.techStr = newStr;
+  }
+};
+
+$scope.changeSubTechStr =  function(tech) {
+  console.log('changeTech hit');
+  console.log(tech);
+  var sub = $scope.techStr.indexOf(tech);
+  console.log(sub);
+  if (sub == -1) {
     $scope.techStr += ' ' + tech + ' ';
   } else {
     var newStr = $scope.techStr.replace(tech, "");
@@ -33,9 +50,6 @@ $scope.changeTechStr =  function(tech) {
     $scope.techStr = newStr;
   }
 };
-// $scope.techFilter = function() {
-//   return $scope.Biweekly && $scope.Stuff;
-// };
 
 $scope.location = ['Twin Cities', 'Duluth'];
 
