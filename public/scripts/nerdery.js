@@ -1,11 +1,15 @@
 
-var myApp = angular.module( 'myApp', ['ngRoute', 'ngMaterial', 'satellizer', 'Authorization', 'ngFileUpload'  ] );
+var myApp = angular.module( 'myApp', ['ngRoute', 'ngMaterial', 'satellizer', 'Authorization', 'xeditable', 'ngFileUpload' ] );
 
 /// Routes ///
 
-myApp.config(['$routeProvider', '$authProvider', '$mdIconProvider',  function( $routeProvider, $authProvider, $mdIconProvider ) {
+myApp.config(['$routeProvider', '$authProvider', '$mdIconProvider',  function( $routeProvider, $authProvider, $mdIconProvider) {
 
 $mdIconProvider.icon('md-close', 'img/icons/ic_close_24px.svg', 24);
+
+myApp.run(function(editableOptions) {
+  editableOptions.theme = 'bs3';
+});
 
 $routeProvider
    .when('/index', {
