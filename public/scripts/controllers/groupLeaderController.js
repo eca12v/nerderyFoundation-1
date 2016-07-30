@@ -107,7 +107,7 @@ $scope.banana = function(index){
   var groupToDelete = $scope.groups[index];
   console.log('groupToDelete: ', groupToDelete);
   var groupId = groupToDelete._id;
-console.log('grouId: ', groupId);
+console.log('groupId: ', groupId);
   $http({
      method: 'DELETE',
      url: '/groups/deleteGroup/' + groupId,
@@ -120,7 +120,8 @@ $scope.submit = function(){
   console.log( 'submit clicked' );
 //forms object with new group info
   var newGroup = {
-
+    
+//do these need to match the syntax that's being used for the Schema in groups.js?
     name: $scope.groupNameIn,
     groupURL: $scope.groupUrlIn,
     contact: $scope.contactNameIn,
