@@ -47,13 +47,9 @@
   max-height: calc(200% / 3);
 }
 
-<<<<<<< HEAD
+
 #main-search {
   width: 25%;
-=======
-main-search {
-  width: 75%;
->>>>>>> traceyz
   margin: auto;
 }
 
@@ -81,10 +77,10 @@ md-checkbox {
   color: black;
 }
 
-<<<<<<< HEAD
+
 .sub {
 padding-left: 15px;
-=======
+
 /*Group Landing Page*/
 body {
     margin-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
@@ -254,5 +250,3 @@ footer {
       margin-bottom: 10px;
       margin-left: 0;
   }
->>>>>>> traceyz
-}
