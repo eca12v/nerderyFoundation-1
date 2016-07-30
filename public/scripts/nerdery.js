@@ -1,4 +1,6 @@
-var myApp = angular.module( 'myApp', ['ngRoute', 'ngMaterial', 'satellizer', 'Authorization', 'xeditable' ] );
+
+var myApp = angular.module( 'myApp', ['ngRoute', 'ngMaterial', 'satellizer', 'Authorization', 'xeditable', 'ngFileUpload' ] );
+
 /// Routes ///
 
 myApp.config(['$routeProvider', '$authProvider', '$mdIconProvider',  function( $routeProvider, $authProvider, $mdIconProvider) {

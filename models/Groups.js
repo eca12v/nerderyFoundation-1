@@ -18,6 +18,7 @@ var groupSchema = mongoose.Schema({
   affiliationURL: String,
   eventInfo: String,
   sizeOfMembership: String,
+  photoURL: String,
   approved: {type: Boolean, default: false},
   created: Date,
 });
