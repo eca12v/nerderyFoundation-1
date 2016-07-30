@@ -17,7 +17,7 @@
     <select class="form-control select-team" ng-model="tObj" data-ng-change="changeOverallTech(tObj)">
       <label>Technology</label>
                     <option value=""></option>
-                    <option ng-repeat="t in tech.Technologies" value={{t.Technology}} >{{t.Technology}}</option>
+                    <option ng-repeat="t in tech.Technologies track by $index" value="{{t.Technology}}" >{{t.Technology}}</option>
                   </select>
   </md-input-container>
 
@@ -25,7 +25,7 @@
     <select class="form-control" ng-model="locationStr">
       <label>Location: </label>
                     <option value=""></option>
-                    <option ng-repeat="l in location" value={{l}} >{{l}}</option>
+                    <option ng-repeat="l in location track by $index" value="{{l}}" >{{l}}</option>
                   </select>
   </md-input-container>
 
@@ -33,7 +33,7 @@
     <select class="form-control" ng-model="sizeStr">
       <label>Typical Meeting Size: </label>
                     <option value=""></option>
-                    <option ng-repeat="s in typicalSize" value={{s}} >{{s}}</option>
+                    <option ng-repeat="s in typicalSize track by $index" value="{{s}}" >{{s}}</option>
                   </select>
   </md-input-container>
 </md-content>
@@ -45,14 +45,14 @@
         <md-card-content>
           <h3>Filter: {{selectedTech}}</h3>
           <div ng-repeat="tech in tech.Technologies">
-            <div ng-show="selectedTech == tech.Technology" ng-repeat="skill in tech.Skills">
+            <div ng-show="selectedTech == tech.Technology" ng-repeat="skill in tech.Skills track by $index">
               <md-checkbox
-              value={{skill.Skill}} data-ng-click="changeTechStr(skill.Skill)" aria-label="Checkbox 1">
+              value="{{skill.Skill}}" data-ng-click="changeTechStr(skill.Skill)" aria-label="Checkbox 1">
                 <strong>{{skill.Skill}}</strong>
               </md-checkbox>
-              <div class="sub" ng-show="selectedSubTech == skill.Skill" ng-repeat="sub in skill.Subskill">
+              <div class="sub" ng-show="selectedSubTech == skill.Skill" ng-repeat="sub in skill.Subskill track by $index">
                 <md-checkbox
-                value={{sub}} data-ng-click="changeSubTechStr(sub)" aria-label="Checkbox 1">
+                value="{{sub}}" data-ng-click="changeSubTechStr(sub)" aria-label="Checkbox 1">
                   <strong>{{sub}}</strong>
                 </md-checkbox>
               </div>
@@ -71,11 +71,12 @@
           </fieldset> -->
         </md-card-content>
       </md-card>
+    </md-content>
     </div>
 
     <div class="col-sm-9">
       <md-content class="md-padding">
-        <div class="col-sm-4" ng-repeat="group in groups | multiWordFilter: techStr | filter: locationStr | filter: sizeStr | filter: filterStr">
+        <div class="col-sm-4" ng-repeat="group in groups | multiWordFilter: techStr | filter: locationStr | filter: sizeStr | filter: filterStr track by $index">
           <a class="group-link" ng-href="/#/groups/{{group.name}}">
             <md-card class="group-tile" >
               <md-card-title>
@@ -83,7 +84,7 @@
                   <span class="md-headline">{{group.name}}</span>
                 </md-card-title-text>
                 <md-card-title-media>
-                  <div class="md-media-sm card-media"></div>
+                  <div class="md-media-sm card-media"><img src="{{group.photoURL}}"/></div>
                 </md-card-title-media>
               </md-card-title>
               <md-card-content>
@@ -116,3 +117,4 @@
   </div>
 
   <hr> -->
+</div>
