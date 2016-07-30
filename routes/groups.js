@@ -5,6 +5,13 @@ var Group = require('../models/Groups');
 
 var router = express.Router();
 
+// require to upload images
+var multer = require('multer');
+var fs = require('fs');
+var multerS3 = require('multer-s3');
+var aws = require('aws-sdk');
+var s3 = new aws.S3();
+
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 
@@ -103,9 +110,26 @@ router.put('/approveGroup/:id', function(req, res) {
   });
 });
 
-router.post('/createGroup', function (req, res) {
+// for uploading photos
+var upload = multer({
+  storage: multerS3({
+    s3: s3,
+    bucket: 'nerdery-foundation-bucket',
+    acl: 'public-read',
+    metadata: function (req, file, cb) {
+      cb(null, {fieldName: file.fieldname});
+    },
+    // key: function (req, file, cb) {
+    //   // file name generation
+    //   cb(null, Date.now().toString());
+    // }
+  })
+}); // end multer upload
+
+router.post('/createGroup', upload.single('file'), function (req, res) {
 console.log('inside groups.js add group ');
   console.log(req.body);
+  console.log(req.file.location);
 
   var newGroup = new Group({
     name: req.body.name,
@@ -123,7 +147,8 @@ console.log('inside groups.js add group ');
     affiliations: req.body.affiliations,
     affiliationURL: req.body.affiliationURL,
     eventInfo: req.body.eventInfo,
-    sizeOfMembership: req.body.sizeOfMembership
+    sizeOfMembership: req.body.sizeOfMembership,
+    photoURL: req.file.location
 
   });
 
@@ -155,5 +180,14 @@ router.delete('/deleteGroup/:groupId', function(req, res){
     }
   });
 });
+
+
+
+// router.post('/uploads', upload.single('file'), function(req, res){
+//   console.log('file: ', req.file);
+//   console.log('location: ', req.file.location);
+//   console.log('name: ', req.body.groupName);
+// res.send(req.file);
+// });
 
 module.exports = router;

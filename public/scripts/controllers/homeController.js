@@ -2,6 +2,7 @@ myApp.controller( 'HomeController', ['$scope', '$http', '$location', 'groupFacto
 function( $scope, $http, $location, groupFactory){
 console.log( 'loaded homeController');
 
+
 $scope.selectedTech = '';
 $scope.selectedSubTech = '';
 $scope.techStr = '';
@@ -68,6 +69,7 @@ $scope.changeLocation =  function(location) {
     $scope.techStr = newStr;
   }
 };
+
 
 groupFactory.getApprovedGroups().then(function(response) {
   $scope.groups = response.data;

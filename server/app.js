@@ -1,3 +1,4 @@
+require('dotenv').load();//loads environment variables locally
 var express = require('express');
 var app=express();
 var path = require('path');
