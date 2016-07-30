@@ -2,8 +2,6 @@
   <div class="col-sm-8 col-sm-offset-2 well">
     <md-content>
       <form name="form">
-
-
       <md-input-container class="md-block" flex-gt-sm>
         <label>Group Name</label>
         <input ng-model="groupNameIn">
@@ -18,10 +16,6 @@
         <label>Contact Email</label>
         <input ng-model="contactEmail" type="email">
       </md-input-container>
-
-
-
-
           <md ng-model="description" md-placeholder="Description">
           </md>
 
@@ -89,12 +83,12 @@
           </md-select>
           </md-input-container>
 
-            <md-input-container flex-gt-sm>
-              <label>sizeOfMeeting</label>
-              <md-select ng-model="sizeOfMeeting">
-              <md-option ng-repeat="option in meetingSizes" value="{{option}}">{{option}}</md-option>
-              </md-select>
-            </md-input-container>
+          <md-input-container flex-gt-sm>
+            <label>sizeOfMeeting</label>
+            <md-select ng-model="sizeOfMeeting">
+            <md-option ng-repeat="option in meetingSizes" value="{{option}}">{{option}}</md-option>
+            </md-select>
+          </md-input-container>
 
             <md-input-container flex-gt-sm>
               <div class="button" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
