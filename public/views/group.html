@@ -1,140 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-<div class="display">
-<form ng-repeat="item in groupDisplayed">
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-2 well">
-      <md-content>
-        <md-input-container class="md-block" flex-gt-sm>
-          <label>Group Name</label>
-          <h1>{{item.name}}</h1>
-          <input ng-model="groupNameIn">
-        </md-input-container>
-
-        <md-input-container flex-gt-xs>
-          <label>Contact Name</label>
-          <h1>{{item.contact}}</h1>
-          <input ng-model="contactNameIn">
-        </md-input-container>
-
-        <div class="form-group">
-          <div ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 800, height: 800}">
-          <button class="btn">Select a profile picture</button>
-          <span class="fileSelect">File: {{file.$ngfName}} </span>
-      </div>
-    </div>
-    <md-input-container flex-gt-sm>
-      <label>Contact Email</label>
-      <h1>{{item.contactEmail}}</h1>
-      <input ng-model="contactEmail" type="email">
-    </md-input-container>
-
-    <md-input-container class="md-block" flex-gt-sm>
-      <label>Location</label>
-      <h1>{{item.location}}</h1>
-      <input ng-model="location">
-    </md-input-container>
-
-    <md-input-container class="md-block" flex-gt-sm>
-      <label>Activities</label>
-      <h4>{{item.activities}}</h4>
-      <input ng-model="activities">
-    </md-input-container>
-
-    <md-input-container class="md-block" flex-gt-sm>
-      <label>Affiliations</label>
-      <h4>{{item.affiliations}}</h4>
-      <input ng-model="affiliations">
-    </md-input-container>
-
-    <md-input-container class="md-block" flex-gt-sm>
-      <label>affiliationURL</label>
-      <h4>{{item.affiliationURL}}</h4>
-      <input name="affiliationURL" ng-model="affiliationURL" placeholder="National Affiliation Website">
-    </md-input-container>
-
-    <md-input-container flex-gt-sm>
-      <label>sizeOfMembership</label>
-      <h4>{{item.sizeOfMembership}}</h4>
-      <md-select ng-model="sizeOfMembership">
-
-      <md-option ng-repeat="size in membershipSizes" value="{{size}}">{{size}}</md-option>
-      </md-select>
-    </md-input-container>
-
-    <md-input-container flex-gt-sm>
-      <label>freqOfMeeting</label>
-      <h4>{{item.freqOfMeeting}}</h4>
-      <md-select ng-model="freqOfMeeting">
-
-      <md-option ng-repeat="option in meetingFreq" value="{{option}}">{{option}}</md-option>
-    </md-select>
-    </md-input-container>
-
-      <md-input-container flex-gt-sm>
-        <label>sizeOfMeeting</label>
-        <h4>{{item.sizeOfMeeting}}</h4>
-        <md-select ng-model="sizeOfMeeting">
-
-        <md-option ng-repeat="option in meetingSizes" value="{{option}}">{{option}}</md-option>
-        </md-select>
-      </md-input-container>
-
-      <br>
-
-    <button type="button" name="button" ng-click=submit() >Submit Group</button>
-  </div>
-</md-content>
-</div>
-</div>
-</form>
-
-
-
-
-
-
-
-          <!-- <md ng-model="description" md-placeholder="Description">
-          </md>
-
-
-
-
-
-          <md-chips ng-model="ctrl.roTagNames" name="tagName" readonly="ctrl.readonly" md-max-chips="5" placeholder="Add A Descriptive Tag" secondary-placeholder="New Tag">>
-            <md-chip-template>
-              <strong>{{$chip}}</strong>
-            </md-chip-template>
-          </md-chips>
-
-        <md-chips ng-model="ctrl.selectedTech" md-autocomplete-snap
-            md-transform-chip="ctrl.transformChip($chip)"
-            md-require-match="ctrl.autocompleteDemoRequireMatch">
-          <md-autocomplete
-            md-selected-item="ctrl.selectedItem"
-            md-search-text="ctrl.searchText"
-            md-items="item in ctrl.querySearch(ctrl.searchText)"
-            md-item-text="item.name"
-            placeholder="Add A Technology Tag">
-            <span md-highlight-text="ctrl.searchText">{{item.name}} :: {{item.type}}</span>
-          </md-autocomplete>
-          <md-chip-template>
-            <span>
-              <strong>{{$chip.name}}</strong>
-              <em>({{$chip.type}})</em>
-            </span>
-          </md-chip-template>
-        </md-chips> -->
-        <!-- <p>{{ctrl.roTagNames}}</p>
-        <p>{{ctrl.selectedTech}}</p> -->
-=======
-<h1>{{group.name}}</h1>
-=======
-
-
-
 <div class="group-container">
   <header class="text-center" name="home">
   <div class="intro-text">
@@ -174,7 +37,6 @@
 <img src="image" class="header-image" />
 
 <div class = "headline"><h1>{{group.name}}</h1>
->>>>>>> e9efc3cbe60a11beab6453d9040c3792e7e108e2
 <h2>Group Contact: {{group.groupContact}}</h2>
 <h3>Email: {{group.contactEmail}}</h3>
 
@@ -193,10 +55,7 @@
 </div>
 </div>
 
-<!-- {{group}} -->
-<<<<<<< HEAD
->>>>>>> origin
-=======
+
 <h1>start editable</h1>
 <div class="row">
 <div class="col-sm-8 col-sm-offset-2 well">
@@ -262,11 +121,11 @@
 </md-select>
 </md-input-container>
 
-<md-chips ng-model="ctrl.roTagNames" name="tagName" readonly="ctrl.readonly" md-max-chips="5" placeholder="group.tags" secondary-placeholder="New Tag">>
+<!-- <md-chips ng-model="ctrl.roTagNames" name="tagName" readonly="ctrl.readonly" md-max-chips="5" placeholder="group.tags" secondary-placeholder="New Tag">>
   <md-chip-template>
     <strong>{{$chip}}</strong>
   </md-chip-template>
-</md-chips>
+</md-chips> -->
 
 </div>
 <button type="button" name="button" ng-click="banana()">Delete Group</button>
@@ -274,4 +133,3 @@
 
 </div>
 </div>
->>>>>>> e9efc3cbe60a11beab6453d9040c3792e7e108e2
