@@ -1,8 +1,7 @@
-<div class="group-container">
+<div class="group-container" vertical>
   <header class="text-center" name="home">
   <div class="intro-text">
     <h1><span class="color">{{group.name}}</span></h1>
-
     <div class="clearfix"></div>
     <!-- <a href="#groupURL" class="btn btn-default btn-lg page-scroll">{{group.groupURL}}</a> </div> -->
   </div>
@@ -53,12 +52,26 @@
 
 
 </div>
-</div>
 
 
 <h1>start editable</h1>
-<div class="row">
-<div class="col-sm-8 col-sm-offset-2 well">
+<div>
+  <md-button ng-click="toggleRight()"
+    ng-hide="isOpenRight()"
+    class="md-primary">
+    Toggle right
+  </md-button>
+</div>
+<div layout="vertical" layout-fill ng-cloak >
+<!-- <md-content flex layout-padding> -->
+      <!-- <div layout="column" layout-fill layout-align="top center"> -->
+<section layout="row" flex>
+<md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right" flex>
+<md-toolbar class="md-theme-light">
+<h1 class="md-toolbar-tools">Sidenav Right</h1>
+</md-toolbar>
+
+<!-- <div class="col-sm-8 col-sm-offset-2 well"> -->
 <md-input-container class="md-block" flex-gt-sm input >
 <div>Name: <a href="#" editable-text="group.name">{{ group.name || 'empty' }}</a></div>
 </md-input-container>
@@ -127,9 +140,13 @@
   </md-chip-template>
 </md-chips> -->
 
-</div>
 <button type="button" name="button" ng-click="banana()">Delete Group</button>
 <button type="button" name="button" ng-click="edit(group._id, $index)">Save your edits</button>
-
+<md-button ng-click="close()" class="md-primary">
+         Close Sidenav Right
+  </md-button>
+</md-sidenav>
+</section>
+</div>
 </div>
 </div>
