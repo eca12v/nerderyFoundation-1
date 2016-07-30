@@ -52,13 +52,21 @@
 
 
 
-</div>
+<div>
+  <md-button ng-click="openNavRight()"
+    class="md-primary">
+    Edit
+  </md-button>
 </div>
 
 <!-- {{group}} -->
-<h1>start editable</h1>
-<div class="row">
-  <div class="col-sm-8 col-sm-offset-2 well">
+<h1>start editable <md-button ng-click="openNavRight('right')" ng-hide="isOpenRight()" class="md-primary" >Edit!!!!!</md-button></h1>
+<!-- <div class="row">
+  <div class="col-sm-8 col-sm-offset-2 well"> -->
+  <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
+      <md-toolbar class="md-theme-light">
+        <h1 class="md-toolbar-tools">Sidenav Right</h1>
+      </md-toolbar>
     <md-content>
       <md-input-container class="md-block" flex-gt-sm input >
         <div>Name: <a href="#" editable-text="group.name">{{ group.name || 'empty' }}</a></div>
@@ -97,9 +105,10 @@
 </md-input-container>
 
 </md-content>
+<!-- <md-button ng-click="closeNav()" class="md-primary"></button> -->
 <button type="button" name="button" ng-click="submit()" >Submit Group</button>
 <button type="button" name="button" ng-click="banana()" >Delete</button>
 <button type="button" name="button" ng-click="edit(group._id, $index)" >Edit</button>
-
-</div>
-</div>
+</md-sidenav>
+<!-- </div>
+</div> -->

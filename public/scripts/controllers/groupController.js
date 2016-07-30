@@ -60,4 +60,21 @@ myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScop
     console.log( 'in edit groups in group controller, $scope.data: ', $scope.group );
   });
 };
+
+$scope.openNavRight = function(navID){
+  console.log('in openNavRight');
+  return function() {
+       // Component lookup should always be available since we are not using `ng-if`
+       $mdSidenav(navID)
+         .toggle()
+         .then(function () {
+           $log.debug("toggle " + navID + " is done");
+         });
+     };
+   };
+
+   $scope.isOpenRight = function(){
+   return $mdSidenav('right').isOpen();
+ };
+ 
 }]); //end controller
