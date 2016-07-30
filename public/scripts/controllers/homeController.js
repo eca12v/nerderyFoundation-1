@@ -1,6 +1,9 @@
-myApp.controller( 'HomeController', ['$scope', '$http', '$location', 'groupFactory',
-function( $scope, $http, $location, groupFactory){
+myApp.controller( 'HomeController', ['$scope', '$http', '$location', 'groupFactory', '$auth',
+function( $scope, $http, $location, groupFactory, $auth){
 console.log( 'loaded homeController');
+
+$scope.currentUser = $auth.getPayload().username;
+console.log($scope.currentUser);
 
 
 $scope.selectedTech = '';

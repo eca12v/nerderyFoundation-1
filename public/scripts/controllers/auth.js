@@ -5,7 +5,7 @@ controller('LoginCtrl', ['$scope', '$auth', '$location',
 
   $scope.isAuthenticated = $auth.isAuthenticated();
 
-  $scope.currentUser = $auth.getPayload();
+  $scope.currentUser = $auth.getPayload().username;
 
   $scope.authenticate = function(provider) {
       $auth.authenticate(provider);
