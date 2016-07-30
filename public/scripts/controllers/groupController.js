@@ -27,29 +27,29 @@ myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScop
   $scope.edit = function(id, index){
     console.log('edit clicked, id: ', id);
     event.preventDefault();
-    
+
   var updatedGroup = {
     name: $scope.group.name,
     groupURL: $scope.groupUrlIn,
-    contact: $scope.contactNameIn,
-    contactEmail: $scope.contactEmail,
-    description: $scope.description,
-    location: $scope.location,
-    activities:$scope.activities,
-    technologies: $scope.technologies,
+    contact: $scope.group.groupContact,
+    contactEmail: $scope.group.contactEmail,
+    description: $scope.group.description,
+    location: $scope.group.location,
+    activities:$scope.group.activities,
+    technologies: $scope.group.technologies,
     tags: self.roTagNames,
-    freqOfMeeting: $scope.freqOfMeeting,
-    sizeOfMeeting: $scope.sizeOfMeeting,
-    affiliations: $scope.affiliations,
-    affiliationURL: $scope.affiliationURL,
-    eventInfo: $scope.eventInfo,
-    sizeOfMembership: $scope.sizeOfMembership
+    freqOfMeeting: $scope.group.freqOfMeeting,
+    sizeOfMeeting: $scope.group.sizeOfMeeting,
+    affiliations: $scope.group.affiliations,
+    affiliationURL: $scope.group.affiliationURL,
+    eventInfo: $scope.group.eventInfo,
+    sizeOfMembership: $scope.group.sizeOfMembership
   };
 
   console.log( 'updatedGroup: ', updatedGroup );
-  groupFactory.editGroup(id).then(function(response){
+  groupFactory.editGroup( id, updatedGroup ).then(function(response){
     $scope.group = response.data;
-    console.log( 'in edit groups in group controller, $scope.data: ', $scope.data );
+    console.log( 'in edit groups in group controller, $scope.data: ', $scope.group );
   });
 };
 }]); //end controller

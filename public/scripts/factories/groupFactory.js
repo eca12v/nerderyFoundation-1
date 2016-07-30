@@ -5,9 +5,11 @@ myApp.factory( 'groupFactory', ['$http',
       groups: []
     };
 
-groups.editGroup = function ( id ) {
-  console.log( 'inside editGroup Factory, id ', id);
-  return $http.put('groups/editGroup/' + id).success(function(data) {
+groups.editGroup = function ( id, updatedGroup ) {
+  console.log( 'inside editGroup Factory, id ', updatedGroup.name );
+  console.log( 'inside editGroup Factory, updatedGroup ', updatedGroup);
+  return $http.put('groups/editGroup/' + id, updatedGroup ).success(function(data) {
+    
     console.log('editGroup ', data);
   });
 };
