@@ -5,7 +5,7 @@ myApp.controller( 'GroupLeaderController',  [ 'Upload', 'groupFactory', '$scope'
 
 
   console.log( 'loaded GroupLeaderController');
-  console.log(techData);
+  //console.log(techData);
   var self = this;
   self.readonly = false;
   self.selectedItem = null;
@@ -139,7 +139,7 @@ $scope.upload = function(file){
   console.log( 'in uploader:', file );
   console.log( 'Upload', Upload );
   Upload.upload({
-    url: '/groups/uploads',
+    url: '/groups/createGroup',
     data: {
       file: file,
       name: $scope.groupNameIn,
@@ -169,42 +169,42 @@ $scope.upload = function(file){
 
 }; //end upload function
 
-$scope.postGroup = function(){
-// //forms object with new group info
-  var newGroup = {
-
-    name: $scope.groupNameIn,
-    groupURL: $scope.groupUrlIn,
-    contact: $scope.contactNameIn,
-    contactEmail: $scope.contactEmail,
-    description: $scope.description,
-    location: $scope.location,
-    activities:$scope.activities,
-    technologies: $scope.technologies,
-    tags: self.roTagNames,
-    freqOfMeeting: $scope.freqOfMeeting,
-    sizeOfMeeting: $scope.sizeOfMeeting,
-    affiliations: $scope.affiliations,
-    affiliationURL: $scope.affiliationURL,
-    eventInfo: $scope.eventInfo,
-    sizeOfMembership: $scope.sizeOfMembership
-
-  };
-  console.log( 'group submitted: ', newGroup);
-
+// $scope.postGroup = function(){
+// // //forms object with new group info
+//   var newGroup = {
 //
-  groupFactory.submit( newGroup )
-  .then(function(response){
-    // console.log( 'group submitted: ', newGroup);
-    console.log('response: ', response.data);
-    $scope.status = 'group submitted successfully!';
-    $scope.groups.push(response.data);
-  }, function(error){
-    $scope.status = 'swing and a miss';
+//     name: $scope.groupNameIn,
+//     groupURL: $scope.groupUrlIn,
+//     contact: $scope.contactNameIn,
+//     contactEmail: $scope.contactEmail,
+//     description: $scope.description,
+//     location: $scope.location,
+//     activities:$scope.activities,
+//     technologies: $scope.technologies,
+//     tags: self.roTagNames,
+//     freqOfMeeting: $scope.freqOfMeeting,
+//     sizeOfMeeting: $scope.sizeOfMeeting,
+//     affiliations: $scope.affiliations,
+//     affiliationURL: $scope.affiliationURL,
+//     eventInfo: $scope.eventInfo,
+//     sizeOfMembership: $scope.sizeOfMembership
+//
+//   };
+//   console.log( 'group submitted: ', newGroup);
+//
+// //
+//   groupFactory.submit( newGroup )
+//   .then(function(response){
+//     // console.log( 'group submitted: ', newGroup);
+//     console.log('response: ', response.data);
+//     $scope.status = 'group submitted successfully!';
+//     $scope.groups.push(response.data);
+//   }, function(error){
+//     $scope.status = 'swing and a miss';
+//
+//   });
 
-  });
 
-
-};//end of postGroup
+//};//end of postGroup
 
 }]); //end adminController
