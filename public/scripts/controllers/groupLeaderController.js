@@ -46,27 +46,27 @@ myApp.controller( 'GroupLeaderController', [ 'groupFactory', '$scope', '$http', 
   }
   function loadTechnologies() {
     var veggies = [
-  {
-    'name': 'Broccoli',
-    'type': 'Brassica'
-  },
-  {
-    'name': 'Cabbage',
-    'type': 'Brassica'
-  },
-  {
-    'name': 'Carrot',
-    'type': 'Umbelliferous'
-  },
-  {
-    'name': 'Lettuce',
-    'type': 'Composite'
-  },
-  {
-    'name': 'Spinach',
-    'type': 'Goosefoot'
-  }
-];
+    {
+      'name': 'Broccoli',
+      'type': 'Brassica'
+    },
+    {
+      'name': 'Cabbage',
+      'type': 'Brassica'
+    },
+    {
+      'name': 'Carrot',
+      'type': 'Umbelliferous'
+    },
+    {
+      'name': 'Lettuce',
+      'type': 'Composite'
+    },
+    {
+      'name': 'Spinach',
+      'type': 'Goosefoot'
+    }
+  ];
     return veggies.map(function (veg) {
       veg._lowername = veg.name.toLowerCase();
       veg._lowertype = veg.type.toLowerCase();

@@ -46,7 +46,7 @@ li{
 }
 
 #main-search {
-  width: 75%;
+  width: 25%;
   margin: auto;
 }
 
@@ -71,4 +71,8 @@ md-checkbox {
 .group-link:focus {
   text-decoration: none;
   color: black;
+}
+
+.sub {
+padding-left: 15px;
 }
