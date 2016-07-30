@@ -131,8 +131,7 @@ $scope.submit = function(){
     $scope.upload($scope.file);
     console.log('in submit function');
     // $scope.postGroup();
-  }
-  // else{$scope.postGroup();}
+  }else{$scope.postGroup();}
 }; //end submit function
 
 $scope.upload = function(file){
@@ -169,42 +168,43 @@ $scope.upload = function(file){
 
 }; //end upload function
 
-// $scope.postGroup = function(){
-// // //forms object with new group info
-//   var newGroup = {
+$scope.postGroup = function(){
+// //forms object with new group info
+console.log('in postgroup');
+  var newGroup = {
+
+    name: $scope.groupNameIn,
+    groupURL: $scope.groupUrlIn,
+    contact: $scope.contactNameIn,
+    contactEmail: $scope.contactEmail,
+    description: $scope.description,
+    location: $scope.location,
+    activities:$scope.activities,
+    technologies: $scope.technologies,
+    tags: self.roTagNames,
+    freqOfMeeting: $scope.freqOfMeeting,
+    sizeOfMeeting: $scope.sizeOfMeeting,
+    affiliations: $scope.affiliations,
+    affiliationURL: $scope.affiliationURL,
+    eventInfo: $scope.eventInfo,
+    sizeOfMembership: $scope.sizeOfMembership
+
+  };
+  console.log( 'group submitted: ', newGroup);
+
 //
-//     name: $scope.groupNameIn,
-//     groupURL: $scope.groupUrlIn,
-//     contact: $scope.contactNameIn,
-//     contactEmail: $scope.contactEmail,
-//     description: $scope.description,
-//     location: $scope.location,
-//     activities:$scope.activities,
-//     technologies: $scope.technologies,
-//     tags: self.roTagNames,
-//     freqOfMeeting: $scope.freqOfMeeting,
-//     sizeOfMeeting: $scope.sizeOfMeeting,
-//     affiliations: $scope.affiliations,
-//     affiliationURL: $scope.affiliationURL,
-//     eventInfo: $scope.eventInfo,
-//     sizeOfMembership: $scope.sizeOfMembership
-//
-//   };
-//   console.log( 'group submitted: ', newGroup);
-//
-// //
-//   groupFactory.submit( newGroup )
-//   .then(function(response){
-//     // console.log( 'group submitted: ', newGroup);
-//     console.log('response: ', response.data);
-//     $scope.status = 'group submitted successfully!';
-//     $scope.groups.push(response.data);
-//   }, function(error){
-//     $scope.status = 'swing and a miss';
-//
-//   });
+  groupFactory.submit( newGroup )
+  .then(function(response){
+    // console.log( 'group submitted: ', newGroup);
+    console.log('response: ', response.data);
+    $scope.status = 'group submitted successfully!';
+    $scope.groups.push(response.data);
+  }, function(error){
+    $scope.status = 'swing and a miss';
+
+  });
 
 
-//};//end of postGroup
+};//end of postGroup
 
 }]); //end adminController

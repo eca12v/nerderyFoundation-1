@@ -41,7 +41,7 @@ router.put('/editGroup/:id', function(req, res) {
       group.sizeOfMembership = req.body.sizeOfMembership;
       group.affiliations = req.body.affiliations;
       group.affiliationURL = req.body.affiliationURL;
-      
+
       group.save(function(err) {
         console.log( 'after group saved in groups.js');
         if(err) {
@@ -128,7 +128,7 @@ var upload = multer({
 router.post('/createGroup', upload.single('file'), function (req, res) {
 console.log('inside groups.js add group ');
   console.log(req.body);
-  console.log(req.file.location);
+  console.log(req.file);
 
   var newGroup = new Group({
     name: req.body.name,
@@ -145,10 +145,14 @@ console.log('inside groups.js add group ');
     affiliations: req.body.affiliations,
     affiliationURL: req.body.affiliationURL,
     eventInfo: req.body.eventInfo,
-    sizeOfMembership: req.body.sizeOfMembership,
-    photoURL: req.file.location
+    sizeOfMembership: req.body.sizeOfMembership
+
 
   });
+
+  if (req.file ){
+    newGroup.photoURL = req.file.location;
+  }
 
 console.log( 'newGroup: ', newGroup );
   newGroup.save(function(err) {
