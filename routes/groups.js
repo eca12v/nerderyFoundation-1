@@ -35,6 +35,7 @@ router.put('/editGroup/:id', function(req, res) {
       group.location = req.body.location;
       group.activities = req.body.activities;
       group.technologies = req.body.technologies;
+      group.coreTechnologies = req.body.coreTechnologies;
       group.tags = req.body.tags;
       group.freqOfMeeting = req.body.freqOfMeeting;
       group.sizeOfMeeting = req.body.sizeOfMeeting;
@@ -139,6 +140,7 @@ console.log('inside groups.js add group ');
     location: req.body.location,
     activities: req.body.activities,
     technologies: req.body.technologies,
+    coreTechnologies: req.body.coreTechnologies,
     tags: req.body.tags,
     freqOfMeeting: req.body.freqOfMeeting,
     sizeOfMeeting: req.body.sizeOfMeeting,
