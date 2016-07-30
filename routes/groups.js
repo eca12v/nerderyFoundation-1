@@ -5,9 +5,59 @@ var Group = require('../models/Groups');
 
 var router = express.Router();
 
+// require to upload images
+var multer = require('multer');
+var fs = require('fs');
+var multerS3 = require('multer-s3');
+var aws = require('aws-sdk');
+var s3 = new aws.S3();
+
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 
+
+router.put('/editGroup/:id', function(req, res) {
+  console.log('inside router edit, id: ', req.params.id );
+  Group.findOne({'_id': req.params.id}, function(err, group) {
+    console.log( 'after Groups.findOne, group: ', group );
+    if(err) {
+      console.log('/editGroup error: ', err);
+    } else {
+      console.log('req.body:', req.body);
+      // group.update({'_id': req.body.id}, function(err){
+      //   if(err){
+      //     console.log(err);
+      //   }else{
+      group.name = req.body.name;
+      group.contactEmail = req.body.contactEmail;
+      group.groupContact = req.body.contact;
+      group.description = req.body.description;
+      group.location = req.body.location;
+      group.activities = req.body.activities;
+      group.technologies = req.body.technologies;
+      group.tags = req.body.tags;
+      group.freqOfMeeting = req.body.freqOfMeeting;
+      group.sizeOfMeeting = req.body.sizeOfMeeting;
+      group.sizeOfMembership = req.body.sizeOfMembership;
+      group.affiliations = req.body.affiliations;
+      group.affiliationURL = req.body.affiliationURL;
+      
+      group.save(function(err) {
+        console.log( 'after group saved in groups.js');
+        if(err) {
+          console.log(err);
+          res.sendStatus(500);
+        } else {
+          console.log(group);
+          res.json(group);
+        }
+      });
+    // }
+  // }
+  // );
+  }
+});
+});//end of edit
 router.get('/getApprovedGroups', function(req, res) {
   Group.find({'approved': true}).sort({created: 'desc'}).exec(function(err, groups) {
     if(err) {
@@ -63,9 +113,26 @@ router.put('/approveGroup/:id', function(req, res) {
   });
 });
 
-router.post('/createGroup', function (req, res) {
+// for uploading photos
+var upload = multer({
+  storage: multerS3({
+    s3: s3,
+    bucket: 'nerdery-foundation-bucket',
+    acl: 'public-read',
+    metadata: function (req, file, cb) {
+      cb(null, {fieldName: file.fieldname});
+    },
+    // key: function (req, file, cb) {
+    //   // file name generation
+    //   cb(null, Date.now().toString());
+    // }
+  })
+}); // end multer upload
+
+router.post('/createGroup', upload.single('file'), function (req, res) {
 console.log('inside groups.js add group ');
   console.log(req.body);
+  console.log(req.file.location);
 
   var newGroup = new Group({
     name: req.body.name,
@@ -82,7 +149,8 @@ console.log('inside groups.js add group ');
     affiliations: req.body.affiliations,
     affiliationURL: req.body.affiliationURL,
     eventInfo: req.body.eventInfo,
-    sizeOfMembership: req.body.sizeOfMembership
+    sizeOfMembership: req.body.sizeOfMembership,
+    photoURL: req.file.location
 
   });
 
@@ -114,5 +182,14 @@ router.delete('/deleteGroup/:groupId', function(req, res){
     }
   });
 });
+
+
+
+// router.post('/uploads', upload.single('file'), function(req, res){
+//   console.log('file: ', req.file);
+//   console.log('location: ', req.file.location);
+//   console.log('name: ', req.body.groupName);
+// res.send(req.file);
+// });
 
 module.exports = router;
