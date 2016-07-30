@@ -97,14 +97,14 @@ $scope.uploads = [];
 $scope.submit = function(){
   console.log( 'submit clicked' );
 
-  var techList = [];
-  var coreTech = [];
+  $scope.techListIn = [];
+  $scope.coreTech = [];
   for (var each in self.selectedTech) {
-    techList.push(self.selectedTech[each].Technologies);
-    coreTech.push(self.selectedTech[each].coreTechnologies);
+    $scope.techListIn.push(self.selectedTech[each].Technologies);
+    $scope.coreTech.push(self.selectedTech[each].coreTechnologies);
   }
 
-  console.log(coreTech);
+  console.log($scope.coreTech);
   console.log('file: ', $scope.file);
   console.log('group name: ', $scope.groupNameIn);
   console.log( 'Upload', Upload );
@@ -129,8 +129,8 @@ $scope.upload = function(file){
       description: $scope.description,
       location: $scope.location,
       activities:$scope.activities,
-      technologies: techList,
-      coreTechnologies: coreTech,
+      technologies: $scope.techListIn,
+      coreTechnologies: $scope.coreTech,
       tags: $scope.tags,
       freqOfMeeting: $scope.freqOfMeeting,
       sizeOfMeeting: $scope.sizeOfMeeting,
@@ -163,7 +163,8 @@ console.log('in postgroup');
     description: $scope.description,
     location: $scope.location,
     activities:$scope.activities,
-    technologies: $scope.technologies,
+    technologies: $scope.techListIn,
+    coreTechnologies: $scope.coreTech,
     tags: self.roTagNames,
     freqOfMeeting: $scope.freqOfMeeting,
     sizeOfMeeting: $scope.sizeOfMeeting,
