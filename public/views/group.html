@@ -1,12 +1,9 @@
 
-
-
 <div class="group-container">
   <header class="text-center" name="home">
     <div class="intro-text">
       <img src="" class="header-image" />
     <h1><span class="color">{{group.name}}</span></h1>
-
     <div class="clearfix"></div>
     <!-- <a href="#groupURL" class="btn btn-default btn-lg page-scroll">{{group.groupURL}}</a> </div> -->
 </div>
@@ -31,33 +28,16 @@
         <p>{{group.name}}</p>
         <a href="{{group.groupURL}}"></a>
         <p>{{group.description}}</p>
-
-        <p>
-
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh ante facilisis bibendum.</p>
-
-          <p>Group Contact: {{group.groupContact}}</p>
-          <p>Email: {{group.contactEmail}}</p>
-          <p>Affiliations: {{group.affiliations}}</p>
-          <p>Affiliation : {{group.affiliationURL}}</p>
-
-
-        <p>Technologies:{{group.technologies}}</p>
-        <p>Affiliations: {{group.affiliations}}</p>
-        <a href="{{group.affiliationURL}}"></a>
-
         <p>Group Contact: {{group.groupContact}}</p>
         <p>Email: {{group.contactEmail}}</p>
-
+        <p>Affiliations: {{group.affiliations}}</p>
+        <p>Affiliation : {{group.affiliationURL}}</p>
       </div>
 
       <div class="col-md-4">
         <h4>What We Do</h4>
         <p>Activities: {{group.activities}}</p>
         <p>Technologies: {{group.technologies}}</p>
-
-
-
       </div>
 
       <div class="col-md-4">
@@ -66,19 +46,17 @@
         <p>Meeting Location: {{group.location}}</p>
         <p>Meeting Frequency: {{group.freqOfMeeting}}</p>
         <p>Typical Meeting Size: {{group.sizeOfMeeting}}</p>
+      </div>
     </div>
   </div>
-</div>
-
-
-
-
-<img src="image" class="header-image" />
 </div>
 </div>
 
 <!-- {{group}} -->
-<h1>start editable</h1>
+
+<p>Is this your group? Make changes here:</p>
+<button type="button" name="button" ng-click="">Update</button>
+
 <div class="row">
 <div class="col-sm-8 col-sm-offset-2 well">
 <md-input-container class="md-block" flex-gt-sm input >
