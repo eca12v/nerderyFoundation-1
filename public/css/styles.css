@@ -1,6 +1,7 @@
 body {
   background-color: #664659;/*plum*/
   color: #fff; /*white*/
+  font:Source Sans Pro, sans-serif;
   }
   .jumbotron {
       display: block;
