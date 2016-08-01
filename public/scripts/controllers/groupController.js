@@ -6,13 +6,30 @@ myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScop
 	});
 
   //  console.log( $scope.group.name );
-  $scope.membershipSizes = [
+$scope.membershipSizes = [
+        "0-25",
+        "25-50",
+        "50-100",
+        "100-500"
+    ];
+$scope.sizeOfMembership = [
+        "0-25",
+        "25-50",
+        "50-100",
+        "100-500"
+  ];
+$scope.freqOfMeeting = [
+        "0-25",
+        "25-50",
+        "50-100",
+        "100-500"
+  ];
+  $scope.sizeOfMeeting = [
           "0-25",
           "25-50",
           "50-100",
           "100-500"
-      ];
-
+    ];
   $scope.banana = function(index){
     var groupToDelete = $scope.groups[index];
     console.log('groupToDelete: ', groupToDelete);
@@ -30,7 +47,17 @@ myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScop
   //   groupFactory.approveGroup(id);
   //   $scope.groups.splice(index, 1);
   // };
+  var self = this;
+  self.readonly = false;
 
+  function transformChip(chip) {
+    // If it is an object, it's already a known chip
+    if (angular.isObject(chip)) {
+      return chip;
+    }
+    // Otherwise, create a new one
+    return { name: chip, type: 'new' };
+  }
 
   $scope.edit = function(id, index){
     console.log('edit clicked, id: ', id);
@@ -59,6 +86,7 @@ myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScop
     $scope.group = response.data;
     console.log( 'in edit groups in group controller, $scope.data: ', $scope.group );
   });
+
 };
 
 $scope.openNavRight = function(){

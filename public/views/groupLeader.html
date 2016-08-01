@@ -2,8 +2,6 @@
   <div class="col-sm-8 col-sm-offset-2 well">
     <md-content>
       <form name="form">
-
-
       <md-input-container class="md-block" flex-gt-sm>
         <label>Group Name</label>
         <input ng-model="groupNameIn">
@@ -18,10 +16,6 @@
         <label>Contact Email</label>
         <input ng-model="contactEmail" type="email">
       </md-input-container>
-
-
-
-
           <md ng-model="description" md-placeholder="Description">
           </md>
 
@@ -50,17 +44,17 @@
             md-items="item in ctrl.querySearch(ctrl.searchText)"
             md-item-text="item.name"
             placeholder="Add A Technology Tag">
-            <span md-highlight-text="ctrl.searchText">{{item.name}} :: {{item.type}}</span>
+            <span md-highlight-text="ctrl.searchText">{{item.Technologies}} {{item.Skills}}</span>
           </md-autocomplete>
           <md-chip-template>
             <span>
-              <strong>{{$chip.name}}</strong>
-              <em>({{$chip.type}})</em>
+              <strong>{{$chip.Technologies}}</strong>
+              <!-- <em>({{$chip.type}})</em> -->
             </span>
           </md-chip-template>
         </md-chips>
-        <!-- <p>{{ctrl.roTagNames}}</p>
-        <p>{{ctrl.selectedTech}}</p> -->
+        <p>{{ctrl.roTagNames}}</p>
+        <p>{{ctrl.selectedTech}}</p>
 
 
 
@@ -89,12 +83,12 @@
           </md-select>
           </md-input-container>
 
-            <md-input-container flex-gt-sm>
-              <label>sizeOfMeeting</label>
-              <md-select ng-model="sizeOfMeeting">
-              <md-option ng-repeat="option in meetingSizes" value="{{option}}">{{option}}</md-option>
-              </md-select>
-            </md-input-container>
+          <md-input-container flex-gt-sm>
+            <label>sizeOfMeeting</label>
+            <md-select ng-model="sizeOfMeeting">
+            <md-option ng-repeat="option in meetingSizes" value="{{option}}">{{option}}</md-option>
+            </md-select>
+          </md-input-container>
 
             <md-input-container flex-gt-sm>
               <div class="button" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"

@@ -1,30 +1,31 @@
 <div id="page-container" class="container-fluid">
 
   <div class="jumbotron">
-    <h1>Nerdery Foundation Developer Network</h1>
-    <p>Connecting new and relocated developers to the local tech user groups.</p>
+    <h3>The Nerdery Foundation</h3>
+      <h2>We connect technologists with the communities that need their talents.</h2>
   </div>
+
   <h3>{{techStr}}</h3>
-  <md-content class="md-no-momentum">
-  <md-input-container id="main-search" class="md-icon-float">
-    <!-- Use floating label instead of placeholder -->
-    <label>Search</label>
-    <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"><i class="material-icons">search</i></md-icon>
-    <input ng-model="filterStr" type="text">
-  </md-input-container>
+    <md-content class="md-no-momentum">
+      <md-input-container id="main-search" class="md-icon-float">
+        <!-- Use floating label instead of placeholder -->
+        <h4><label>Search</label></h4>
+          <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"><i class="material-icons">search</i></md-icon>
+        <input ng-model="filterStr" type="text">
+      </md-input-container>
 
   <md-input-container id="tech-search" class="md-icon-float">
-    <select class="form-control select-team" ng-model="tObj" data-ng-change="changeOverallTech(tObj)">
+    <select class="form-control select-team" ng-model="tObj" data-ng-change="changeOverallTech(tObj)" >
       <label>Technology</label>
-                    <option value=""></option>
-                    <option ng-repeat="t in tech.Technologies track by $index" value="{{t.Technology}}" >{{t.Technology}}</option>
-                  </select>
+        <option value="">Technologies</option>
+          <option ng-repeat="t in tech.Technologies track by $index" placeholder="Technologies" value="{{t.Technology}}" >{{t.Technology}}</option>
+    </select>
   </md-input-container>
 
   <md-input-container id="location-search" class="md-icon-float">
     <select class="form-control" ng-model="locationStr">
       <label>Location: </label>
-                    <option value=""></option>
+                    <option value="">Location</option>
                     <option ng-repeat="l in location track by $index" value="{{l}}" >{{l}}</option>
                   </select>
   </md-input-container>
@@ -32,7 +33,7 @@
   <md-input-container id="size-search" class="md-icon-float">
     <select class="form-control" ng-model="sizeStr">
       <label>Typical Meeting Size: </label>
-                    <option value=""></option>
+                    <option value="">Meeting Size</option>
                     <option ng-repeat="s in typicalSize track by $index" value="{{s}}" >{{s}}</option>
                   </select>
   </md-input-container>
@@ -55,6 +56,7 @@
                 value="{{sub}}" data-ng-click="changeSubTechStr(sub)" aria-label="Checkbox 1">
                   <strong>{{sub}}</strong>
                 </md-checkbox>
+
               </div>
             </div>
           </div>
@@ -89,16 +91,17 @@
                   <!-- <div class="md-media-sm card-media"> -->
 
               </md-card-title>
-              <!-- <div class="imageDiv"><img src="{{group.photoURL}}" class="md-card-image"/></div> -->
-              <md-card-footer>
-                <!-- {{group}} -->
-                <p>Location: {{group.location}}</p>
-                <p>Meeting Frequency: {{group.freqOfMeeting}}</p>
-              </md-card-footer>
-              <!-- <md-card-actions layout="row" layout-align="end center">
-                <md-button>Action 1</md-button>
-                <md-button>Action 2</md-button>
-              </md-card-actions> -->
+
+              <md-card-content>
+
+                <p>{{group.location}}</p>
+                <p>{{group.freqOfMeeting}}</p>
+              </md-card-content>
+              <md-card-actions layout="row" layout-align="end center">
+                <!-- <md-button>Action 1</md-button>
+                <md-button>Action 2</md-button> -->
+              </md-card-actions>
+
             </md-card>
           </a>
 
@@ -106,6 +109,7 @@
         <h3 ng-show="(groups| multiWordFilter: techStr | filter: locationStr | filter: sizeStr | filter: filterStr).length == 0">Unfortunately, no local tech user groups fit your current criteria!</h3>
       </md-content>
     </div>
+
   </div>
 
   <!-- Pat here are some loops to get started with -->

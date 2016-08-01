@@ -1,0 +1,1422 @@
+[
+  {
+    "Technologies": ".NET",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "App Development",
+    "coreTechnologies": ".NET"
+  },
+  {
+    "Technologies": "Windows Communication Foundation",
+    "coreTechnologies": ".NET App Development"
+  },
+  {
+    "Technologies": "Windows Forms",
+    "coreTechnologies": ".NET App Development"
+  },
+  {
+    "Technologies": "Windows Phone",
+    "coreTechnologies": ".NET App Development"
+  },
+  {
+    "Technologies": "Windows Presentation Foundation",
+    "coreTechnologies": ".NET App Development"
+  },
+  {
+    "Technologies": "WinRT/Windows 8",
+    "coreTechnologies": ".NET App Development"
+  },
+  {
+    "Technologies": "CMS",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Ektron",
+    "coreTechnologies": "CMS"
+  },
+  {
+    "Technologies": "Kentico",
+    "coreTechnologies": "CMS"
+  },
+  {
+    "Technologies": "Sharepoint",
+    "coreTechnologies": "CMS"
+  },
+  {
+    "Technologies": "Sitecore",
+    "coreTechnologies": "CMS"
+  },
+  {
+    "Technologies": "Sitefinity",
+    "coreTechnologies": "CMS"
+  },
+  {
+    "Technologies": "Umbraco",
+    "coreTechnologies": "CMS"
+  },
+  {
+    "Technologies": "Frameworks",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "ASP.Net",
+    "coreTechnologies": "Frameworks"
+  },
+  {
+    "Technologies": "ASP.Net MVC",
+    "coreTechnologies": "Frameworks ASP.Net"
+  },
+  {
+    "Technologies": "ASP.Net Web API",
+    "coreTechnologies": "Frameworks ASP.Net"
+  },
+  {
+    "Technologies": "ASP.Net WebForms",
+    "coreTechnologies": "Frameworks ASP.Net"
+  },
+  {
+    "Technologies": "SignalR",
+    "coreTechnologies": "Frameworks ASP.Net"
+  },
+  {
+    "Technologies": "Compact Framework",
+    "coreTechnologies": "Frameworks"
+  },
+  {
+    "Technologies": "Silverlight",
+    "coreTechnologies": "Frameworks"
+  },
+  {
+    "Technologies": "Languages",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "C#",
+    "coreTechnologies": "Languages"
+  },
+  {
+    "Technologies": "F#",
+    "coreTechnologies": "Languages"
+  },
+  {
+    "Technologies": "VB.NET",
+    "coreTechnologies": "Languages"
+  },
+  {
+    "Technologies": "Client-Side",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Accessibility",
+    "coreTechnologies": "Client-Side"
+  },
+  {
+    "Technologies": "ADA",
+    "coreTechnologies": "Client-Side Accessibility"
+  },
+  {
+    "Technologies": "Section 508",
+    "coreTechnologies": "Client-Side Accessibility"
+  },
+  {
+    "Technologies": "WCAG",
+    "coreTechnologies": "Client-Side Accessibility"
+  },
+  {
+    "Technologies": "Analytics",
+    "coreTechnologies": "Client-Side"
+  },
+  {
+    "Technologies": "Fireclick",
+    "coreTechnologies": "Client-Side Analytics"
+  },
+  {
+    "Technologies": "Google Analytics",
+    "coreTechnologies": "Client-Side Analytics"
+  },
+  {
+    "Technologies": "Omniture",
+    "coreTechnologies": "Client-Side Analytics"
+  },
+  {
+    "Technologies": "WebTrends",
+    "coreTechnologies": "Client-Side Analytics"
+  },
+  {
+    "Technologies": "CSS",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Frameworks",
+    "coreTechnologies": "CSS"
+  },
+  {
+    "Technologies": "Twitter Bootstrap",
+    "coreTechnologies": "CSS Frameworks"
+  },
+  {
+    "Technologies": "Zurb Foundation",
+    "coreTechnologies": "CSS Frameworks"
+  },
+  {
+    "Technologies": "Parallax",
+    "coreTechnologies": "CSS"
+  },
+  {
+    "Technologies": "Preprocessors",
+    "coreTechnologies": "CSS"
+  },
+  {
+    "Technologies": "LESS",
+    "coreTechnologies": "CSS Preprocessors"
+  },
+  {
+    "Technologies": "PostCSS",
+    "coreTechnologies": "CSS Preprocessors"
+  },
+  {
+    "Technologies": "SASS",
+    "coreTechnologies": "CSS Preprocessors"
+  },
+  {
+    "Technologies": "Responsive Web Design",
+    "coreTechnologies": "CSS"
+  },
+  {
+    "Technologies": "Responsive images",
+    "coreTechnologies": "CSS Responsive Web Design"
+  },
+  {
+    "Technologies": "Graphics",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "2D",
+    "coreTechnologies": "Graphics"
+  },
+  {
+    "Technologies": "Canvas",
+    "coreTechnologies": "Graphics 2D"
+  },
+  {
+    "Technologies": "D3",
+    "coreTechnologies": "Graphics 2D"
+  },
+  {
+    "Technologies": "SVG",
+    "coreTechnologies": "Graphics 2D"
+  },
+  {
+    "Technologies": "3D",
+    "coreTechnologies": "Graphics"
+  },
+  {
+    "Technologies": "Three.js",
+    "coreTechnologies": "Graphics 3D"
+  },
+  {
+    "Technologies": "WebGL",
+    "coreTechnologies": "Graphics 3D"
+  },
+  {
+    "Technologies": "HTML",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Microdata",
+    "coreTechnologies": "HTML"
+  },
+  {
+    "Technologies": "RDFa",
+    "coreTechnologies": "HTML Microdata"
+  },
+  {
+    "Technologies": "schema.org",
+    "coreTechnologies": "HTML Microdata"
+  },
+  {
+    "Technologies": "Microformats",
+    "coreTechnologies": "HTML"
+  },
+  {
+    "Technologies": "microformats2",
+    "coreTechnologies": "HTML Microformats"
+  },
+  {
+    "Technologies": "Integration",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": ".NET",
+    "coreTechnologies": "Integration"
+  },
+  {
+    "Technologies": "Razor",
+    "coreTechnologies": "Integration .NET"
+  },
+  {
+    "Technologies": "WebForms",
+    "coreTechnologies": "Integration .NET"
+  },
+  {
+    "Technologies": "JVM",
+    "coreTechnologies": "Integration"
+  },
+  {
+    "Technologies": "FreeMarker",
+    "coreTechnologies": "Integration JVM"
+  },
+  {
+    "Technologies": "JSP",
+    "coreTechnologies": "Integration JVM"
+  },
+  {
+    "Technologies": "Thymeleaf",
+    "coreTechnologies": "Integration JVM"
+  },
+  {
+    "Technologies": "Twirl",
+    "coreTechnologies": "Integration JVM"
+  },
+  {
+    "Technologies": "Velocity",
+    "coreTechnologies": "Integration JVM"
+  },
+  {
+    "Technologies": "PHP",
+    "coreTechnologies": "Integration"
+  },
+  {
+    "Technologies": "Twig",
+    "coreTechnologies": "Integration PHP"
+  },
+  {
+    "Technologies": "Ruby",
+    "coreTechnologies": "Integration"
+  },
+  {
+    "Technologies": "ERB",
+    "coreTechnologies": "Integration Ruby"
+  },
+  {
+    "Technologies": "JavaScript",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "APIs",
+    "coreTechnologies": "JavaScript"
+  },
+  {
+    "Technologies": "DOM",
+    "coreTechnologies": "JavaScript APIs"
+  },
+  {
+    "Technologies": "HTML5 Audio",
+    "coreTechnologies": "JavaScript APIs"
+  },
+  {
+    "Technologies": "HTML5 Video",
+    "coreTechnologies": "JavaScript APIs"
+  },
+  {
+    "Technologies": "Web Components",
+    "coreTechnologies": "JavaScript APIs"
+  },
+  {
+    "Technologies": "WebSockets",
+    "coreTechnologies": "JavaScript APIs"
+  },
+  {
+    "Technologies": "Frameworks",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Alt",
+    "coreTechnologies": "Frameworks"
+  },
+  {
+    "Technologies": "Angular 1.x",
+    "coreTechnologies": "Frameworks"
+  },
+  {
+    "Technologies": "Angular 2.x",
+    "coreTechnologies": "Frameworks"
+  },
+  {
+    "Technologies": "Aurelia",
+    "coreTechnologies": "Frameworks"
+  },
+  {
+    "Technologies": "Backbone",
+    "coreTechnologies": "Frameworks"
+  },
+  {
+    "Technologies": "Dojo",
+    "coreTechnologies": "Frameworks"
+  },
+  {
+    "Technologies": "Ember",
+    "coreTechnologies": "Frameworks"
+  },
+  {
+    "Technologies": "jQuery Mobile",
+    "coreTechnologies": "Frameworks"
+  },
+  {
+    "Technologies": "Knockout",
+    "coreTechnologies": "Frameworks"
+  },
+  {
+    "Technologies": "Meteor",
+    "coreTechnologies": "Frameworks"
+  },
+  {
+    "Technologies": "Polymer",
+    "coreTechnologies": "Frameworks"
+  },
+  {
+    "Technologies": "Ractive",
+    "coreTechnologies": "Frameworks"
+  },
+  {
+    "Technologies": "React",
+    "coreTechnologies": "Frameworks"
+  },
+  {
+    "Technologies": "Redux",
+    "coreTechnologies": "Frameworks"
+  },
+  {
+    "Technologies": "Riot",
+    "coreTechnologies": "Frameworks"
+  },
+  {
+    "Technologies": "Vue",
+    "coreTechnologies": "Frameworks"
+  },
+  {
+    "Technologies": "Libraries",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Bacon",
+    "coreTechnologies": "Libraries"
+  },
+  {
+    "Technologies": "Browserify",
+    "coreTechnologies": "Libraries"
+  },
+  {
+    "Technologies": "Google Maps",
+    "coreTechnologies": "Libraries"
+  },
+  {
+    "Technologies": "immutable.js",
+    "coreTechnologies": "Libraries"
+  },
+  {
+    "Technologies": "jQuery",
+    "coreTechnologies": "Libraries"
+  },
+  {
+    "Technologies": "jQuery UI",
+    "coreTechnologies": "Libraries"
+  },
+  {
+    "Technologies": "JSPM",
+    "coreTechnologies": "Libraries"
+  },
+  {
+    "Technologies": "Leaflet",
+    "coreTechnologies": "Libraries"
+  },
+  {
+    "Technologies": "RequireJS",
+    "coreTechnologies": "Libraries"
+  },
+  {
+    "Technologies": "rx.js",
+    "coreTechnologies": "Libraries"
+  },
+  {
+    "Technologies": "Webpack",
+    "coreTechnologies": "Libraries"
+  },
+  {
+    "Technologies": "Node",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Express",
+    "coreTechnologies": "Node"
+  },
+  {
+    "Technologies": "Hapi",
+    "coreTechnologies": "Node"
+  },
+  {
+    "Technologies": "Restify",
+    "coreTechnologies": "Node"
+  },
+  {
+    "Technologies": "Preprocessors",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Babel",
+    "coreTechnologies": "Preprocessors"
+  },
+  {
+    "Technologies": "CoffeeScript",
+    "coreTechnologies": "Preprocessors"
+  },
+  {
+    "Technologies": "TypeScript",
+    "coreTechnologies": "Preprocessors"
+  },
+  {
+    "Technologies": "Task Runners",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Grunt",
+    "coreTechnologies": "Task Runners"
+  },
+  {
+    "Technologies": "Gulp",
+    "coreTechnologies": "Task Runners"
+  },
+  {
+    "Technologies": "Templates",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Dust",
+    "coreTechnologies": "Templates"
+  },
+  {
+    "Technologies": "Handlebars",
+    "coreTechnologies": "Templates"
+  },
+  {
+    "Technologies": "Mustache",
+    "coreTechnologies": "Templates"
+  },
+  {
+    "Technologies": "Nunjucks",
+    "coreTechnologies": "Templates"
+  },
+  {
+    "Technologies": "Unit Testing",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Jasmine",
+    "coreTechnologies": "Unit Testing"
+  },
+  {
+    "Technologies": "Karma",
+    "coreTechnologies": "Unit Testing"
+  },
+  {
+    "Technologies": "Mocha",
+    "coreTechnologies": "Unit Testing"
+  },
+  {
+    "Technologies": "Testem",
+    "coreTechnologies": "Unit Testing"
+  },
+  {
+    "Technologies": "SEO",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Meta data",
+    "coreTechnologies": "SEO"
+  },
+  {
+    "Technologies": "Data Security",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Social Media",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Business Architecture",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Business Intelligence",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Technical Architecture",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Cross-Discipline",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Cloud Hosting",
+    "coreTechnologies": "Cross-Discipline"
+  },
+  {
+    "Technologies": "Amazon Web Services",
+    "coreTechnologies": "Cross-Discipline Cloud Hosting"
+  },
+  {
+    "Technologies": "Azure",
+    "coreTechnologies": "Cross-Discipline Cloud Hosting"
+  },
+  {
+    "Technologies": "Google Cloud Platform",
+    "coreTechnologies": "Cross-Discipline Cloud Hosting"
+  },
+  {
+    "Technologies": "Heroku",
+    "coreTechnologies": "Cross-Discipline Cloud Hosting"
+  },
+  {
+    "Technologies": "Rackspace",
+    "coreTechnologies": "Cross-Discipline Cloud Hosting"
+  },
+  {
+    "Technologies": "DevOps",
+    "coreTechnologies": "Cross-Discipline"
+  },
+  {
+    "Technologies": "Appveyor",
+    "coreTechnologies": "Cross-Discipline DevOps"
+  },
+  {
+    "Technologies": "Bamboo",
+    "coreTechnologies": "Cross-Discipline DevOps"
+  },
+  {
+    "Technologies": "Capistrano",
+    "coreTechnologies": "Cross-Discipline DevOps"
+  },
+  {
+    "Technologies": "Circle CI",
+    "coreTechnologies": "Cross-Discipline DevOps"
+  },
+  {
+    "Technologies": "DeployBot",
+    "coreTechnologies": "Cross-Discipline DevOps"
+  },
+  {
+    "Technologies": "Jenkins",
+    "coreTechnologies": "Cross-Discipline DevOps"
+  },
+  {
+    "Technologies": "Virtualization",
+    "coreTechnologies": "Cross-Discipline Virtualization"
+  },
+  {
+    "Technologies": "Ansible",
+    "coreTechnologies": "Cross-Discipline Virtualization"
+  },
+  {
+    "Technologies": "Chef",
+    "coreTechnologies": "Cross-Discipline Virtualization"
+  },
+  {
+    "Technologies": "Docker",
+    "coreTechnologies": "Cross-Discipline Virtualization"
+  },
+  {
+    "Technologies": "Puppet",
+    "coreTechnologies": "Cross-Discipline Virtualization"
+  },
+  {
+    "Technologies": "Vagrant",
+    "coreTechnologies": "Cross-Discipline Virtualization"
+  },
+  {
+    "Technologies": "Payment Processing",
+    "coreTechnologies": "Cross-Discipline"
+  },
+  {
+    "Technologies": "Authorize.net",
+    "coreTechnologies": "Cross-Discipline Payment Processing"
+  },
+  {
+    "Technologies": "PayPal",
+    "coreTechnologies": "Cross-Discipline Payment Processing"
+  },
+  {
+    "Technologies": "Version Control Systems",
+    "coreTechnologies": "Cross-Discipline"
+  },
+  {
+    "Technologies": "CVS",
+    "coreTechnologies": "Cross-Discipline Version Control Systems"
+  },
+  {
+    "Technologies": "Git",
+    "coreTechnologies": "Cross-Discipline Version Control Systems"
+  },
+  {
+    "Technologies": "Mercurial",
+    "coreTechnologies": "Cross-Discipline Version Control Systems"
+  },
+  {
+    "Technologies": "Subversion",
+    "coreTechnologies": "Cross-Discipline Version Control Systems"
+  },
+  {
+    "Technologies": "Team Foundation Server",
+    "coreTechnologies": "Cross-Discipline Version Control Systems"
+  },
+  {
+    "Technologies": "Web Servers",
+    "coreTechnologies": "Cross-Discipline"
+  },
+  {
+    "Technologies": "Apache",
+    "coreTechnologies": "Cross-Discipline Web Servers"
+  },
+  {
+    "Technologies": "IIS",
+    "coreTechnologies": "Cross-Discipline Web Servers"
+  },
+  {
+    "Technologies": "JBoss / WildFly",
+    "coreTechnologies": "Cross-Discipline Web Servers"
+  },
+  {
+    "Technologies": "Nginx",
+    "coreTechnologies": "Cross-Discipline Web Servers"
+  },
+  {
+    "Technologies": "Tomcat",
+    "coreTechnologies": "Cross-Discipline Web Servers"
+  },
+  {
+    "Technologies": "WebLogic",
+    "coreTechnologies": "Cross-Discipline Web Servers"
+  },
+  {
+    "Technologies": "WebSphere",
+    "coreTechnologies": "Cross-Discipline Web Servers"
+  },
+  {
+    "Technologies": "Data Science",
+    "coreTechnologies": "Cross-Discipline"
+  },
+  {
+    "Technologies": "Hadoop",
+    "coreTechnologies": "Cross-Discipline Data Science"
+  },
+  {
+    "Technologies": "R",
+    "coreTechnologies": "Cross-Discipline Data Science"
+  },
+  {
+    "Technologies": "Spark",
+    "coreTechnologies": "Cross-Discipline Data Science"
+  },
+  {
+    "Technologies": "Databases",
+    "coreTechnologies": "Cross-Discipline"
+  },
+  {
+    "Technologies": "NoSQL",
+    "coreTechnologies": "Cross-Discipline Databases"
+  },
+  {
+    "Technologies": "Cassandra",
+    "coreTechnologies": "Cross-Discipline Databases"
+  },
+  {
+    "Technologies": "Elasticsearch",
+    "coreTechnologies": "Cross-Discipline Databases"
+  },
+  {
+    "Technologies": "MongoDb",
+    "coreTechnologies": "Cross-Discipline Databases"
+  },
+  {
+    "Technologies": "RavenDB",
+    "coreTechnologies": "Cross-Discipline Databases"
+  },
+  {
+    "Technologies": "Redis",
+    "coreTechnologies": "Cross-Discipline Databases"
+  },
+  {
+    "Technologies": "RethinkDB",
+    "coreTechnologies": "Cross-Discipline Databases"
+  },
+  {
+    "Technologies": "Solr",
+    "coreTechnologies": "Cross-Discipline Databases"
+  },
+  {
+    "Technologies": "RDBMS",
+    "coreTechnologies": "Cross-Discipline"
+  },
+  {
+    "Technologies": "MySQL",
+    "coreTechnologies": "Cross-Discipline RDBMS"
+  },
+  {
+    "Technologies": "Oracle",
+    "coreTechnologies": "Cross-Discipline RDBMS"
+  },
+  {
+    "Technologies": "Postgres",
+    "coreTechnologies": "Cross-Discipline RDBMS"
+  },
+  {
+    "Technologies": "SQL Server",
+    "coreTechnologies": "Cross-Discipline RDBMS"
+  },
+  {
+    "Technologies": "SSIS / SSRS / SSAS",
+    "coreTechnologies": "Cross-Discipline Services"
+  },
+  {
+    "Technologies": "Message Queues",
+    "coreTechnologies": "Cross-Discipline"
+  },
+  {
+    "Technologies": "ActiveMQ",
+    "coreTechnologies": "Cross-Discipline Message Queues"
+  },
+  {
+    "Technologies": "Kafka",
+    "coreTechnologies": "Cross-Discipline Message Queues"
+  },
+  {
+    "Technologies": "RabbitMQ",
+    "coreTechnologies": "Cross-Discipline Message Queues"
+  },
+  {
+    "Technologies": "Sidekiq",
+    "coreTechnologies": "Cross-Discipline Message Queues"
+  },
+  {
+    "Technologies": "JVM",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "CMS",
+    "coreTechnologies": "JVM"
+  },
+  {
+    "Technologies": "Adobe Experience Manager",
+    "coreTechnologies": "JVM CMS"
+  },
+  {
+    "Technologies": "DotCMS",
+    "coreTechnologies": "JVM CMS"
+  },
+  {
+    "Technologies": "HippoCMS",
+    "coreTechnologies": "JVM CMS"
+  },
+  {
+    "Technologies": "LifeRay",
+    "coreTechnologies": "JVM CMS"
+  },
+  {
+    "Technologies": "WCS",
+    "coreTechnologies": "JVM CMS"
+  },
+  {
+    "Technologies": "Frameworks",
+    "coreTechnologies": "JVM"
+  },
+  {
+    "Technologies": "GWT",
+    "coreTechnologies": "JVM Frameworks"
+  },
+  {
+    "Technologies": "JEE",
+    "coreTechnologies": "JVM Frameworks"
+  },
+  {
+    "Technologies": "JPA / Hibernate",
+    "coreTechnologies": "JVM Frameworks"
+  },
+  {
+    "Technologies": "Play",
+    "coreTechnologies": "JVM Frameworks"
+  },
+  {
+    "Technologies": "Spring",
+    "coreTechnologies": "JVM Frameworks"
+  },
+  {
+    "Technologies": "Spring Security",
+    "coreTechnologies": "JVM Frameworks"
+  },
+  {
+    "Technologies": "Struts",
+    "coreTechnologies": "JVM Frameworks"
+  },
+  {
+    "Technologies": "Languages",
+    "coreTechnologies": "JVM"
+  },
+  {
+    "Technologies": "Clojure",
+    "coreTechnologies": "JVM Languages"
+  },
+  {
+    "Technologies": "Groovy/Grails",
+    "coreTechnologies": "JVM Languages"
+  },
+  {
+    "Technologies": "Java",
+    "coreTechnologies": "JVM Languages"
+  },
+  {
+    "Technologies": "Scala",
+    "coreTechnologies": "JVM Languages"
+  },
+  {
+    "Technologies": "Mobile",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Android",
+    "coreTechnologies": "Mobile"
+  },
+  {
+    "Technologies": "Android Pay",
+    "coreTechnologies": "Mobile Android"
+  },
+  {
+    "Technologies": "Android TV",
+    "coreTechnologies": "Mobile Android"
+  },
+  {
+    "Technologies": "Android Wear",
+    "coreTechnologies": "Mobile Android"
+  },
+  {
+    "Technologies": "Cross-Platform",
+    "coreTechnologies": "Mobile"
+  },
+  {
+    "Technologies": "Appcelerator",
+    "coreTechnologies": "Mobile Cross-Platform"
+  },
+  {
+    "Technologies": "Ionic",
+    "coreTechnologies": "Mobile Cross-Platform"
+  },
+  {
+    "Technologies": "PhoneGap",
+    "coreTechnologies": "Mobile Cross-Platform"
+  },
+  {
+    "Technologies": "React Native",
+    "coreTechnologies": "Mobile Cross-Platform"
+  },
+  {
+    "Technologies": "Telerik",
+    "coreTechnologies": "Mobile Cross-Platform"
+  },
+  {
+    "Technologies": "Xamarin",
+    "coreTechnologies": "Mobile Cross-Platform"
+  },
+  {
+    "Technologies": "iOS",
+    "coreTechnologies": "Mobile"
+  },
+  {
+    "Technologies": "ApplePay",
+    "coreTechnologies": "Mobile iOS"
+  },
+  {
+    "Technologies": "HealthKit",
+    "coreTechnologies": "Mobile iOS"
+  },
+  {
+    "Technologies": "Objective-C",
+    "coreTechnologies": "Mobile iOS"
+  },
+  {
+    "Technologies": "Swift",
+    "coreTechnologies": "Mobile iOS"
+  },
+  {
+    "Technologies": "tvOS",
+    "coreTechnologies": "Mobile iOS"
+  },
+  {
+    "Technologies": "WatchKit",
+    "coreTechnologies": "Mobile iOS"
+  },
+  {
+    "Technologies": "Game Development",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Graphics API",
+    "coreTechnologies": "Game Development"
+  },
+  {
+    "Technologies": "DirectX",
+    "coreTechnologies": "Game Development Graphics API"
+  },
+  {
+    "Technologies": "OpenGL",
+    "coreTechnologies": "Game Development Graphics API"
+  },
+  {
+    "Technologies": "Phaser",
+    "coreTechnologies": "Game Development"
+  },
+  {
+    "Technologies": "Unity",
+    "coreTechnologies": "Game Development"
+  },
+  {
+    "Technologies": "Languages",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "ActionScript",
+    "coreTechnologies": "Languages"
+  },
+  {
+    "Technologies": "ASP Classic",
+    "coreTechnologies": "Languages"
+  },
+  {
+    "Technologies": "C/C++",
+    "coreTechnologies": "Languages"
+  },
+  {
+    "Technologies": "ColdFusion",
+    "coreTechnologies": "Languages"
+  },
+  {
+    "Technologies": "Erlang",
+    "coreTechnologies": "Languages"
+  },
+  {
+    "Technologies": "GoLang",
+    "coreTechnologies": "Languages"
+  },
+  {
+    "Technologies": "Haskell",
+    "coreTechnologies": "Languages"
+  },
+  {
+    "Technologies": "Perl",
+    "coreTechnologies": "Languages"
+  },
+  {
+    "Technologies": "Python",
+    "coreTechnologies": "Languages"
+  },
+  {
+    "Technologies": "Django",
+    "coreTechnologies": "Languages Python"
+  },
+  {
+    "Technologies": "PHP",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "CMS",
+    "coreTechnologies": "PHP"
+  },
+  {
+    "Technologies": "Craft",
+    "coreTechnologies": "PHP CMS"
+  },
+  {
+    "Technologies": "Drupal",
+    "coreTechnologies": "PHP CMS"
+  },
+  {
+    "Technologies": "ExpressionEngine",
+    "coreTechnologies": "PHP CMS"
+  },
+  {
+    "Technologies": "Magento",
+    "coreTechnologies": "PHP CMS"
+  },
+  {
+    "Technologies": "OroCRM",
+    "coreTechnologies": "PHP CMS"
+  },
+  {
+    "Technologies": "WordPress",
+    "coreTechnologies": "PHP CMS"
+  },
+  {
+    "Technologies": "Frameworks",
+    "coreTechnologies": "PHP"
+  },
+  {
+    "Technologies": "CakePHP",
+    "coreTechnologies": "PHP Frameworks"
+  },
+  {
+    "Technologies": "CodeIgniter",
+    "coreTechnologies": "PHP Frameworks"
+  },
+  {
+    "Technologies": "Laravel",
+    "coreTechnologies": "PHP Frameworks"
+  },
+  {
+    "Technologies": "Symfony2",
+    "coreTechnologies": "PHP Frameworks"
+  },
+  {
+    "Technologies": "Yii",
+    "coreTechnologies": "PHP Frameworks"
+  },
+  {
+    "Technologies": "Zend Framework 1",
+    "coreTechnologies": "PHP Frameworks"
+  },
+  {
+    "Technologies": "Zend Framework 2",
+    "coreTechnologies": "PHP Frameworks"
+  },
+  {
+    "Technologies": "Services",
+    "coreTechnologies": "PHP"
+  },
+  {
+    "Technologies": "Testing (PHPUnit, Behat, PHPSpec)",
+    "coreTechnologies": "PHP Services"
+  },
+  {
+    "Technologies": "Project Management",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Agile Methodology",
+    "coreTechnologies": "Project Management"
+  },
+  {
+    "Technologies": "Scrum Master",
+    "coreTechnologies": "Project Management"
+  },
+  {
+    "Technologies": "Six Sigma",
+    "coreTechnologies": "Project Management"
+  },
+  {
+    "Technologies": "Quality Assurance/QA",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Accessibility",
+    "coreTechnologies": "Quality Assurance/QA"
+  },
+  {
+    "Technologies": "Security",
+    "coreTechnologies": "Quality Assurance/QA"
+  },
+  {
+    "Technologies": "OWASP",
+    "coreTechnologies": "Quality Assurance/QA Security"
+  },
+  {
+    "Technologies": "PCI Compliance",
+    "coreTechnologies": "Quality Assurance/QA Security"
+  },
+  {
+    "Technologies": "Ruby",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Frameworks",
+    "coreTechnologies": "Ruby"
+  },
+  {
+    "Technologies": "ActiveAdmin",
+    "coreTechnologies": "Ruby Frameworks"
+  },
+  {
+    "Technologies": "Padrino",
+    "coreTechnologies": "Ruby Frameworks"
+  },
+  {
+    "Technologies": "Ruby On Rails",
+    "coreTechnologies": "Ruby Frameworks"
+  },
+  {
+    "Technologies": "Sinatra",
+    "coreTechnologies": "Ruby Frameworks"
+  },
+  {
+    "Technologies": "Services",
+    "coreTechnologies": "Ruby"
+  },
+  {
+    "Technologies": "RSpec",
+    "coreTechnologies": "Ruby Services"
+  },
+  {
+    "Technologies": "Systems Administration",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Active Directory",
+    "coreTechnologies": "Systems Administration"
+  },
+  {
+    "Technologies": "AIX",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Databases",
+    "coreTechnologies": "Systems Administration"
+  },
+  {
+    "Technologies": "MySQL",
+    "coreTechnologies": "Systems Administration Databases"
+  },
+  {
+    "Technologies": "MySQL Cluster",
+    "coreTechnologies": "Systems Administration Databases"
+  },
+  {
+    "Technologies": "NoSQL",
+    "coreTechnologies": "Systems Administration Databases"
+  },
+  {
+    "Technologies": "Oracle",
+    "coreTechnologies": "Systems Administration Databases"
+  },
+  {
+    "Technologies": "Postgres",
+    "coreTechnologies": "Systems Administration Databases"
+  },
+  {
+    "Technologies": "SQL Server",
+    "coreTechnologies": "Systems Administration Databases"
+  },
+  {
+    "Technologies": "DNS",
+    "coreTechnologies": "Systems Administration"
+  },
+  {
+    "Technologies": "Bind 9",
+    "coreTechnologies": "Systems Administration DNS"
+  },
+  {
+    "Technologies": "Microsoft DNS",
+    "coreTechnologies": "Systems Administration DNS"
+  },
+  {
+    "Technologies": "Email",
+    "coreTechnologies": "Systems Administration"
+  },
+  {
+    "Technologies": "Exim",
+    "coreTechnologies": "Systems Administration Email"
+  },
+  {
+    "Technologies": "Google Mail, Postini",
+    "coreTechnologies": "Systems Administration Email"
+  },
+  {
+    "Technologies": "Lotus Domino Server",
+    "coreTechnologies": "Systems Administration Email"
+  },
+  {
+    "Technologies": "Microsoft Exchange",
+    "coreTechnologies": "Systems Administration Email"
+  },
+  {
+    "Technologies": "Postfix",
+    "coreTechnologies": "Systems Administration Email"
+  },
+  {
+    "Technologies": "Sendmail",
+    "coreTechnologies": "Systems Administration Email"
+  },
+  {
+    "Technologies": "Flash Media Server",
+    "coreTechnologies": "Systems Administration"
+  },
+  {
+    "Technologies": "Java & Tomcat",
+    "coreTechnologies": "Systems Administration"
+  },
+  {
+    "Technologies": "LDAP",
+    "coreTechnologies": "Systems Administration"
+  },
+  {
+    "Technologies": "Linux",
+    "coreTechnologies": "Systems Administration"
+  },
+  {
+    "Technologies": "Networking",
+    "coreTechnologies": "Systems Administration"
+  },
+  {
+    "Technologies": "Firewall Management",
+    "coreTechnologies": "Systems Administration"
+  },
+  {
+    "Technologies": "Cisco",
+    "coreTechnologies": "Systems Administration Firewall Management"
+  },
+  {
+    "Technologies": "iptables",
+    "coreTechnologies": "Systems Administration Firewall Management"
+  },
+  {
+    "Technologies": "Microsoft Windows",
+    "coreTechnologies": "Systems Administration Firewall Management"
+  },
+  {
+    "Technologies": "SonicWall",
+    "coreTechnologies": "Systems Administration Firewall Management"
+  },
+  {
+    "Technologies": "ufw",
+    "coreTechnologies": "Systems Administration Firewall Management"
+  },
+  {
+    "Technologies": "RAID",
+    "coreTechnologies": "Systems Administration"
+  },
+  {
+    "Technologies": "Shell Scripting",
+    "coreTechnologies": "Systems Administration"
+  },
+  {
+    "Technologies": "Bash / csh",
+    "coreTechnologies": "Systems Administration Shell Scripting"
+  },
+  {
+    "Technologies": "Microsoft Powershell",
+    "coreTechnologies": "Systems Administration Shell Scripting"
+  },
+  {
+    "Technologies": "SSL Installs",
+    "coreTechnologies": "Systems Administration"
+  },
+  {
+    "Technologies": "Virtualization",
+    "coreTechnologies": "Systems Administration"
+  },
+  {
+    "Technologies": "KVM on Linux",
+    "coreTechnologies": "Systems Administration Virtualization"
+  },
+  {
+    "Technologies": "Microsoft Hyper-V",
+    "coreTechnologies": "Systems Administration Virtualization"
+  },
+  {
+    "Technologies": "Oracle VirtualBox",
+    "coreTechnologies": "Systems Administration Virtualization"
+  },
+  {
+    "Technologies": "VMWare",
+    "coreTechnologies": "Systems Administration Virtualization"
+  },
+  {
+    "Technologies": "Web",
+    "coreTechnologies": "Systems Administration"
+  },
+  {
+    "Technologies": "Amazon Web Services",
+    "coreTechnologies": "Systems Administration Web"
+  },
+  {
+    "Technologies": "Apache",
+    "coreTechnologies": "Systems Administration Web"
+  },
+  {
+    "Technologies": "Azure",
+    "coreTechnologies": "Systems Administration Web"
+  },
+  {
+    "Technologies": "Microsoft IIS",
+    "coreTechnologies": "Systems Administration Web"
+  },
+  {
+    "Technologies": "Nginx",
+    "coreTechnologies": "Systems Administration Web"
+  },
+  {
+    "Technologies": "Rackspace",
+    "coreTechnologies": "Systems Administration Web"
+  },
+  {
+    "Technologies": "Windows Desktop",
+    "coreTechnologies": "Systems Administration"
+  },
+  {
+    "Technologies": "Windows Server",
+    "coreTechnologies": "Systems Administration"
+  },
+  {
+    "Technologies": "User Experience/UX",
+    "coreTechnologies": ""
+  },
+  {
+    "Technologies": "Accessibility",
+    "coreTechnologies": "User Experience/UX"
+  },
+  {
+    "Technologies": "Branding",
+    "coreTechnologies": "User Experience/UX"
+  },
+  {
+    "Technologies": "Business Discovery",
+    "coreTechnologies": "User Experience/UX"
+  },
+  {
+    "Technologies": "Business Strategy",
+    "coreTechnologies": "User Experience/UX"
+  },
+  {
+    "Technologies": "Content Strategy",
+    "coreTechnologies": "User Experience/UX"
+  },
+  {
+    "Technologies": "Game Design",
+    "coreTechnologies": "User Experience/UX"
+  },
+  {
+    "Technologies": "Information Architecture",
+    "coreTechnologies": "User Experience/UX"
+  },
+  {
+    "Technologies": "Interaction Design",
+    "coreTechnologies": "User Experience/UX"
+  },
+  {
+    "Technologies": "Mobile App Design",
+    "coreTechnologies": "User Experience/UX"
+  },
+  {
+    "Technologies": "Responsive / Adaptive Design",
+    "coreTechnologies": "User Experience/UX"
+  },
+  {
+    "Technologies": "Usability Testing",
+    "coreTechnologies": "User Experience/UX"
+  },
+  {
+    "Technologies": "User Research",
+    "coreTechnologies": "User Experience/UX"
+  },
+  {
+    "Technologies": "Visual Design",
+    "coreTechnologies": "User Experience/UX"
+  }
+]
