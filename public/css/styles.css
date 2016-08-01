@@ -1,7 +1,11 @@
+*{
+  font-family: "Source Sans Pro", sans-serif;
+}
+
 body {
   background-color: #664659;/*plum*/
   color: #fff; /*white*/
-  font:Source Sans Pro, sans-serif;
+
   }
   .jumbotron {
       display: block;
@@ -113,6 +117,7 @@ padding-left: 15px;
 
 /*Group Landing Page*/
 
+/*Group Edit Menu*/
 
 
 .headline {

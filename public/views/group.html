@@ -32,6 +32,9 @@
         <p>Email: {{group.contactEmail}}</p>
         <p>Affiliations: {{group.affiliations}}</p>
         <p>Affiliation : {{group.affiliationURL}}</p>
+        <div class="editGroup">
+        <p>Is this your group? Make changes here:  <button type="button" class = "btn btn-default" name="button" ng-click="">Update</button></p>
+        </div>
       </div>
 
       <div class="col-md-4">
@@ -53,9 +56,6 @@
 </div>
 
 <!-- {{group}} -->
-
-<p>Is this your group? Make changes here:</p>
-<button type="button" name="button" ng-click="">Update</button>
 
 <div class="row">
 <div class="col-sm-8 col-sm-offset-2 well">
@@ -133,7 +133,7 @@
 </md-chips> -->
 
 </div>
-<button type="button" name="button" ng-click="banana()">Delete Group</button>
-<button type="button" name="button" ng-click="edit(group._id, $index)">Save your edits</button>
+<button type="button" class="btn btn-danger" name="button" ng-click="banana()">Delete Group</button>
+<button type="button" class="btn btn-success" name="button" ng-click="edit(group._id, $index)">Save your edits</button>
 
 </div>
