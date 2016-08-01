@@ -1,11 +1,6 @@
-myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScope', 'groupFactory', '$routeParams', function( $scope, $http, $location, $rootScope, groupFactory, $routeParams ){
+myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScope', 'groupFactory', '$stateParams', 'group', function( $scope, $http, $location, $rootScope, groupFactory, $stateParams, group ){
+  $scope.group = group.data;
 
-  groupFactory.getGroup($routeParams.groupName).then(function(response) {
-		$scope.group = response.data;
-    console.log($scope.group);
-	});
-
-  //  console.log( $scope.group.name );
 $scope.membershipSizes = [
         "0-25",
         "25-50",

@@ -1,10 +1,15 @@
-myApp.controller( 'HomeController', ['$scope', '$http', '$location', 'groupFactory', '$auth',
-function( $scope, $http, $location, groupFactory, $auth){
+myApp.controller( 'HomeController', ['$scope', '$http', '$location', 'groupFactory', '$auth', 'techData',
+function( $scope, $http, $location, groupFactory, $auth, techData){
 console.log( 'loaded homeController');
 
-$scope.currentUser = $auth.getPayload().username;
-console.log($scope.currentUser);
-
+$scope.isAuthenticated = $auth.isAuthenticated();
+if ($scope.isAuthenticated) {
+  $scope.currentUser = $auth.getPayload().username;
+  console.log($scope.currentUser);
+}
+// $scope.groups = groups.data;
+// console.log($scope.groups);
+// $scope.tech = techData;
 
 $scope.selectedTech = '';
 $scope.selectedSubTech = '';
@@ -78,20 +83,6 @@ groupFactory.getApprovedGroups().then(function(response) {
   $scope.groups = response.data;
   console.log($scope.groups);
 });
-
-
-// DOESN'T WORK YET/////////////////
-
-$http({
-  method: "GET",
-  url: '/tech.json',
-})
-.then(function (response) {
-  $scope.tech = response.data;
-  console.log($scope.tech);
-}, function myError(response) {
-  $scope.tech = response.statusText;
-});//End of http call
 
 
 }]) //end homeController

@@ -10,7 +10,7 @@ var User = require('../models/Users');
 
 var auth = jwt({secret: 'SECRET', userProperty: 'payload'});
 
-router.post('/signup', function(req, res, next){
+router.post('/signup', auth, function(req, res, next){
   var user = new User({
     "username": req.body.username,
     "email": req.body.email

@@ -7,7 +7,8 @@ var Schema = mongoose.Schema;
 var UserSchema = new Schema({
   username: {type: String, lowercase: true, unique: true},
   email: {type: String, unique: true},
-  active: Boolean,
+  admin: {type: Boolean, default: false},
+  active: {type: Boolean, default: true},
   hash: String,
   salt: String,
   joined_on: Date
@@ -22,7 +23,8 @@ UserSchema.methods.generateJWT = function() {
 
   return jwt.sign({
     _id: this._id,
-    username: this.username
+    username: this.username,
+    admin: this.admin
   }, 'SECRET', {expiresIn: 30000 });
 };
 

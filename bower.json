@@ -19,6 +19,7 @@
     "bootstrap": "^3.3.6",
     "satellizer": "^0.15.4",
     "angular-material": "^1.0.9",
-    "angular-route": "^1.5.8"
+    "angular-route": "^1.5.8",
+    "angular-ui-router": "^0.3.1"
   }
 }
