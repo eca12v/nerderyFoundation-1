@@ -1,3 +1,21 @@
+#page-container {
+  background-color: #664659;
+}
+
+.group-tile {
+  color: white;
+}
+
+md-card-title-text {
+  text-align: center;
+}
+
+md-card {
+  border: 3px solid #664659;
+  border-radius: 7px;
+  background-color: turquoise;
+  height: auto;
+}
 
 .flex {
   -webkit-flex: 1 1 0;

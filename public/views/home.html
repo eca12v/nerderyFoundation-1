@@ -73,29 +73,32 @@
       </md-card>
     </md-content>
     </div>
-
+<!-- class="col-sm-4"  -->
     <div class="col-sm-9">
-      <md-content class="md-padding">
-        <div class="col-sm-4" ng-repeat="group in groups | multiWordFilter: techStr | filter: locationStr | filter: sizeStr | filter: filterStr track by $index">
+      <md-content layout="row" layout-wrap>
+        <div flex="30" flex-sm="80" flex-xs="80" class="md-padding" ng-repeat="group in groups | multiWordFilter: techStr | filter: locationStr | filter: sizeStr | filter: filterStr track by $index">
           <a class="group-link" ng-href="/#/groups/{{group.name}}">
-            <md-card class="group-tile" >
+            <md-card class="group-tile md-whiteframe-12dp" ng-style="{'background-image':'url({{group.photoURL}})', 'background-size':'cover', 'background-position':'center'}" >
+
               <md-card-title>
                 <md-card-title-text>
                   <span class="md-headline">{{group.name}}</span>
                 </md-card-title-text>
-                <md-card-title-media>
-                  <div class="md-media-sm card-media"><img src="{{group.photoURL}}"/></div>
-                </md-card-title-media>
+
+
+                  <!-- <div class="md-media-sm card-media"> -->
+
               </md-card-title>
-              <md-card-content>
+              <!-- <div class="imageDiv"><img src="{{group.photoURL}}" class="md-card-image"/></div> -->
+              <md-card-footer>
                 <!-- {{group}} -->
                 <p>Location: {{group.location}}</p>
                 <p>Meeting Frequency: {{group.freqOfMeeting}}</p>
-              </md-card-content>
-              <md-card-actions layout="row" layout-align="end center">
-                <!-- <md-button>Action 1</md-button>
-                <md-button>Action 2</md-button> -->
-              </md-card-actions>
+              </md-card-footer>
+              <!-- <md-card-actions layout="row" layout-align="end center">
+                <md-button>Action 1</md-button>
+                <md-button>Action 2</md-button>
+              </md-card-actions> -->
             </md-card>
           </a>
 
