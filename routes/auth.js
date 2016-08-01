@@ -100,4 +100,6 @@ router.post('/google', function(req, res) {
   });
 });
 
+router.get('/facebook', passport.authenticate('facebook', { scope : 'email' }));
+
 module.exports = router;
