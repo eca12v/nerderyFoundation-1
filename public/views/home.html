@@ -1,24 +1,24 @@
 <div id="page-container" class="container-fluid">
-
   <div class="jumbotron">
     <h1>Nerdery Foundation Developer Network</h1>
-    <p>Connecting new and relocated developers to the local tech user groups.</p>
+      <p>Connecting new and relocated developers to the local tech user groups.</p>
   </div>
+
   <h3>{{techStr}}</h3>
-  <md-content class="md-no-momentum">
-  <md-input-container id="main-search" class="md-icon-float">
-    <!-- Use floating label instead of placeholder -->
-    <label>Search</label>
-    <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"><i class="material-icons">search</i></md-icon>
-    <input ng-model="filterStr" type="text">
-  </md-input-container>
+    <md-content class="md-no-momentum">
+      <md-input-container id="main-search" class="md-icon-float">
+        <!-- Use floating label instead of placeholder -->
+        <label>Search</label>
+          <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"><i class="material-icons">search</i></md-icon>
+        <input ng-model="filterStr" type="text">
+      </md-input-container>
 
   <md-input-container id="tech-search" class="md-icon-float">
-    <select class="form-control select-team" ng-model="tObj" data-ng-change="changeOverallTech(tObj)">
+    <select class="form-control select-team" ng-model="tObj" data-ng-change="changeOverallTech(tObj)" >
       <label>Technology</label>
-                    <option value=""></option>
-                    <option ng-repeat="t in tech.Technologies track by $index" value="{{t.Technology}}" >{{t.Technology}}</option>
-                  </select>
+        <option value=""></option>
+          <option ng-repeat="t in tech.Technologies track by $index" placeholder="Technologies" value="{{t.Technology}}" >{{t.Technology}}</option>
+    </select>
   </md-input-container>
 
   <md-input-container id="location-search" class="md-icon-float">
@@ -88,7 +88,7 @@
                 </md-card-title-media>
               </md-card-title>
               <md-card-content>
-                {{group}}
+
                 <p>{{group.location}}</p>
                 <p>{{group.freqOfMeeting}}</p>
               </md-card-content>
