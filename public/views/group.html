@@ -1,3 +1,6 @@
+
+
+
 <div class="group-container">
   <header class="text-center" name="home">
   <div class="intro-text">
@@ -51,11 +54,14 @@
 <!-- {{group}} -->
 <h1>start editable</h1>
 <div class="row">
-  <div class="col-sm-8 col-sm-offset-2 well">
-    <md-content>
-      <md-input-container class="md-block" flex-gt-sm input >
-        <div>Name: <a href="#" editable-text="group.name">{{ group.name || 'empty' }}</a></div>
-    </md-input-container>
+<div class="col-sm-8 col-sm-offset-2 well">
+<md-input-container class="md-block" flex-gt-sm input >
+<div>Name: <a href="#" editable-text="group.name">{{ group.name || 'empty' }}</a></div>
+</md-input-container>
+
+<md-input-container input ng-model="description">
+<div>Desciption: <a href="#" editable-textarea="group.description" e-rows="7" e-cols="40">{{ group.description || 'empty' }}</a></div>
+</md-input-container>
 
 <md-input-container input ng-model="groupContact">
 <div>Group Contact: <a href="#" editable-text="group.groupContact" e-step="5">{{ group.groupContact || 'empty' }}</a></div>
@@ -67,32 +73,59 @@
 
 <md-input-container input ng-model="location">
 <div>Location: <a href="#" editable-text="group.location">{{ group.location || 'empty' }}</a></div>
-
 </md-input-container>
 
-<md-input-container ng-model="freqOfMeeting">
-<div>Meeting Frequency: <a href="#" editable-select="group.freqOfMeeting">{{ group.freqOfMeeting || 'empty' }}</a></div>
+<md-input-container input ng-model="activities">
+<div>Activites: <a href="#" editable-text="group.activites">{{ group.activities || 'empty' }}</a></div>
 </md-input-container>
 
-<md-input-container input ng-model="sizeOfMeeting">
-<div>Meeting size: <a href="#" editable-select="group.sizeOfMeeting">{{ user.date || 'empty' }}</a></div>
-
+<md-input-container input ng-model="technologies">
+<div>Technologies: <a href="#" editable-text="group.technologies">{{ group.technologies || 'empty' }}</a></div>
 </md-input-container>
 
-<md-input-container ng-model="sizeOfMembership">
-<div>Size of membership: <a href="#" editable-select="group.sizeOfMembership">{{ user.time || 'empty' }}</a></div>
-
+<md-input-container input ng-model="tags">
+<div>Tags: <a href="#" editable-text="group.tags">{{ group.tags || 'empty' }}</a></div>
 </md-input-container>
 
-<md-input-container>
-<div>Tags: <a href="#" editable-text="group.tag">{{ group.tags || 'empty' }}</a></div>
-<input ng-model="tags">
+<md-input-container input ng-model="affiliations">
+<div>Affiliations: <a href="#" editable-text="group.affiliations">{{ group.affiliations || 'empty' }}</a></div>
 </md-input-container>
 
-</md-content>
-<button type="button" name="button" ng-click="submit()" >Submit Group</button>
-<button type="button" name="button" ng-click="banana()" >Delete</button>
-<button type="button" name="button" ng-click="edit(group._id, $index)" >Edit</button>
+<md-input-container input ng-model="affiliationURL">
+<div>AffiliationURL: <a href="#" editable-text="group.affiliationURL">{{ group.affiliationURL || 'empty' }}</a></div>
+</md-input-container>
+
+
+<md-input-container flex-gt-sm>
+<label>freqOfMeeting</label>
+<md-select ng-model="freqOfMeeting">
+<md-option ng-repeat="option in freqOfMeeting" value="{{option}}">{{ option }}</md-option>
+</md-select>
+</md-input-container>
+
+<md-input-container flex-gt-sm>
+  <label>sizeOfMeeting</label>
+  <md-select ng-model="sizeOfMeeting">
+  <md-option ng-repeat="option in sizeOfMeeting" value="{{ option }}">{{ option }}</md-option>
+</md-select>
+</md-input-container>
+
+<md-input-container flex-gt-sm>
+  <label>sizeOfMembership</label>
+  <md-select ng-model="sizeOfMembership">
+  <md-option ng-repeat="option in sizeOfMembership" value="{{ option }}">{{ option }}</md-option>
+</md-select>
+</md-input-container>
+
+<md-chips ng-model="ctrl.roTagNames" name="tagName" readonly="ctrl.readonly" md-max-chips="5" placeholder="group.tags" secondary-placeholder="New Tag">>
+  <md-chip-template>
+    <strong>{{$chip}}</strong>
+  </md-chip-template>
+</md-chips>
+
+</div>
+<button type="button" name="button" ng-click="banana()">Delete Group</button>
+<button type="button" name="button" ng-click="edit(group._id, $index)">Save your edits</button>
 
 </div>
 </div>

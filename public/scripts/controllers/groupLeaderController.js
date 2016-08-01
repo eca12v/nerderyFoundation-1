@@ -1,24 +1,29 @@
-console.log('group leader cont has arrived');
+myApp.controller( 'GroupLeaderController',  [ 'Upload', 'groupFactory', '$scope', '$http', '$location', '$rootScope',   function( Upload, groupFactory, $scope,  $http, $location, $authProvider, $rootScope  ){
 
-myApp.controller( 'GroupLeaderController', [ 'groupFactory', '$scope', '$http', '$location', '$rootScope', 'techData',  function( groupFactory, $scope,  $http, $location, $authProvider, $rootScope, techData ){
-
-  console.log( 'loaded GroupLeaderController');
-  console.log(techData);
   var self = this;
   self.readonly = false;
   self.selectedItem = null;
   self.searchText = null;
   self.querySearch = querySearch;
-  self.technologies = loadTechnologies();
   self.selectedTech = [];
   self.roSelectedTech = angular.copy(self.selectedTech);
   self.autocompleteDemoRequireMatch = true;
   self.transformChip = transformChip;
   self.tagNames = ['Beer', 'Pizza'];
   self.roTagNames = angular.copy(self.tagNames);
-  /**
-   * Return the proper object when the append is called.
-   */
+
+  $http({
+    method: "GET",
+    url: '/techTag.json',
+  })
+  .then(function (response) {
+    $scope.techList = response.data;
+    self.technologies = loadTechnologies();
+  }, function myError(response) {
+    console.log('techTag error');
+    $scope.techList = response.statusText;
+  });//End of http call
+
   function transformChip(chip) {
     // If it is an object, it's already a known chip
     if (angular.isObject(chip)) {
@@ -27,50 +32,22 @@ myApp.controller( 'GroupLeaderController', [ 'groupFactory', '$scope', '$http', 
     // Otherwise, create a new one
     return { name: chip, type: 'new' };
   }
-  /**
-   * Search for Tech.
-   */
+
   function querySearch (query) {
     var results = query ? self.technologies.filter(createFilterFor(query)) : [];
     return results;
   }
-  /**
-   * Create filter function for a query string
-   */
+
   function createFilterFor(query) {
     var lowercaseQuery = angular.lowercase(query);
-    return function filterFn(vegetable) {
-      return (vegetable._lowername.indexOf(lowercaseQuery) === 0) ||
-          (vegetable._lowertype.indexOf(lowercaseQuery) === 0);
+    return function filterFn(tech) {
+      return (tech._lowername.indexOf(lowercaseQuery) === 0);
     };
   }
   function loadTechnologies() {
-    var veggies = [
-  {
-    'name': 'Broccoli',
-    'type': 'Brassica'
-  },
-  {
-    'name': 'Cabbage',
-    'type': 'Brassica'
-  },
-  {
-    'name': 'Carrot',
-    'type': 'Umbelliferous'
-  },
-  {
-    'name': 'Lettuce',
-    'type': 'Composite'
-  },
-  {
-    'name': 'Spinach',
-    'type': 'Goosefoot'
-  }
-];
-    return veggies.map(function (veg) {
-      veg._lowername = veg.name.toLowerCase();
-      veg._lowertype = veg.type.toLowerCase();
-      return veg;
+    return $scope.techList.map(function (tech) {
+      tech._lowername = tech.Technologies.toLowerCase();
+      return tech;
     });
   }
 
@@ -97,9 +74,6 @@ $scope.meetingFreq = [
   "Annually"
 ];
 
-
-
-
 $scope.status = '';
 
 //deletes group
@@ -115,13 +89,73 @@ console.log('groupId: ', groupId);
   $scope.groups.splice(index, 1);
 };
 
+//global for uploading functions
+$scope.file = '';
+$scope.uploads = [];
+
 //submit function to add group
 $scope.submit = function(){
   console.log( 'submit clicked' );
-//forms object with new group info
+
+  $scope.techListIn = [];
+  $scope.coreTech = [];
+  for (var each in self.selectedTech) {
+    $scope.techListIn.push(self.selectedTech[each].Technologies);
+    $scope.coreTech.push(self.selectedTech[each].coreTechnologies);
+  }
+
+  console.log($scope.coreTech);
+  console.log('file: ', $scope.file);
+  console.log('group name: ', $scope.groupNameIn);
+  console.log( 'Upload', Upload );
+  if($scope.form.file.$valid && $scope.file){
+    $scope.upload($scope.file);
+    console.log('in submit function');
+    // $scope.postGroup();
+  }else{$scope.postGroup();}
+}; //end submit function
+
+$scope.upload = function(file){
+  console.log( 'in uploader:', file );
+  console.log( 'Upload', Upload );
+  Upload.upload({
+    url: '/groups/createGroup',
+    data: {
+      file: file,
+      name: $scope.groupNameIn,
+      groupURL: $scope.groupUrlIn,
+      contact: $scope.contactNameIn,
+      contactEmail: $scope.contactEmail,
+      description: $scope.description,
+      location: $scope.location,
+      activities:$scope.activities,
+      technologies: $scope.techListIn,
+      coreTechnologies: $scope.coreTech,
+      tags: $scope.tags,
+      freqOfMeeting: $scope.freqOfMeeting,
+      sizeOfMeeting: $scope.sizeOfMeeting,
+      affiliations: $scope.affiliations,
+      affiliationURL: $scope.affiliationURL,
+      eventInfo: $scope.eventInfo,
+      sizeOfMembership: $scope.sizeOfMembership
+    }
+  }).then(function (resp) {
+            console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
+        }, function (resp) {
+            console.log('Error status: ' + resp.status);
+        }, function (evt) {
+            var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+            console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
+        });
+
+}; //end upload function
+
+
+$scope.postGroup = function(){
+// //forms object with new group info
+console.log('in postgroup');
   var newGroup = {
-    
-//do these need to match the syntax that's being used for the Schema in groups.js?
+
     name: $scope.groupNameIn,
     groupURL: $scope.groupUrlIn,
     contact: $scope.contactNameIn,
@@ -129,7 +163,8 @@ $scope.submit = function(){
     description: $scope.description,
     location: $scope.location,
     activities:$scope.activities,
-    technologies: $scope.technologies,
+    technologies: $scope.techListIn,
+    coreTechnologies: $scope.coreTech,
     tags: self.roTagNames,
     freqOfMeeting: $scope.freqOfMeeting,
     sizeOfMeeting: $scope.sizeOfMeeting,
@@ -139,7 +174,6 @@ $scope.submit = function(){
     sizeOfMembership: $scope.sizeOfMembership
 
   };
-
   console.log( 'group submitted: ', newGroup);
 
 //
@@ -152,9 +186,9 @@ $scope.submit = function(){
   }, function(error){
     $scope.status = 'swing and a miss';
 
-  }
-);
+  });
 
-};//end of submit
+
+};//end of postGroup
 
 }]); //end adminController
