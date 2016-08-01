@@ -1,5 +1,6 @@
 myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScope', 'groupFactory', '$stateParams', 'group', function( $scope, $http, $location, $rootScope, groupFactory, $stateParams, group ){
-  $scope.group = group.data;
+
+$scope.group = group.data;
 
 $scope.membershipSizes = [
         "0-25",

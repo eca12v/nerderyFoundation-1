@@ -1,15 +1,25 @@
-myApp.controller( 'HomeController', ['$scope', '$http', '$location', 'groupFactory', '$auth', 'techData',
-function( $scope, $http, $location, groupFactory, $auth, techData){
+myApp.controller( 'HomeController', ['$scope', '$http', '$location', 'groupFactory', '$auth',
+function( $scope, $http, $location, groupFactory, $auth){
 console.log( 'loaded homeController');
 
-$scope.isAuthenticated = $auth.isAuthenticated();
-if ($scope.isAuthenticated) {
-  $scope.currentUser = $auth.getPayload().username;
-  console.log($scope.currentUser);
-}
-// $scope.groups = groups.data;
-// console.log($scope.groups);
-// $scope.tech = techData;
+$scope.isAuthenticated = $auth.isAuthenticated;
+$scope.currentUser = $auth.getPayload;
+
+groupFactory.getApprovedGroups().then(function(response) {
+  $scope.groups = response.data;
+  console.log($scope.groups);
+});
+
+$http({
+  method: "GET",
+  url: '/tech.json',
+})
+.then(function (response) {
+  $scope.tech = response.data;
+  console.log($scope.tech);
+}, function myError(response) {
+  $scope.tech = response.statusText;
+});//End of http call
 
 $scope.selectedTech = '';
 $scope.selectedSubTech = '';
@@ -77,13 +87,6 @@ $scope.changeLocation =  function(location) {
     $scope.techStr = newStr;
   }
 };
-
-
-groupFactory.getApprovedGroups().then(function(response) {
-  $scope.groups = response.data;
-  console.log($scope.groups);
-});
-
 
 }]) //end homeController
 

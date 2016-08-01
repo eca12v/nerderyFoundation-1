@@ -4,7 +4,8 @@ var myApp = angular.module( 'myApp', [
   'ngMaterial',
   'Authorization',
   'xeditable',
-  'ngFileUpload'
+  'ngFileUpload',
+  'toastr'
 ]);
 
 /// Routes ///
@@ -17,26 +18,7 @@ function($stateProvider, $urlRouterProvider, $mdIconProvider, $authProvider) {
     url : '/home',
     templateUrl : 'views/home.html',
     controller : 'HomeController',
-    resolve : {
-      techData: ['$http',
-        function($http) {
-          return $http({
-            method: "GET",
-            url: '/tech.json',
-          })
-          .then(function (response) {
-            return response.data;
-          }, function myError(response) {
-            return response.statusText;
-          });//End of http call
-        }
-    ]
-    // groups : ['groupFactory',
-		// 	function(groupFactory) {
-		// 		return groupFactory.getApprovedGroups();
-		// 	}
-    // ]
-  }
+    resolve : {}
   }).
   state('group', {
     url: '/groups/:groupName',
