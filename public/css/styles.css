@@ -23,6 +23,10 @@ body {
   .jumbotron h1{
     color:#fff;
   }
+/*Search Bar*/
+container-fluid ng-scope{
+  background-color: #664659
+}
 
 /*Landing Page*/
 .flex {
