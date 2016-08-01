@@ -20,7 +20,9 @@
       <div class = "navBar" ng-include="'/views/templates/navBar.html'"></div>
     </div>
 
-    <main ng-view></main>
+    <div id="page-container" class="container-fluid">
+      <main ng-view></main>
+    </div>
 
     <script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="./bower_components/angular-route/angular-route.min.js"></script>

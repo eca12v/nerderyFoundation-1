@@ -51,14 +51,31 @@ myApp.controller( 'GroupLeaderController',  [ 'Upload', 'groupFactory', '$scope'
     });
   }
 
-//create array to put new groups into
-$scope.groups = [];
-$scope.membershipSizes = [
-        "0-25",
-        "25-50",
-        "50-100",
-        "100-500"
-    ];
+  //create array to put new groups into
+  $scope.groups = [];
+
+  $scope.locations = [
+    "Minneapolis - St. Paul",
+    "Duluth - Superior",
+    "Fargo - Valley City, ND",
+    "Sioux Falls(Mitchell), SD",
+    "Mankato",
+    "Rochester - Mason City - Austin, MN - IA",
+    "La Crosse - Eau Claire, WI"
+  ];
+
+  $scope.activityList = [
+    "Networking",
+    "Education",
+    "Hands-On"
+  ];
+
+  $scope.membershipSizes = [
+    "0-25",
+    "25-50",
+    "50-100",
+    "100-500"
+  ];
 
 $scope.meetingSizes = [
   "0-25",
@@ -66,6 +83,7 @@ $scope.meetingSizes = [
   "50-100",
   "100-500"
 ];
+
 $scope.meetingFreq = [
   "Weekly",
   "Biweekly",

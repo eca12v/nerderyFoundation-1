@@ -148,8 +148,6 @@ console.log('inside groups.js add group ');
     affiliationURL: req.body.affiliationURL,
     eventInfo: req.body.eventInfo,
     sizeOfMembership: req.body.sizeOfMembership
-
-
   });
 
   if (req.file ){
