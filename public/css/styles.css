@@ -33,8 +33,9 @@ body {
 /*Search Bar*/
 container-fluid ng-scope{
   background-color: #664659
+}
 
-  #page-container {
+#page-container {
     background-color: #664659;
   }
 /*css for cards*/
@@ -50,7 +51,7 @@ container-fluid ng-scope{
     border: 3px solid #664659;
     border-radius: 7px;
     background-color: turquoise;
-    height: auto;
+    
 }
 
 /*Landing Page*/
