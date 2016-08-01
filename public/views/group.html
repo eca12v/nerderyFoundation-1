@@ -1,16 +1,20 @@
 <div class="group-container">
   <header class="text-center" name="home">
-  <div class="intro-text">
+    <div class="intro-text">
+      <img src="" class="header-image" />
     <h1><span class="color">{{group.name}}</span></h1>
 
     <div class="clearfix"></div>
     <!-- <a href="#groupURL" class="btn btn-default btn-lg page-scroll">{{group.groupURL}}</a> </div> -->
-</header>
+  </header>
+
 <!-- About Section -->
 <div id="about-section">
   <div class="container">
     <div class="section-title">
       <h2>About Us</h2>
+
+      <!-- that hr is for a line. it's a pretty line. Leave the weird hr tag alone. -->
       <hr>
     </div>
     <div class="space"></div>
@@ -18,36 +22,42 @@
       <div class="col-md-4">
         <h4>Who We Are</h4>
         <p>{{group.description}}</p>
+        <p>
+
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh ante facilisis bibendum.</p>
+
+          <p>Group Contact: {{group.groupContact}}</p>
+          <p>Email: {{group.contactEmail}}</p>
+          <p>Affiliations: {{group.affiliations}}</p>
+          <p>Affiliation : {{group.affiliationURL}}</p>
+
       </div>
       <div class="col-md-4">
         <h4>What We Do</h4>
         <p>Activities: {{group.activities}}</p>
+        <p>Technologies: {{group.technologies}}</p>
+
+
+
       </div>
+
       <div class="col-md-4">
         <h4>Where We Meet</h4>
-        <p><!-- <h3>Area Served: {{group.areaServed}}</h3> -->
-        <!-- <h3>Meeting Location: {{group.location}}</h3> could be listed as "varies" or "see Website", or a regular meeting place -->
-        <h3>Meeting Frequency: {{group.freqOfMeeting}}</h3>
-        <h3>Typical Meeting Size: {{group.sizeOfMeeting}}</h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh ante facilisis bibendum.</p>
-      </div>
+        <p>Area Served: {{group.areaServed}}</p>
+        <p>Meeting Location: {{group.location}}</p>
+        <p>Meeting Frequency: {{group.freqOfMeeting}}</p>
+        <p>Typical Meeting Size: {{group.sizeOfMeeting}}</p>
     </div>
   </div>
 </div>
-<img src="" class="header-image" />
 
-<div class = "headline">{{group.name}}</h1>
-<h2>Group Contact: {{group.groupContact}}</h2>
-<h3>Email: {{group.contactEmail}}</h3>
+
+
 
 <!-- <h3>Website: {{group.groupURL}}</h3> -->
 
 
-<h3>Technologies: {{group.technologies}}</h3>
 
-
-<h3>Affiliations: {{group.affiliations}}</h3>
-
-<h3>Affiliation URL: {{group.affiliationURL}}</h3>
 
 
 

@@ -1,4 +1,10 @@
+body {
+  background-color: #664659;/*plum*/
+  color: #fff; /*white*/
+  margin-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
 
+/*Landing Page*/
 .flex {
   -webkit-flex: 1 1 0;
       -ms-flex: 1 1 0;
@@ -46,7 +52,7 @@
   max-width: 100%;
   max-height: calc(200% / 3);
 }
-
+/*Search Bar*/
 main-search {
   width: 75%;
   margin: auto;
@@ -56,13 +62,13 @@ filter-box {
   height: 100%;
 }
 
-
+/*Group Tiles*/
 .group-tile {
   height: 300px;
   margin-left: 0;
   margin-right: 0;
 }
-
+/*checkboxex*/
 md-checkbox {
   display: block;
 
@@ -77,21 +83,22 @@ md-checkbox {
 }
 
 /*Group Landing Page*/
-body {
-    margin-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-}
+
 
 .header-image {
     display: block;
+    height:auto;
     width: 100%;
     text-align: center;
-    background: url('http://placehold.it/1900x500') no-repeat center center scroll;
+    background: url('https://static.pexels.com/photos/34676/pexels-photo-large.jpg') no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-}
+    position:relative;
 
+}
+/*
 .headline {
     padding: 120px 0;
 }
@@ -244,5 +251,5 @@ footer {
   .featurette-image pull-right {
       margin-bottom: 10px;
       margin-left: 0;
-  }
+  }*/
 }
