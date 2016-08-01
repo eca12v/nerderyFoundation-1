@@ -1,3 +1,7 @@
+*{
+  font-family: "Source Sans Pro", sans-serif;
+}
+
 body {
   background-color: #664659;/*plum*/
   color: #fff; /*white*/
@@ -44,6 +48,10 @@ body {
   .jumbotron h1{
     color:#fff;
   }
+/*Search Bar*/
+container-fluid ng-scope{
+  background-color: #664659
+}
 
 /*Landing Page*/
 .flex {
@@ -129,6 +137,7 @@ padding-left: 15px;
 
 /*Group Landing Page*/
 
+/*Group Edit Menu*/
 
 
 .headline {
