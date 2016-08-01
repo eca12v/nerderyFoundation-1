@@ -11,6 +11,7 @@ var groupSchema = mongoose.Schema({
   location: String,
   activities: {type: Array},
   technologies: {type: Array},
+  coreTechnologies: {type: Array},
   tags: {type: Array},
   freqOfMeeting: String,
   sizeOfMeeting: String,
@@ -18,6 +19,7 @@ var groupSchema = mongoose.Schema({
   affiliationURL: String,
   eventInfo: String,
   sizeOfMembership: String,
+  photoURL: String,
   approved: {type: Boolean, default: false},
   created: Date,
 });
