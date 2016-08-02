@@ -1,42 +1,144 @@
-<div id="page-container" class="container-fluid">
+<header>
+  <div class="layerBack">
+    <div class="navWrap">
+      <div class = "navBar" ng-include="'/views/templates/navBar.html'"></div>
+    </div>
 
-  <div class="jumbotron">
-    <h3>The Nerdery Foundation</h3>
+    <div class="jumbotron">
+      <h1>Nerdery Foundation Developer Network</h1>
       <h2>We connect technologists with the communities that need their talents.</h2>
+    </div>
   </div>
+</header>
 
-  <h3>{{techStr}}</h3>
+<div id="sortBar">
+
     <md-content class="md-no-momentum">
-      <md-input-container id="main-search" class="md-icon-float">
-        <!-- Use floating label instead of placeholder -->
+      <!-- <md-input-container id="main-search" class="md-icon-float">
         <h4><label>Search</label></h4>
-          <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"><i class="material-icons">search</i></md-icon>
         <input ng-model="filterStr" type="text">
-      </md-input-container>
+      </md-input-container> -->
+      <div id="searchBar">
+        <span>Search: </span>
+        <input id="main-search" class="form-control" ng-model="filterStr" placeholder="search"/>
+      </div>
 
-  <md-input-container id="tech-search" class="md-icon-float">
+
+
+<div id="filterBar">
+  <span>Filter By: </span>
+  <md-menu>
+       <md-button aria-label="" class="md-raised md-button md-ink-ripple" ng-click="openMenu($mdOpenMenu, $event)"><span ng-hide="selectedTech"> Technology</span><span ng-show="selectedTech">{{selectedTech}}</span>
+     <!-- <md-icon md-menu-origin md-svg-icon="call:phone"></md-icon> -->
+      </md-button>
+
+   <md-menu-content width="8">
+     <div layout="row">
+
+     <div layout="column">
+
+     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 6 | limitTo: -6">
+       <md-button ng-click="changeOverallTech(t.Technology)">
+         {{t.Technology}}
+       </md-button>
+     </md-menu-item>
+   </div>
+   <div layout="column">
+     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 12 | limitTo: -6">
+       <md-button ng-click="changeOverallTech(t.Technology)">
+         {{t.Technology}}
+       </md-button>
+     </md-menu-item>
+   </div>
+   <div layout="column">
+     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 18 | limitTo: -6">
+       <md-button ng-click="changeOverallTech(t.Technology)">
+         {{t.Technology}}
+       </md-button>
+     </md-menu-item>
+   </div>
+   <div layout="column">
+     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 24 | limitTo: -6">
+       <md-button ng-click="changeOverallTech(t.Technology)">
+         {{t.Technology}}
+       </md-button>
+     </md-menu-item>
+   </div>
+   <div layout="column">
+     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 30 | limitTo: -6">
+       <md-button ng-click="changeOverallTech(t.Technology)">
+         {{t.Technology}}
+       </md-button>
+     </md-menu-item>
+   </div>
+   <div layout="column">
+     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 33 | limitTo: -3">
+       <md-button ng-click="changeOverallTech(t.Technology)">
+         {{t.Technology}}
+       </md-button>
+     </md-menu-item>
+     </div>
+   </div>
+   </md-menu-content>
+ </md-menu>
+
+ <md-menu>
+      <md-button aria-label="" class="md-raised md-button md-ink-ripple" ng-click="openMenu($mdOpenMenu, $event)"><span ng-hide="locationStr"> Market Region</span><span ng-show="locationStr">{{locationStr}}</span>
+    <!-- <md-icon md-menu-origin md-svg-icon="call:phone"></md-icon> -->
+     </md-button>
+
+  <md-menu-content width="8">
+    <md-menu-item ng-repeat="l in location">
+      <md-button ng-click="changeOverallTech(t.Technology)">
+        {{l}}
+      </md-button>
+    </md-menu-item>
+
+</md-menu-content>
+</md-menu>
+
+<md-menu>
+     <md-button aria-label="" class="md-raised md-button md-ink-ripple" ng-click="openMenu($mdOpenMenu, $event)"><span ng-hide="sizeStr">Typical Meeting Size</span><span ng-show="sizeStr">{{sizeStr}}</span>
+   <!-- <md-icon md-menu-origin md-svg-icon="call:phone"></md-icon> -->
+    </md-button>
+
+ <md-menu-content width="8">
+   <md-menu-item ng-repeat="s in typicalSize">
+     <md-button ng-click="changeOverallTech(t.Technology)">
+       {{s}}
+     </md-button>
+   </md-menu-item>
+
+</md-menu-content>
+</md-menu>
+
+</div>
+</div>
+
+
+  <!-- <md-input-container id="tech-search" class="md-icon-float">
     <select class="form-control select-team" ng-model="tObj" data-ng-change="changeOverallTech(tObj)" >
       <label>Technology</label>
         <option value="">Technologies</option>
           <option ng-repeat="t in tech.Technologies track by $index" placeholder="Technologies" value="{{t.Technology}}" >{{t.Technology}}</option>
     </select>
-  </md-input-container>
+  </md-input-container> -->
 
-  <md-input-container id="location-search" class="md-icon-float">
+  <!-- <md-input-container id="location-search" class="md-icon-float">
     <select class="form-control" ng-model="locationStr">
       <label>Location: </label>
                     <option value="">Location</option>
                     <option ng-repeat="l in location track by $index" value="{{l}}" >{{l}}</option>
                   </select>
-  </md-input-container>
+  </md-input-container> -->
 
-  <md-input-container id="size-search" class="md-icon-float">
+  <!-- <md-input-container id="size-search" class="md-icon-float">
     <select class="form-control" ng-model="sizeStr">
       <label>Typical Meeting Size: </label>
                     <option value="">Meeting Size</option>
                     <option ng-repeat="s in typicalSize track by $index" value="{{s}}" >{{s}}</option>
                   </select>
-  </md-input-container>
+  </md-input-container> -->
 </md-content>
 
 <div class="row">
