@@ -11,12 +11,17 @@
   </div>
 </header>
 
+<div id="sortBar">
+
     <md-content class="md-no-momentum">
-      <md-input-container id="main-search" class="md-icon-float">
-        <!-- Use floating label instead of placeholder -->
+      <!-- <md-input-container id="main-search" class="md-icon-float">
         <h4><label>Search</label></h4>
         <input ng-model="filterStr" type="text">
-      </md-input-container>
+      </md-input-container> -->
+      <div id="searchBar">
+        <span>Search: </span>
+        <input id="main-search" class="form-control" ng-model="filterStr" placeholder="search"/>
+      </div>
 
 
 
@@ -107,6 +112,7 @@
 </md-menu-content>
 </md-menu>
 
+</div>
 </div>
 
 

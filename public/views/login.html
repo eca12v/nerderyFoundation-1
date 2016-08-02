@@ -1,22 +1,48 @@
-<div class="container">
-  <h1>Login Page</h1>
+<header id="non-home">
+  <div class="layerBack">
+    <div class="navWrap">
+      <div class = "navBar" ng-include="'/views/templates/navBar.html'"></div>
+    </div>
+  </div>
+</header>
 
+<div class="container">
   <div class="row">
     <div class="col-sm-6">
-    <h2>Login as Admin</h2>
+      <div id="admin-login" class="login-panel">
+        <h2 class="login-title">Admin</h2>
 
-      <input type="text" ng-model="username" placeholder="Username" class="form-control">
-      <input type="text" ng-model="email" placeholder="Email" class="form-control">
-      <input type="password" ng-model="password" placeholder="Password" class="form-control">
+        <form name="form">
 
-      <button class="btn btn-default" ng-click="login()">Login</button>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Username</label>
+            <input type="text" ng-model="username">
+          </md-input-container>
 
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Email</label>
+            <input type="text" ng-model="email">
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Password</label>
+            <input type="password" ng-model="password">
+          </md-input-container>
+
+        <!-- <input type="text" ng-model="username" placeholder="Username" class="form-control">
+        <input type="text" ng-model="email" placeholder="Email" class="form-control">
+        <input type="password" ng-model="password" placeholder="Password" class="form-control"> -->
+
+        <md-button class="md-raised md-button md-ink-ripple" ng-click="login()">Login</md-button>
+
+      </div>
     </div>
     <div class="col-sm-6">
-      <h2>Login as Group Contact</h2>
+      <div id="group-contact-login" class="login-panel">
+        <h2 class="login-title">Group Contact</h2>
         <img src="img/google.png" ng-click="authenticate('google')"></img>
-      </h2>
-
+      </div>
       <!-- <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a> -->
 
     </div>

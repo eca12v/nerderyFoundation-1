@@ -16,9 +16,7 @@ body {
 #add-group-banner {
   background-color: #353535;
   margin-bottom: 3px;
-}
-
-#add-group-banner {
+  text-align: center !important;
   padding-left: 10px;
   color: #E2DE00;
 }
@@ -116,11 +114,7 @@ container-fluid ng-scope{
   max-height: calc(200% / 3);
 }
 
-/*Search Bar*/
-#main-search {
-  float: left;
-  width: 50%;
-}
+
 
 /*filter-box {
   height: 100%;
@@ -219,7 +213,43 @@ padding-left: 15px;
   color: #E2DE00;
 }
 
+#main-search {
+  width: 75%;
+  display: inline-block;
+}
+
 #filterBar {
   display: inline-block;
   float: right;
+  vertical-align: middle;
+}
+
+#searchBar {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  vertical-align: middle;
+}
+
+#sortBar {
+  height: 60px;
+  line-height: 60px;
+}
+
+#non-home {
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+md-input-container.md-default-theme label,
+ md-input-container.md-default-theme .md-placeholder{
+    color:red !important;
+}
+
+.login-panel {
+  padding: 20px;
+}
+
+.login-title {
+  color: #E2DE00;
 }

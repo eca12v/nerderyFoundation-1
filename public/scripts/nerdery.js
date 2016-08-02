@@ -10,8 +10,8 @@ var myApp = angular.module( 'myApp', [
 
 /// Routes ///
 
-myApp.config(['$stateProvider', '$urlRouterProvider', '$mdIconProvider', '$authProvider',
-function($stateProvider, $urlRouterProvider, $mdIconProvider, $authProvider) {
+myApp.config(['$stateProvider', '$urlRouterProvider', '$mdIconProvider', '$mdThemingProvider', '$authProvider',
+function($stateProvider, $urlRouterProvider, $mdIconProvider, $mdThemingProvider, $authProvider) {
 
   $stateProvider.
   state('home', {
@@ -72,6 +72,21 @@ function($stateProvider, $urlRouterProvider, $mdIconProvider, $authProvider) {
   });
 
   $mdIconProvider.icon('md-close', 'img/icons/ic_close_24px.svg', 24);
+
+  //change default color for primary
+  var indigo = $mdThemingProvider.extendPalette('indigo', {
+      '500': '664659'
+  });
+  $mdThemingProvider.definePalette('indigo', indigo);
+
+  //change default color for warn
+
+  $mdThemingProvider.definePalette('red', indigo);
+
+  $mdThemingProvider.theme('default').primaryPalette('indigo').warnPalette('red');
+
+  //here you change placeholder/foreground color.
+  $mdThemingProvider.theme('default').foregroundPalette[3] = "gray";
 
  }]);//end of myapp config
 
