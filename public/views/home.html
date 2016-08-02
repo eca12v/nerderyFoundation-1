@@ -241,7 +241,7 @@
     </div>
 <!-- class="col-sm-4"  -->
     <div class="col-sm-9">
-      <md-content layout="row" layout-wrap>
+      <md-content layout="row" layout-wrap class="cardsContainer">
         <div flex="30" flex-sm="50" flex-xs="80" class="md-padding flip" ng-mouseenter="autoScroll = !autoScroll" ng-mouseleave="autoScroll = !autoScroll" ng-repeat="group in groups | multiWordFilter: techStr | filter: locationStr | filter: sizeStr | filter: filterStr track by $index">
           <div class="card" ng-class="autoScroll ? 'flipped' : ''">
           <a class="group-link" ng-href="/#/groups/{{group.name}}">

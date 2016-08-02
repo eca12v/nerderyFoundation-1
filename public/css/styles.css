@@ -11,6 +11,10 @@ body {
   height:auto;
   }
 
+  .cardsContainer {
+    background-image: url('http://thecodeplayer.com/uploads/media/pxpat.png');
+  }
+
   .flip {
     -webkit-perspective: 800;
      /*width: 400px;
@@ -18,9 +22,9 @@ body {
       position: relative;
       margin: 50px auto;
   }
-  .flip .card.flipped {
+  /*.flip .card.flipped {
     -webkit-transform: rotatex(-180deg);
-  }
+  }*/
   .flip .card {
     width: auto;
     height: 300px;
@@ -50,12 +54,26 @@ body {
   .flip .card .back {
     height: 110%;
     width: 110%;
-    -webkit-transform: rotatex(-180deg);
+    /*-webkit-transform: rotatex(-180deg);*/
       background: #f4f750;
 
       color: black;
       cursor: pointer;
   }
+/*making cards fade from sepia on hover*/
+  .card{
+    -webkit-transition: all 0.7s;
+  }
+
+  .card:hover {
+    -webkit-filter: none;
+  }
+
+  .card.brightness:hover {
+    -webkit-filter: brightness(0);
+  }
+
+  .card {-webkit-filter: sepia(100%);}
 
 #add-group {
   box-shadow: 2px 2px 4px #272727;
@@ -184,12 +202,12 @@ container-fluid ng-scope{
 }*/
 
 /*Group Tiles*/
-.group-tile {
+/*.group-tile {
   height: 300px;
   margin-left: 0;
   margin-right: 0;
   color: white;
-}
+}*/
 /*checkboxes*/
 md-checkbox {
   display: block;
