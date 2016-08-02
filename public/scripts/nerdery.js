@@ -56,6 +56,7 @@ function($stateProvider, $urlRouterProvider, $mdIconProvider, $authProvider) {
         if (!$auth.isAuthenticated() || !$auth.getPayload().admin) {
           $state.go('home');
       }
+<<<<<<< HEAD
     }]
   }).
   state('login', {
@@ -70,6 +71,24 @@ function($stateProvider, $urlRouterProvider, $mdIconProvider, $authProvider) {
     clientId: '125382478230-3n8qqoeugab70kluqqm1o3hleh6acbcc.apps.googleusercontent.com',
     redirectUri: 'http://localhost:8080/auth/google'
   });
+=======
+   })
+   .when('/admin', {
+     templateUrl: '/views/admin.html',
+     controller: 'AdminController'
+   })
+   .when('/login', {
+     templateUrl: '/views/login.html',
+     controller: 'LoginCtrl'
+   })
+   .when('/display/:groupName', {
+     templateUrl: '/views/display.html',
+     controller: 'DisplayCtrl'
+   })
+   .otherwise({
+     redirectTo: 'home'
+   });
+>>>>>>> origin/anna
 
   $mdIconProvider.icon('md-close', 'img/icons/ic_close_24px.svg', 24);
 
