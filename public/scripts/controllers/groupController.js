@@ -1,50 +1,56 @@
 
 myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScope', 'groupFactory', '$stateParams', '$mdSidenav', '$log', function( $scope, $http, $location, $rootScope, groupFactory, $stateParams, $mdSidenav, $log ){
-$scope.groupDisplayed = [];
+  $scope.groupDisplayed = [];
+
   groupFactory.getGroup($stateParams.name).then(function(response) {
 		$scope.group = response.data;
     $scope.groupDisplayed.push ($scope.group);
     console.log('in GroupController, $scope.group: ', $scope.group);
     console.log('in GroupController, $scope.groupDisplayed: ', $scope.groupDisplayed);
+  });
 
 //-----------------------------------------------------------------------
 $scope.toggleLeft = buildDelayedToggler('left');
 $scope.toggleRight = buildToggler('right');
+
 $scope.isOpenRight = function(){
   return $mdSidenav('right').isOpen();
-  };
+};
+
  function buildDelayedToggler(navID) {
-       return debounce(function() {
-         // Component lookup should always be available since we are not using `ng-if`
-         $mdSidenav(navID)
-           .toggle()
-           .then(function () {
-             $log.debug("toggle " + navID + " is done");
-           });
-       }, 200);
-     }
-     function buildToggler(navID) {
-     return function() {
-       // Component lookup should always be available since we are not using `ng-if`
-       $mdSidenav(navID)
-         .toggle()
-         .then(function () {
-           $log.debug("toggle " + navID + " is done");
-         });
+   return debounce(function() {
+     // Component lookup should always be available since we are not using `ng-if`
+     $mdSidenav(navID)
+       .toggle()
+       .then(function () {
+         $log.debug("toggle " + navID + " is done");
+       });
+   }, 200);
+  }
+
+  function buildToggler(navID) {
+    return function() {
+     // Component lookup should always be available since we are not using `ng-if`
+     $mdSidenav(navID)
+       .toggle()
+       .then(function () {
+         $log.debug("toggle " + navID + " is done");
+       });
      };
    }
-function debounce(func, wait, context) {
-  var timer;
-  return function debounced() {
-    var context = $scope,
-        args = Array.prototype.slice.call(arguments);
-    $timeout.cancel(timer);
-    timer = $timeout(function() {
-      timer = undefined;
-      func.apply(context, args);
-    }, wait || 10);
-  };
-}
+
+  function debounce(func, wait, context) {
+    var timer;
+    return function debounced() {
+      var context = $scope,
+          args = Array.prototype.slice.call(arguments);
+      $timeout.cancel(timer);
+      timer = $timeout(function() {
+        timer = undefined;
+        func.apply(context, args);
+      }, wait || 10);
+    };
+  }
 //-------------------------------------------------------------------
   var self = this;
   self.readonly = false;
@@ -121,7 +127,7 @@ $scope.groups = [];
   //  console.log( $scope.group.name );
 
 $scope.status = '';
-	});
+
 $scope.sizeOfMembership = [
         "0-25",
         "25-50",
