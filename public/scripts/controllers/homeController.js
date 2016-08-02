@@ -9,7 +9,7 @@ groupFactory.getApprovedGroups().then(function(response) {
   $scope.groups = response.data;
   console.log($scope.groups);
 });
-
+//calls in the technology list to populate filters
 $http({
   method: "GET",
   url: '/tech.json',

@@ -43,5 +43,12 @@ myApp.factory( 'groupFactory', ['$http', function($http) {
       console.log(groups);
       return groups;
 
+      groups.deleteGroup = function( deletedGroup ) {
+        console.log( 'in factory, deletedGroup: ', deletedGroup );
+        return $http.delete('groups/deleteGroup/' + deletedGroup).success(function(){
+
+        })
+      }
+
     }
   ]); //end of Group Factory

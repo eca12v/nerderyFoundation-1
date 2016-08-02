@@ -1,12 +1,12 @@
 
 myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScope', 'groupFactory', '$stateParams', '$mdSidenav', '$log', function( $scope, $http, $location, $rootScope, groupFactory, $stateParams, $mdSidenav, $log ){
 $scope.groupDisplayed = [];
-  groupFactory.getGroup($stateParams.name).then(function(response) {
+  groupFactory.getGroup($stateParams.groupName).then(function(response) {
 		$scope.group = response.data;
     $scope.groupDisplayed.push ($scope.group);
     console.log('in GroupController, $scope.group: ', $scope.group);
     console.log('in GroupController, $scope.groupDisplayed: ', $scope.groupDisplayed);
-
+});
 //-----------------------------------------------------------------------
 $scope.toggleLeft = buildDelayedToggler('left');
 $scope.toggleRight = buildToggler('right');
@@ -121,7 +121,7 @@ $scope.groups = [];
   //  console.log( $scope.group.name );
 
 $scope.status = '';
-	});
+
 $scope.sizeOfMembership = [
         "0-25",
         "25-50",
@@ -140,16 +140,17 @@ $scope.sizeOfMeeting = [
       "50-100",
       "100-500"
 ];
-  $scope.banana = function(index){
-    console.log( 'index: ', index );
-    var groupToDelete = index;
-    console.log('groupToDelete: ', groupToDelete);
-    groupFactory.deleteGroup( groupToDelete ).then(function(response){
-      $scope.group = response.data;
-      $scope.close();
-      console.log( 'in edit groups in group controller, $scope.data: ', $scope.group );
-    });
-  };
+//--------- begin delete function
+$scope.delete = function(index){
+  console.log( 'index: ', index );
+  var groupToDelete = index;
+  console.log('groupToDelete: ', groupToDelete);
+  groupFactory.deleteGroup( groupToDelete ).then(function(response){
+    $scope.group = response.data;
+    $scope.close();
+    console.log( 'in edit groups in group controller, $scope.data: ', $scope.group );
+  });
+};
 
   // FIX THE CHIPS !----------------------------------------
   var self = this;
