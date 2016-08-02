@@ -13,8 +13,8 @@ body {
 
   .flip {
     -webkit-perspective: 800;
-     width: 400px;
-     height: 300px;
+     /*width: 400px;
+     height: 300px;*/
       position: relative;
       margin: 50px auto;
   }
@@ -22,10 +22,11 @@ body {
     -webkit-transform: rotatex(-180deg);
   }
   .flip .card {
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: 300px;
+    margin: 50px auto;
     -webkit-transform-style: preserve-3d;
-    -webkit-transition: 0.5s;
+    -webkit-transition: 0.7s;
   }
   .flip .card .face {
     width: 100%;
@@ -40,15 +41,18 @@ body {
   }
   .flip .card .front {
     position: absolute;
+
     z-index: 1;
-      background: black;
+      background: turquoise;
       color: white;
       cursor: pointer;
   }
   .flip .card .back {
+    height: 110%;
+    width: 110%;
     -webkit-transform: rotatex(-180deg);
-      background: blue;
-      background: white;
+      background: #f4f750;
+
       color: black;
       cursor: pointer;
   }
@@ -100,16 +104,17 @@ container-fluid ng-scope{
     background-color: #664659;
   }
 
-  md-card-title-text {
+  md-card-title-text .md-headline {
     text-align: center;
   }
 
-  md-card {
+  md-card.face {
     border: 3px solid #664659;
     border-radius: 7px;
     background-color: turquoise;
     height: auto;
 }
+
 
 /*Landing Page*/
 .flex {
