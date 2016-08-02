@@ -25,8 +25,6 @@
         <input ng-model="description">
       </md-input-container>
 
-
-<<<<<<< HEAD
     <md-input-container class="md-block" flex-gt-sm>
       <label>Location</label>
       <input ng-model="location">
@@ -55,7 +53,6 @@
       <span md-highlight-text="ctrl.searchText">{{item.name}} :: {{item.type}}</span>
     </md-autocomplete>
     <md-chip-template>
-=======
           <md-chips ng-model="ctrl.roTagNames" name="tagName" readonly="ctrl.readonly" md-max-chips="5" placeholder="Add A Descriptive Tag" secondary-placeholder="New Tag">>
             <md-chip-template>
               <strong>{{$chip}}</strong>
@@ -74,7 +71,6 @@
             <span md-highlight-text="ctrl.searchText">{{item.Technologies}} {{item.Skills}}</span>
           </md-autocomplete>
           <md-chip-template>
->>>>>>> 201dcc9c5ab508b67bb93bed8828d08ec845985b
             <span>
               <strong>{{$chip.Technologies}}</strong>
               <!-- <em>({{$chip.type}})</em> -->
@@ -83,9 +79,6 @@
         </md-chips>
         <p>{{ctrl.roTagNames}}</p>
         <p>{{ctrl.selectedTech}}</p>
-
-
-
           <md-input-container class="md-block" flex-gt-sm>
             <label>Affiliations</label>
             <input ng-model="affiliations">
@@ -95,7 +88,6 @@
             <label>affiliationURL</label>
             <input name="affiliationURL" ng-model="affiliationURL" placeholder="National Affiliation Website">
           </md-input-container>
-
 
           <md-input-container flex-gt-sm>
             <label>sizeOfMembership</label>

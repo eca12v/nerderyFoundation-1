@@ -140,15 +140,14 @@ $scope.sizeOfMeeting = [
       "100-500"
 ];
   $scope.banana = function(index){
-    var groupToDelete = $scope.groups[index];
+    console.log( 'index: ', index );
+    var groupToDelete = index;
     console.log('groupToDelete: ', groupToDelete);
-    var groupId = groupToDelete._id;
-  console.log('grouId: ', groupId);
-    $http({
-       method: 'DELETE',
-       url: '/groups/deleteGroup/' + groupId,
-     });
-    $scope.groups.splice(index, 1);
+    groupFactory.deleteGroup( groupToDelete ).then(function(response){
+      $scope.group = response.data;
+      $scope.close();
+      console.log( 'in edit groups in group controller, $scope.data: ', $scope.group );
+    });
   };
 
   // FIX THE CHIPS !----------------------------------------
@@ -189,9 +188,18 @@ $scope.edit = function(id, index){
   console.log( 'updatedGroup: ', updatedGroup );
   groupFactory.editGroup( id, updatedGroup ).then(function(response){
     $scope.group = response.data;
+    $scope.close();
     console.log( 'in edit groups in group controller, $scope.data: ', $scope.group );
 
   });
+};//end of editGroup
 
-};
+$scope.close = function () {
+      // Component lookup should always be available since we are not using `ng-if`
+      $mdSidenav('right').close()
+        .then(function () {
+          $log.debug("close RIGHT is done");
+        });
+    };
+
 }]); //end controller

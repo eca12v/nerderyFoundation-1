@@ -9,10 +9,17 @@ groups.editGroup = function ( id, updatedGroup ) {
   console.log( 'inside editGroup Factory, id ', updatedGroup.name );
   console.log( 'inside editGroup Factory, updatedGroup ', updatedGroup);
   return $http.put('groups/editGroup/' + id, updatedGroup ).success(function(data) {
-    
     console.log('editGroup ', data);
   });
 };
+
+groups.deleteGroup = function ( groupToDelete ) {
+  console.log( 'inside deleteGroup Factory, id ', groupToDelete );
+  return $http.delete('groups/deleteGroup/' + groupToDelete ).success(function(data) {
+    console.log('deleteGroup ', data);
+  });
+};
+
 
     groups.getApprovedGroups = function () {
       return $http.get('groups/getApprovedGroups').success(function(data) {
