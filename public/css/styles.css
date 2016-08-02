@@ -241,6 +241,10 @@ padding-left: 15px;
   margin-bottom: 15px;
 }
 
+#non-home-group {
+  height: auto;
+}
+
 md-input-container.md-default-theme label,
  md-input-container.md-default-theme .md-placeholder{
     color:red !important;
