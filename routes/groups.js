@@ -86,8 +86,8 @@ router.get('/getUnapprovedGroups', auth, function(req, res) {
 });
 
 router.get('/getGroup/:groupName', function(req, res) {
-  console.log(req.params.name);
-  Group.findOne({'groupName': req.params.name}, function(err, group) {
+  console.log(req.params.groupName);
+  Group.findOne({'name': req.params.groupName}, function(err, group) {
     if(err) {
       console.log('/getGroup error: ', err);
       res.sendStatus(500);

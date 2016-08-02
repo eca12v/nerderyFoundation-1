@@ -2,7 +2,7 @@
 myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScope', 'groupFactory', '$stateParams', '$mdSidenav', '$log', function( $scope, $http, $location, $rootScope, groupFactory, $stateParams, $mdSidenav, $log ){
   $scope.groupDisplayed = [];
 
-  groupFactory.getGroup($stateParams.name).then(function(response) {
+  groupFactory.getGroup($stateParams.groupName).then(function(response) {
 		$scope.group = response.data;
     $scope.groupDisplayed.push ($scope.group);
     console.log('in GroupController, $scope.group: ', $scope.group);
