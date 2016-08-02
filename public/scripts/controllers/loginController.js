@@ -1,24 +1,23 @@
-angular.module('Authorization', ['satellizer']).
+angular.module('Authorization', ['satellizer', 'toastr']).
 
-controller('LoginCtrl', ['$scope', '$auth', '$location',
-  function($scope, $auth, $location, $authProvider) {
+controller('LoginCtrl', ['$scope', '$auth', '$state', '$location', 'toastr',
+  function($scope, $auth, $state, $location, $authProvider, toastr) {
 
-  $scope.isAuthenticated = $auth.isAuthenticated();
-
-  $scope.currentUser = $auth.getPayload();
+  console.log(toastr);
+  $scope.isAuthenticated = $auth.isAuthenticated;
+  $scope.currentUser = $auth.getPayload;
 
   $scope.authenticate = function(provider) {
       $auth.authenticate(provider);
     };
-
-  console.log($scope.isAuthenticated);
 
   $scope.signUp = function () {
     $auth
       .signup({username: $scope.username, email: $scope.email, password: $scope.password})
       .then(function (response) {
         $auth.setToken(response);
-        $location.path('/home');
+        $state.go('home');
+
       })
       .catch(function (response) {
       });
@@ -29,7 +28,12 @@ controller('LoginCtrl', ['$scope', '$auth', '$location',
       .login({username: $scope.username, email: $scope.email, password: $scope.password})
       .then(function (response) {
         $auth.setToken(response);
-        $location.path('/home');
+        $state.go('home');
+        toastr.success(
+          'Succesfully logined in!',
+          {closeButton: true}
+        );
+
       })
       .catch(function (response) {
       });
@@ -37,7 +41,7 @@ controller('LoginCtrl', ['$scope', '$auth', '$location',
 
   $scope.logout = function () {
     $auth.logout();
-    $location.path('/home');
+    $state.go('home');
   };
 }
 ]);

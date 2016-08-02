@@ -7,8 +7,28 @@
 body {
   background-color: #664659;/*plum*/
   color: #fff; /*white*/
-
+  min-height:100%;
+  height:auto;
   }
+
+#add-group {
+  box-shadow: 2px 2px 4px #272727;
+}
+
+#add-group-banner {
+  background-color: #353535;
+  margin-bottom: 3px;
+}
+
+#add-group-banner {
+  padding-left: 10px;
+  color: #E2DE00;
+}
+
+#page-container {
+  padding-bottom: 50px;
+}
+
   .jumbotron {
       display: block;
       height:auto;
@@ -108,9 +128,9 @@ main-search {
   width: 75%;
 }
 
-filter-box {
+/*filter-box {
   height: 100%;
-}
+}*/
 
 /*Group Tiles*/
 .group-tile {
