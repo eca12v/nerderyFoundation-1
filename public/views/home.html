@@ -78,7 +78,7 @@
 <!-- class="col-sm-4"  -->
     <div class="col-sm-9">
       <md-content layout="row" layout-wrap>
-        <div flex="30" flex-sm="80" flex-xs="80" class="md-padding" ng-repeat="group in groups | multiWordFilter: techStr | filter: locationStr | filter: sizeStr | filter: filterStr track by $index">
+        <div flex="30" flex-sm="50" flex-xs="80" class="md-padding" ng-repeat="group in groups | multiWordFilter: techStr | filter: locationStr | filter: sizeStr | filter: filterStr track by $index">
           <a class="group-link" ng-href="/#/groups/{{group.name}}">
             <md-card class="group-tile md-whiteframe-6dp" ng-style="{'background-image':'url({{group.photoURL}})', 'background-size':'cover', 'background-position':'center'}" >
 

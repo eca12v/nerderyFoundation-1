@@ -11,6 +11,8 @@ body {
   height:auto;
   }
 
+
+
 #add-group {
   box-shadow: 2px 2px 4px #272727;
 }
@@ -53,7 +55,7 @@ body {
 /*Search Bar*/
 container-fluid ng-scope{
   background-color: #664659
-
+}
   #page-container {
     background-color: #664659;
   }
@@ -134,7 +136,7 @@ main-search {
 
 /*Group Tiles*/
 .group-tile {
-  height: auto;
+  height: 300px;
   margin-left: 0;
   margin-right: 0;
 }
@@ -154,7 +156,7 @@ md-checkbox {
 
 .sub {
 padding-left: 15px;
-
+}
 /*Group Landing Page*/
 
 /*Group Edit Menu*/
