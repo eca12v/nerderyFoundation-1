@@ -86,11 +86,12 @@ router.get('/getUnapprovedGroups', auth, function(req, res) {
 });
 
 router.get('/getGroup/:groupName', function(req, res) {
-  Group.findOne({'name': req.params.groupName}, function(err, group) {
+  Group.findOne({'groupName': req.params.name}, function(err, group) {
     if(err) {
       console.log('/getGroup error: ', err);
       res.sendStatus(500);
     } else {
+      console.log('in router.get, returning group: ', group);
       res.json(group);
     }
   });
@@ -115,6 +116,24 @@ router.put('/approveGroup/:id', auth, function(req, res) {
     }
   });
 });
+
+router.delete('/deleteGroup/:id', function(req, res) {
+  Group.findOne({'_id': req.params.id}, function(err, group) {
+    if(err) {
+      console.log('/deleteGroup error: ', err);
+    } else {
+      group.save(function(err) {
+        if(err) {
+          console.log(err);
+          res.sendStatus(500);
+        } else {
+          res.json(group);
+        }
+      });
+    }
+  });
+});
+
 
 // for uploading photos
 var upload = multer({

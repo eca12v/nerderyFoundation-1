@@ -1,5 +1,4 @@
-
-<div class="group-container">
+<div class="group-container" vertical>
   <header class="text-center" name="home">
     <div class="intro-text">
       <img src="" class="header-image" />
@@ -9,14 +8,11 @@
 </div>
   </header>
 
-
-
 <!-- About Section -->
 <div id="about-section">
   <div class="container">
     <div class="section-title">
       <h2>About Us</h2>
-
       <!-- that hr is for a line. it's a pretty line. Leave the weird hr tag alone. -->
       <hr>
     </div>
@@ -33,7 +29,13 @@
         <p>Affiliations: {{group.affiliations}}</p>
         <p>Affiliation : {{group.affiliationURL}}</p>
         <div class="editGroup">
-        <p>Is this your group? Make changes here:  <button type="button" class = "btn btn-default" name="button" ng-click="">Update</button></p>
+          <div style="color: black">
+            <button ng-click="toggleRight()"
+              ng-hide="isOpenRight()"
+              class="md-primary">
+              Edit or Delete this group
+            </button>
+          </div>
         </div>
       </div>
 
@@ -53,87 +55,81 @@
     </div>
   </div>
 </div>
+
+<div layout="row" layout-fill ng-cloak >
+<md-sidenav class="md-sidenav-right" style="color: black" md-component-id="right">
+      <md-toolbar>
+        <h1 class="md-toolbar-tools">Sidenav Right</h1>
+      </md-toolbar>
+      <md-content layout-padding >
+        <section="row">
+          <md-input-container class="md-block" flex-gt-sm input >
+          <div>Name: <a href="#" editable-text="group.name">{{ group.name || 'empty' }}</a></div>
+          </md-input-container>
+
+          <md-input-container input ng-model="description">
+          <div>Desciption: <a href="#" editable-textarea="group.description" e-rows="7" e-cols="40">{{ group.description || 'empty' }}</a></div>
+          </md-input-container>
+
+          <md-input-container input ng-model="groupContact">
+          <div>Group Contact: <a href="#" editable-text="group.groupContact" e-step="5">{{ group.groupContact || 'empty' }}</a></div>
+          </md-input-container>
+
+          <md-input-container input ng-model="contactEmail">
+          <div>Contact Email: <a href="#" editable-email="group.contactEmail"> {{ group.contactEmail || 'empty' }}</a></div>
+          </md-input-container>
+
+          <md-input-container input ng-model="location">
+          <div>Location: <a href="#" editable-text="group.location">{{ group.location || 'empty' }}</a></div>
+          </md-input-container>
+
+          <md-input-container input ng-model="activities">
+          <div>Activites: <a href="#" editable-text="group.activites">{{ group.activities || 'empty' }}</a></div>
+          </md-input-container>
+
+          <md-input-container input ng-model="technologies">
+          <div>Technologies: <a href="#" editable-text="group.technologies">{{ group.technologies || 'empty' }}</a></div>
+          </md-input-container>
+
+          <md-input-container input ng-model="tags">
+          <div>Tags: <a href="#" editable-text="group.tags">{{ group.tags || 'empty' }}</a></div>
+          </md-input-container>
+
+          <md-input-container input ng-model="affiliations">
+          <div>Affiliations: <a href="#" editable-text="group.affiliations">{{ group.affiliations || 'empty' }}</a></div>
+          </md-input-container>
+
+
+          <md-input-container input ng-model="affiliationURL">
+          <div>AffiliationURL: <a href="#" editable-text="group.affiliationURL">{{ group.affiliationURL || 'empty' }}</a></div>
+          </md-input-container>
+
+
+          <md-input-container flex-gt-sm>
+          <label>freqOfMeeting</label>
+          <md-select ng-model="freqOfMeeting">
+          <md-option ng-repeat="option in freqOfMeeting" value="{{option}}">{{ option }}</md-option>
+          </md-select>
+          </md-input-container>
+
+          <md-input-container flex-gt-sm>
+            <label>sizeOfMeeting</label>
+            <md-select ng-model="sizeOfMeeting">
+            <md-option ng-repeat="option in sizeOfMeeting" value="{{ option }}">{{ option }}</md-option>
+          </md-select>
+          </md-input-container>
+
+          <md-input-container flex-gt-sm>
+            <label>sizeOfMembership</label>
+            <md-select ng-model="sizeOfMembership">
+            <md-option ng-repeat="option in sizeOfMembership" value="{{ option }}">{{ option }}</md-option>
+          </md-select>
+          </md-input-container>
+
+          <button type="button" name="button" ng-click="banana(group._id, $index)">Delete Group</button>
+          <button type="button" name="button" ng-click="edit(group._id, $index)">Save your edits</button>
+      </md-content>
+      </section>
+    </md-sidenav>
 </div>
-
-<!-- {{group}} -->
-
-<div class="row">
-<div class="col-sm-8 col-sm-offset-2 well">
-<md-input-container class="md-block" flex-gt-sm input >
-<div>Name: <a href="#" editable-text="group.name">{{ group.name || 'empty' }}</a></div>
-</md-input-container>
-
-<md-input-container input ng-model="description">
-<div>Desciption: <a href="#" editable-textarea="group.description" e-rows="7" e-cols="40">{{ group.description || 'empty' }}</a></div>
-</md-input-container>
-
-<md-input-container input ng-model="groupContact">
-<div>Group Contact: <a href="#" editable-text="group.groupContact" e-step="5">{{ group.groupContact || 'empty' }}</a></div>
-</md-input-container>
-
-<md-input-container input ng-model="contactEmail">
-<div>Contact Email: <a href="#" editable-email="group.contactEmail"> {{ group.contactEmail || 'empty' }}</a></div>
-</md-input-container>
-
-<md-input-container input ng-model="location">
-<div>Location: <a href="#" editable-text="group.location">{{ group.location || 'empty' }}</a></div>
-</md-input-container>
-
-<md-input-container input ng-model="activities">
-<div>Activites: <a href="#" editable-text="group.activites">{{ group.activities || 'empty' }}</a></div>
-</md-input-container>
-
-
-<md-input-container input ng-model="technologies">
-<div>Technologies: <a href="#" editable-text="group.technologies">{{ group.technologies || 'empty' }}</a></div>
-</md-input-container>
-
-
-<!-- <h3>Website: {{group.groupURL}}</h3> -->
-
-<md-input-container input ng-model="tags">
-<div>Tags: <a href="#" editable-text="group.tags">{{ group.tags || 'empty' }}</a></div>
-</md-input-container>
-
-<md-input-container input ng-model="affiliations">
-<div>Affiliations: <a href="#" editable-text="group.affiliations">{{ group.affiliations || 'empty' }}</a></div>
-</md-input-container>
-
-
-<md-input-container input ng-model="affiliationURL">
-<div>AffiliationURL: <a href="#" editable-text="group.affiliationURL">{{ group.affiliationURL || 'empty' }}</a></div>
-</md-input-container>
-
-
-<md-input-container flex-gt-sm>
-<label>freqOfMeeting</label>
-<md-select ng-model="freqOfMeeting">
-<md-option ng-repeat="option in freqOfMeeting" value="{{option}}">{{ option }}</md-option>
-</md-select>
-</md-input-container>
-
-<md-input-container flex-gt-sm>
-  <label>sizeOfMeeting</label>
-  <md-select ng-model="sizeOfMeeting">
-  <md-option ng-repeat="option in sizeOfMeeting" value="{{ option }}">{{ option }}</md-option>
-</md-select>
-</md-input-container>
-
-<md-input-container flex-gt-sm>
-  <label>sizeOfMembership</label>
-  <md-select ng-model="sizeOfMembership">
-  <md-option ng-repeat="option in sizeOfMembership" value="{{ option }}">{{ option }}</md-option>
-</md-select>
-</md-input-container>
-
-<!-- <md-chips ng-model="ctrl.roTagNames" name="tagName" readonly="ctrl.readonly" md-max-chips="5" placeholder="group.tags" secondary-placeholder="New Tag">>
-  <md-chip-template>
-    <strong>{{$chip}}</strong>
-  </md-chip-template>
-</md-chips> -->
-
-</div>
-<button type="button" class="btn btn-danger" name="button" ng-click="banana()">Delete Group</button>
-<button type="button" class="btn btn-success" name="button" ng-click="edit(group._id, $index)">Save your edits</button>
-
 </div>
