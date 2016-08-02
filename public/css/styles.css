@@ -22,9 +22,9 @@ body {
       position: relative;
       margin: 50px auto;
   }
-  /*.flip .card.flipped {
+  .flip .card.flipped {
     -webkit-transform: rotatex(-180deg);
-  }*/
+  }
   .flip .card {
     width: auto;
     height: 300px;
@@ -54,26 +54,12 @@ body {
   .flip .card .back {
     height: 110%;
     width: 110%;
-    /*-webkit-transform: rotatex(-180deg);*/
+    -webkit-transform: rotatex(-180deg);
       background: #f4f750;
 
       color: black;
       cursor: pointer;
   }
-/*making cards fade from sepia on hover*/
-  .card{
-    -webkit-transition: all 0.7s;
-  }
-
-  .card:hover {
-    -webkit-filter: none;
-  }
-
-  .card.brightness:hover {
-    -webkit-filter: brightness(0);
-  }
-
-  .card {-webkit-filter: sepia(100%);}
 
 #add-group {
   box-shadow: 2px 2px 4px #272727;
