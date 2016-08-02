@@ -127,10 +127,10 @@ header {
   }
 /*Search Bar*/
 container-fluid ng-scope{
-  background-color: #664659
+  /*background-color: #664659*/
 }
   #page-container {
-    background-color: #664659;
+    /*background-color: #664659;*/
   }
 
   md-card-title-text .md-headline {
