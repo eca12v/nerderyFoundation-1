@@ -69,9 +69,6 @@ $scope.changeSubTechStr =  function(tech) {
     $scope.techStr = newStr;
   }
 };
-
-$scope.location = ['Twin Cities', 'Duluth'];
-
 $scope.typicalSize = ['0-25', '25-50', '50-100', '100-500'];
 
 $scope.changeLocation =  function(location) {
@@ -87,6 +84,22 @@ $scope.changeLocation =  function(location) {
     $scope.techStr = newStr;
   }
 };
+
+$scope.location = [
+  "Minneapolis - St. Paul",
+  "Duluth - Superior",
+  "Fargo - Valley City, ND",
+  "Sioux Falls(Mitchell), SD",
+  "Mankato",
+  "Rochester - Mason City - Austin, MN - IA",
+  "La Crosse - Eau Claire, WI"
+];
+
+  var originatorEv;
+  $scope.openMenu = function($mdOpenMenu, ev) {
+    originatorEv = ev;
+    $mdOpenMenu(ev);
+  };
 
 }]) //end homeController
 
