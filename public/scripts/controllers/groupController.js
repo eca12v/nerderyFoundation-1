@@ -1,4 +1,5 @@
 
+
 myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScope', 'groupFactory', '$stateParams', '$mdSidenav', '$log', function( $scope, $http, $location, $rootScope, groupFactory, $stateParams, $mdSidenav, $log ){
   $scope.groupDisplayed = [];
 
@@ -8,6 +9,7 @@ myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScop
     console.log('in GroupController, $scope.group: ', $scope.group);
     console.log('in GroupController, $scope.groupDisplayed: ', $scope.groupDisplayed);
   });
+
 
 //-----------------------------------------------------------------------
 $scope.toggleLeft = buildDelayedToggler('left');
@@ -208,5 +210,6 @@ $scope.close = function () {
           $log.debug("close RIGHT is done");
         });
     };
+
 
 }]); //end controller
