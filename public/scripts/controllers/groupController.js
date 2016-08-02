@@ -5,6 +5,7 @@ myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScop
 
   groupFactory.getGroup($stateParams.groupName).then(function(response) {
 		$scope.group = response.data;
+    $scope.groupFlags = $scope.group.flags;
     $scope.groupDisplayed.push ($scope.group);
     console.log('in GroupController, $scope.group: ', $scope.group);
     console.log('in GroupController, $scope.groupDisplayed: ', $scope.groupDisplayed);
@@ -210,6 +211,11 @@ $scope.close = function () {
           $log.debug("close RIGHT is done");
         });
     };
+
+$scope.flagGroup = function() {
+  groupFactory.flagGroup($scope.group._id);
+  $scope.groupFlags++;
+};
 
 
 }]); //end controller

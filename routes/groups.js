@@ -85,6 +85,37 @@ router.get('/getUnapprovedGroups', auth, function(req, res) {
   });
 });
 
+router.put('/flagGroup/:id', function(req, res) {
+  console.log('flag group endpoint hit');
+  Group.findOne({'_id': req.params.id}, function(err, group) {
+    if(err) {
+      console.log('/flagGroup error: ', err);
+    } else {
+      group.flags++;
+      group.save(function(err) {
+        if(err) {
+          console.log(err);
+          res.sendStatus(500);
+        } else {
+          console.log(group);
+          res.json(group);
+        }
+      });
+    }
+  });
+});
+
+router.get('/getFlaggedGroups', function(req, res) {
+  Group.find({'flags': { $gt: 0 }}).sort({ flags: 'desc'}).exec(function(err, groups) {
+    if(err) {
+      console.log(err);
+      res.sendStatus(500);
+    } else {
+      res.send(groups);
+    }
+  });
+});
+
 router.get('/getGroup/:groupName', function(req, res) {
   console.log(req.params.groupName);
   Group.findOne({'name': req.params.groupName}, function(err, group) {

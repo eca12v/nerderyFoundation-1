@@ -23,6 +23,18 @@ myApp.factory( 'groupFactory', ['$http', function($http) {
 		});
    };
 
+   groups.flagGroup = function(id) {
+     return $http.put('groups/flagGroup/' + id).success(function(data) {
+       console.log(data);
+ 		});
+  };
+
+   groups.getFlaggedGroups = function() {
+     return $http.get('groups/getFlaggedGroups').success(function(data) {
+ 			angular.copy(data, groups.groups);
+ 		});
+  };
+
    groups.approveGroup = function(id) {
      return $http.put('groups/approveGroup/' + id).success(function(data) {
        console.log(data);
