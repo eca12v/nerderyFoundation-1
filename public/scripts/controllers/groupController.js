@@ -198,7 +198,7 @@ $scope.edit = function(id, index){
 $scope.delete = function(id, index){
   console.log( 'delete clicked, index: ', id );
   groupFactory.deleteGroup( id ).then(function(response){
-    // $scope.close();
+    $scope.close();
     $window.location.href = '/home.html';
 
     console.log( 'in delete groups in group controller, $scope.data: ', $scope.group );
