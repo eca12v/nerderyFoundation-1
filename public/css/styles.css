@@ -11,14 +11,13 @@ body {
   height:auto;
   }
 
-  .cardsContainer {
-    background-image: url('http://thecodeplayer.com/uploads/media/pxpat.png');
-  }
 
-  .flip {
+
+
+  /*.flip {
     -webkit-perspective: 800;
-     /*width: 400px;
-     height: 300px;*/
+     width: 400px;
+     height: 300px;
       position: relative;
       margin: 50px auto;
   }
@@ -39,9 +38,9 @@ body {
     -webkit-backface-visibility: hidden ;
     z-index: 2;
       font-family: Georgia;
-      /*font-size: 3em;*/
+      font-size: 3em;
       text-align: center;
-      /*line-height: 200px;*/
+      line-height: 200px;
   }
   .flip .card .front {
     position: absolute;
@@ -59,7 +58,7 @@ body {
 
       color: black;
       cursor: pointer;
-  }
+  }*/
 
 #add-group {
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
@@ -119,16 +118,7 @@ container-fluid ng-scope{
     /*background-color: #664659;*/
   }
 
-  md-card-title-text .md-headline {
-    text-align: center;
-  }
 
-  md-card.face {
-    border: 3px solid #664659;
-    border-radius: 7px;
-    background-color: turquoise;
-    height: auto;
-}
 
 
 /*Landing Page*/
@@ -188,6 +178,59 @@ container-fluid ng-scope{
 }*/
 
 /*Group Tiles*/
+
+
+  .cardsContainer {
+    background-image: url('http://thecodeplayer.com/uploads/media/pxpat.png');
+  }
+
+  /*.flip {
+    border: 3px solid #664659;
+    border-radius: 7px;
+    background-color: turquoise;
+    height: 300px;
+    width: auto;
+  }
+
+  .flip:hover {
+    border: 3px solid #664659;
+    border-radius: 7px;
+    background-color: turquoise;
+    height:auto;
+    min-height: 300px;
+  }*/
+
+md-card-title-text .md-headline {
+  text-align: center;
+}
+/*ng-style="{'background-image':'url({{group.photoURL}})', 'background-size':'cover', 'background-position':'center'}"*/
+md-card.face {
+  background-image: url("../images/code-1486361__340.jpg");
+  border: 1px solid #664659;
+  border-radius: 7px;
+  /*background-color: turquoise;*/
+  height: 300px;
+  color: white;
+  transition: transform .2s ease-in;
+  z-index: 1;
+}
+
+md-card.face:hover {
+  border: 1px solid #664659;
+  border-radius: 7px;
+  color: white;
+  height: auto;
+  min-height: 300px;
+  /*width: auto;
+  min-width: 350px;*/
+  z-index: 999;
+  transform: scale(1.1);
+
+}
+
+.flip:hover {
+  z-index: 999;
+}
 /*.group-tile {
   height: 300px;
   margin-left: 0;
