@@ -7,46 +7,62 @@
 </header>
 
 <div class="container">
-  <h1>Admin Page</h1>
-
   <div class="row">
     <div class="col-sm-12">
-      <md-content class="md-padding">
-          <md-card>
+
+      <h2 class="admin-title">Groups Awaiting Approval: </h2>
+
+      <div class="row">
+        <div ng-repeat="group in groups" class="col-sm-6">
+
+          <md-card class="admin-card">
             <md-card-title>
-              <h2>Groups Awaiting Approval: </h2>
+              <md-card-title-text>
+                <span class="md-headline">{{group.name}}</span>
+                <span class="md-subhead">Contact: {{group.groupContact}}</span>
+                <span class="md-subhead">Location: {{group.location}}</span>
+                <span class="md-subhead">Typical Meeting Size: {{group.sizeOfMeeting}}</span>
+              </md-card-title-text>
+              <md-card-title-media>
+                <div class="md-media-sm card-media"></div>
+              </md-card-title-media>
             </md-card-title>
-            <md-card-content>
-              <md-card ng-repeat="group in groups">
-                <span>Group Name: {{group.groupName}}</span>
-                <span>Group URL: {{group.groupURL}}</span>
-                <button ng-click="approve(group._id, $index)">Approve Group</button>
-              </md-card>
-            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+              <md-button class="md-raised md-primary admin-link"><a ng-href="/#/groups/{{group.name}}">View Group Page</a></md-button>
+              <md-button class="md-fab md-success" aria-label="" ng-click="approve(group._id, $index)"><i class="fa fa-check" aria-hidden="true"></i></md-button>
+              <md-button class="md-fab md-warn" ng-click="delete(group._id, $index)"><i class="fa fa-times" aria-hidden="true"></i></md-button>
+            </md-card-actions>
           </md-card>
 
-          <md-card>
+        </div>
+      </div>
+
+      <h2 class="admin-title">Flagged Groups: </h2>
+
+      <div class="row">
+        <div ng-repeat="group in flaggedGroups" class="col-sm-6">
+
+          <md-card class="admin-card">
             <md-card-title>
-              <h2>Flagged Groups: </h2>
-              <md-card ng-repeat="group in flaggedGroups">
-                <span>Group Name: {{group.name}}</span>
-                <span># of flags: {{group.flags}}</span>
-                <!-- <button ng-click="approve(group._id, $index)">Approve Group</button> -->
-              </md-card>
-
+              <md-card-title-text>
+                <span class="md-headline">{{group.name}}</span>
+                <span class="md-subhead">Contact: {{group.groupContact}}</span>
+                <span class="md-subhead">Flags: {{group.flags}}</span>
+              </md-card-title-text>
+              <md-card-title-media>
+                <div class="md-media-sm card-media"></div>
+              </md-card-title-media>
             </md-card-title>
-            <md-card-content>
-
-            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+              <md-button class="md-raised md-primary admin-link"><a ng-href="/#/groups/{{group.name}}">View Group Page</a></md-button>
+              <md-button class="md-fab md-success" aria-label="" ng-click="approve(group._id, $index)"><i class="fa fa-check" aria-hidden="true"></i></md-button>
+              <md-button class="md-fab md-warn" ng-click="delete(group._id, $index)"><i class="fa fa-times" aria-hidden="true"></i></md-button>
+            </md-card-actions>
           </md-card>
 
-          <md-card>
-            <md-card-title>
-              <h2>Groups: </h2>
-            </md-card-title>
-            <md-card-content>
+        </div>
+      </div>
 
-            </md-card-content>
-          </md-card>
     </div>
   </div>
+</div>
