@@ -1,6 +1,10 @@
 
 
-myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScope', 'groupFactory', '$stateParams', '$mdSidenav', '$log', function( $scope, $http, $location, $rootScope, groupFactory, $stateParams, $mdSidenav, $log ){
+myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScope', 'groupFactory', '$stateParams', '$mdSidenav', '$log', '$auth', function( $scope, $http, $location, $rootScope, groupFactory, $stateParams, $mdSidenav, $log, $auth ){
+
+  $scope.isAuthenticated = $auth.isAuthenticated;
+  $scope.currentUser = $auth.getPayload;
+
   $scope.groupDisplayed = [];
 
   groupFactory.getGroup($stateParams.groupName).then(function(response) {

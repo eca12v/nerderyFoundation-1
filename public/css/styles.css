@@ -91,7 +91,7 @@ header {
 
 }
 
-  .jumbotron {
+  #jumbo-home {
       display: block;
       height:auto;
       width: 100%;
@@ -348,6 +348,7 @@ md-input-container.md-default-theme label,
 
 md-card-title-text .md-headline {
   text-align: left;
+  color: black;
 }
 
 .admin-card {
@@ -363,4 +364,23 @@ md-card-title-text .md-headline {
 .md-button {
   background: white;
   color: black;
+}
+
+md-card-content,
+md-card md-card-title md-card-title-text {
+  color: black;
+}
+
+#group-jumbo {
+  background: url('../img/techmeetup.jpeg') no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+#flagDiv {
+  float: right;
+  color: gray;
+  margin-right: 15px;
 }
