@@ -1,7 +1,7 @@
 <header id="non-home">
   <div class="layerBack">
     <div class="navWrap">
-      <div class = "navBar" ng-include="'/views/templates/navBar.html'"></div>
+      <div class = "navBar" ng-include="'/views/navBar.html'"></div>
     </div>
   </div>
 </header>
@@ -60,7 +60,16 @@
           </md-card-title>
           <md-card-content>
             <p>Activities: {{group.activities}}</p>
-            <p>Technologies: {{group.technologies}}</p>
+            <p>Descriptive Tags: </p>
+            <md-chips>
+              <md-chip ng-repeat="t in group.tags">{{t}}</md-chip>
+            </md-chips>
+            <br>
+            <p>Technologies: </p>
+            <md-chips>
+              <md-chip ng-repeat="t in group.technologies">{{t}}</md-chip>
+            </md-chips>
+            <!-- <p>Technologies: {{group.technologies}}</p> -->
           </md-card-content>
       </md-card>
       </div>

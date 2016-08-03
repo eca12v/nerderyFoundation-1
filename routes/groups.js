@@ -105,6 +105,26 @@ router.put('/flagGroup/:id', function(req, res) {
   });
 });
 
+router.put('/unFlagGroup/:id', function(req, res) {
+  console.log('un flag group endpoint hit');
+  Group.findOne({'_id': req.params.id}, function(err, group) {
+    if(err) {
+      console.log('/flagGroup error: ', err);
+    } else {
+      group.flags = 0;
+      group.save(function(err) {
+        if(err) {
+          console.log(err);
+          res.sendStatus(500);
+        } else {
+          console.log(group);
+          res.json(group);
+        }
+      });
+    }
+  });
+});
+
 router.get('/getFlaggedGroups', function(req, res) {
   Group.find({'flags': { $gt: 0 }}).sort({ flags: 'desc'}).exec(function(err, groups) {
     if(err) {
@@ -148,24 +168,6 @@ router.put('/approveGroup/:id', auth, function(req, res) {
     }
   });
 });
-// 
-// router.delete('/deleteGroup/:id', function(req, res) {
-//   Group.findOne({'_id': req.params.id}, function(err, group) {
-//     if(err) {
-//       console.log('/deleteGroup error: ', err);
-//     } else {
-//       group.save(function(err) {
-//         if(err) {
-//           console.log(err);
-//           res.sendStatus(500);
-//         } else {
-//           res.json(group);
-//         }
-//       });
-//     }
-//   });
-// });
-
 
 // for uploading photos
 var upload = multer({
@@ -234,6 +236,7 @@ router.delete('/deleteGroup/:groupId', function(req, res){
         if(err){
           console.log('remove group error: ', err);
         }else{
+          res.json({});
         }
       });
     }

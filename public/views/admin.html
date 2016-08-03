@@ -1,7 +1,7 @@
 <header id="non-home">
   <div class="layerBack">
     <div class="navWrap">
-      <div class = "navBar" ng-include="'/views/templates/navBar.html'"></div>
+      <div class = "navBar" ng-include="'/views/navBar.html'"></div>
     </div>
   </div>
 </header>
@@ -30,7 +30,7 @@
             <md-card-actions layout="row" layout-align="end center">
               <md-button class="md-raised md-primary admin-link"><a ng-href="/#/groups/{{group.name}}">View Group Page</a></md-button>
               <md-button class="md-fab md-success" aria-label="" ng-click="approve(group._id, $index)"><i class="fa fa-check" aria-hidden="true"></i></md-button>
-              <md-button class="md-fab md-warn" ng-click="delete(group._id, $index)"><i class="fa fa-times" aria-hidden="true"></i></md-button>
+              <md-button class="md-fab md-warn" ng-click="delete(group._id, $index, 'approval')"><i class="fa fa-times" aria-hidden="true"></i></md-button>
             </md-card-actions>
           </md-card>
 
@@ -55,8 +55,8 @@
             </md-card-title>
             <md-card-actions layout="row" layout-align="end center">
               <md-button class="md-raised md-primary admin-link"><a ng-href="/#/groups/{{group.name}}">View Group Page</a></md-button>
-              <md-button class="md-fab md-success" aria-label="" ng-click="approve(group._id, $index)"><i class="fa fa-check" aria-hidden="true"></i></md-button>
-              <md-button class="md-fab md-warn" ng-click="delete(group._id, $index)"><i class="fa fa-times" aria-hidden="true"></i></md-button>
+              <md-button class="md-fab md-success" aria-label="" ng-click="unFlag(group._id, $index)"><i class="fa fa-check" aria-hidden="true"></i></md-button>
+              <md-button class="md-fab md-warn" ng-click="delete(group._id, $index, 'flagged')"><i class="fa fa-times" aria-hidden="true"></i></md-button>
             </md-card-actions>
           </md-card>
 
