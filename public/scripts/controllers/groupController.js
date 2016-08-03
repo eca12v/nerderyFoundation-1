@@ -1,6 +1,6 @@
 
 
-myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScope', 'groupFactory', '$stateParams', '$mdSidenav', '$log', function( $scope, $http, $location, $rootScope, groupFactory, $stateParams, $mdSidenav, $log ){
+myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScope', 'groupFactory', '$state', '$stateParams', '$mdSidenav', '$log', function( $scope, $http, $location, $rootScope, groupFactory, $state, $stateParams, $mdSidenav, $log ){
   $scope.groupDisplayed = [];
 
   groupFactory.getGroup($stateParams.groupName).then(function(response) {
@@ -198,8 +198,7 @@ $scope.edit = function(id, index){
 $scope.delete = function(id, index){
   console.log( 'delete clicked, index: ', id );
   groupFactory.deleteGroup( id ).then(function(response){
-    $scope.close();
-    $window.location.href = '/home.html';
+    $state.go('home');
 
     console.log( 'in delete groups in group controller, $scope.data: ', $scope.group );
   });

@@ -1,4 +1,4 @@
-myApp.controller( 'AddGroupController',  [ 'Upload', 'groupFactory', '$scope', '$http', '$location', '$rootScope',   function( Upload, groupFactory, $scope,  $http, $location, $authProvider, $rootScope  ){
+myApp.controller( 'AddGroupController',  [ 'Upload', 'groupFactory', '$scope', '$http', '$location', '$rootScope', '$state',   function( Upload, groupFactory, $scope,  $http, $location, $authProvider, $state, $rootScope  ){
 
   var self = this;
   self.readonly = false;
@@ -74,7 +74,8 @@ myApp.controller( 'AddGroupController',  [ 'Upload', 'groupFactory', '$scope', '
     "0-25",
     "25-50",
     "50-100",
-    "100-500"
+    "100-500",
+    "500+"
   ];
 
 $scope.meetingSizes = [
@@ -199,9 +200,9 @@ console.log('in postgroup');
   .then(function(response){
     // console.log( 'group submitted: ', newGroup);
     console.log('response: ', response.data);
-    $scope.status = 'group submitted successfully!';
     $scope.groups.push(response.data);
-  }, function(error){
+    $state.go('home');
+    }, function(error){
     $scope.status = 'swing and a miss';
 
   });
