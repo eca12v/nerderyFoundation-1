@@ -1,7 +1,7 @@
 <header id="non-home">
   <div class="layerBack">
     <div class="navWrap">
-      <div class = "navBar" ng-include="'/views/templates/navBar.html'"></div>
+      <div class = "navBar" ng-include="'/views/navBar.html'"></div>
     </div>
   </div>
 </header>
@@ -20,6 +20,11 @@
           <input ng-model="groupNameIn">
         </md-input-container>
       </div>
+
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>URL</label>
+        <input ng-model="groupUrlIn">
+      </md-input-container>
       <div layout-gt-sm="row">
 
       <md-input-container class="md-block" flex-gt-xs>

@@ -34,6 +34,12 @@ myApp.factory( 'groupFactory', ['$http', function($http) {
  		});
   };
 
+  groups.unFlagGroup = function(id) {
+    return $http.put('groups/unFlagGroup/' + id).success(function(data) {
+      console.log(data);
+   });
+ };
+
    groups.getFlaggedGroups = function() {
      return $http.get('groups/getFlaggedGroups').success(function(data) {
  			angular.copy(data, groups.groups);

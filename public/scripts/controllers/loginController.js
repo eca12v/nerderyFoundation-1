@@ -29,10 +29,10 @@ controller('LoginCtrl', ['$scope', '$auth', '$state', '$location', 'toastr',
       .then(function (response) {
         $auth.setToken(response);
         $state.go('home');
-        toastr.success(
-          'Succesfully logined in!',
-          {closeButton: true}
-        );
+        // toastr.success(
+        //   'Succesfully logined in!',
+        //   {closeButton: true}
+        // );
 
       })
       .catch(function (response) {

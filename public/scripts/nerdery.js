@@ -24,6 +24,24 @@ function($stateProvider, $urlRouterProvider, $mdIconProvider, $mdThemingProvider
     url: '/groups/:groupName',
     templateUrl: 'views/group.html',
     controller: 'GroupController',
+    onEnter : ['$state', '$auth', 'groupFactory', '$stateParams',
+      function($state, $auth, groupFactory, $stateParams) {
+        groupFactory.getGroup($stateParams.groupName).then(function(response) {
+          if (!response.data.approved) {
+            if(!$auth.isAuthenticated()) {
+              $state.go('home');
+            }
+            if(!$auth.getPayload().admin) {
+              $state.go('home');
+            }
+          }
+        });
+        // console.log($auth.isAuthenticated());
+        // if (!$auth.isAuthenticated()) {
+        //   $state.go('login');
+        // }
+      }
+    ],
     resolve : {
       group : ['groupFactory', '$stateParams',
   			function(groupFactory, $stateParams) {
@@ -75,16 +93,16 @@ function($stateProvider, $urlRouterProvider, $mdIconProvider, $mdThemingProvider
   $mdIconProvider.icon('md-close', 'img/icons/ic_close_24px.svg', 24);
 
   //change default color for primary
-  var indigo = $mdThemingProvider.extendPalette('indigo', {
-      '500': '664659'
-  });
-  $mdThemingProvider.definePalette('indigo', indigo);
+  // var indigo = $mdThemingProvider.extendPalette('indigo', {
+  //     '500': '664659'
+  // });
+  // $mdThemingProvider.definePalette('indigo', indigo);
 
   //change default color for warn
 
-  $mdThemingProvider.definePalette('red', indigo);
-
-  $mdThemingProvider.theme('default').primaryPalette('indigo').warnPalette('red');
+  // $mdThemingProvider.definePalette('red', indigo);
+  //
+  // $mdThemingProvider.theme('default').primaryPalette('indigo').warnPalette('red');
 
   //here you change placeholder/foreground color.
   $mdThemingProvider.theme('default').foregroundPalette[3] = "gray";
