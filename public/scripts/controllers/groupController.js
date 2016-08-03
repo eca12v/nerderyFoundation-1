@@ -151,17 +151,17 @@ $scope.sizeOfMeeting = [
 
 
   // FIX THE CHIPS !----------------------------------------
-  var self = this;
-  self.readonly = false;
-
-  function transformChip(chip) {
-    // If it is an object, it's already a known chip
-    if (angular.isObject(chip)) {
-      return chip;
-    }
-    // Otherwise, create a new one
-    return { name: chip, type: 'new' };
-  }
+  // var self = this;
+  // self.readonly = false;
+  //
+  // function transformChip(chip) {
+  //   // If it is an object, it's already a known chip
+  //   if (angular.isObject(chip)) {
+  //     return chip;
+  //   }
+  //   // Otherwise, create a new one
+  //   return { name: chip, type: 'new' };
+  // }
 //--------------------------------------------------------------
 $scope.edit = function(id, index){
   console.log('edit clicked, id: ', id);
@@ -197,8 +197,9 @@ $scope.edit = function(id, index){
 $scope.delete = function(id, index){
   console.log( 'delete clicked, index: ', id );
   groupFactory.deleteGroup( id ).then(function(response){
-    // $scope.group = response.data;
-    $scope.close();
+    // $scope.close();
+    $window.location.href = '/home.html';
+
     console.log( 'in delete groups in group controller, $scope.data: ', $scope.group );
   });
 };
