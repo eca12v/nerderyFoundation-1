@@ -148,16 +148,7 @@ $scope.sizeOfMeeting = [
       "50-100",
       "100-500"
 ];
-  $scope.banana = function(index){
-    console.log( 'index: ', index );
-    var groupToDelete = index;
-    console.log('groupToDelete: ', groupToDelete);
-    groupFactory.deleteGroup( groupToDelete ).then(function(response){
-      $scope.group = response.data;
-      $scope.close();
-      console.log( 'in edit groups in group controller, $scope.data: ', $scope.group );
-    });
-  };
+
 
   // FIX THE CHIPS !----------------------------------------
   var self = this;
@@ -202,6 +193,15 @@ $scope.edit = function(id, index){
 
   });
 };//end of editGroup
+
+$scope.delete = function(id, index){
+  console.log( 'delete clicked, index: ', id );
+  groupFactory.deleteGroup( id ).then(function(response){
+    // $scope.group = response.data;
+    $scope.close();
+    console.log( 'in delete groups in group controller, $scope.data: ', $scope.group );
+  });
+};
 
 $scope.close = function () {
       // Component lookup should always be available since we are not using `ng-if`

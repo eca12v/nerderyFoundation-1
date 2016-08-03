@@ -4,13 +4,18 @@ myApp.factory( 'groupFactory', ['$http', function($http) {
   };
 
   groups.editGroup = function ( id, updatedGroup ) {
-    // console.log( 'inside editGroup Factory, id ', updatedGroup.name );
-    // console.log( 'inside editGroup Factory, updatedGroup ', updatedGroup);
+    console.log( 'inside editGroup Factory, id ', updatedGroup.name );
+    console.log( 'inside editGroup Factory, updatedGroup ', updatedGroup);
     return $http.put('groups/editGroup/' + id, updatedGroup ).success(function(data) {
-    // console.log('editGroup ', data);
+    console.log('editGroup ', data);
     });
   };
 
+  groups.deleteGroup = function ( groupToDelete ) {
+    console.log( 'groupToDelete: ', groupToDelete);
+    return $http.delete('groups/deleteGroup/' + groupToDelete ).success(function(){
+    });
+};
   groups.getApprovedGroups = function () {
     return $http.get('groups/getApprovedGroups').success(function(data) {
 			angular.copy(data, groups.groups);
@@ -28,20 +33,20 @@ myApp.factory( 'groupFactory', ['$http', function($http) {
        console.log(data);
      });
    };
-     groups.getGroup = function(groupName) {
-       console.log(groupName);
-       return $http.get('groups/getGroup/' + groupName).success(function(data) {
-         console.log('in getGroup in factory, data: ', data);
-         angular.copy(data, groups.groups);
-       });
-     };
+   groups.getGroup = function(groupName) {
+     console.log(groupName);
+     return $http.get('groups/getGroup/' + groupName).success(function(data) {
+       console.log('in getGroup in factory, data: ', data, groups);
+       angular.copy(data, groups.groups);
+     });
+   };
 
-     groups.submit = function ( newGroup ) {
-       console.log( 'in factory, newGroup: ', newGroup);
-       return $http.post('/groups/createGroup', newGroup);
-      };
-      console.log(groups);
-      return groups;
+   groups.submit = function ( newGroup ) {
+     console.log( 'in factory, newGroup: ', newGroup);
+     return $http.post('/groups/createGroup', newGroup);
+    };
+    console.log(groups);
+    return groups;
 
-    }
+  }
   ]); //end of Group Factory

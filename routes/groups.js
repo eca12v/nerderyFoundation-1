@@ -117,23 +117,23 @@ router.put('/approveGroup/:id', auth, function(req, res) {
     }
   });
 });
-
-router.delete('/deleteGroup/:id', function(req, res) {
-  Group.findOne({'_id': req.params.id}, function(err, group) {
-    if(err) {
-      console.log('/deleteGroup error: ', err);
-    } else {
-      group.save(function(err) {
-        if(err) {
-          console.log(err);
-          res.sendStatus(500);
-        } else {
-          res.json(group);
-        }
-      });
-    }
-  });
-});
+// 
+// router.delete('/deleteGroup/:id', function(req, res) {
+//   Group.findOne({'_id': req.params.id}, function(err, group) {
+//     if(err) {
+//       console.log('/deleteGroup error: ', err);
+//     } else {
+//       group.save(function(err) {
+//         if(err) {
+//           console.log(err);
+//           res.sendStatus(500);
+//         } else {
+//           res.json(group);
+//         }
+//       });
+//     }
+//   });
+// });
 
 
 // for uploading photos
@@ -192,7 +192,7 @@ console.log( 'newGroup: ', newGroup );
   });
 });//end of post createGroup
 
-router.delete('/deleteGroup/:groupId', auth, function(req, res){
+router.delete('/deleteGroup/:groupId', function(req, res){
   console.log('In /deleteGroup/:groupId: ', req.params.groupId);
   var id = req.params.groupId;
   Group.findOne({'_id': id}, function(err, groupon){
