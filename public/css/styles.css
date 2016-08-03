@@ -5,7 +5,7 @@
 }
 
 body {
-  /*background-color: #664659;/*plum*/*/
+  background-color: #efede7;
   color: #fff; /*white*/
   min-height:100%;
   height:auto;
@@ -58,7 +58,7 @@ body {
   }
 
 #add-group {
-  box-shadow: 2px 2px 4px #272727;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 }
 
 #add-group-banner {
@@ -91,7 +91,7 @@ header {
 
 }
 
-  .jumbotron {
+  #jumbo-home {
       display: block;
       height:auto;
       width: 100%;
@@ -297,11 +297,16 @@ padding-left: 15px;
   float: left;
   width: 50%;
   vertical-align: middle;
+  margin-left: 10px;
 }
 
 #sortBar {
   height: 60px;
   line-height: 60px;
+}
+
+#sortBar md-content {
+  background-color: #efede7;
 }
 
 #non-home {
@@ -322,6 +327,60 @@ md-input-container.md-default-theme label,
   padding: 20px;
 }
 
-.login-title {
-  color: #E2DE00;
+.login-title,
+.admin-title {
+  color: #353535;
+}
+
+.md-success {
+  background-color: #4d984d !important;
+  color: white !important;
+}
+
+.md-warn {
+  background-color: #e2663e !important;
+}
+
+.admin-link a{
+  text-decoration: none;
+  color: white;
+}
+
+md-card-title-text .md-headline {
+  text-align: left;
+  color: black;
+}
+
+.admin-card {
+}
+
+.sort-icon {
+  color: gray;
+  vertical-align: middle;
+  padding-bottom: 5px;
+  padding-right: 3px;
+}
+
+.md-button {
+  background: white;
+  color: black;
+}
+
+md-card-content,
+md-card md-card-title md-card-title-text {
+  color: black;
+}
+
+#group-jumbo {
+  background: url('../img/techmeetup.jpeg') no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+#flagDiv {
+  float: right;
+  color: gray;
+  margin-right: 15px;
 }

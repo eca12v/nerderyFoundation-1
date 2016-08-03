@@ -4,7 +4,7 @@
       <div class = "navBar" ng-include="'/views/templates/navBar.html'"></div>
     </div>
 
-    <div class="jumbotron">
+    <div id="jumbo-home" class="jumbotron">
       <h1>Nerdery Foundation Developer Network</h1>
       <h2>We connect technologists with the communities that need their talents.</h2>
     </div>
@@ -19,14 +19,14 @@
         <input ng-model="filterStr" type="text">
       </md-input-container> -->
       <div id="searchBar">
-        <span>Search: </span>
-        <input id="main-search" class="form-control" ng-model="filterStr" placeholder="search"/>
+        <i class="fa fa-search fa-2x sort-icon" aria-hidden="true"></i>
+        <input id="main-search" class="md-button md-raised" ng-model="filterStr" placeholder="search"/>
       </div>
 
 
 
 <div id="filterBar">
-  <span>Filter By: </span>
+  <i class="fa fa-filter fa-2x sort-icon" aria-hidden="true"></i>
   <md-menu>
        <md-button aria-label="" class="md-raised md-button md-ink-ripple" ng-click="openMenu($mdOpenMenu, $event)"><span ng-hide="selectedTech"> Technology</span><span ng-show="selectedTech">{{selectedTech}}</span>
      <!-- <md-icon md-menu-origin md-svg-icon="call:phone"></md-icon> -->
@@ -143,7 +143,7 @@
 
 <div class="row">
   <div class="col-sm-3">
-    <md-content class="md-padding">
+    <md-content ng-show="selectedTech" class="md-padding">
       <md-card id="filter-box">
         <md-card-content>
           <h3>Filter: {{selectedTech}}</h3>
