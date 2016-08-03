@@ -27,7 +27,13 @@
 
           <md-card>
             <md-card-title>
-              <h2>Group Contacts: </h2>
+              <h2>Flagged Groups: </h2>
+              <md-card ng-repeat="group in flaggedGroups">
+                <span>Group Name: {{group.name}}</span>
+                <span># of flags: {{group.flags}}</span>
+                <!-- <button ng-click="approve(group._id, $index)">Approve Group</button> -->
+              </md-card>
+
             </md-card-title>
             <md-card-content>
 

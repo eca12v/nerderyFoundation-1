@@ -9,6 +9,11 @@ console.log( 'loaded AdminController');
     console.log($scope.groups);
 	});
 
+  groupFactory.getFlaggedGroups().then(function(response) {
+    $scope.flaggedGroups = response.data;
+    console.log($scope.groups);
+  });
+
   $scope.approve = function(id, index) {
     console.log(id);
     groupFactory.approveGroup(id);

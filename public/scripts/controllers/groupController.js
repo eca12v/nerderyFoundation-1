@@ -5,6 +5,7 @@ myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScop
 
   groupFactory.getGroup($stateParams.groupName).then(function(response) {
 		$scope.group = response.data;
+    $scope.groupFlags = $scope.group.flags;
     $scope.groupDisplayed.push ($scope.group);
     console.log('in GroupController, $scope.group: ', $scope.group);
     console.log('in GroupController, $scope.groupDisplayed: ', $scope.groupDisplayed);
@@ -148,29 +149,20 @@ $scope.sizeOfMeeting = [
       "50-100",
       "100-500"
 ];
-  $scope.banana = function(index){
-    console.log( 'index: ', index );
-    var groupToDelete = index;
-    console.log('groupToDelete: ', groupToDelete);
-    groupFactory.deleteGroup( groupToDelete ).then(function(response){
-      $scope.group = response.data;
-      $scope.close();
-      console.log( 'in edit groups in group controller, $scope.data: ', $scope.group );
-    });
-  };
+
 
   // FIX THE CHIPS !----------------------------------------
-  var self = this;
-  self.readonly = false;
-
-  function transformChip(chip) {
-    // If it is an object, it's already a known chip
-    if (angular.isObject(chip)) {
-      return chip;
-    }
-    // Otherwise, create a new one
-    return { name: chip, type: 'new' };
-  }
+  // var self = this;
+  // self.readonly = false;
+  //
+  // function transformChip(chip) {
+  //   // If it is an object, it's already a known chip
+  //   if (angular.isObject(chip)) {
+  //     return chip;
+  //   }
+  //   // Otherwise, create a new one
+  //   return { name: chip, type: 'new' };
+  // }
 //--------------------------------------------------------------
 $scope.edit = function(id, index){
   console.log('edit clicked, id: ', id);
@@ -203,6 +195,16 @@ $scope.edit = function(id, index){
   });
 };//end of editGroup
 
+$scope.delete = function(id, index){
+  console.log( 'delete clicked, index: ', id );
+  groupFactory.deleteGroup( id ).then(function(response){
+    $scope.close();
+    $window.location.href = '/home.html';
+
+    console.log( 'in delete groups in group controller, $scope.data: ', $scope.group );
+  });
+};
+
 $scope.close = function () {
       // Component lookup should always be available since we are not using `ng-if`
       $mdSidenav('right').close()
@@ -210,6 +212,11 @@ $scope.close = function () {
           $log.debug("close RIGHT is done");
         });
     };
+
+$scope.flagGroup = function() {
+  groupFactory.flagGroup($scope.group._id);
+  $scope.groupFlags++;
+};
 
 
 }]); //end controller
