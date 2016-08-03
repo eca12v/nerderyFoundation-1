@@ -201,6 +201,7 @@ console.log('in postgroup');
     // console.log( 'group submitted: ', newGroup);
     console.log('response: ', response.data);
     $scope.groups.push(response.data);
+    
     $state.go('home');
     }, function(error){
     $scope.status = 'swing and a miss';

@@ -1,12 +1,10 @@
+myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScope', 'groupFactory', '$state', '$stateParams', '$mdSidenav', '$log', '$auth', function( $scope, $http, $location, $rootScope, groupFactory, $state, $stateParams, $mdSidenav, $log, $auth ){
 
-myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScope', 'groupFactory', '$stateParams', '$mdSidenav', '$log', '$auth', function( $scope, $http, $location, $rootScope, groupFactory, $stateParams, $mdSidenav, $log, $auth ){
+$scope.isAuthenticated = $auth.isAuthenticated;
+$scope.currentUser = $auth.getPayload;
 
-  $scope.isAuthenticated = $auth.isAuthenticated;
-  $scope.currentUser = $auth.getPayload;
-
-  $scope.groupDisplayed = [];
-
-  groupFactory.getGroup($stateParams.groupName).then(function(response) {
+$scope.groupDisplayed = [];
+groupFactory.getGroup($stateParams.groupName).then(function(response) {
 		$scope.group = response.data;
     $scope.groupFlags = $scope.group.flags;
     $scope.groupDisplayed.push ($scope.group);
@@ -202,7 +200,6 @@ $scope.delete = function(id, index){
   console.log( 'delete clicked, index: ', id );
   groupFactory.deleteGroup( id ).then(function(response){
     $state.go('home');
-
     console.log( 'in delete groups in group controller, $scope.data: ', $scope.group );
   });
 };
@@ -219,6 +216,8 @@ $scope.flagGroup = function() {
   groupFactory.flagGroup($scope.group._id);
   $scope.groupFlags++;
 };
+
+
 
 
 }]); //end controller
