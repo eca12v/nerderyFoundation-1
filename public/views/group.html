@@ -92,17 +92,19 @@
 <div id="flagDiv">
   <md-button class="md-fab md-raised flag-btn" ng-click="flagGroup()"><i class="fa fa-flag" aria-hidden="true"></i></md-button>
   <span>Flag Inappropriate Content</span>
-</div>
 
-<div ng-if="currentUser().admin" class="editGroup">
+  <div ng-if="currentUser().admin" class="editGroup">
   <div style="color: black">
     <md-button ng-click="toggleRight()"
       ng-hide="isOpenRight()"
       class="md-primary md-raised">
       Edit or Delete this group
     </md-button>
+   </div>
   </div>
 </div>
+
+
 
 
 <div layout="row" layout-fill ng-cloak >
