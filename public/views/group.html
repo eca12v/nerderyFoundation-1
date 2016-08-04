@@ -6,6 +6,7 @@
   </div>
 </header>
 
+<h3 id="preview-tag" ng-hide="group.approved">Group View - Preview Mode</h3>
 
 <div class="group-container" vertical>
   <div class="text-center" name="home">
@@ -99,10 +100,10 @@
 
 <!-- <p>Flags: {{groupFlags}}</p> -->
 <div id="flagDiv">
-  <md-button class="md-fab md-raised flag-btn" ng-click="flagGroup()"><i class="fa fa-flag" aria-hidden="true"></i></md-button>
-  <span>Flag Inappropriate Content</span>
+  <md-button class="md-fab md-raised flag-btn" ng-click="showConfirm()"><i class="fa fa-flag" aria-hidden="true"></i></md-button>
+  <span>Flag This Group</span>
 
-  <div ng-if="currentUser().admin" class="editGroup">
+  <div ng-if="currentUser().admin || currentUser()._id === group.submitterID" class="editGroup">
   <div style="color: black">
     <md-button ng-click="toggleRight()"
       ng-hide="isOpenRight()"

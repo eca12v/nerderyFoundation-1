@@ -206,7 +206,8 @@ console.log('inside groups.js add group ');
     affiliations: req.body.affiliations,
     affiliationURL: req.body.affiliationURL,
     eventInfo: req.body.eventInfo,
-    sizeOfMembership: req.body.sizeOfMembership
+    sizeOfMembership: req.body.sizeOfMembership,
+    submitterID: req.body.submitterID
   });
 
   if (req.file ){
