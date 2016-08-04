@@ -370,6 +370,16 @@ md-input-container.md-default-theme label,
     color:red !important;
 }
 
+/*.md-sidenav-right{
+  background-color: green;
+  padding-right: 50px;
+}*/
+md-sidenav{
+  background-color: green;
+}
+md-content{
+  padding-left: 50px;
+}
 .login-panel {
   padding: 20px;
 }
