@@ -114,8 +114,6 @@
 </div>
 
 
-
-
 <div layout="row" layout-fill ng-cloak >
 <md-sidenav class="md-sidenav-right" style="color: black" md-component-id="right">
       <md-toolbar>
@@ -186,12 +184,11 @@
           </md-select>
           </md-input-container>
 
-          <button type="button" name="button" ng-click="delete(group._id, $index)">Delete Group</button>
+          <button type="button" name="button" ng-click="confirmDelete($event, group._id, $index)">Delete Group</button>
           <button type="button" name="button" ng-click="edit(group._id, $index)">Save your edits</button>
       </md-content>
       </section>
     </md-sidenav>
 </div>
-
 </div>
 </div>

@@ -1,4 +1,4 @@
-myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScope', 'groupFactory', '$state', '$stateParams', '$mdSidenav', '$log', '$auth', function( $scope, $http, $location, $rootScope, groupFactory, $state, $stateParams, $mdSidenav, $log, $auth ){
+myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScope', 'groupFactory', '$state', '$stateParams', '$mdSidenav', '$log', '$auth', '$mdDialog', '$mdMedia', function( $scope, $http, $location, $rootScope, groupFactory, $state, $stateParams, $mdSidenav, $log, $auth, $mdDialog, $mdMedia ){
 
 $scope.isAuthenticated = $auth.isAuthenticated;
 $scope.currentUser = $auth.getPayload;
@@ -56,75 +56,7 @@ $scope.isOpenRight = function(){
     };
   }
 //-------------------------------------------------------------------
-  var self = this;
-  self.readonly = false;
-  self.selectedItem = null;
-  self.searchText = null;
-  self.querySearch = querySearch;
-  self.technologies = loadTechnologies();
-  self.selectedTech = [];
-  self.roSelectedTech = angular.copy(self.selectedTech);
-  self.autocompleteDemoRequireMatch = true;
-  self.transformChip = transformChip;
-  self.tagNames = ['Beer', 'Pizza'];
-  self.roTagNames = angular.copy(self.tagNames);
-  /**
-   * Return the proper object when the append is called.
-   */
-  function transformChip(chip) {
-    // If it is an object, it's already a known chip
-    if (angular.isObject(chip)) {
-      return chip;
-    }
-    // Otherwise, create a new one
-    return { name: chip, type: 'new' };
-  }
-  /**
-   * Search for Tech.
-   */
-  function querySearch (query) {
-    var results = query ? self.technologies.filter(createFilterFor(query)) : [];
-    return results;
-  }
-  /**
-   * Create filter function for a query string
-   */
-  function createFilterFor(query) {
-    var lowercaseQuery = angular.lowercase(query);
-    return function filterFn(vegetable) {
-      return (vegetable._lowername.indexOf(lowercaseQuery) === 0) ||
-          (vegetable._lowertype.indexOf(lowercaseQuery) === 0);
-    };
-  }
-  function loadTechnologies() {
-    var veggies = [
-      {
-        'name': 'AngularJS',
-        'type': 'Javascript'
-      },
-      {
-        'name': 'Node.js',
-        'type': 'Javascript'
-      },
-      {
-        'name': '.NET',
-        'type': 'Web Technology'
-      },
-      {
-        'name': 'SASS',
-        'type': 'CSS'
-      },
-      {
-        'name': 'Blah',
-        'type': 'Blah'
-      }
-    ];
-    return veggies.map(function (veg) {
-      veg._lowername = veg.name.toLowerCase();
-      veg._lowertype = veg.type.toLowerCase();
-      return veg;
-    });
-  }
+
 
 //create array to put new groups into
 $scope.groups = [];
@@ -196,14 +128,39 @@ $scope.edit = function(id, index){
   });
 };//end of editGroup
 
-$scope.delete = function(id, index){
-  console.log( 'delete clicked, index: ', id );
-  groupFactory.deleteGroup( id ).then(function(response){
-    $state.go('home');
-    console.log( 'in delete groups in group controller, $scope.data: ', $scope.group );
-  });
-};
+// DELETES GROUP AFTER SHOW CONFIRM, REDIRECTS BACK TO HOME
+$scope.confirmDelete = function(ev, id, index ) {
+    // Appending dialog to document.body to cover sidenav in docs app
+    var confirm = $mdDialog.confirm()
+          .title('Would you like to delete your debt?')
+          .textContent('All of the banks have agreed to forgive you your debts.')
+          .ariaLabel('Lucky day')
+          .targetEvent(ev)
+          .ok('Please do it!')
+          .cancel('Sounds like a scam');
+    $mdDialog.show(confirm).then(function() {
+      $scope.status = 'You decided to get rid of your debt.';
+      $scope.delete(id, index);
+    }, function() {
+      $scope.close();
+      $state.go('group');
+    });
+  };
+  $scope.delete = function(id, index){
+    console.log( 'delete clicked, index: ', id );
+    groupFactory.deleteGroup( id ).then(function(response){
+      $state.go('home');
+      console.log( 'in delete groups in group controller, $scope.data: ', $scope.group );
+    });
+  };
 
+
+$scope.cancel = function(){
+  console.log( 'cancel clicked' );
+  $scope.close();
+  $state.go('group');
+};
+// CLOSES SIDENAV, CALLED INSIDE EDIT FUNCTION
 $scope.close = function () {
       // Component lookup should always be available since we are not using `ng-if`
       $mdSidenav('right').close()
@@ -217,6 +174,10 @@ $scope.flagGroup = function() {
   $scope.groupFlags++;
 };
 
+
+// CONFIRM DELETE POPUP
+$scope.status = '  ';
+  $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
 
 
 

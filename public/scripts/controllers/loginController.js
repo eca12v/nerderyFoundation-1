@@ -3,7 +3,7 @@ angular.module('Authorization', ['satellizer', 'toastr']).
 controller('LoginCtrl', ['$scope', '$auth', '$state', '$location', 'toastr',
   function($scope, $auth, $state, $location, $authProvider, toastr) {
 
-  console.log(toastr);
+  // console.log(toastr);
   $scope.isAuthenticated = $auth.isAuthenticated;
   $scope.currentUser = $auth.getPayload;
 
