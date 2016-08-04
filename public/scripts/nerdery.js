@@ -5,7 +5,7 @@ var myApp = angular.module( 'myApp', [
   'Authorization',
   'xeditable',
   'ngFileUpload',
-  'toastr'
+  'ngMessages'
 ]);
 
 /// Routes ///
@@ -59,6 +59,7 @@ function($stateProvider, $urlRouterProvider, $mdIconProvider, $mdThemingProvider
         console.log($auth.isAuthenticated());
         if (!$auth.isAuthenticated()) {
           $state.go('login');
+          toastr.info("Please create a group submitter account to create a group.", {"positionClass": "toast-top-full-width"});
       }
     }]
   }).
@@ -107,6 +108,8 @@ function($stateProvider, $urlRouterProvider, $mdIconProvider, $mdThemingProvider
   //here you change placeholder/foreground color.
   $mdThemingProvider.theme('default').foregroundPalette[3] = "gray";
 
+  toastr.options.positionClass = "toast-top-left";
+  toastr.options.showDuration = 500;
  }]);//end of myapp config
 
 

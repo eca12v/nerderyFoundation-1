@@ -37,42 +37,47 @@
 
      <div layout="column">
 
-     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 6 | limitTo: -6">
+     <md-menu-item>
+       <md-button ng-click="changeOverallTech('')">
+       </md-button>
+     </md-menu-item>
+
+     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 5 | limitTo: -5">
        <md-button ng-click="changeOverallTech(t.Technology)">
          {{t.Technology}}
        </md-button>
      </md-menu-item>
    </div>
    <div layout="column">
-     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 12 | limitTo: -6">
+     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 11 | limitTo: -6">
        <md-button ng-click="changeOverallTech(t.Technology)">
          {{t.Technology}}
        </md-button>
      </md-menu-item>
    </div>
    <div layout="column">
-     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 18 | limitTo: -6">
+     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 17 | limitTo: -6">
        <md-button ng-click="changeOverallTech(t.Technology)">
          {{t.Technology}}
        </md-button>
      </md-menu-item>
    </div>
    <div layout="column">
-     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 24 | limitTo: -6">
+     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 23 | limitTo: -6">
        <md-button ng-click="changeOverallTech(t.Technology)">
          {{t.Technology}}
        </md-button>
      </md-menu-item>
    </div>
    <div layout="column">
-     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 30 | limitTo: -6">
+     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 29 | limitTo: -6">
        <md-button ng-click="changeOverallTech(t.Technology)">
          {{t.Technology}}
        </md-button>
      </md-menu-item>
    </div>
    <div layout="column">
-     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 33 | limitTo: -3">
+     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 33 | limitTo: -4">
        <md-button ng-click="changeOverallTech(t.Technology)">
          {{t.Technology}}
        </md-button>
@@ -88,6 +93,10 @@
      </md-button>
 
   <md-menu-content width="8">
+    <md-menu-item>
+      <md-button ng-click="changeOverallTech('')">
+      </md-button>
+    </md-menu-item>
     <md-menu-item ng-repeat="l in location">
       <md-button ng-click="changeOverallTech(t.Technology)">
         {{l}}
@@ -103,6 +112,10 @@
     </md-button>
 
  <md-menu-content width="8">
+   <md-menu-item>
+     <md-button ng-click="changeOverallTech('')">
+     </md-button>
+   </md-menu-item>
    <md-menu-item ng-repeat="s in typicalSize">
      <md-button ng-click="changeOverallTech(t.Technology)">
        {{s}}
@@ -275,7 +288,7 @@
 
         <!-- </div> -->
       </div>
-        <!-- <h3 ng-show="(groups| multiWordFilter: techStr | filter: locationStr | filter: sizeStr | filter: filterStr).length == 0">Unfortunately, no local tech user groups fit your current criteria!</h3> -->
+        <h3 ng-show="(groups| multiWordFilter: techStr | filter: locationStr | filter: sizeStr | filter: filterStr).length == 0">Unfortunately, no local tech user groups fit your current criteria!</h3>
       </md-content>
     </div>
 
