@@ -38,7 +38,7 @@
             </md-card-title-text>
           </md-card-title>
           <md-card-content>
-            <a href= website: "{{group.groupURL}}"></a>
+            <p>Website:<a href= website: "{{group.groupUrlIn}}"></a></p>
             <p>Description: {{group.description}}</p>
             <p>Group Contact: {{group.groupContact}}</p>
             <p>Email: {{group.contactEmail}}</p>
@@ -60,7 +60,7 @@
             </md-card-title-media>
           </md-card-title>
           <md-card-content>
-            <p>Activities: {{group.activities}}</p>
+            <p>Activities: {{group.activities}} </p>
             <p>Descriptive Tags: </p>
             <md-chips>
               <md-chip ng-repeat="t in group.tags">{{t}}</md-chip>
@@ -86,10 +86,10 @@
             </md-card-title-media>
           </md-card-title>
           <md-card-content>
-            <p>Area Served: {{group.areaServed}}</p>
             <p>Meeting Location: {{group.location}}</p>
             <p>Meeting Frequency: {{group.freqOfMeeting}}</p>
             <p>Typical Meeting Size: {{group.sizeOfMeeting}}</p>
+            <p>Membership Size: {{group.sizeOfMembership}}</p>
           </md-card-content>
       </md-card>
 
@@ -131,7 +131,7 @@
           </md-input-container>
 
           <md-input-container input ng-model="groupUrlIn">
-          <div>Site: <a href="#" editable-textarea="group.groupURLIn" e-rows="7" e-cols="40">{{ group.groupUrlIn || 'empty' }}</a></div>
+          <div>Site: <a href="#" editable-url="group.groupUrlIn" e-rows="7" e-cols="40">{{ group.groupUrlIn || 'empty' }}</a></div>
           </md-input-container>
 
           <md-input-container input ng-model="groupContact">
@@ -176,14 +176,14 @@
           <md-input-container flex-gt-sm>
             <label>sizeOfMeeting</label>
             <md-select ng-model="sizeOfMeeting">
-            <md-option ng-repeat="option in sizeOfMeeting" value="{{ option }}">{{ option }}</md-option>
+            <md-option ng-repeat="two in sizeOfMeeting" value="{{ two }}">{{ two }}</md-option>
           </md-select>
           </md-input-container>
 
           <md-input-container flex-gt-sm>
             <label>sizeOfMembership</label>
             <md-select ng-model="sizeOfMembership">
-            <md-option ng-repeat="option in sizeOfMembership" value="{{ option }}">{{ option }}</md-option>
+            <md-option ng-repeat="three in sizeOfMembership" value="{{ three }}">{{ three }}</md-option>
           </md-select>
           </md-input-container>
           <div class="row">

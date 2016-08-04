@@ -65,17 +65,18 @@ $scope.groups = [];
 $scope.status = '';
 
 $scope.sizeOfMembership = [
-      "0-25",
-      "25-50",
-      "50-100",
-      "100-500"
+        "0-25",
+        "25-50",
+        "50-100",
+        "100-500"
   ];
 $scope.freqOfMeeting = [
-	    "weekly",
-			"biweekly",
-			"monthly",
-			"quarterly",
-			"annually"
+        // "0-25",
+        // "25-50",
+        // "50-100",
+        // "100-500"
+					0-36,
+					37-100
   ];
 $scope.sizeOfMeeting = [
       "0-25",
@@ -124,7 +125,7 @@ $scope.edit = function(id, index){
   groupFactory.editGroup( id, updatedGroup ).then(function(response){
     $scope.group = response.data;
     $scope.close();
-    console.log( 'in edit groups in group controller, $scope.data: ', $scope.group );
+    console.log( 'in edit groups in group controller, $scope.data: ', $scope.data );
 
   });
 };//end of editGroup
