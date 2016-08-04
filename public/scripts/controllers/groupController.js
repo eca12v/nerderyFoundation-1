@@ -65,16 +65,17 @@ $scope.groups = [];
 $scope.status = '';
 
 $scope.sizeOfMembership = [
-        "0-25",
-        "25-50",
-        "50-100",
-        "100-500"
+      "0-25",
+      "25-50",
+      "50-100",
+      "100-500"
   ];
 $scope.freqOfMeeting = [
-        "0-25",
-        "25-50",
-        "50-100",
-        "100-500"
+	    "weekly",
+			"biweekly",
+			"monthly",
+			"quarterly",
+			"annually"
   ];
 $scope.sizeOfMeeting = [
       "0-25",
@@ -103,7 +104,7 @@ $scope.edit = function(id, index){
 
   var updatedGroup = {
     name: $scope.group.name,
-    groupURL: $scope.groupUrlIn,
+    groupURL: $scope.group.groupUrlIn,
     contact: $scope.group.groupContact,
     contactEmail: $scope.group.contactEmail,
     description: $scope.group.description,
@@ -137,7 +138,7 @@ $scope.confirmDelete = function(ev, id, index ) {
           .ariaLabel('Lucky day')
           .targetEvent(ev)
           .ok('I am sure I want to delete')
-          .cancel('Oops, finger slipped');
+          .cancel('Never Mind');
     $mdDialog.show(confirm).then(function() {
       $scope.delete(id, index);
     }, function() {

@@ -10,16 +10,26 @@ body {
   min-height:100%;
   height:auto;
   }
-  md-sidenav{
-    background-color: green;
+
+  md-input-container{
+    padding-right: 30px;
+    width: 200px;
   }
 
-  !md-toolbar{
-    padding: 50px;
-    color: #353535;
+  md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
+    background-color: #664659;
   }
+
+
+  !md-dialog md-dialog-content:not([layout=row]) > *:first-child:not(.md-subheader) {
+      color: black;
+  }
+  md-sidenav{
+    width: 500px;
+  }
+
   md-content{
-    padding-right: 50px;
+    /*padding-right: 50px;*/
   }
   .confirmDeleteClass {
     position: relative;

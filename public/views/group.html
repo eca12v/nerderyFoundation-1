@@ -38,8 +38,8 @@
             </md-card-title-text>
           </md-card-title>
           <md-card-content>
-            <a href="{{group.groupURL}}"></a>
-            <p>{{group.description}}</p>
+            <a href= website: "{{group.groupURL}}"></a>
+            <p>Description: {{group.description}}</p>
             <p>Group Contact: {{group.groupContact}}</p>
             <p>Email: {{group.contactEmail}}</p>
             <p>Affiliations: {{group.affiliations}}</p>
@@ -130,6 +130,10 @@
           <div>Desciption: <a href="#" editable-textarea="group.description" e-rows="7" e-cols="40">{{ group.description || 'empty' }}</a></div>
           </md-input-container>
 
+          <md-input-container input ng-model="groupUrlIn">
+          <div>Site: <a href="#" editable-textarea="group.groupURLIn" e-rows="7" e-cols="40">{{ group.groupUrlIn || 'empty' }}</a></div>
+          </md-input-container>
+
           <md-input-container input ng-model="groupContact">
           <div>Group Contact: <a href="#" editable-text="group.groupContact" e-step="5">{{ group.groupContact || 'empty' }}</a></div>
           </md-input-container>
@@ -158,11 +162,9 @@
           <div>Affiliations: <a href="#" editable-text="group.affiliations">{{ group.affiliations || 'empty' }}</a></div>
           </md-input-container>
 
-
           <md-input-container input ng-model="affiliationURL">
           <div>AffiliationURL: <a href="#" editable-text="group.affiliationURL">{{ group.affiliationURL || 'empty' }}</a></div>
           </md-input-container>
-
 
           <md-input-container flex-gt-sm>
           <label>freqOfMeeting</label>
@@ -184,8 +186,11 @@
             <md-option ng-repeat="option in sizeOfMembership" value="{{ option }}">{{ option }}</md-option>
           </md-select>
           </md-input-container>
+          <div class="row">
             <md-button type="button" class="md-raised" name="button" ng-click="confirmDelete($event, group._id, $index)">Delete Group</md-button>
-          <md-button type="button" class="md-raised" name="button" ng-click="edit(group._id, $index)">Save your edits</md-button>
+            <md-button type="button" class="md-raised" name="button" ng-click="edit(group._id, $index)">Save your edits</md-button>
+        </div>
+
       </md-content>
       </section>
     </md-sidenav>
