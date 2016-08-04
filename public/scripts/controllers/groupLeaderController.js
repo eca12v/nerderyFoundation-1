@@ -54,14 +54,16 @@ myApp.controller( 'GroupLeaderController',  [ 'Upload', 'groupFactory', '$scope'
 //create array to put new groups into
 $scope.groups = [];
 $scope.membershipSizes = [
-        "0-25",
+        "0-10",
+        "10-25",
         "25-50",
         "50-100",
         "100-500"
     ];
 
 $scope.meetingSizes = [
-  "0-25",
+  "0-10",
+  "10-25",
   "25-50",
   "50-100",
   "100-500"
@@ -113,6 +115,7 @@ $scope.submit = function(){
     console.log('in submit function');
     // $scope.postGroup();
   }else{$scope.postGroup();}
+  swal("Submitted for Approval!");
 }; //end submit function
 
 $scope.upload = function(file){
