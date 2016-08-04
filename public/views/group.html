@@ -183,11 +183,8 @@
             <md-option ng-repeat="option in sizeOfMembership" value="{{ option }}">{{ option }}</md-option>
           </md-select>
           </md-input-container>
-          <div class="dialog-demo-content" layout="row" layout-wrap layout-margin layout-align="center">
-            <button type="button" name="button" ng-click="confirmDelete($event, group._id, $index)">Delete Group</button>
-          </div>
-
-          <button type="button" name="button" ng-click="edit(group._id, $index)">Save your edits</button>
+            <md-button type="button" class="md-raised" name="button" ng-click="confirmDelete($event, group._id, $index)">Delete Group</md-button>
+          <md-button type="button" class="md-raised" name="button" ng-click="edit(group._id, $index)">Save your edits</md-button>
       </md-content>
       </section>
     </md-sidenav>
