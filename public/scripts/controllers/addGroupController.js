@@ -71,7 +71,8 @@ myApp.controller( 'AddGroupController',  [ 'Upload', 'groupFactory', '$scope', '
   ];
 
   $scope.membershipSizes = [
-    "0-25",
+    "0-10",
+    "10-25",
     "25-50",
     "50-100",
     "100-500",
@@ -79,7 +80,8 @@ myApp.controller( 'AddGroupController',  [ 'Upload', 'groupFactory', '$scope', '
   ];
 
 $scope.meetingSizes = [
-  "0-25",
+  "0-10",
+  "10-25",
   "25-50",
   "50-100",
   "100-500"
@@ -132,6 +134,7 @@ $scope.submit = function(){
     console.log('in submit function');
     // $scope.postGroup();
   }else{$scope.postGroup();}
+  
 }; //end submit function
 
 $scope.upload = function(file){
@@ -201,7 +204,7 @@ console.log('in postgroup');
     // console.log( 'group submitted: ', newGroup);
     console.log('response: ', response.data);
     $scope.groups.push(response.data);
-    
+
     $state.go('home');
     }, function(error){
     $scope.status = 'swing and a miss';

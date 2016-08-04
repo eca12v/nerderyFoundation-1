@@ -28,7 +28,7 @@ controller('LoginCtrl', ['$scope', '$auth', '$state', '$location', 'toastr',
       .login({username: $scope.username, email: $scope.email, password: $scope.password})
       .then(function (response) {
         $auth.setToken(response);
-        $state.go('home');
+        $state.go('admin');
         // toastr.success(
         //   'Succesfully logined in!',
         //   {closeButton: true}
