@@ -132,14 +132,13 @@ $scope.edit = function(id, index){
 $scope.confirmDelete = function(ev, id, index ) {
     // Appending dialog to document.body to cover sidenav in docs app
     var confirm = $mdDialog.confirm()
-          .title('Would you like to delete your debt?')
-          .textContent('All of the banks have agreed to forgive you your debts.')
+          .title('Are you sure?')
+          .textContent('This cannot be undone')
           .ariaLabel('Lucky day')
           .targetEvent(ev)
-          .ok('Please do it!')
-          .cancel('Sounds like a scam');
+          .ok('I am sure I want to delete')
+          .cancel('Oops, finger slipped');
     $mdDialog.show(confirm).then(function() {
-      $scope.status = 'You decided to get rid of your debt.';
       $scope.delete(id, index);
     }, function() {
       $scope.close();

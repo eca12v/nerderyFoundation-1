@@ -10,9 +10,34 @@ body {
   min-height:100%;
   height:auto;
   }
+  md-sidenav{
+    background-color: green;
+  }
 
-
-
+  !md-toolbar{
+    padding: 50px;
+    color: #353535;
+  }
+  md-content{
+    padding-right: 50px;
+  }
+  .confirmDeleteClass {
+    position: relative;
+    background-color: black;
+  }
+  .dialogdemoBasicUsage .footer {
+    width: 100%;
+    text-align: center;
+    margin-left: 20px; }
+  .dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+    font-size: 0.8em;
+    margin-top: 50px; }
+  .dialogdemoBasicUsage button {
+    width: 200px; }
+  .dialogdemoBasicUsage div#status {
+    color: #c60008; }
+  .dialogdemoBasicUsage .dialog-demo-prerendered md-checkbox {
+    margin-bottom: 0; }
 
   /*.flip {
     -webkit-perspective: 800;
@@ -374,19 +399,7 @@ md-input-container.md-default-theme label,
   background-color: green;
   padding-right: 50px;
 }*/
-md-sidenav{
-  background-color: green;
-}
-md-toolbar{
-  background-color: #353535;
-}
-md-toolbar{
-  padding: 50px;
-  color: #353535;
-}
-md-content{
-  /*padding-left: 50px;*/
-}
+
 .login-panel {
   padding: 20px;
 }
