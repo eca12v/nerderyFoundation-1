@@ -1,7 +1,7 @@
 angular.module('Authorization', ['satellizer', 'toastr']).
 
-controller('LoginCtrl', ['$scope', '$auth', '$state', '$location', 'toastr',
-  function($scope, $auth, $state, $location, $authProvider, toastr) {
+controller('LoginCtrl', ['$scope', '$auth', '$state', '$location',
+  function($scope, $auth, $state, $location, $authProvider) {
 
   console.log(toastr);
   $scope.isAuthenticated = $auth.isAuthenticated;
@@ -29,11 +29,7 @@ controller('LoginCtrl', ['$scope', '$auth', '$state', '$location', 'toastr',
       .then(function (response) {
         $auth.setToken(response);
         $state.go('home');
-        // toastr.success(
-        //   'Succesfully logined in!',
-        //   {closeButton: true}
-        // );
-
+        toastr.info("You logged in successfully.");
       })
       .catch(function (response) {
       });
@@ -42,6 +38,7 @@ controller('LoginCtrl', ['$scope', '$auth', '$state', '$location', 'toastr',
   $scope.logout = function () {
     $auth.logout();
     $state.go('home');
+    toastr.info("You logged out successfully.");
   };
 }
 ]);

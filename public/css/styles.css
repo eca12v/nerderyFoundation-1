@@ -431,3 +431,15 @@ md-card md-card-title md-card-title-text {
   color: gray;
   margin-right: 15px;
 }
+
+.toast-message {
+   color: #E2DE00;
+}
+
+.toast-info {
+  background-color: #664659;
+}
+
+.md-dialog-content {
+  color: black;
+}
