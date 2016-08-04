@@ -108,7 +108,8 @@ function($stateProvider, $urlRouterProvider, $mdIconProvider, $mdThemingProvider
   //here you change placeholder/foreground color.
   $mdThemingProvider.theme('default').foregroundPalette[3] = "gray";
 
-  toastr.options.positionClass = "toast-top-full-width";
+  toastr.options.positionClass = "toast-top-left";
+  toastr.options.showDuration = 500;
  }]);//end of myapp config
 
 

@@ -65,7 +65,7 @@ body {
 }
 
 #add-group-banner {
-  background-color: #353535;
+  background-color: #664659;
   margin-bottom: 3px;
   text-align: center !important;
   padding-left: 10px;
@@ -182,6 +182,7 @@ container-fluid ng-scope{
 
   .cardsContainer {
     background-image: url('http://thecodeplayer.com/uploads/media/pxpat.png');
+    height: 100%
   }
 
   /*.flip {
@@ -442,4 +443,17 @@ md-card md-card-title md-card-title-text {
 
 .md-dialog-content {
   color: black;
+}
+
+#toast-container > div {
+    opacity:1;
+}
+
+.admin-link {
+  margin-right: 10px !important;
+}
+
+#preview-tag {
+  text-align: center;
+  color: #e2663e;
 }
