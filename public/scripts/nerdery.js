@@ -1,74 +1,111 @@
-
-var myApp = angular.module( 'myApp', ['ngRoute', 'ngMaterial', 'satellizer', 'Authorization', 'xeditable', 'ngFileUpload' ] );
+var myApp = angular.module( 'myApp', [
+  'ui.router',
+  'satellizer',
+  'ngMaterial',
+  'Authorization',
+  'xeditable',
+  'ngFileUpload',
+  'toastr'
+]);
 
 /// Routes ///
 
-myApp.config(['$routeProvider', '$authProvider', '$mdIconProvider',  function( $routeProvider, $authProvider, $mdIconProvider) {
+myApp.config(['$stateProvider', '$urlRouterProvider', '$mdIconProvider', '$mdThemingProvider', '$authProvider',
+function($stateProvider, $urlRouterProvider, $mdIconProvider, $mdThemingProvider, $authProvider) {
 
-$mdIconProvider.icon('md-close', 'img/icons/ic_close_24px.svg', 24);
-
-myApp.run(function(editableOptions) {
-  editableOptions.theme = 'bs3';
-});
-
-$routeProvider
-   .when('/index', {
-     templateUrl: '/views/index.html'
-    //  controller: 'IndexController'
-   })
-   .when('/home', {
-     templateUrl: '../views/home.html',
-     controller: 'HomeController'
-   })
-   .when('/groups/:groupName', {
-     templateUrl: '/views/group.html',
-     controller: 'GroupController'
-   })
-   .when('/groupLeader', {
-     templateUrl: '/views/groupLeader.html',
-     controller: 'GroupLeaderController as ctrl',
-     resolve: {
-            techData: function($http){
-              // var techData = {};
-              return $http({
-                method: "GET",
-                url: '/tech.json',
-              }).then(function (response) {
-                return response.data;
-              });
-              //   angular.copy(response.data, techData);
-              //   techData = response.data;
-              // .then(function (response) {
-              //   angular.copy(response.data, techData);
-              //   techData = response.data;
-              //   console.log(response.data);
-              // }, function myError(response) {
-              // });//End of http call
-              // console.log(techData);
-              // return techData;
-        }
+  $stateProvider.
+  state('home', {
+    url : '/home',
+    templateUrl : 'views/home.html',
+    controller : 'HomeController',
+    resolve : {}
+  }).
+  state('group', {
+    url: '/groups/:groupName',
+    templateUrl: 'views/group.html',
+    controller: 'GroupController',
+    onEnter : ['$state', '$auth', 'groupFactory', '$stateParams',
+      function($state, $auth, groupFactory, $stateParams) {
+        groupFactory.getGroup($stateParams.groupName).then(function(response) {
+          if (!response.data.approved) {
+            if(!$auth.isAuthenticated()) {
+              $state.go('home');
+            }
+            if(!$auth.getPayload().admin) {
+              $state.go('home');
+            }
+          }
+        });
+        // console.log($auth.isAuthenticated());
+        // if (!$auth.isAuthenticated()) {
+        //   $state.go('login');
+        // }
       }
-   })
-   .when('/admin', {
-     templateUrl: '/views/admin.html',
-     controller: 'AdminController'
-   })
-   .when('/login', {
-     templateUrl: '/views/login.html',
-     controller: 'LoginCtrl'
-   })
-   .when('/display', {
-     templateUrl: '/views/display.html',
-     controller: 'DisplayCtrl'
-   })
-   .otherwise({
-     redirectTo: 'home'
-   });
+    ],
+    resolve : {
+      group : ['groupFactory', '$stateParams',
+  			function(groupFactory, $stateParams) {
+  				return groupFactory.getGroup($stateParams.groupName);
+  			}
+      ]
+    }
+  }).
+  state('addGroup', {
+    url: '/addGroup',
+    templateUrl: 'views/addGroup.html',
+    controller: 'AddGroupController as ctrl',
+    onEnter : ['$state', '$auth',
+      function($state, $auth) {
+        console.log($auth.isAuthenticated());
+        if (!$auth.isAuthenticated()) {
+          $state.go('login');
+      }
+    }]
+  }).
+  state('admin', {
+    url: '/admin',
+    templateUrl: 'views/admin.html',
+    controller: 'AdminController',
+    onEnter : ['$state', '$auth',
+      function($state, $auth) {
+        console.log($auth.isAuthenticated());
+        console.log($auth.getPayload().admin);
 
-   $authProvider.google({
-        clientId: '125382478230-3n8qqoeugab70kluqqm1o3hleh6acbcc.apps.googleusercontent.com',
-        redirectUri: 'http://localhost:8080/auth/google'
-      });
+        if (!$auth.isAuthenticated() || !$auth.getPayload().admin) {
+          $state.go('home');
+      }
+    }]
+  }).
+  state('login', {
+    url: '/login',
+    templateUrl: 'views/login.html',
+    controller: 'LoginCtrl'
+  });
+
+
+  $urlRouterProvider.otherwise('home');
+
+  $authProvider.google({
+    clientId: '125382478230-3n8qqoeugab70kluqqm1o3hleh6acbcc.apps.googleusercontent.com',
+    redirectUri: 'http://localhost:8080/auth/google'
+  });
+
+  $mdIconProvider.icon('md-close', 'img/icons/ic_close_24px.svg', 24);
+
+  //change default color for primary
+  // var indigo = $mdThemingProvider.extendPalette('indigo', {
+  //     '500': '664659'
+  // });
+  // $mdThemingProvider.definePalette('indigo', indigo);
+
+  //change default color for warn
+
+  // $mdThemingProvider.definePalette('red', indigo);
+  //
+  // $mdThemingProvider.theme('default').primaryPalette('indigo').warnPalette('red');
+
+  //here you change placeholder/foreground color.
+  $mdThemingProvider.theme('default').foregroundPalette[3] = "gray";
 
  }]);//end of myapp config
 

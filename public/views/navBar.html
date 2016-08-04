@@ -1,0 +1,10 @@
+<nav id="nerdNav" class="navbar navbar-default">
+  <a class="navbar-brand" href="/#/home">Nerdery Foundation</a>
+  <ul class="nav navbar-nav navbar-right" ng-controller="LoginCtrl">
+    <li ng-if="currentUser().admin"><a href ="/#/admin">Dashboard</a></li>
+    <li><a href ="/#/addGroup"> Create A Group</a></li>
+    <li ng-hide="isAuthenticated()"><a href ="/#/login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+    <li ng-show="isAuthenticated()"><a><i class="fa fa-user" aria-hidden="true"> </i> {{currentUser().username}}</a></li>
+    <li ng-show="isAuthenticated()"><a href="#" ng-click="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+  </ul>
+</nav>

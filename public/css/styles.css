@@ -1,28 +1,125 @@
+
+
+*{
+  font-family: "Source Sans Pro", sans-serif;
+}
+
 body {
-  background-color: #664659;/*plum*/
+  background-color: #efede7;
   color: #fff; /*white*/
+  min-height:100%;
+  height:auto;
   }
-  .jumbotron {
+
+
+
+
+  /*.flip {
+    -webkit-perspective: 800;
+     width: 400px;
+     height: 300px;
+      position: relative;
+      margin: 50px auto;
+  }
+  .flip .card.flipped {
+    -webkit-transform: rotatex(-180deg);
+  }
+  .flip .card {
+    width: auto;
+    height: 300px;
+    margin: 50px auto;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: 0.7s;
+  }
+  .flip .card .face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-backface-visibility: hidden ;
+    z-index: 2;
+      font-family: Georgia;
+      font-size: 3em;
+      text-align: center;
+      line-height: 200px;
+  }
+  .flip .card .front {
+    position: absolute;
+
+    z-index: 1;
+      background: turquoise;
+      color: white;
+      cursor: pointer;
+  }
+  .flip .card .back {
+    height: 110%;
+    width: 110%;
+    -webkit-transform: rotatex(-180deg);
+      background: #f4f750;
+
+      color: black;
+      cursor: pointer;
+  }*/
+
+#add-group {
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+
+#add-group-banner {
+  background-color: #353535;
+  margin-bottom: 3px;
+  text-align: center !important;
+  padding-left: 10px;
+  color: #E2DE00;
+}
+
+#page-container {
+  padding-bottom: 50px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+header {
+    background: url('https://static.pexels.com/photos/34676/pexels-photo-large.jpg') no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    position:relative;
+    padding-bottom: 30px;
+
+    position: relative;
+    height: 400px;
+    width: 100%;
+    box-shadow: 2px 2px 3px gray;
+
+}
+
+  #jumbo-home {
       display: block;
       height:auto;
       width: 100%;
+      background: none;
       text-align: center;
-
-      background: url('https://static.pexels.com/photos/34676/pexels-photo-large.jpg') no-repeat center center scroll;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      background-size: cover;
-      -o-background-size: cover;
-      position:relative;
-
   }
   .jumbotron h2{
     font-weight: bold;
     color:#E2DE00;
+    text-shadow: 1px 1px 2px black;
   }
   .jumbotron h1{
     color:#fff;
+    text-shadow: 1px 1px 2px black;
   }
+/*Search Bar*/
+container-fluid ng-scope{
+  /*background-color: #664659*/
+}
+  #page-container {
+    /*background-color: #664659;*/
+  }
+
+
+
 
 /*Landing Page*/
 .flex {
@@ -74,21 +171,72 @@ body {
   max-height: calc(200% / 3);
 }
 
-/*Search Bar*/
-main-search {
-  width: 75%;
-}
 
-filter-box {
+
+/*filter-box {
   height: 100%;
-}
+}*/
 
 /*Group Tiles*/
-.group-tile {
+
+
+  .cardsContainer {
+    background-image: url('http://thecodeplayer.com/uploads/media/pxpat.png');
+  }
+
+  /*.flip {
+    border: 3px solid #664659;
+    border-radius: 7px;
+    background-color: turquoise;
+    height: 300px;
+    width: auto;
+  }
+
+  .flip:hover {
+    border: 3px solid #664659;
+    border-radius: 7px;
+    background-color: turquoise;
+    height:auto;
+    min-height: 300px;
+  }*/
+
+md-card-title-text .md-headline {
+  text-align: center;
+}
+/*ng-style="{'background-image':'url({{group.photoURL}})', 'background-size':'cover', 'background-position':'center'}"*/
+md-card.face {
+  background-image: url("../images/code-1486361__340.jpg");
+  border: 1px solid #664659;
+  border-radius: 7px;
+  /*background-color: turquoise;*/
+  height: 300px;
+  color: white;
+  transition: transform .2s ease-in;
+  z-index: 1;
+}
+
+md-card.face:hover {
+  border: 1px solid #664659;
+  border-radius: 7px;
+  color: white;
   height: auto;
+  min-height: 300px;
+  /*width: auto;
+  min-width: 350px;*/
+  z-index: 999;
+  transform: scale(1.1);
+
+}
+
+.flip:hover {
+  z-index: 999;
+}
+/*.group-tile {
+  height: 300px;
   margin-left: 0;
   margin-right: 0;
-}
+  color: white;
+}*/
 /*checkboxes*/
 md-checkbox {
   display: block;
@@ -103,11 +251,17 @@ md-checkbox {
   color: black;
 }
 
+.group-link:hover {
+  transform: perspective(700px) scale(0.5) translateX(-16.66%) rotateY(25deg);
+}
+
 .sub {
 padding-left: 15px;
+}
 
 /*Group Landing Page*/
 
+/*Group Edit Menu*/
 
 
 .headline {
@@ -123,4 +277,157 @@ padding-left: 15px;
     font-size: 77px;
     background: #fff;
     background: rgba(255,255,255,0.9);
+}
+
+.navbar-default {
+  border-radius: 0px !important;
+  background-color: transparent;
+  border: none;
+}
+
+#nerdNav {
+  background-color: none;
+}
+
+.layerBack {
+    background-color: rgba(102, 70, 89, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar-default .navbar-brand {
+  color:#E2DE00;
+  font-size: 18px;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:active,
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:active,
+.navbar-default .navbar-nav>li>a:focus {
+  color: white;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: white;
+}
+
+.navbar-right {
+  margin-right: 15px;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: white;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+  color: #E2DE00;
+}
+
+#main-search {
+  width: 75%;
+  display: inline-block;
+}
+
+#filterBar {
+  display: inline-block;
+  float: right;
+  vertical-align: middle;
+}
+
+#searchBar {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+#sortBar {
+  height: 60px;
+  line-height: 60px;
+}
+
+#sortBar md-content {
+  background-color: #efede7;
+}
+
+#non-home {
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+#non-home-group {
+  height: auto;
+}
+
+md-input-container.md-default-theme label,
+ md-input-container.md-default-theme .md-placeholder{
+    color:red !important;
+}
+
+.login-panel {
+  padding: 20px;
+}
+
+.login-title,
+.admin-title {
+  color: #353535;
+}
+
+.md-success {
+  background-color: #4d984d !important;
+  color: white !important;
+}
+
+.md-warn {
+  background-color: #e2663e !important;
+}
+
+.admin-link a{
+  text-decoration: none;
+  color: white;
+}
+
+md-card-title-text .md-headline {
+  text-align: left;
+  color: black;
+}
+
+.admin-card {
+}
+
+.sort-icon {
+  color: gray;
+  vertical-align: middle;
+  padding-bottom: 5px;
+  padding-right: 3px;
+}
+
+.md-button {
+  background: white;
+  color: black;
+}
+
+md-card-content,
+md-card md-card-title md-card-title-text {
+  color: black;
+}
+
+#group-jumbo {
+  background: url('../img/techmeetup.jpeg') no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+#flagDiv {
+  float: right;
+  color: gray;
+  margin-right: 15px;
 }

@@ -2,6 +2,10 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Group = require('../models/Groups');
+var passport = require('passport');
+var jwt = require('express-jwt');
+
+var auth = jwt({secret: 'SECRET', userProperty: 'payload'});
 
 var router = express.Router();
 
@@ -16,7 +20,7 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 
 
-router.put('/editGroup/:id', function(req, res) {
+router.put('/editGroup/:id', auth, function(req, res) {
   console.log('inside router edit, id: ', req.params.id );
   Group.findOne({'_id': req.params.id}, function(err, group) {
     console.log( 'after Groups.findOne, group: ', group );
@@ -70,7 +74,7 @@ router.get('/getApprovedGroups', function(req, res) {
   });
 });
 
-router.get('/getUnapprovedGroups', function(req, res) {
+router.get('/getUnapprovedGroups', auth, function(req, res) {
   Group.find({'approved': false}).sort({created: 'desc'}).exec(function(err, groups) {
     if(err) {
       console.log(err);
@@ -81,18 +85,72 @@ router.get('/getUnapprovedGroups', function(req, res) {
   });
 });
 
+router.put('/flagGroup/:id', function(req, res) {
+  console.log('flag group endpoint hit');
+  Group.findOne({'_id': req.params.id}, function(err, group) {
+    if(err) {
+      console.log('/flagGroup error: ', err);
+    } else {
+      group.flags++;
+      group.save(function(err) {
+        if(err) {
+          console.log(err);
+          res.sendStatus(500);
+        } else {
+          console.log(group);
+          res.json(group);
+        }
+      });
+    }
+  });
+});
+
+router.put('/unFlagGroup/:id', function(req, res) {
+  console.log('un flag group endpoint hit');
+  Group.findOne({'_id': req.params.id}, function(err, group) {
+    if(err) {
+      console.log('/flagGroup error: ', err);
+    } else {
+      group.flags = 0;
+      group.save(function(err) {
+        if(err) {
+          console.log(err);
+          res.sendStatus(500);
+        } else {
+          console.log(group);
+          res.json(group);
+        }
+      });
+    }
+  });
+});
+
+router.get('/getFlaggedGroups', function(req, res) {
+  Group.find({'flags': { $gt: 0 }}).sort({ flags: 'desc'}).exec(function(err, groups) {
+    if(err) {
+      console.log(err);
+      res.sendStatus(500);
+    } else {
+      res.send(groups);
+    }
+  });
+});
+
 router.get('/getGroup/:groupName', function(req, res) {
+  console.log(req.params.groupName);
   Group.findOne({'name': req.params.groupName}, function(err, group) {
     if(err) {
       console.log('/getGroup error: ', err);
       res.sendStatus(500);
     } else {
+      // console.log('in router.get, returning group: ', group);
       res.json(group);
     }
   });
 });
 
-router.put('/approveGroup/:id', function(req, res) {
+router.put('/approveGroup/:id', auth, function(req, res) {
+  console.log('approve group endpoint hit');
   Group.findOne({'_id': req.params.id}, function(err, group) {
     if(err) {
       console.log('/approveGroup error: ', err);
@@ -103,6 +161,7 @@ router.put('/approveGroup/:id', function(req, res) {
           console.log(err);
           res.sendStatus(500);
         } else {
+          console.log(group);
           res.json(group);
         }
       });
@@ -148,8 +207,6 @@ console.log('inside groups.js add group ');
     affiliationURL: req.body.affiliationURL,
     eventInfo: req.body.eventInfo,
     sizeOfMembership: req.body.sizeOfMembership
-
-
   });
 
   if (req.file ){
@@ -179,6 +236,7 @@ router.delete('/deleteGroup/:groupId', function(req, res){
         if(err){
           console.log('remove group error: ', err);
         }else{
+          res.json({});
         }
       });
     }

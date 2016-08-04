@@ -21,6 +21,7 @@ var groupSchema = mongoose.Schema({
   sizeOfMembership: String,
   photoURL: String,
   approved: {type: Boolean, default: false},
+  flags: {type: Number, default: 0},
   created: Date,
 });
 

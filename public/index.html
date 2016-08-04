@@ -7,10 +7,12 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
     <link href="bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-toastr/dist/angular-toastr.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css"
+   charset="utf-8">
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="css/styles.css">
     <script src="./bower_components/sweetalert/dist/sweetalert.min.js"></script> 
     <link rel="stylesheet" type="text/css" href="./bower_components/sweetalert/dist/sweetalert.css">
@@ -18,14 +20,15 @@
 
   <body>
 
-    <div class="navWrap">
-      <div class = "navBar" ng-include="'/views/templates/navBar.html'"></div>
+    <div id="page-container" class="container-fluid">
+      <ui-view></ui-view>
     </div>
 
-    <main ng-view></main>
-
+    <script src="bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
-    <script type="text/javascript" src="./bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+
+    <script src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="/vendors/ng-file-upload.min.js"></script>
     <script src="/vendors/ng-file-upload-shim.min.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
@@ -36,11 +39,10 @@
     <script src="./bower_components/satellizer/dist/satellizer.js" charset="utf-8"></script>
     <script type="text/javascript" src="/scripts/factories/groupFactory.js"></script>
     <script type="text/javascript" src="/scripts/controllers/adminController.js"></script>
-    <script type="text/javascript" src="/scripts/controllers/groupLeaderController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/addGroupController.js"></script>
     <script type="text/javascript" src="/scripts/controllers/homeController.js"></script>
-    <script type="text/javascript" src="/scripts/controllers/displayCtrl.js"></script>
     <script type="text/javascript" src="/scripts/controllers/groupController.js"></script>
-    <script src="/scripts/controllers/auth.js" charset="utf-8"></script>
+    <script src="/scripts/controllers/loginController.js" charset="utf-8"></script>
 
   </body>
 </html>

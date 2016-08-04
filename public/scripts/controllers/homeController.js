@@ -1,7 +1,25 @@
-myApp.controller( 'HomeController', ['$scope', '$http', '$location', 'groupFactory',
-function( $scope, $http, $location, groupFactory){
+myApp.controller( 'HomeController', ['$scope', '$http', '$location', 'groupFactory', '$auth',
+function( $scope, $http, $location, groupFactory, $auth){
 console.log( 'loaded homeController');
 
+$scope.isAuthenticated = $auth.isAuthenticated;
+$scope.currentUser = $auth.getPayload;
+
+groupFactory.getApprovedGroups().then(function(response) {
+  $scope.groups = response.data;
+  console.log($scope.groups);
+});
+
+$http({
+  method: "GET",
+  url: '/tech.json',
+})
+.then(function (response) {
+  $scope.tech = response.data;
+  console.log($scope.tech);
+}, function myError(response) {
+  $scope.tech = response.statusText;
+});//End of http call
 
 $scope.selectedTech = '';
 $scope.selectedSubTech = '';
@@ -51,9 +69,6 @@ $scope.changeSubTechStr =  function(tech) {
     $scope.techStr = newStr;
   }
 };
-
-$scope.location = ['Twin Cities', 'Duluth'];
-
 $scope.typicalSize = ['0-25', '25-50', '50-100', '100-500'];
 
 $scope.changeLocation =  function(location) {
@@ -70,26 +85,21 @@ $scope.changeLocation =  function(location) {
   }
 };
 
+$scope.location = [
+  "Minneapolis - St. Paul",
+  "Duluth - Superior",
+  "Fargo - Valley City, ND",
+  "Sioux Falls(Mitchell), SD",
+  "Mankato",
+  "Rochester - Mason City - Austin, MN - IA",
+  "La Crosse - Eau Claire, WI"
+];
 
-groupFactory.getApprovedGroups().then(function(response) {
-  $scope.groups = response.data;
-  console.log($scope.groups);
-});
-
-
-// DOESN'T WORK YET/////////////////
-
-$http({
-  method: "GET",
-  url: '/tech.json',
-})
-.then(function (response) {
-  $scope.tech = response.data;
-  console.log($scope.tech);
-}, function myError(response) {
-  $scope.tech = response.statusText;
-});//End of http call
-
+  var originatorEv;
+  $scope.openMenu = function($mdOpenMenu, ev) {
+    originatorEv = ev;
+    $mdOpenMenu(ev);
+  };
 
 }]) //end homeController
 

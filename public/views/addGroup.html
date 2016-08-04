@@ -1,0 +1,178 @@
+<header id="non-home">
+  <div class="layerBack">
+    <div class="navWrap">
+      <div class = "navBar" ng-include="'/views/navBar.html'"></div>
+    </div>
+  </div>
+</header>
+
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+
+    <md-content id="add-group" layout-padding>
+      <div id="add-group-banner" layout-gt-sm="row">
+        <h1>Add A Group to the Network</h1>
+      </div>
+      <form name="form">
+      <div layout-gt-sm="row">
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Group Name</label>
+          <input ng-model="groupNameIn">
+        </md-input-container>
+      </div>
+
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>URL</label>
+        <input ng-model="groupUrlIn">
+      </md-input-container>
+      <div layout-gt-sm="row">
+
+      <md-input-container class="md-block" flex-gt-xs>
+        <label>Contact Name</label>
+        <input ng-model="contactNameIn">
+      </md-input-container>
+
+      <md-input-container  class="md-block" flex-gt-sm>
+        <label>Contact Email</label>
+        <input ng-model="contactEmail" type="email">
+      </md-input-container>
+
+    </div>
+
+    <div layout-gt-sm="row">
+      <md-input-container  class="md-block" flex-gt-sm>
+        <label>Group Description</label>
+        <textarea ng-model="description" md-placeholder="Description"></textarea>
+       </md-input-container>
+    </div>
+
+    <div layout-gt-sm="row">
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>Location</label>
+        <md-select ng-model="location">
+        <md-option ng-repeat="option in locations" value="{{option}}">{{option}}</md-option>
+        </md-select>
+      </md-input-container>
+
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Activities</label>
+          <md-select ng-model="activities">
+          <md-option ng-repeat="option in activityList" value="{{option}}">{{option}}</md-option>
+          </md-select>
+        </md-input-container>
+      </div>
+
+      <md-chips ng-model="ctrl.roTagNames" name="tagName" readonly="ctrl.readonly" md-max-chips="5" placeholder="Add A Descriptive Tag" secondary-placeholder="New Tag">>
+        <md-chip-template>
+          <strong>{{$chip}}</strong>
+        </md-chip-template>
+      </md-chips>
+
+      <md-chips ng-model="ctrl.selectedTech" md-autocomplete-snap
+          md-transform-chip="ctrl.transformChip($chip)"
+          md-require-match="ctrl.autocompleteDemoRequireMatch">
+        <md-autocomplete
+          md-selected-item="ctrl.selectedItem"
+          md-search-text="ctrl.searchText"
+          md-items="item in ctrl.querySearch(ctrl.searchText)"
+          md-item-text="item.name"
+          placeholder="Add A Technology Tag">
+          <span md-highlight-text="ctrl.searchText">{{item.Technologies}} {{item.Skills}}</span>
+        </md-autocomplete>
+        <md-chip-template>
+          <span>
+            <strong>{{$chip.Technologies}}</strong>
+          </span>
+        </md-chip-template>
+      </md-chips>
+        <!-- <p>{{ctrl.roTagNames}}</p>
+        <p>{{ctrl.selectedTech}}</p> -->
+
+
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Affiliations</label>
+            <input ng-model="affiliations">
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Affilation URL</label>
+            <input name="affiliationURL" ng-model="affiliationURL">
+          </md-input-container>
+        </div>
+
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Membership Size</label>
+            <md-select ng-model="sizeOfMembership">
+            <md-option ng-repeat="size in membershipSizes" value="{{size}}">{{size}}</md-option>
+            </md-select>
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Meeting Frequency</label>
+            <md-select ng-model="freqOfMeeting">
+            <md-option ng-repeat="option in meetingFreq" value="{{option}}">{{option}}</md-option>
+          </md-select>
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Typical Meeting Size</label>
+            <md-select ng-model="sizeOfMeeting">
+            <md-option ng-repeat="option in meetingSizes" value="{{option}}">{{option}}</md-option>
+            </md-select>
+          </md-input-container>
+        </div>
+
+        <div layout-gt-sm="row">
+            <md-input-container flex-gt-sm>
+              <md-button class="md-primary" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
+            ngf-accept="'image/*'" ngf-max-size="2MB" ngf-min-height="100"
+            ngf-resize="{width: 100, height: 100}">Select An Image</md-button>
+            </md-input-container>
+          </div>
+
+          <p>{{file}}</p>
+          <p>{{uploads}}</p>
+
+
+          <button class="btn btn-default" type="button" name="button" ng-click=submit() >Submit Group</button>
+        </div>
+        </form>
+      </md-content>
+    </div>
+  </div>
+
+
+<!-- <legend>New Group Submission Form</legend> -->
+<!-- Text input-->
+<!-- <div class="displayGroup">
+  <div class="jumbotron vertical-center">
+    <div class="container-fluid text-center">
+     <div class="row">
+      <div class="col-md-4">
+       <div class="top-bg"></div>
+       <div class="col-md-5" ng-repeat="record in groups">
+       <h1>{{ record.name }}</h1>
+          <ul class="top-features">
+              <span><i class="simple_bg top-features-bg"></i></span>
+              <p><strong>Group Contact</strong><br> {{  record.groupContact  }} </p>
+
+              <span><i class="simple_bg top-features-bg"></i></span>
+              <p><strong>Location</strong><br> {{ record.location }}</p>
+
+              <span><i class="simple_bg top-features-bg"></i></span>
+              <p><strong>Frequency of Meetings</strong><br> {{record.freqOfMeeting }}</p>
+
+              <span><i class="simple_bg top-features-bg"></i></span>
+              <p><strong>Contact Info</strong><br>Contact Info Here</p>
+
+            <a href="some website" class="btn-primary btn h2 lightBlue get-Started-btn">Go to Group website</a>
+            <h6 class="get-Started-sub-btn"></h6>
+          </ul>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
