@@ -377,8 +377,15 @@ md-input-container.md-default-theme label,
 md-sidenav{
   background-color: green;
 }
+md-toolbar{
+  background-color: #353535;
+}
+md-toolbar{
+  padding: 50px;
+  color: #353535;
+}
 md-content{
-  padding-left: 50px;
+  /*padding-left: 50px;*/
 }
 .login-panel {
   padding: 20px;
