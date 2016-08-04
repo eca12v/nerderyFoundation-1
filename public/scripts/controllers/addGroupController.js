@@ -1,4 +1,7 @@
-myApp.controller( 'AddGroupController',  [ 'Upload', 'groupFactory', '$scope', '$http', '$location', '$rootScope', '$state',   function( Upload, groupFactory, $scope,  $http, $location, $authProvider, $state, $rootScope  ){
+myApp.controller( 'AddGroupController',  [ 'Upload', 'groupFactory', '$scope', '$http', '$state', '$rootScope', '$auth', function( Upload, groupFactory, $scope, $http, $state, $rootScope, $auth ){
+
+  $scope.isAuthenticated = $auth.isAuthenticated;
+  $scope.currentUser = $auth.getPayload;
 
   var self = this;
   self.readonly = false;
@@ -159,7 +162,8 @@ $scope.upload = function(file){
       affiliations: $scope.affiliations,
       affiliationURL: $scope.affiliationURL,
       eventInfo: $scope.eventInfo,
-      sizeOfMembership: $scope.sizeOfMembership
+      sizeOfMembership: $scope.sizeOfMembership,
+      submitterID: $scope.currentUser()._id
     }
   }).then(function (resp) {
             console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
@@ -194,7 +198,8 @@ console.log('in postgroup');
     affiliations: $scope.affiliations,
     affiliationURL: $scope.affiliationURL,
     eventInfo: $scope.eventInfo,
-    sizeOfMembership: $scope.sizeOfMembership
+    sizeOfMembership: $scope.sizeOfMembership,
+    submitterID: $scope.currentUser()._id
 
   };
   console.log( 'group submitted: ', newGroup);

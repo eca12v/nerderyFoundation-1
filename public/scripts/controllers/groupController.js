@@ -1,4 +1,4 @@
-myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScope', 'groupFactory', '$state', '$stateParams', '$mdSidenav', '$log', '$auth', function( $scope, $http, $location, $rootScope, groupFactory, $state, $stateParams, $mdSidenav, $log, $auth ){
+myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScope', 'groupFactory', '$state', '$stateParams', '$mdSidenav', '$log', '$auth', '$mdDialog', '$mdMedia', function( $scope, $http, $location, $rootScope, groupFactory, $state, $stateParams, $mdSidenav, $log, $auth, $mdDialog, $mdMedia ){
 
 $scope.isAuthenticated = $auth.isAuthenticated;
 $scope.currentUser = $auth.getPayload;
@@ -216,6 +216,42 @@ $scope.flagGroup = function() {
   groupFactory.flagGroup($scope.group._id);
   $scope.groupFlags++;
 };
+
+$scope.status = '  ';
+$scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
+$scope.showAlert = function(ev) {
+  // Appending dialog to document.body to cover sidenav in docs app
+  // Modal dialogs should fully cover application
+  // to prevent interaction outside of dialog
+  $mdDialog.show(
+    $mdDialog.alert()
+      .parent(angular.element(document.querySelector('#popupContainer')))
+      .clickOutsideToClose(true)
+      .title('This is an alert title')
+      .textContent('You can specify some description text in here.')
+      .ariaLabel('Alert Dialog Demo')
+      .ok('Got it!')
+      .targetEvent(ev)
+  );
+};
+
+$scope.showConfirm = function(ev) {
+ // Appending dialog to document.body to cover sidenav in docs app
+ var confirm = $mdDialog.confirm()
+       .title('Would you like to flag this group?')
+       .textContent('Is the information displayed either incorrect or inappropriate?  Let an admin know.')
+       .ariaLabel()
+       .targetEvent(ev)
+       .ok('Yes')
+       .cancel('No');
+ $mdDialog.show(confirm).then(function() {
+   groupFactory.flagGroup($scope.group._id);
+   $scope.groupFlags++;
+ }, function() {
+  //  $scope.status = 'You have not approved this group yet';
+ });
+};
+
 
 
 

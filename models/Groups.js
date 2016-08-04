@@ -22,6 +22,7 @@ var groupSchema = mongoose.Schema({
   photoURL: String,
   approved: {type: Boolean, default: false},
   flags: {type: Number, default: 0},
+  submitterID:  String,
   created: Date,
 });
 
