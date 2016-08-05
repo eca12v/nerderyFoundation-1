@@ -10,7 +10,7 @@
     </div>
   </div>
 </header>
-{{currentUser()}}
+
 <div id="sortBar">
 
     <md-content class="md-no-momentum">
@@ -258,14 +258,17 @@
         <div flex="30" flex-sm="50" flex-xs="80" class="md-padding flip" ng-repeat="group in groups | multiWordFilter: techStr | filter: locationStr | filter: sizeStr | filter: filterStr track by $index">
           <!-- <div class="card" ng-class="autoScroll ? 'flipped' : ''"> -->
           <a class="group-link" ng-href="/#/groups/{{group.name}}">
-            <md-card class="group-tile md-whiteframe-6dp face front" ng-mouseenter="description = !description" ng-mouseleave="description = !description" ng-style="{'background-image':'url(../images/code-1486361__340.jpg)', 'background-size':'cover', 'background-position':'center'}" >
+            <md-card class="group-tile md-whiteframe-6dp face front" ng-mouseenter="description = !description" ng-mouseleave="description = !description">
 
-              <md-card-title>
-                <md-card-title-text>
-                  <span class="md-headline">{{group.name}}</span>
-                </md-card-title-text>
+              <md-card-header>
+                <md-card-avatar>
+                  <img class="md-user-avatar" ng-src="{{avatarImage}}" alt="" />
+                </md-card-avatar>
+                <md-card-header-text>
+                  <span class="md-title">{{group.name}}</span>
+                </md-card-header-text>
                   <!-- <div class="md-media-sm card-media"> -->
-              </md-card-title>
+              </md-card-header>
               <md-card-content ng-show="description">
                 <p>
                   {{group.description}}

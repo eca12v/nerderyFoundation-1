@@ -69,7 +69,7 @@ body {
 }
 
 header {
-    background: url('https://static.pexels.com/photos/34676/pexels-photo-large.jpg') no-repeat center center scroll;
+    background: url('http://techanddesign.ca/wp-content/uploads/2016/01/technetwork.jpgç') no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -175,31 +175,16 @@ container-fluid ng-scope{
     height: 100%
   }
 
-  /*.flip {
-    border: 3px solid #664659;
-    border-radius: 7px;
-    background-color: turquoise;
-    height: 300px;
-    width: auto;
-  }
-
-  .flip:hover {
-    border: 3px solid #664659;
-    border-radius: 7px;
-    background-color: turquoise;
-    height:auto;
-    min-height: 300px;
-  }*/
 
 md-card-title-text .md-headline {
   text-align: center;
 }
 /*ng-style="{'background-image':'url({{group.photoURL}})', 'background-size':'cover', 'background-position':'center'}"*/
 md-card.face {
-  background-image: url("../images/code-1486361__340.jpg");
+  /*background-image: url("../images/code-1486361__340.jpg");*/
   border: 1px solid #664659;
   border-radius: 7px;
-  /*background-color: turquoise;*/
+  background-color: rgba(102, 70, 89, 0.9);
   height: 300px;
   color: white;
   transition: transform .2s ease-in;
@@ -219,9 +204,6 @@ md-card.face:hover {
 
 }
 
-.flip:hover {
-  z-index: 999;
-}
 /*.group-tile {
   height: 300px;
   margin-left: 0;
@@ -251,6 +233,10 @@ padding-left: 15px;
 }
 
 /*Group Landing Page*/
+
+.group-card {
+  min-height: 330px;
+}
 
 /*Group Edit Menu*/
 
@@ -395,7 +381,8 @@ md-input-container.md-default-theme label,
 
 md-card-title-text .md-headline {
   text-align: left;
-  color: black;
+  color: rgba(244, 247, 80, .8);
+  text-shadow: 1px 1px 2px black;
 }
 
 .admin-card {
