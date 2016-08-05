@@ -6,10 +6,11 @@ var jwt = require('express-jwt');
 var jswt = require('jsonwebtoken');
 var sanitizer = require('sanitizer');
 var request = require('request');
+var authConfig = require('../modules/authConfig');
 
 var User = require('../models/Users');
 
-var auth = jwt({secret: 'SECRET', userProperty: 'payload'});
+var auth = jwt({secret: authConfig.TOKEN_SECRET, userProperty: 'payload'});
 
 router.post('/signup', auth, function(req, res, next){
   var user = new User({
@@ -43,7 +44,7 @@ router.post('/google', function(req, res) {
   var params = {
     code: req.body.code,
     client_id: req.body.clientId,
-    client_secret: 'HNU0Ebbps7g5D1Q1bu1ErECb',
+    client_secret: authConfig.GOOGLE_SECRET,
     redirect_uri: req.body.redirectUri,
     grant_type: 'authorization_code'
   };
@@ -66,7 +67,7 @@ router.post('/google', function(req, res) {
             return res.status(409).send({ message: 'There is already a Google account that belongs to you' });
           }
           var token = req.header('Authorization').split(' ')[1];
-          var payload = jswt.verify(token, 'SECRET');
+          var payload = jswt.verify(token, authConfig.TOKEN_SECRET);
           User.findById(payload.sub, function(err, user) {
             if (!user) {
               return res.status(400).send({ message: 'User not found' });
@@ -109,7 +110,7 @@ router.post('/facebook', function(req, res) {
   var params = {
     code: req.body.code,
     client_id: req.body.clientId,
-    client_secret: 'a8fa21e754f6ad0f21ab615c4c101d02',
+    client_secret: authConfig.FACEBOOK_SECRET,
     redirect_uri: req.body.redirectUri
   };
 
@@ -131,7 +132,7 @@ router.post('/facebook', function(req, res) {
             return res.status(409).send({ message: 'There is already a Facebook account that belongs to you' });
           }
           var token = req.header('Authorization').split(' ')[1];
-          var payload = jswt.verify(token, 'SECRET');
+          var payload = jswt.verify(token, authConfig.TOKEN_SECRET);
           User.findById(payload.sub, function(err, user) {
             if (!user) {
               return res.status(400).send({ message: 'User not found' });

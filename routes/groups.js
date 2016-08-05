@@ -4,8 +4,9 @@ var mongoose = require('mongoose');
 var Group = require('../models/Groups');
 var passport = require('passport');
 var jwt = require('express-jwt');
+var authConfig = require('../modules/authConfig');
 
-var auth = jwt({secret: 'SECRET', userProperty: 'payload'});
+var auth = jwt({secret: authConfig.TOKEN_SECRET, userProperty: 'payload'});
 
 var router = express.Router();
 
