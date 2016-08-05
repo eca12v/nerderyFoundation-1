@@ -241,10 +241,10 @@ md-card-title-text .md-headline {
 }
 /*ng-style="{'background-image':'url({{group.photoURL}})', 'background-size':'cover', 'background-position':'center'}"*/
 md-card.face {
-  background-image: url("../images/code-1486361__340.jpg");
+  /*background-image: url("../images/code-1486361__340.jpg");*/
   border: 1px solid #664659;
   border-radius: 7px;
-  /*background-color: turquoise;*/
+  background-color: rgba(102, 70, 89, 0.9);
   height: 300px;
   color: white;
   transition: transform .2s ease-in;
@@ -440,7 +440,8 @@ md-input-container.md-default-theme label,
 
 md-card-title-text .md-headline {
   text-align: left;
-  color: black;
+  color: rgba(244, 247, 80, .8);
+  text-shadow: 1px 1px 2px black;
 }
 
 .admin-card {
