@@ -45,8 +45,8 @@
             <p>Description: {{group.description}}</p>
             <p>Group Contact: {{group.groupContact}}</p>
             <p>Email: {{group.contactEmail}}</p>
-            <p>Affiliations: {{group.affiliations}}</p>
-            <p>Affiliation : {{group.affiliationURL}}</p>
+            <p ng-hide="group.affiliations == null">Affiliations: {{group.affiliations}}</p>
+            <p ng-hide="group.affiliationURL == null">Affiliation : {{group.affiliationURL}}</p>
           </md-card-content>
         </md-card>
 
@@ -63,7 +63,7 @@
             </md-card-title-media>
           </md-card-title>
           <md-card-content>
-            <p>Activities: {{group.activities}} </p>
+            <p ng-hide="group.activities == null">Activities: {{group.activities}} </p>
             <p>Descriptive Tags: </p>
             <md-chips>
               <md-chip ng-repeat="t in group.tags">{{t}}</md-chip>
