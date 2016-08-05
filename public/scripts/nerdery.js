@@ -96,19 +96,19 @@ function($stateProvider, $urlRouterProvider, $mdIconProvider, $mdThemingProvider
 
   $mdIconProvider.icon('md-close', 'img/icons/ic_close_24px.svg', 24);
 
-  //change default color for primary
-  // var indigo = $mdThemingProvider.extendPalette('indigo', {
-  //     '500': '664659'
-  // });
-  // $mdThemingProvider.definePalette('indigo', indigo);
+  // change default color for primary
+  var indigo = $mdThemingProvider.extendPalette('indigo', {
+      '500': '664659'
+  });
+  $mdThemingProvider.definePalette('indigo', indigo);
 
-  //change default color for warn
+  // change default color for warn
 
-  // $mdThemingProvider.definePalette('red', indigo);
-  //
-  // $mdThemingProvider.theme('default').primaryPalette('indigo').warnPalette('red');
+  $mdThemingProvider.definePalette('red', indigo);
 
-  //here you change placeholder/foreground color.
+  $mdThemingProvider.theme('default').primaryPalette('indigo').warnPalette('red');
+
+  // here you change placeholder/foreground color.
   $mdThemingProvider.theme('default').foregroundPalette[3] = "gray";
 
   toastr.options.positionClass = "toast-top-full-width";
@@ -121,3 +121,7 @@ myApp.run(function($rootScope, $window, $auth) {
       // $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
     }
   });
+
+  myApp.run(function(editableOptions) {
+  editableOptions.theme = 'bs3';
+});

@@ -1,4 +1,4 @@
-myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScope', 'groupFactory', '$state', '$stateParams', '$mdSidenav', '$log', '$auth', '$mdDialog', '$mdMedia', function( $scope, $http, $location, $rootScope, groupFactory, $state, $stateParams, $mdSidenav, $log, $auth, $mdDialog, $mdMedia ){
+myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScope', 'groupFactory', '$state', '$stateParams', '$mdSidenav', '$log', '$auth', '$mdDialog', '$mdMedia', '$filter', function( $scope, $http, $location, $rootScope, groupFactory, $state, $stateParams, $mdSidenav, $log, $auth, $mdDialog, $mdMedia, $filter ){
 
 $scope.isAuthenticated = $auth.isAuthenticated;
 $scope.currentUser = $auth.getPayload;
@@ -139,25 +139,26 @@ $scope.groups = [];
 
 $scope.status = '';
 
-$scope.sizeOfMembership = [
+$scope.sizeOfMembershipArray = [
       "0-25",
       "25-50",
       "50-100",
       "100-500"
   ];
-$scope.freqOfMeeting = [
+$scope.freqOfMeetingArray = [
 	    "Weekly",
 			"Biweekly",
 			"Monthly",
 			"Quarterly",
 			"Annually"
   ];
-$scope.sizeOfMeeting = [
+$scope.sizeOfMeetingArray = [
       "0-25",
       "25-50",
       "50-100",
       "100-500"
 ];
+
 
 
   // FIX THE CHIPS !----------------------------------------
@@ -194,15 +195,17 @@ $scope.edit = function(id, index){
     eventInfo: $scope.group.eventInfo,
     sizeOfMembership: $scope.group.sizeOfMembership
   };
-
-  console.log( 'updatedGroup: ', updatedGroup );
+  console.log( 'group.urlin: ', $scope.group.groupURL );
   groupFactory.editGroup( id, updatedGroup ).then(function(response){
-    $scope.group = response.data;
+    $scope.updatedGroup = response.data;
     $scope.close();
-    console.log( 'in edit groups in group controller, $scope.data: ', $scope.group );
+    console.log( 'in edit groups in group controller, $scope.data: ', $scope.group, ' ', $scope.freqOfMeeting );
 
   });
 };//end of editGroup
+
+
+
 // DELETES GROUP AFTER SHOW CONFIRM, REDIRECTS BACK TO HOME
 $scope.confirmDelete = function(ev, id, index ) {
 	console.log( 'confirmDelete clicked');
