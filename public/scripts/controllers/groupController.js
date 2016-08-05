@@ -71,12 +71,11 @@ $scope.sizeOfMembership = [
         "100-500"
   ];
 $scope.freqOfMeeting = [
-        // "0-25",
-        // "25-50",
-        // "50-100",
-        // "100-500"
-					0-36,
-					37-100
+        "0-25",
+        "25-50",
+        "50-100",
+        "100-500"
+
   ];
 $scope.sizeOfMeeting = [
       "0-25",
@@ -110,14 +109,14 @@ $scope.edit = function(id, index){
     contactEmail: $scope.group.contactEmail,
     description: $scope.group.description,
     location: $scope.group.location,
-    activities:$scope.group.activities,
+    activities: $scope.group.activities,
     technologies: $scope.group.technologies,
     tags: self.roTagNames,
     freqOfMeeting: $scope.group.freqOfMeeting,
     sizeOfMeeting: $scope.group.sizeOfMeeting,
     affiliations: $scope.group.affiliations,
     affiliationURL: $scope.group.affiliationURL,
-    eventInfo: $scope.group.eventInfo,
+    // eventInfo: $scope.group.eventInfo,
     sizeOfMembership: $scope.group.sizeOfMembership
   };
 
