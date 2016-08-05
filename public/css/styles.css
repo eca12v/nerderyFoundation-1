@@ -175,21 +175,6 @@ container-fluid ng-scope{
     height: 100%
   }
 
-  /*.flip {
-    border: 3px solid #664659;
-    border-radius: 7px;
-    background-color: turquoise;
-    height: 300px;
-    width: auto;
-  }
-
-  .flip:hover {
-    border: 3px solid #664659;
-    border-radius: 7px;
-    background-color: turquoise;
-    height:auto;
-    min-height: 300px;
-  }*/
 
 md-card-title-text .md-headline {
   text-align: center;
@@ -219,9 +204,6 @@ md-card.face:hover {
 
 }
 
-.flip:hover {
-  z-index: 999;
-}
 /*.group-tile {
   height: 300px;
   margin-left: 0;
@@ -251,6 +233,10 @@ padding-left: 15px;
 }
 
 /*Group Landing Page*/
+
+.group-card {
+  min-height: 330px;
+}
 
 /*Group Edit Menu*/
 
