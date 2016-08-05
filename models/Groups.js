@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-
 var groupSchema = mongoose.Schema({
   name: {type: String, unique: true, required: true },
   groupURL: {type: String, unique: true, required: true},
