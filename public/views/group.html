@@ -38,7 +38,7 @@
             </md-card-title-text>
           </md-card-title>
           <md-card-content>
-            <a href="{{group.groupURL}}"></a>
+            <p>Website: <a href="{{group.groupURL}}"></a></p>
             <p>{{group.description}}</p>
             <p>Group Contact: {{group.groupContact}}</p>
             <p>Email: {{group.contactEmail}}</p>
@@ -86,7 +86,6 @@
             </md-card-title-media>
           </md-card-title>
           <md-card-content>
-            <p>Area Served: {{group.areaServed}}</p>
             <p>Meeting Location: {{group.location}}</p>
             <p>Meeting Frequency: {{group.freqOfMeeting}}</p>
             <p>Typical Meeting Size: {{group.sizeOfMeeting}}</p>
@@ -131,7 +130,7 @@
           <md-input-container input ng-model="description">
           <div>Desciption: <a href="#" editable-textarea="group.description" e-rows="7" e-cols="40">{{ group.description || 'empty' }}</a></div>
           </md-input-container>
-
+          <br>
           <md-input-container input ng-model="groupContact">
           <div>Group Contact: <a href="#" editable-text="group.groupContact" e-step="5">{{ group.groupContact || 'empty' }}</a></div>
           </md-input-container>
