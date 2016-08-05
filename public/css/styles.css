@@ -347,11 +347,7 @@ md-input-container.md-default-theme label,
     color:red !important;
 }
 
-/*.md-sidenav-right{
-  background-color: green;
-  padding-right: 50px;
-}*/
-
+/*admin page*/
 .login-panel {
   padding: 20px;
 }
@@ -360,7 +356,7 @@ md-input-container.md-default-theme label,
 .admin-title {
   color: #353535;
 }
-
+/*admin buttons*/
 .md-success {
   background-color: rgba(77, 152, 77, .7) !important;
   color: white !important;
@@ -373,7 +369,7 @@ md-input-container.md-default-theme label,
 .admin-link {
   background-color: rgba(63, 81, 181, .85) !important;
 }
-
+/*preview page*/
 .admin-link a{
   text-decoration: none;
   color: white;
@@ -418,7 +414,7 @@ md-card md-card-title md-card-title-text {
   color: gray;
   margin-right: 15px;
 }
-
+/*pop-up styling*/
 .toast-message {
    color: #E2DE00;
 }
