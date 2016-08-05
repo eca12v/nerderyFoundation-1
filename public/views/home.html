@@ -94,11 +94,11 @@
 
   <md-menu-content width="8">
     <md-menu-item>
-      <md-button ng-click="changeOverallTech('')">
+      <md-button ng-click="changeLocation('')">
       </md-button>
     </md-menu-item>
     <md-menu-item ng-repeat="l in location">
-      <md-button ng-click="changeOverallTech(t.Technology)">
+      <md-button ng-click="changeLocation(l)">
         {{l}}
       </md-button>
     </md-menu-item>
@@ -260,12 +260,15 @@
           <a class="group-link" ng-href="/#/groups/{{group.name}}">
             <md-card class="group-tile md-whiteframe-6dp face front" ng-mouseenter="description = !description" ng-mouseleave="description = !description">
 
-              <md-card-title>
-                <md-card-title-text>
-                  <span class="md-headline">{{group.name}}</span>
-                </md-card-title-text>
+              <md-card-header>
+                <md-card-avatar>
+                  <img class="md-user-avatar" ng-src="{{avatarImage}}" alt="" />
+                </md-card-avatar>
+                <md-card-header-text>
+                  <span class="md-title">{{group.name}}</span>
+                </md-card-header-text>
                   <!-- <div class="md-media-sm card-media"> -->
-              </md-card-title>
+              </md-card-header>
               <md-card-content ng-show="description">
                 <p>
                   {{group.description}}

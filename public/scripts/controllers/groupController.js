@@ -10,6 +10,13 @@ groupFactory.getGroup($stateParams.groupName).then(function(response) {
     $scope.groupDisplayed.push ($scope.group);
     console.log('in GroupController, $scope.group: ', $scope.group);
     console.log('in GroupController, $scope.groupDisplayed: ', $scope.groupDisplayed);
+
+		if($scope.group.photoURL) {
+			$scope.titleImage = $scope.group.photoURL;
+		} else {
+			$scope.titleImage = '../images/startup-photos-medium.jpg';
+		}
+
   });
 
 
@@ -276,9 +283,6 @@ $scope.showConfirm = function(ev) {
   //  $scope.status = 'You have not approved this group yet';
  });
 };
-
-
-
 
 
 }]); //end controller
