@@ -469,3 +469,7 @@ a.md-button.md-default-theme.md-primary, a.md-button.md-primary, .md-button.md-d
 md-dialog md-dialog-content:not([layout=row]) > *:first-child:not(.md-subheader) {
   color: #E2DE00;
 }
+
+.btn-social {
+  width: 75%;
+}

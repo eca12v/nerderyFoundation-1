@@ -90,6 +90,10 @@ function($stateProvider, $urlRouterProvider, $mdIconProvider, $mdThemingProvider
     clientId: '125382478230-3n8qqoeugab70kluqqm1o3hleh6acbcc.apps.googleusercontent.com'
   });
 
+  $authProvider.facebook({
+      clientId: '621280634704305'
+  });
+
   $mdIconProvider.icon('md-close', 'img/icons/ic_close_24px.svg', 24);
 
   //change default color for primary

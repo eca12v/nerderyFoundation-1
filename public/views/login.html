@@ -40,12 +40,25 @@
     </div>
     <div class="col-sm-6">
       <div id="group-contact-login" class="login-panel">
-        <h2 class="login-title">Group Contact</h2>
-        <img src="img/google.png" ng-click="authenticate('google')"></img>
-      </div>
 
-      <button ng-click="authenticate('google')">Sign in with Google</button>
-      <!-- <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a> -->
+        <h2 class="login-title">Group Contact</h2>
+
+        <a class="btn btn-block btn-social btn-lg btn-google" ng-click="authenticate('google')">
+          <span class="fa fa-google"></span>
+            Sign in with Google
+        </a>
+
+        <a class="btn btn-block btn-social btn-lg btn-facebook" ng-click="authenticate('facebook')">
+          <span class="fa fa-facebook"></span>
+            Sign in with Facebook
+        </a>
+
+        <a class="btn btn-block btn-social btn-lg btn-github" ng-click="">
+          <span class="fa fa-github"></span>
+            Sign in with Git Hub
+        </a>
+
+      </div>
 
     </div>
   </div>

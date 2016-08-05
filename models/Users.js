@@ -10,6 +10,7 @@ var UserSchema = new Schema({
   admin: {type: Boolean, default: false},
   active: {type: Boolean, default: true},
   google: String,
+  facebook: String,
   hash: String,
   salt: String,
   joined_on: Date
