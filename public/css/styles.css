@@ -49,51 +49,7 @@ body {
   .dialogdemoBasicUsage .dialog-demo-prerendered md-checkbox {
     margin-bottom: 0; }
 
-  /*.flip {
-    -webkit-perspective: 800;
-     width: 400px;
-     height: 300px;
-      position: relative;
-      margin: 50px auto;
-  }
-  .flip .card.flipped {
-    -webkit-transform: rotatex(-180deg);
-  }
-  .flip .card {
-    width: auto;
-    height: 300px;
-    margin: 50px auto;
-    -webkit-transform-style: preserve-3d;
-    -webkit-transition: 0.7s;
-  }
-  .flip .card .face {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    -webkit-backface-visibility: hidden ;
-    z-index: 2;
-      font-family: Georgia;
-      font-size: 3em;
-      text-align: center;
-      line-height: 200px;
-  }
-  .flip .card .front {
-    position: absolute;
 
-    z-index: 1;
-      background: turquoise;
-      color: white;
-      cursor: pointer;
-  }
-  .flip .card .back {
-    height: 110%;
-    width: 110%;
-    -webkit-transform: rotatex(-180deg);
-      background: #f4f750;
-
-      color: black;
-      cursor: pointer;
-  }*/
 
 #add-group {
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
@@ -220,21 +176,6 @@ container-fluid ng-scope{
     height: 100%
   }
 
-  /*.flip {
-    border: 3px solid #664659;
-    border-radius: 7px;
-    background-color: turquoise;
-    height: 300px;
-    width: auto;
-  }
-
-  .flip:hover {
-    border: 3px solid #664659;
-    border-radius: 7px;
-    background-color: turquoise;
-    height:auto;
-    min-height: 300px;
-  }*/
 
 md-card-title-text .md-headline {
   text-align: center;
@@ -264,9 +205,6 @@ md-card.face:hover {
 
 }
 
-.flip:hover {
-  z-index: 999;
-}
 /*.group-tile {
   height: 300px;
   margin-left: 0;
@@ -296,6 +234,10 @@ padding-left: 15px;
 }
 
 /*Group Landing Page*/
+
+.group-card {
+  min-height: 330px;
+}
 
 /*Group Edit Menu*/
 
