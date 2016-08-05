@@ -133,16 +133,17 @@ $scope.groups = [];
 $scope.status = '';
 
 $scope.sizeOfMembership = [
-        "0-25",
-        "25-50",
-        "50-100",
-        "100-500"
+      "0-25",
+      "25-50",
+      "50-100",
+      "100-500"
   ];
 $scope.freqOfMeeting = [
-        "0-25",
-        "25-50",
-        "50-100",
-        "100-500"
+	    "Weekly",
+			"Biweekly",
+			"Monthly",
+			"Quarterly",
+			"Annually"
   ];
 $scope.sizeOfMeeting = [
       "0-25",
@@ -195,13 +196,37 @@ $scope.edit = function(id, index){
 
   });
 };//end of editGroup
+// DELETES GROUP AFTER SHOW CONFIRM, REDIRECTS BACK TO HOME
+$scope.confirmDelete = function(ev, id, index ) {
+	console.log( 'confirmDelete clicked');
+    // Appending dialog to document.body to cover sidenav in docs app
+    var confirm = $mdDialog.confirm()
+          .title('Are you sure?')
+          .textContent('This cannot be undone')
+          .ariaLabel('Lucky day')
+          .targetEvent(ev)
+          .ok('I am sure I want to delete')
+          .cancel('Never mind, take me back to group page');
+    $mdDialog.show(confirm).then(function() {
+      $scope.delete(id, index);
+    }, function() {
+      $scope.close();
+      $state.go('group');
+    });
+  };
+  $scope.delete = function(id, index){
+    console.log( 'delete clicked, index: ', id );
+    groupFactory.deleteGroup( id ).then(function(response){
+      $state.go('home');
+      console.log( 'in delete groups in group controller, $scope.data: ', $scope.group );
+    });
+  };
 
-$scope.delete = function(id, index){
-  console.log( 'delete clicked, index: ', id );
-  groupFactory.deleteGroup( id ).then(function(response){
-    $state.go('home');
-    console.log( 'in delete groups in group controller, $scope.data: ', $scope.group );
-  });
+
+$scope.cancel = function(){
+  console.log( 'cancel clicked' );
+  $scope.close();
+  $state.go('group');
 };
 
 $scope.close = function () {
