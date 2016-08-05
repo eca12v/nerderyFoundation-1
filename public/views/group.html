@@ -12,12 +12,15 @@
   <div class="text-center" name="home">
 
     <div id="group-jumbo" class="jumbotron intro-text">
-      <img src="" class="header-image" />
-    <h1><span class="color">{{group.name}}</span></h1>
-    <div class="clearfix"></div>
+      <div class="layerBackGroup">
+        <img ng-src="{{titleImage}}" class="header-image" />
+        <h1 id="group-name"><span class="color">{{group.name}}</span></h1>
+        <div class="clearfix"></div>
+      </div>
     <!-- <a href="#groupURL" class="btn btn-default btn-lg page-scroll">{{group.groupURL}}</a> </div> -->
-</div>
   </div>
+</div>
+</div>
 
 <!-- About Section -->
 <!-- <div id="about-section">
@@ -38,7 +41,7 @@
             </md-card-title-text>
           </md-card-title>
           <md-card-content>
-            <p>Website:{{group.groupUrlIn}}</p>
+            <p>Website:{{group.groupURL}}</p>
             <p>Description: {{group.description}}</p>
             <p>Group Contact: {{group.groupContact}}</p>
             <p>Email: {{group.contactEmail}}</p>
@@ -98,19 +101,19 @@
   </div>
 </div>
 
-<!-- <p>Flags: {{groupFlags}}</p> -->
-<div id="flagDiv">
-  <md-button class="md-fab md-raised flag-btn" ng-click="showConfirm()"><i class="fa fa-flag" aria-hidden="true"></i></md-button>
-  <span>Flag This Group</span>
-
+<div id="group-button-div">
   <div ng-if="currentUser().admin || currentUser()._id === group.submitterID" class="editGroup">
-  <div style="color: black">
     <md-button ng-click="toggleRight()"
       ng-hide="isOpenRight()"
       class="md-primary md-raised">
       Edit or Delete this group
     </md-button>
-   </div>
+  </div>
+
+  <!-- <p>Flags: {{groupFlags}}</p> -->
+  <div id="flagDiv">
+    <md-button class="md-fab md-raised flag-btn" ng-click="showConfirm()"><i class="fa fa-flag" aria-hidden="true"></i></md-button>
+    <span>Flag This Group</span>
   </div>
 </div>
 
@@ -131,8 +134,8 @@
           </md-input-container>
           <br>
 
-          <md-input-container input ng-model="groupUrlIn">
-          <div>Site: <a href="#" editable-text="group.groupUrlIn" e-rows="7" e-cols="40">{{ group.groupUrlIn || 'empty' }}</a></div>
+          <md-input-container input ng-model="groupURL">
+          <div>Site: <a href="#" editable-text="group.groupURL" e-rows="7" e-cols="40">{{ group.groupURL || 'empty' }}</a></div>
           </md-input-container>
 
           <md-input-container input ng-model="groupContact">

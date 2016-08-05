@@ -10,6 +10,13 @@ groupFactory.getGroup($stateParams.groupName).then(function(response) {
     $scope.groupDisplayed.push ($scope.group);
     console.log('in GroupController, $scope.group: ', $scope.group);
     console.log('in GroupController, $scope.groupDisplayed: ', $scope.groupDisplayed);
+
+		if($scope.group.photoURL) {
+			$scope.titleImage = $scope.group.photoURL;
+		} else {
+			$scope.titleImage = '../images/startup-photos-medium.jpg';
+		}
+
   });
 
 
@@ -173,7 +180,7 @@ $scope.edit = function(id, index){
 
   var updatedGroup = {
     name: $scope.group.name,
-    groupURL: $scope.group.groupUrlIn,
+    groupURL: $scope.group.groupURL,
     contact: $scope.group.groupContact,
     contactEmail: $scope.group.contactEmail,
     description: $scope.group.description,
@@ -188,7 +195,7 @@ $scope.edit = function(id, index){
     eventInfo: $scope.group.eventInfo,
     sizeOfMembership: $scope.group.sizeOfMembership
   };
-  console.log( 'group.urlin: ', $scope.group.groupUrlIn );
+  console.log( 'group.urlin: ', $scope.group.groupURL );
   groupFactory.editGroup( id, updatedGroup ).then(function(response){
     $scope.updatedGroup = response.data;
     $scope.close();
@@ -279,7 +286,6 @@ $scope.showConfirm = function(ev) {
   //  $scope.status = 'You have not approved this group yet';
  });
 };
-
 
 
 }]); //end controller

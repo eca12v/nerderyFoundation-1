@@ -59,7 +59,7 @@ body {
   margin-bottom: 3px;
   text-align: center !important;
   padding-left: 10px;
-  color: #E2DE00;
+  color: white;
 }
 
 #page-container {
@@ -275,6 +275,15 @@ padding-left: 15px;
     height: 100%;
 }
 
+.layerBackGroup {
+    background-color: rgba(46, 47, 49, 0.66);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 .navbar-default .navbar-brand {
   color:#E2DE00;
   font-size: 18px;
@@ -347,11 +356,7 @@ md-input-container.md-default-theme label,
     color:red !important;
 }
 
-/*.md-sidenav-right{
-  background-color: green;
-  padding-right: 50px;
-}*/
-
+/*admin page*/
 .login-panel {
   padding: 20px;
 }
@@ -360,7 +365,7 @@ md-input-container.md-default-theme label,
 .admin-title {
   color: #353535;
 }
-
+/*admin buttons*/
 .md-success {
   background-color: rgba(77, 152, 77, .7) !important;
   color: white !important;
@@ -373,7 +378,7 @@ md-input-container.md-default-theme label,
 .admin-link {
   background-color: rgba(63, 81, 181, .85) !important;
 }
-
+/*preview page*/
 .admin-link a{
   text-decoration: none;
   color: white;
@@ -411,6 +416,11 @@ md-card md-card-title md-card-title-text {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+
+  position: relative;
+  height: 200px;
+  width: 100%;
+  line-height: 200px;
 }
 
 #flagDiv {
@@ -418,13 +428,13 @@ md-card md-card-title md-card-title-text {
   color: gray;
   margin-right: 15px;
 }
-
+/*pop-up styling*/
 .toast-message {
-   color: #E2DE00;
+   color: white;
 }
 
 .toast-info {
-  background-color: #664659;
+  background-color: #353535;
 }
 
 .md-dialog-content {
@@ -454,4 +464,24 @@ md-dialog md-dialog-content:not([layout=row]) > *:first-child:not(.md-subheader)
 
 .btn-social {
   width: 75%;
+}
+
+.header-image {
+  height: 150px;
+  display: inline-block;
+  width: 150px;
+  vertical-align: middle;
+  margin-right: 15px;
+  border-radius: 100%;
+  border: 3px solid white;
+  box-shadow: 1px 1px 2px black;
+
+}
+
+#group-name {
+  display: inline-block;
+  vertical-align: middle;
+}
+.editGroup {
+  float: left;
 }
