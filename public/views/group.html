@@ -38,7 +38,7 @@
             </md-card-title-text>
           </md-card-title>
           <md-card-content>
-            <p>Website:<a href= website: "{{group.groupUrlIn}}"></a></p>
+            <p>Website:{{group.groupUrlIn}}</p>
             <p>Description: {{group.description}}</p>
             <p>Group Contact: {{group.groupContact}}</p>
             <p>Email: {{group.contactEmail}}</p>
@@ -131,9 +131,8 @@
           </md-input-container>
           <br>
 
-
           <md-input-container input ng-model="groupUrlIn">
-          <div>Site: <a href="#" editable-url="group.groupUrlIn" e-rows="7" e-cols="40">{{ group.groupUrlIn || 'empty' }}</a></div>
+          <div>Site: <a href="#" editable-text="group.groupUrlIn" e-rows="7" e-cols="40">{{ group.groupUrlIn || 'empty' }}</a></div>
           </md-input-container>
 
           <md-input-container input ng-model="groupContact">
@@ -168,27 +167,40 @@
           <div>AffiliationURL: <a href="#" editable-text="group.affiliationURL">{{ group.affiliationURL || 'empty' }}</a></div>
           </md-input-container>
 
-          <md-input-container flex-gt-sm>
-          <label>freqOfMeeting</label>
-          <md-select ng-model="freqOfMeeting">
-          <md-option ng-repeat="option in freqOfMeeting" value="{{option}}">{{ option }}</md-option>
-          </md-select>
+          <!-- <md-input-container flex-gt-sm input ng-model="freqOfMeeting">
+            <div>Frequency of Meeting:
+              <a href="#" editable-select="group.freqOfMeeting" e-ng-options="options in statuses">
+                {{ group.freqOfMeeting }}
+              </a>
+            </div>
+          </md-input-container> -->
+
+          <md-input-container >
+            <md-select ng-model="freqOfMeeting" placeholder="Frequency of Meeting">
+              <md-option ng-repeat="option in freqOfMeetingArray">{{ option }}</md-option>
+            </md-select>
+          </md-input-container>
+
+          <!-- <md-input-container flex-gt-sm>
+            <label>sizeOfMeeting</label>
+            <editable-select ng-model="sizeOfMeeting">
+            <e-ng-options ng-repeat="two in sizeOfMeetingArray" value="{{ two }}">{{ two }}</md-option>
+          </editable-select>
           </md-input-container>
 
           <md-input-container flex-gt-sm>
-            <label>sizeOfMeeting</label>
-            <md-select ng-model="sizeOfMeeting">
-            <md-option ng-repeat="two in sizeOfMeeting" value="{{ two }}">{{ two }}</md-option>
-          </md-select>
-          </md-input-container>
+          <label>sizeOfMeeting</label>
+          <a href="#" id="country" data-type="select2" data-pk="1" data-value="BS" data-title="Select country" class="editable editable-click" data-original-title="" title="">Bahamas</a>
+        </md-input-container>
 
           <md-input-container flex-gt-sm>
             <label>sizeOfMembership</label>
             <md-select ng-model="sizeOfMembership">
-            <md-option ng-repeat="three in sizeOfMembership" value="{{ three }}">{{ three }}</md-option>
+            <md-option ng-repeat="three in sizeOfMembershipArray" value="{{ three }}">{{ three }}</md-option>
           </md-select>
-          </md-input-container>
-          <div class="row">
+          </md-input-container> -->
+
+        <div class="row">
             <md-button type="button" class="md-raised" name="button" ng-click="confirmDelete($event, group._id, $index)">Delete Group</md-button>
             <md-button type="button" class="md-raised" name="button" ng-click="edit(group._id, $index)">Save your edits</md-button>
         </div>

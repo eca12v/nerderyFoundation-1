@@ -24,7 +24,7 @@ router.use(bodyParser.urlencoded({ extended: true }));
 router.put('/editGroup/:id', auth, function(req, res) {
   console.log('inside router edit, id: ', req.params.id );
   Group.findOne({'_id': req.params.id}, function(err, group) {
-    console.log( 'after Groups.findOne, group: ', group );
+    console.log( 'after /editGroup/:id, group: ', group );
     if(err) {
       console.log('/editGroup error: ', err);
     } else {
