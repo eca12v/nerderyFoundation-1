@@ -5,10 +5,11 @@ var jwt = require('jsonwebtoken');
 var Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
-  username: {type: String, lowercase: true, unique: true},
+  username: {type: String, unique: true},
   email: {type: String, unique: true},
   admin: {type: Boolean, default: false},
   active: {type: Boolean, default: true},
+  google: String,
   hash: String,
   salt: String,
   joined_on: Date

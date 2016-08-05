@@ -8,7 +8,13 @@ controller('LoginCtrl', ['$scope', '$auth', '$state', '$location',
   $scope.currentUser = $auth.getPayload;
 
   $scope.authenticate = function(provider) {
-      $auth.authenticate(provider);
+      $auth.authenticate(provider).then(function(response) {
+          $state.go('home');
+          toastr.info("You logged in successfully.");
+        })
+        .catch(function(response) {
+          toastr.info("Could not login.");
+        });
     };
 
   $scope.signUp = function () {
