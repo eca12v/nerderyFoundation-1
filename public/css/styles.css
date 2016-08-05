@@ -50,7 +50,6 @@ body {
     margin-bottom: 0; }
 
 
-
 #add-group {
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 }
@@ -70,7 +69,7 @@ body {
 }
 
 header {
-    background: url('https://static.pexels.com/photos/34676/pexels-photo-large.jpg') no-repeat center center scroll;
+    background: url('http://techanddesign.ca/wp-content/uploads/2016/01/technetwork.jpgç') no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
