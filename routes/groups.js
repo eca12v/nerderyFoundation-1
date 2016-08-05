@@ -33,6 +33,7 @@ router.put('/editGroup/:id', auth, function(req, res) {
       //     console.log(err);
       //   }else{
       group.name = req.body.name;
+      group.groupURL = req.body.groupUrlIn;
       group.contactEmail = req.body.contactEmail;
       group.groupContact = req.body.contact;
       group.description = req.body.description;
