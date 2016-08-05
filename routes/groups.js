@@ -24,7 +24,7 @@ router.use(bodyParser.urlencoded({ extended: true }));
 router.put('/editGroup/:id', auth, function(req, res) {
   console.log('inside router edit, id: ', req.params.id );
   Group.findOne({'_id': req.params.id}, function(err, group) {
-    console.log( 'after /editGroup/:id, group: ', group );
+    console.log( 'after /editGroup/:id, group: ', req.body.groupURL );
     if(err) {
       console.log('/editGroup error: ', err);
     } else {
@@ -33,8 +33,9 @@ router.put('/editGroup/:id', auth, function(req, res) {
       //   if(err){
       //     console.log(err);
       //   }else{
+
       group.name = req.body.name;
-      group.groupURL = req.body.groupUrlIn;
+      group.groupURL = req.body.groupURL;
       group.contactEmail = req.body.contactEmail;
       group.groupContact = req.body.contact;
       group.description = req.body.description;
@@ -50,7 +51,7 @@ router.put('/editGroup/:id', auth, function(req, res) {
       group.affiliationURL = req.body.affiliationURL;
 
       group.save(function(err) {
-        console.log( 'after group saved in groups.js');
+        console.log( 'after group.save in server, groupURL: ', group.groupURL);
         if(err) {
           console.log(err);
           res.sendStatus(500);

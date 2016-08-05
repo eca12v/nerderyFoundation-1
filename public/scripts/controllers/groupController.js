@@ -173,7 +173,7 @@ $scope.edit = function(id, index){
 
   var updatedGroup = {
     name: $scope.group.name,
-    groupURL: $scope.groupUrlIn,
+    groupURL: $scope.group.groupUrlIn,
     contact: $scope.group.groupContact,
     contactEmail: $scope.group.contactEmail,
     description: $scope.group.description,
@@ -190,7 +190,7 @@ $scope.edit = function(id, index){
   };
   console.log( 'group.urlin: ', $scope.group.groupUrlIn );
   groupFactory.editGroup( id, updatedGroup ).then(function(response){
-    $scope.group = response.data;
+    $scope.updatedGroup = response.data;
     $scope.close();
     console.log( 'in edit groups in group controller, $scope.data: ', $scope.group, ' ', $scope.freqOfMeeting );
 
