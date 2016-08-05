@@ -41,7 +41,7 @@
             </md-card-title-text>
           </md-card-title>
           <md-card-content>
-            <p>Website:<a href= website: "{{group.groupUrlIn}}"></a></p>
+            <p>Website:<a ng-href="{{group.groupURL}}">{{group.groupURL}}</a></p>
             <p>Description: {{group.description}}</p>
             <p>Group Contact: {{group.groupContact}}</p>
             <p>Email: {{group.contactEmail}}</p>
@@ -135,8 +135,8 @@
           <br>
 
 
-          <md-input-container input ng-model="groupUrlIn">
-          <div>Site: <a href="#" editable-url="group.groupUrlIn" e-rows="7" e-cols="40">{{ group.groupUrlIn || 'empty' }}</a></div>
+          <md-input-container input ng-model="groupURL">
+          <div>Site: <a href="#" editable-text="group.groupURL" e-rows="7" e-cols="40">{{ group.groupURL || 'empty' }}</a></div>
           </md-input-container>
 
           <md-input-container input ng-model="groupContact">

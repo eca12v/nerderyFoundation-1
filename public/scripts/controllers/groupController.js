@@ -179,7 +179,7 @@ $scope.edit = function(id, index){
 
   var updatedGroup = {
     name: $scope.group.name,
-    groupURL: $scope.groupUrlIn,
+    groupURL: $scope.group.groupURL,
     contact: $scope.group.groupContact,
     contactEmail: $scope.group.contactEmail,
     description: $scope.group.description,
