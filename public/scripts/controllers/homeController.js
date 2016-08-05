@@ -7,6 +7,11 @@ $scope.currentUser = $auth.getPayload;
 
 groupFactory.getApprovedGroups().then(function(response) {
   $scope.groups = response.data;
+  if($scope.groups.photoURL){
+    $scope.avatarImage = $scope.groups.photoURL;
+  }else{
+    $scope.avatarImage = "../images/imgres copy.jpg";
+  }
   console.log($scope.groups);
 });
 
@@ -100,6 +105,8 @@ $scope.location = [
     originatorEv = ev;
     $mdOpenMenu(ev);
   };
+
+
 
 }]) //end homeController
 
