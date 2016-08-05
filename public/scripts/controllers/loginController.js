@@ -10,7 +10,6 @@ controller('LoginCtrl', ['$scope', '$auth', '$state', '$location',
   $scope.authenticate = function(provider) {
       $auth.authenticate(provider).then(function(response) {
           $state.go('home');
-          toastr.info("You logged in successfully.");
         })
         .catch(function(response) {
           toastr.info("Could not login.");
@@ -36,7 +35,6 @@ controller('LoginCtrl', ['$scope', '$auth', '$state', '$location',
         $auth.setToken(response);
 
         $state.go('home');
-        toastr.info("You logged in successfully.");
       })
       .catch(function (response) {
       });
@@ -45,7 +43,6 @@ controller('LoginCtrl', ['$scope', '$auth', '$state', '$location',
   $scope.logout = function () {
     $auth.logout();
     $state.go('home');
-    toastr.info("You logged out successfully.");
   };
 }
 ]);
