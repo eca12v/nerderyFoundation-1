@@ -154,8 +154,10 @@ router.post('/createGroup', upload.single('file'), function (req, res) {
   });
   if (req.file ){
     newGroup.photoURL = req.file.location;
+  } else {
+    newGroup.photoURL = '../images/startup-photos-medium.jpg';
   }
-
+  
   newGroup.save(function(err) {
     if(err) {
       console.log(err);

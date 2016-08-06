@@ -140,6 +140,7 @@ nerderyApp.controller( 'AddGroupController',  [ 'Upload', 'groupFactory', '$scop
       }
     }).then(function (resp) {
               console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
+              $state.go('home');
               toastr.info("Your group was creating and is awaiting admin approval.");
           }, function (resp) {
               console.log('Error status: ' + resp.status);
