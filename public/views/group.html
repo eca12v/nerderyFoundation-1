@@ -188,30 +188,23 @@
             </div>
           </md-input-container> -->
 
-          <md-input-container >
-            <md-select ng-model="freqOfMeeting" placeholder="Frequency of Meeting">
+           <md-input-container >
+            <div>Frequency of Meetings: <md-select ng-model="group.freqOfMeeting" placeholder="Frequency of Meeting">
               <md-option ng-repeat="option in freqOfMeetingArray">{{ option }}</md-option>
-            </md-select>
+            </md-select></div>
           </md-input-container>
 
-          <!-- <md-input-container flex-gt-sm>
-            <label>sizeOfMeeting</label>
-            <editable-select ng-model="sizeOfMeeting">
-            <e-ng-options ng-repeat="two in sizeOfMeetingArray" value="{{ two }}">{{ two }}</md-option>
-          </editable-select>
+          <md-input-container >
+            <div>Size of Meetings:<md-select ng-model="group.sizeOfMeeting" placeholder="Size of Meeting">
+              <md-option ng-repeat="option in sizeOfMeetingArray">{{ option }}</md-option>
+            </md-select></div>
           </md-input-container>
 
-          <md-input-container flex-gt-sm>
-          <label>sizeOfMeeting</label>
-          <a href="#" id="country" data-type="select2" data-pk="1" data-value="BS" data-title="Select country" class="editable editable-click" data-original-title="" title="">Bahamas</a>
-        </md-input-container>
-
-          <md-input-container flex-gt-sm>
-            <label>sizeOfMembership</label>
-            <md-select ng-model="sizeOfMembership">
-            <md-option ng-repeat="three in sizeOfMembershipArray" value="{{ three }}">{{ three }}</md-option>
-          </md-select>
-          </md-input-container> -->
+          <md-input-container >
+            <div>Size of Membership: <md-select ng-model="group.sizeOfMembership" placeholder="Size of Membership">
+              <md-option ng-repeat="size in sizeOfMembershipArray">{{ size }}</md-option>
+            </md-select></div>
+          </md-input-container>
 
         <div class="row">
             <md-button type="button" class="md-raised" name="button" ng-click="confirmDelete($event, group._id, $index)">Delete Group</md-button>
