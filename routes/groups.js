@@ -5,10 +5,8 @@ var Group = require('../models/Groups');
 var passport = require('passport');
 var jwt = require('express-jwt');
 var authConfig = require('../modules/authConfig');
-
+// authentication check
 var auth = jwt({secret: authConfig.TOKEN_SECRET, userProperty: 'payload'});
-
-var router = express.Router();
 // require to upload images
 var multer = require('multer');
 var fs = require('fs');
@@ -16,55 +14,11 @@ var multerS3 = require('multer-s3');
 var aws = require('aws-sdk');
 var s3 = new aws.S3();
 
+var router = express.Router();
+// router middleware
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
-
-
-router.put('/editGroup/:id', auth, function(req, res) {
-  console.log('inside router edit, id: ', req.params.id );
-  Group.findOne({'_id': req.params.id}, function(err, group) {
-    console.log( 'after /editGroup/:id, group: ', req.body.groupURL );
-    if(err) {
-      console.log('/editGroup error: ', err);
-    } else {
-      console.log('req.body:', req.body);
-      // group.update({'_id': req.body.id}, function(err){
-      //   if(err){
-      //     console.log(err);
-      //   }else{
-
-      group.name = req.body.name;
-      group.groupURL = req.body.groupURL;
-      group.contactEmail = req.body.contactEmail;
-      group.groupContact = req.body.contact;
-      group.description = req.body.description;
-      group.location = req.body.location;
-      group.activities = req.body.activities;
-      group.technologies = req.body.technologies;
-      group.coreTechnologies = req.body.coreTechnologies;
-      group.tags = req.body.tags;
-      group.freqOfMeeting = req.body.freqOfMeeting;
-      group.sizeOfMeeting = req.body.sizeOfMeeting;
-      group.sizeOfMembership = req.body.sizeOfMembership;
-      group.affiliations = req.body.affiliations;
-      group.affiliationURL = req.body.affiliationURL;
-
-      group.save(function(err) {
-        console.log( 'after group.save in server, groupURL: ', group.groupURL);
-        if(err) {
-          console.log(err);
-          res.sendStatus(500);
-        } else {
-          console.log(group);
-          res.json(group);
-        }
-      });
-    // }
-  // }
-  // );
-  }
-});
-});//end of edit
+// get all approved groups
 router.get('/getApprovedGroups', function(req, res) {
   Group.find({'approved': true}).sort({created: 'desc'}).exec(function(err, groups) {
     if(err) {
@@ -75,7 +29,7 @@ router.get('/getApprovedGroups', function(req, res) {
     }
   });
 });
-
+// all unapproved groups
 router.get('/getUnapprovedGroups', auth, function(req, res) {
   Group.find({'approved': false}).sort({created: 'desc'}).exec(function(err, groups) {
     if(err) {
@@ -86,73 +40,8 @@ router.get('/getUnapprovedGroups', auth, function(req, res) {
     }
   });
 });
-
-router.put('/flagGroup/:id', function(req, res) {
-  console.log('flag group endpoint hit');
-  Group.findOne({'_id': req.params.id}, function(err, group) {
-    if(err) {
-      console.log('/flagGroup error: ', err);
-    } else {
-      group.flags++;
-      group.save(function(err) {
-        if(err) {
-          console.log(err);
-          res.sendStatus(500);
-        } else {
-          console.log(group);
-          res.json(group);
-        }
-      });
-    }
-  });
-});
-
-router.put('/unFlagGroup/:id', function(req, res) {
-  console.log('un flag group endpoint hit');
-  Group.findOne({'_id': req.params.id}, function(err, group) {
-    if(err) {
-      console.log('/flagGroup error: ', err);
-    } else {
-      group.flags = 0;
-      group.save(function(err) {
-        if(err) {
-          console.log(err);
-          res.sendStatus(500);
-        } else {
-          console.log(group);
-          res.json(group);
-        }
-      });
-    }
-  });
-});
-
-router.get('/getFlaggedGroups', function(req, res) {
-  Group.find({'flags': { $gt: 0 }}).sort({ flags: 'desc'}).exec(function(err, groups) {
-    if(err) {
-      console.log(err);
-      res.sendStatus(500);
-    } else {
-      res.send(groups);
-    }
-  });
-});
-
-router.get('/getGroup/:groupName', function(req, res) {
-  console.log(req.params.groupName);
-  Group.findOne({'name': req.params.groupName}, function(err, group) {
-    if(err) {
-      console.log('/getGroup error: ', err);
-      res.sendStatus(500);
-    } else {
-      // console.log('in router.get, returning group: ', group);
-      res.json(group);
-    }
-  });
-});
-
+// approve a group
 router.put('/approveGroup/:id', auth, function(req, res) {
-  console.log('approve group endpoint hit');
   Group.findOne({'_id': req.params.id}, function(err, group) {
     if(err) {
       console.log('/approveGroup error: ', err);
@@ -163,14 +52,70 @@ router.put('/approveGroup/:id', auth, function(req, res) {
           console.log(err);
           res.sendStatus(500);
         } else {
-          console.log(group);
           res.json(group);
         }
       });
     }
   });
 });
-
+// flag a group
+router.put('/flagGroup/:id', function(req, res) {
+  Group.findOne({'_id': req.params.id}, function(err, group) {
+    if(err) {
+      console.log('/flagGroup error: ', err);
+    } else {
+      group.flags++;
+      group.save(function(err) {
+        if(err) {
+          console.log(err);
+          res.sendStatus(500);
+        } else {
+          res.json(group);
+        }
+      });
+    }
+  });
+});
+// unflag a group
+router.put('/unFlagGroup/:id', function(req, res) {
+  Group.findOne({'_id': req.params.id}, function(err, group) {
+    if(err) {
+      console.log('/flagGroup error: ', err);
+    } else {
+      group.flags = 0;
+      group.save(function(err) {
+        if(err) {
+          console.log(err);
+          res.sendStatus(500);
+        } else {
+          res.json(group);
+        }
+      });
+    }
+  });
+});
+// get all groups with more than 0 flags
+router.get('/getFlaggedGroups', function(req, res) {
+  Group.find({'flags': { $gt: 0 }}).sort({ flags: 'desc'}).exec(function(err, groups) {
+    if(err) {
+      console.log(err);
+      res.sendStatus(500);
+    } else {
+      res.send(groups);
+    }
+  });
+});
+// retrieve a group by its name
+router.get('/getGroup/:groupName', function(req, res) {
+  Group.findOne({'name': req.params.groupName}, function(err, group) {
+    if(err) {
+      console.log('/getGroup error: ', err);
+      res.sendStatus(500);
+    } else {
+      res.json(group);
+    }
+  });
+});
 // for uploading photos
 var upload = multer({
   storage: multerS3({
@@ -186,12 +131,8 @@ var upload = multer({
     // }
   })
 }); // end multer upload
-
+// create a new group
 router.post('/createGroup', upload.single('file'), function (req, res) {
-console.log('inside groups.js add group ');
-  console.log(req.body);
-  console.log(req.file);
-
   var newGroup = new Group({
     name: req.body.name,
     groupURL: req.body.groupURL,
@@ -211,14 +152,11 @@ console.log('inside groups.js add group ');
     sizeOfMembership: req.body.sizeOfMembership,
     submitterID: req.body.submitterID
   });
-
   if (req.file ){
     newGroup.photoURL = req.file.location;
   }
 
-console.log( 'newGroup: ', newGroup );
   newGroup.save(function(err) {
-
     if(err) {
       console.log(err);
       res.sendStatus(500);
@@ -226,33 +164,56 @@ console.log( 'newGroup: ', newGroup );
       res.json(newGroup);
     }
   });
-});//end of post createGroup
+});
+// edit group endpoint
+router.put('/editGroup/:id', auth, function(req, res) {
+  Group.findOne({'_id': req.params.id}, function(err, group) {
+    if(err) {
+      console.log('/editGroup error: ', err);
+    } else {
+      group.name = req.body.name;
+      group.groupURL = req.body.groupURL;
+      group.contactEmail = req.body.contactEmail;
+      group.groupContact = req.body.contact;
+      group.description = req.body.description;
+      group.location = req.body.location;
+      group.activities = req.body.activities;
+      group.technologies = req.body.technologies;
+      group.coreTechnologies = req.body.coreTechnologies;
+      group.tags = req.body.tags;
+      group.freqOfMeeting = req.body.freqOfMeeting;
+      group.sizeOfMeeting = req.body.sizeOfMeeting;
+      group.sizeOfMembership = req.body.sizeOfMembership;
+      group.affiliations = req.body.affiliations;
+      group.affiliationURL = req.body.affiliationURL;
 
+      group.save(function(err) {
+        if(err) {
+          console.log(err);
+          res.sendStatus(500);
+        } else {
+          res.json(group);
+        }
+      });
+    }
+  });
+});
+// delete a group
 router.delete('/deleteGroup/:groupId', function(req, res){
-  console.log('In /deleteGroup/:groupId: ', req.params.groupId);
   var id = req.params.groupId;
-  Group.findOne({'_id': id}, function(err, groupon){
+  Group.findOne({'_id': id}, function(err, group){
     if(err){
       console.log('/deleteGroup error: ', err);
-    }else{
+    } else {
       Group.remove({'_id': id}, function(err){
         if(err){
           console.log('remove group error: ', err);
-        }else{
+        } else {
           res.json({});
         }
       });
     }
   });
 });
-
-
-
-// router.post('/uploads', upload.single('file'), function(req, res){
-//   console.log('file: ', req.file);
-//   console.log('location: ', req.file.location);
-//   console.log('name: ', req.body.groupName);
-// res.send(req.file);
-// });
 
 module.exports = router;
