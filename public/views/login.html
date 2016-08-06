@@ -1,41 +1,54 @@
-
-    <div class="col-sm-6">
-      <div id="group-contact-login" class="login-panel">
-
-        <h2 class="login-title">Group Contact</h2>
-
-        <a class="btn btn-block btn-social btn-lg btn-google" ng-click="authenticate('google')">
-          <span class="fa fa-google"></span>
-            Sign in with Google
-        </a>
-
-        <a class="btn btn-block btn-social btn-lg btn-facebook" ng-click="authenticate('facebook')">
-          <span class="fa fa-facebook"></span>
-            Sign in with Facebook
-        </a>
-
-        <a class="btn btn-block btn-social btn-lg btn-github" ng-click="">
-          <span class="fa fa-github"></span>
-            Sign in with Git Hub
-        </a>
-
+<!--header/nav-bar -->
+<header id="non-home">
+  <div class="layerBack">
+    <div class="navWrap">
+      <div class = "navBar" ng-include="'/views/navBar.html'"></div>
       </div>
-
     </div>
-    <header id="non-home">
-      <div class="layerBack">
-        <div class="navWrap">
-          <div class = "navBar" ng-include="'/views/navBar.html'"></div>
+</header>
+<!-- login -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div id="group-contact-login" class="panel panel-default">
+        <div class="panel-heading">
+          <h1 class="panel-title">Add Your Group to The Network!</h1>
+          <h5>
+          It's easy... Anyone can log in with Google, Facebook, or Github <br />
+          and submit a group for approval. <br />
+          <br />
+          Give it a try!</h5>
         </div>
-      </div>
-    </header>
+        <div class="panel-body">
+          <!-- <input class="btn btn-lg btn-facebook btn-block" type="submit" value="Login via facebook"> -->
+          <a class="btn btn-block btn-social btn-lg btn-google full-width" ng-click="authenticate('google')">
+            <span class="fa fa-google"></span>
+              Sign in with Google
+          </a>
+          <a class="btn btn-block btn-social btn-lg btn-facebook" ng-click="authenticate('facebook')">
+            <span class="fa fa-facebook"></span>
+              Sign in with Facebook
+          </a>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6">
+          <a class="btn btn-block btn-social btn-lg btn-github" ng-click="">
+            <span class="fa fa-github"></span>
+              Sign in with Git Hub
+          </a>
+    </div>
+
+
           <div id="admin-login" class="login-panel">
-            <h2 class="login-title">Admin</h2>
+            <h2 class="text-center login-title">Administrative Use Only</h2>
 
+<!-- stuck some stuff here -->
+
+            <form accept-charset="UTF-8" role="form">
+              <fieldset>
+                <div class="form-group">
+
+                </div>
+              </fieldset>
             <form name="form">
 
               <md-input-container class="md-block" flex-gt-sm>
@@ -60,8 +73,13 @@
 
             <md-button class="md-raised md-button md-ink-ripple" ng-click="login()">Login</md-button>
 
-          </div>
-        </div>
+        </form>
+
+      </div>
+
   </div>
+
+</div>
+</div>
 
 </div>

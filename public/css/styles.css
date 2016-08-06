@@ -70,7 +70,7 @@ body {
 }
 
 header {
-    background: url('http://techanddesign.ca/wp-content/uploads/2016/01/technetwork.jpgç') no-repeat center center scroll;
+    background: url('http://techanddesign.ca/wp-content/uploads/2016/01/technetwork.jpg') no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -358,14 +358,39 @@ md-input-container.md-default-theme label,
 }
 
 /*admin page*/
-.login-panel {
-  padding: 20px;
-}
 
-.login-title,
-.admin-title {
-  color: #353535;
+
+/*group-contact-login*/
+.panel panel-default{
+  margin: 50px auto;
+	width: 540px;
+	height:460px;
+	background: #fff;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	-ms-border-radius: 5px;
+	border-radius: 5px;
+	padding: 40px;
+  /*padding: 20px;*/
 }
+.panel-heading {
+
+	font-size: 44px;
+
+}
+.panel-body a{
+  display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+text-center login-title{
+  color: black;
+  font-size: 44px;
+}
+/*.panel-title {
+  color: #353535;
+}*/
 /*admin buttons*/
 .md-success {
   background-color: rgba(77, 152, 77, .7) !important;
@@ -455,6 +480,7 @@ md-card md-card-title md-card-title-text {
   color: #e2663e;
 }
 
+
 a.md-button.md-default-theme.md-primary, a.md-button.md-primary, .md-button.md-default-theme.md-primary, .md-button.md-primary {
   color: #664659;
 }
@@ -462,9 +488,9 @@ a.md-button.md-default-theme.md-primary, a.md-button.md-primary, .md-button.md-d
 md-dialog md-dialog-content:not([layout=row]) > *:first-child:not(.md-subheader) {
   color: #E2DE00;
 }
-
+/*social buttons*/
 .btn-social {
-  width: 75%;
+  width: 100%;
 }
 
 .header-image {
@@ -482,6 +508,10 @@ md-dialog md-dialog-content:not([layout=row]) > *:first-child:not(.md-subheader)
 #group-name {
   display: inline-block;
   vertical-align: middle;
+}
+.text-center login-title{
+  color: black;
+
 }
 .editGroup {
   float: left;
