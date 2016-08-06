@@ -193,18 +193,37 @@ md-card-title-text .md-headline {
 /*ng-style="{'background-image':'url({{group.photoURL}})', 'background-size':'cover', 'background-position':'center'}"*/
 md-card.face {
   /*background-image: url("../images/code-1486361__340.jpg");*/
-  border: 1px solid #664659;
-  border-radius: 7px;
-  background-color: rgba(102, 70, 89, 0.9);
-  height: 300px;
+  /*border: 1px solid #664659;
+  border-radius: 7px;*/
+  position: relative;
+  background: rgba(102, 70, 89, 0.9); /* For browsers that do not support gradients */
+  background: radial-gradient(rgba(102, 70, 89, 0.9), rgba(102, 70, 89, 0.7));  height: 300px;
   color: white;
   transition: transform .2s ease-in;
   z-index: 1;
 }
 
+.md-user-avatar {
+  height: 150px;
+  width: 150px;
+  border: 2px solid white;
+  border-radius: 100%;
+  position: absolute;
+  top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  box-shadow: 1px 1px 2px #aba8a8;
+}
+
+md-card-footer p {
+  color: #aba8a8;
+}
+
 md-card.face:hover {
-  border: 1px solid #664659;
-  border-radius: 7px;
+  /*border: 1px solid #664659;
+  border-radius: 7px;*/
   color: white;
   height: auto;
   min-height: 300px;
