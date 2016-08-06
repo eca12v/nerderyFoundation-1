@@ -13,17 +13,16 @@
 
 <div id="sortBar">
     <div id="searchBar">
-      <i class="fa fa-search fa-2x sort-icon" aria-hidden="true"></i>
       <input id="main-search" class="md-button md-raised" ng-model="filterStr" placeholder="search"/>
     </div>
 </div>
 
 <div class="row">
-  <div class="col-sm-3">
+  <div id="filter-column" class="col-sm-3">
     <md-content id="filterSide">
       <md-card id="filter-box">
         <div id="filter-heading">
-          <h3 id="filter-title"><i class="fa fa-filter filter-icon" aria-hidden="true"></i> Filter</h3>
+          <h3 id="filter-title">Filter</h3>
           <span id="clear-filter" ng-show="techStr || locationStr || sizeStr" ng-click="clearAllFilters()">Clear All Filters</span>
         </div>
 
@@ -140,9 +139,10 @@
 
     </div>
 
-    <div class="col-sm-9">
+    <div id="groups-column" class="col-sm-9">
+      <md-card id="groups-container">
       <md-content layout="row" layout-wrap class="cardsContainer">
-        <div flex="30" flex-sm="50" flex-xs="80" class="md-padding flip" ng-repeat="group in groups | multiWordFilter: techStr | filter: locationStr | filter: sizeStr | filter: filterStr track by $index">
+        <div flex="33" flex-sm="50" flex-xs="80" class="md-padding flip" ng-repeat="group in groups | multiWordFilter: techStr | filter: locationStr | filter: sizeStr | filter: filterStr track by $index">
           <a class="group-link" ng-href="/#/groups/{{group.name}}">
             <md-card class="group-tile md-whiteframe-6dp face front" ng-mouseenter="description = !description" ng-mouseleave="description = !description">
               <md-card-header>
@@ -167,7 +167,7 @@
         </div>
         <h3 ng-show="(groups| multiWordFilter: techStr | filter: locationStr | filter: sizeStr | filter: filterStr).length == 0">Unfortunately, no local tech user groups fit your current criteria!</h3>
       </md-content>
-
+    </md-card>
     </div>
   </div>
 </div>
