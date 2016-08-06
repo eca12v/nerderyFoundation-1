@@ -237,6 +237,7 @@ $scope.cancel = function(){
   console.log( 'cancel clicked' );
   $scope.close();
   $state.go('group');
+
 };
 
 $scope.close = function () {
