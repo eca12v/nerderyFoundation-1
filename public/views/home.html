@@ -153,7 +153,7 @@
             </md-card>
           </a>
         </div>
-        <h3 ng-show="(groups| multiWordFilter: techStr | filter: locationStr | filter: sizeStr | filter: filterStr).length == 0">Unfortunately, no local tech user groups fit your current criteria!</h3>
+        <h3 id="no-results" ng-show="(groups| multiWordFilter: techStr | filter: locationStr | filter: sizeStr | filter: filterStr).length == 0">Unfortunately, no local tech user groups fit your current criteria!</h3>
       </md-content>
     </md-card>
     </div>

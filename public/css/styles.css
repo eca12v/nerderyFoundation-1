@@ -217,6 +217,12 @@ md-card.face {
   box-shadow: 1px 1px 2px #aba8a8;
 }
 
+#no-results {
+  text-align: center;
+  margin: auto;
+  padding: 50px;
+}
+
 md-card-footer p {
   color: #aba8a8;
 }
