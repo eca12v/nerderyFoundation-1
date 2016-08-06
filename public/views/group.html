@@ -179,26 +179,22 @@
           </md-input-container> -->
 
            <md-input-container >
-            <md-select ng-model="group.freqOfMeeting" placeholder="Frequency of Meeting">
+            <div>Frequency of Meetings: <md-select ng-model="group.freqOfMeeting" placeholder="Frequency of Meeting">
               <md-option ng-repeat="option in freqOfMeetingArray">{{ option }}</md-option>
-            </md-select>
+            </md-select></div>
           </md-input-container>
 
           <md-input-container >
-            <md-select ng-model="group.sizeOfMeeting" placeholder="size of Meeting">
+            <div>Size of Meetings:<md-select ng-model="group.sizeOfMeeting" placeholder="Size of Meeting">
               <md-option ng-repeat="option in sizeOfMeetingArray">{{ option }}</md-option>
-            </md-select>
+            </md-select></div>
           </md-input-container>
 
           <md-input-container >
-            <md-select ng-model="group.sizeOfMembership" placeholder="Size of Membership">
+            <div>Size of Membership: <md-select ng-model="group.sizeOfMembership" placeholder="Size of Membership">
               <md-option ng-repeat="size in sizeOfMembershipArray">{{ size }}</md-option>
-            </md-select>
+            </md-select></div>
           </md-input-container>
-
-          sizeOfMeeting: {{ sizeOfMeeting }}
-          sizeOfMembership: {{ sizeOfMembership }}
-          freqOfMeeting: {{ freqOfMeeting }}
 
         <div class="row">
             <md-button type="button" class="md-raised" name="button" ng-click="confirmDelete($event, group._id, $index)">Delete Group</md-button>
