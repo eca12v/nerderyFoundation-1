@@ -69,13 +69,11 @@ function( $scope, $http, $location, groupFactory, $auth){
   };
   // change filter location str
   $scope.changeLocation =  function(location) {
-    var sub = $scope.techStr.indexOf(location);
-    if (sub == -1) {
-      $scope.techStr += ' ' + location + ' ';
-    } else {
-      var newStr = $scope.techStr.replace(location, "");
-      $scope.techStr = newStr;
-    }
+    $scope.locationStr = location;
+  };
+  // change filter size str
+  $scope.changeSize =  function(size) {
+    $scope.sizeStr = size;
   };
   // arrays to populate filter drop down menus
   $scope.location = [
@@ -90,6 +88,14 @@ function( $scope, $http, $location, groupFactory, $auth){
   $scope.typicalSize = [
     '0-25', '25-50', '50-100', '100-500'
   ];
+  // clears all the filters
+  $scope.clearAllFilters = function() {
+    $scope.techStr = '';
+    $scope.selectedTech = '';
+    $scope.selectedSubTech = '';
+    $scope.locationStr = '';
+    $scope.sizeStr = '';
+  };
   // menu helper functions
   var originatorEv;
   $scope.openMenu = function($mdOpenMenu, ev) {

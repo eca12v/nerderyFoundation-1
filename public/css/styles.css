@@ -326,12 +326,33 @@ padding-left: 15px;
   vertical-align: middle;
 }
 
+#filter-box {
+  margin-top: 0;
+  padding-bottom: 50px;
+}
+
+.filter-button {
+  width:100%;
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+#filter-title,
+#clear-filter {
+  color: gray;
+}
+
+#filter-heading {
+  padding-left: 20px;
+}
+
 #searchBar {
   display: inline-block;
-  float: left;
-  width: 50%;
-  vertical-align: middle;
-  margin-left: 10px;
+      float: left;
+      width: 100%;
+      vertical-align: middle;
+      margin: auto;
+      text-align: center;
 }
 
 #sortBar {
@@ -346,6 +367,10 @@ padding-left: 15px;
 #non-home {
   height: 60px;
   margin-bottom: 15px;
+}
+
+#filterSide {
+  background-color: #efede7;
 }
 
 #non-home-group {
