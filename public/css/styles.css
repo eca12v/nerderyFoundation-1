@@ -26,7 +26,7 @@ body {
   }
   md-sidenav{
     width: 500px;
-    line-height: 1.2;  
+    line-height: 1.2;
   }
 
   md-content{
@@ -437,7 +437,7 @@ md-card md-card-title md-card-title-text {
 }
 
 #group-jumbo {
-  background: url('../img/techmeetup.jpeg') no-repeat center center scroll;
+  background: url('../images/techmeetup.jpeg') no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;

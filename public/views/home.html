@@ -12,147 +12,108 @@
 </header>
 
 <div id="sortBar">
+  <md-content class="md-no-momentum">
+    <div id="searchBar">
+      <i class="fa fa-search fa-2x sort-icon" aria-hidden="true"></i>
+      <input id="main-search" class="md-button md-raised" ng-model="filterStr" placeholder="search"/>
+    </div>
 
-    <md-content class="md-no-momentum">
-      <!-- <md-input-container id="main-search" class="md-icon-float">
-        <h4><label>Search</label></h4>
-        <input ng-model="filterStr" type="text">
-      </md-input-container> -->
-      <div id="searchBar">
-        <i class="fa fa-search fa-2x sort-icon" aria-hidden="true"></i>
-        <input id="main-search" class="md-button md-raised" ng-model="filterStr" placeholder="search"/>
-      </div>
+    <div id="filterBar">
+      <i class="fa fa-filter fa-2x sort-icon" aria-hidden="true"></i>
+      <md-menu>
+        <md-button aria-label="" class="md-raised md-button md-ink-ripple" ng-click="openMenu($mdOpenMenu, $event)"><span ng-hide="selectedTech"> Technology</span><span ng-show="selectedTech">{{selectedTech}}</span>
+        </md-button>
 
+       <md-menu-content width="8">
+         <div layout="row">
+           <div layout="column">
+             <md-menu-item>
+               <md-button ng-click="changeOverallTech('')">
+               </md-button>
+             </md-menu-item>
 
+             <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 5 | limitTo: -5">
+               <md-button ng-click="changeOverallTech(t.Technology)">
+                 {{t.Technology}}
+               </md-button>
+             </md-menu-item>
+           </div>
+           <div layout="column">
+             <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 11 | limitTo: -6">
+               <md-button ng-click="changeOverallTech(t.Technology)">
+                 {{t.Technology}}
+               </md-button>
+             </md-menu-item>
+           </div>
+           <div layout="column">
+             <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 17 | limitTo: -6">
+               <md-button ng-click="changeOverallTech(t.Technology)">
+                 {{t.Technology}}
+               </md-button>
+             </md-menu-item>
+           </div>
+           <div layout="column">
+             <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 23 | limitTo: -6">
+               <md-button ng-click="changeOverallTech(t.Technology)">
+                 {{t.Technology}}
+               </md-button>
+             </md-menu-item>
+           </div>
+           <div layout="column">
+             <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 29 | limitTo: -6">
+               <md-button ng-click="changeOverallTech(t.Technology)">
+                 {{t.Technology}}
+               </md-button>
+             </md-menu-item>
+           </div>
+           <div layout="column">
+             <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 33 | limitTo: -4">
+               <md-button ng-click="changeOverallTech(t.Technology)">
+                 {{t.Technology}}
+               </md-button>
+             </md-menu-item>
+             </div>
+           </div>
+         </md-menu-content>
+       </md-menu>
 
-<div id="filterBar">
-  <i class="fa fa-filter fa-2x sort-icon" aria-hidden="true"></i>
-  <md-menu>
-       <md-button aria-label="" class="md-raised md-button md-ink-ripple" ng-click="openMenu($mdOpenMenu, $event)"><span ng-hide="selectedTech"> Technology</span><span ng-show="selectedTech">{{selectedTech}}</span>
-     <!-- <md-icon md-menu-origin md-svg-icon="call:phone"></md-icon> -->
+       <md-menu>
+        <md-button aria-label="" class="md-raised md-button md-ink-ripple" ng-click="openMenu($mdOpenMenu, $event)"><span ng-hide="locationStr"> Location</span><span ng-show="locationStr">{{locationStr}}</span>
+        </md-button>
+        <md-menu-content width="8">
+          <md-menu-item>
+            <md-button ng-click="changeLocation('')">
+            </md-button>
+          </md-menu-item>
+          <md-menu-item ng-repeat="l in location">
+            <md-button ng-click="changeLocation(l)">
+              {{l}}
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+
+      <md-menu>
+       <md-button aria-label="" class="md-raised md-button md-ink-ripple" ng-click="openMenu($mdOpenMenu, $event)"><span ng-hide="sizeStr">Typical Meeting Size</span><span ng-show="sizeStr">{{sizeStr}}</span>
       </md-button>
 
-   <md-menu-content width="8">
-     <div layout="row">
+     <md-menu-content width="8">
+       <md-menu-item>
+         <md-button ng-click="changeOverallTech('')">
+         </md-button>
+       </md-menu-item>
+       <md-menu-item ng-repeat="s in typicalSize">
+         <md-button ng-click="changeOverallTech(t.Technology)">
+           {{s}}
+         </md-button>
+       </md-menu-item>
 
-     <div layout="column">
+    </md-menu-content>
+  </md-menu>
 
-     <md-menu-item>
-       <md-button ng-click="changeOverallTech('')">
-       </md-button>
-     </md-menu-item>
-
-     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 5 | limitTo: -5">
-       <md-button ng-click="changeOverallTech(t.Technology)">
-         {{t.Technology}}
-       </md-button>
-     </md-menu-item>
-   </div>
-   <div layout="column">
-     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 11 | limitTo: -6">
-       <md-button ng-click="changeOverallTech(t.Technology)">
-         {{t.Technology}}
-       </md-button>
-     </md-menu-item>
-   </div>
-   <div layout="column">
-     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 17 | limitTo: -6">
-       <md-button ng-click="changeOverallTech(t.Technology)">
-         {{t.Technology}}
-       </md-button>
-     </md-menu-item>
-   </div>
-   <div layout="column">
-     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 23 | limitTo: -6">
-       <md-button ng-click="changeOverallTech(t.Technology)">
-         {{t.Technology}}
-       </md-button>
-     </md-menu-item>
-   </div>
-   <div layout="column">
-     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 29 | limitTo: -6">
-       <md-button ng-click="changeOverallTech(t.Technology)">
-         {{t.Technology}}
-       </md-button>
-     </md-menu-item>
-   </div>
-   <div layout="column">
-     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 33 | limitTo: -4">
-       <md-button ng-click="changeOverallTech(t.Technology)">
-         {{t.Technology}}
-       </md-button>
-     </md-menu-item>
-     </div>
-   </div>
-   </md-menu-content>
- </md-menu>
-
- <md-menu>
-      <md-button aria-label="" class="md-raised md-button md-ink-ripple" ng-click="openMenu($mdOpenMenu, $event)"><span ng-hide="locationStr"> Location</span><span ng-show="locationStr">{{locationStr}}</span>
-    <!-- <md-icon md-menu-origin md-svg-icon="call:phone"></md-icon> -->
-     </md-button>
-
-  <md-menu-content width="8">
-    <md-menu-item>
-      <md-button ng-click="changeLocation('')">
-      </md-button>
-    </md-menu-item>
-    <md-menu-item ng-repeat="l in location">
-      <md-button ng-click="changeLocation(l)">
-        {{l}}
-      </md-button>
-    </md-menu-item>
-
-</md-menu-content>
-</md-menu>
-
-<md-menu>
-     <md-button aria-label="" class="md-raised md-button md-ink-ripple" ng-click="openMenu($mdOpenMenu, $event)"><span ng-hide="sizeStr">Typical Meeting Size</span><span ng-show="sizeStr">{{sizeStr}}</span>
-   <!-- <md-icon md-menu-origin md-svg-icon="call:phone"></md-icon> -->
-    </md-button>
-
- <md-menu-content width="8">
-   <md-menu-item>
-     <md-button ng-click="changeOverallTech('')">
-     </md-button>
-   </md-menu-item>
-   <md-menu-item ng-repeat="s in typicalSize">
-     <md-button ng-click="changeOverallTech(t.Technology)">
-       {{s}}
-     </md-button>
-   </md-menu-item>
-
-</md-menu-content>
-</md-menu>
-
-</div>
-</div>
-
-
-  <!-- <md-input-container id="tech-search" class="md-icon-float">
-    <select class="form-control select-team" ng-model="tObj" data-ng-change="changeOverallTech(tObj)" >
-      <label>Technology</label>
-        <option value="">Technologies</option>
-          <option ng-repeat="t in tech.Technologies track by $index" placeholder="Technologies" value="{{t.Technology}}" >{{t.Technology}}</option>
-    </select>
-  </md-input-container> -->
-
-  <!-- <md-input-container id="location-search" class="md-icon-float">
-    <select class="form-control" ng-model="locationStr">
-      <label>Location: </label>
-                    <option value="">Location</option>
-                    <option ng-repeat="l in location track by $index" value="{{l}}" >{{l}}</option>
-                  </select>
-  </md-input-container> -->
-
-  <!-- <md-input-container id="size-search" class="md-icon-float">
-    <select class="form-control" ng-model="sizeStr">
-      <label>Typical Meeting Size: </label>
-                    <option value="">Meeting Size</option>
-                    <option ng-repeat="s in typicalSize track by $index" value="{{s}}" >{{s}}</option>
-                  </select>
-  </md-input-container> -->
+  </div>
 </md-content>
+</div>
 
 <div class="row">
   <div class="col-sm-3">
@@ -171,95 +132,20 @@
                 value="{{sub}}" data-ng-click="changeSubTechStr(sub)" aria-label="Checkbox 1">
                   <strong>{{sub}}</strong>
                 </md-checkbox>
-
               </div>
             </div>
           </div>
-        <hr>
-          <!-- <label>Biweekly</label><input  type="checkbox" data-ng-model="Biweekly" ng-true-value="{state: true, val: 'Biweekly'}"  data-ng-false-value="{state: false, val: 'Biweekly'}" ng-click="changeTechStr(Biweekly)"/><br/>
-<label>Stuff</label><input  type="checkbox" ng-model="Stuff" ng-true-value="{state: true, val: 'Stuff'}"  data-ng-false-value="{state: false, val: 'Stuff'}" ng-click="changeTechStr(Stuff)"/><br/>
-<p>{{Stuff}}</p>
-<p>{{Biweekly}}</p> -->
-          <!-- <fieldset class="standard">
-            <md-checkbox ng-repeat="t in tech.Technologies"
-            value={{t.Technology}} data-ng-click="changeTechStr(t.Technology)" aria-label="Checkbox 1">
-              <strong>{{t.Technology}}</strong>
-            </md-checkbox>
-<<<<<<< HEAD
-              <div ng-show="clientSide">
-                <md-checkbox ng-model="accessibility" aria-label="Checkbox 2">
-                  Accessibility
-                </md-checkbox>
-                <md-checkbox ng-model="analytics" aria-label="Checkbox 2">
-                  Analytics
-                </md-checkbox>
-              </div>
-              <div ng-show="accessibility">
-                <md-checkbox aria-label="Checkbox 2">
-                  ADA
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Section 508
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  WCAG
-                </md-checkbox>
-              </div>
-              <div ng-show="analytics">
-                <md-checkbox aria-label="Checkbox 2">
-                  Fireclick
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Google Analytics
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Omniture
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  WebTrends
-                </md-checkbox>
-              </div>
-            <md-checkbox ng-model="cms" aria-label="Checkbox 1">
-              <strong>CMS</strong>
-            </md-checkbox>
-              <div ng-show="cms">
-                <md-checkbox aria-label="Checkbox 2">
-                  Ektron
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Kentico
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Sharepoint
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Sitecore
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Sitefinity
-                </md-checkbox>
-                <md-checkbox aria-label="Checkbox 2">
-                  Umbraco
-                </md-checkbox>
-              </div>
-           <! <md-checkbox ng-model="" aria-label="Checkbox 1">
-
-            </md-checkbox> -->
-
-          </fieldset>
-          </fieldset>
         </md-card-content>
       </md-card>
     </md-content>
+
     </div>
-<!-- class="col-sm-4"  -->
+
     <div class="col-sm-9">
       <md-content layout="row" layout-wrap class="cardsContainer">
         <div flex="30" flex-sm="50" flex-xs="80" class="md-padding flip" ng-repeat="group in groups | multiWordFilter: techStr | filter: locationStr | filter: sizeStr | filter: filterStr track by $index">
-          <!-- <div class="card" ng-class="autoScroll ? 'flipped' : ''"> -->
           <a class="group-link" ng-href="/#/groups/{{group.name}}">
             <md-card class="group-tile md-whiteframe-6dp face front" ng-mouseenter="description = !description" ng-mouseleave="description = !description">
-
               <md-card-header>
                 <md-card-avatar>
                   <img class="md-user-avatar" ng-src="{{avatarImage}}" alt="" />
@@ -267,46 +153,22 @@
                 <md-card-header-text>
                   <span class="md-title">{{group.name}}</span>
                 </md-card-header-text>
-                  <!-- <div class="md-media-sm card-media"> -->
               </md-card-header>
               <md-card-content ng-show="description">
                 <p>
                   {{group.description}}
                 </p>
               </md-card-content>
-
               <md-card-footer>
-
                 <p>{{group.location}}</p>
                 <p>{{group.freqOfMeeting}}</p>
               </md-card-footer>
-              <!-- <md-card-actions layout="row" layout-align="end center">
-                <md-button>Action 1</md-button>
-                <md-button>Action 2</md-button>
-              </md-card-actions> -->
-
             </md-card>
-
           </a>
-
-        <!-- </div> -->
-      </div>
+        </div>
         <h3 ng-show="(groups| multiWordFilter: techStr | filter: locationStr | filter: sizeStr | filter: filterStr).length == 0">Unfortunately, no local tech user groups fit your current criteria!</h3>
       </md-content>
+
     </div>
-
   </div>
-
-  <!-- Pat here are some loops to get started with -->
-  <!-- <div ng-repeat="tech in tech.Technologies">
-    <input type="checkbox">{{tech.Technology}}
-    <div ng-show="selectedTech == tech.Technology" ng-repeat="skill in tech.Skills">
-      <input type="checkbox">{{skill.Skill}}
-        <div ng-repeat="sub in skill.Subskills">
-          <input type="checkbox">{{sub}}
-        </div>
-      </div>
-  </div>
-
-  <hr> -->
 </div>

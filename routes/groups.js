@@ -9,7 +9,6 @@ var authConfig = require('../modules/authConfig');
 var auth = jwt({secret: authConfig.TOKEN_SECRET, userProperty: 'payload'});
 
 var router = express.Router();
-
 // require to upload images
 var multer = require('multer');
 var fs = require('fs');

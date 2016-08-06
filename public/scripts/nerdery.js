@@ -1,16 +1,13 @@
-var myApp = angular.module( 'myApp', [
+var nerderyApp = angular.module( 'nerderyApp', [
   'ui.router',
   'satellizer',
   'ngMaterial',
-  'Authorization',
   'xeditable',
   'ngFileUpload',
   'ngMessages'
 ]);
 
-/// Routes ///
-
-myApp.config(['$stateProvider', '$urlRouterProvider', '$mdIconProvider', '$mdThemingProvider', '$authProvider',
+nerderyApp.config(['$stateProvider', '$urlRouterProvider', '$mdIconProvider', '$mdThemingProvider', '$authProvider',
 function($stateProvider, $urlRouterProvider, $mdIconProvider, $mdThemingProvider, $authProvider) {
 
   $stateProvider.
@@ -26,29 +23,22 @@ function($stateProvider, $urlRouterProvider, $mdIconProvider, $mdThemingProvider
     controller: 'GroupController',
     onEnter : ['$state', '$auth', 'groupFactory', '$stateParams',
       function($state, $auth, groupFactory, $stateParams) {
+        // retrieve group info
         groupFactory.getGroup($stateParams.groupName).then(function(response) {
+          // hook if group is not approved
           if (!response.data.approved) {
+            // if user is not authenticated redirect home
             if(!$auth.isAuthenticated()) {
               $state.go('home');
             }
+            // if user is not an admin redirect home
             if(!$auth.getPayload().admin) {
               $state.go('home');
             }
           }
         });
-        // console.log($auth.isAuthenticated());
-        // if (!$auth.isAuthenticated()) {
-        //   $state.go('login');
-        // }
       }
-    ],
-    resolve : {
-      group : ['groupFactory', '$stateParams',
-  			function(groupFactory, $stateParams) {
-  				return groupFactory.getGroup($stateParams.groupName);
-  			}
-      ]
-    }
+    ]
   }).
   state('addGroup', {
     url: '/addGroup',
@@ -56,7 +46,7 @@ function($stateProvider, $urlRouterProvider, $mdIconProvider, $mdThemingProvider
     controller: 'AddGroupController as ctrl',
     onEnter : ['$state', '$auth',
       function($state, $auth) {
-        console.log($auth.isAuthenticated());
+        // if user is not authenticated redirect home
         if (!$auth.isAuthenticated()) {
           $state.go('login');
           toastr.info("Please create a group submitter account to create a group.", {"positionClass": "toast-top-full-width"});
@@ -69,9 +59,7 @@ function($stateProvider, $urlRouterProvider, $mdIconProvider, $mdThemingProvider
     controller: 'AdminController',
     onEnter : ['$state', '$auth',
       function($state, $auth) {
-        console.log($auth.isAuthenticated());
-        console.log($auth.getPayload().admin);
-
+        // if the user is not logged in or not an admin redirect home
         if (!$auth.isAuthenticated() || !$auth.getPayload().admin) {
           $state.go('home');
       }
@@ -82,7 +70,6 @@ function($stateProvider, $urlRouterProvider, $mdIconProvider, $mdThemingProvider
     templateUrl: 'views/login.html',
     controller: 'LoginCtrl'
   });
-
 
   $urlRouterProvider.otherwise('home');
 
@@ -95,33 +82,28 @@ function($stateProvider, $urlRouterProvider, $mdIconProvider, $mdThemingProvider
   });
 
   $mdIconProvider.icon('md-close', 'img/icons/ic_close_24px.svg', 24);
-
+  // theme configuation
   // change default color for primary
   var indigo = $mdThemingProvider.extendPalette('indigo', {
       '500': '664659'
   });
   $mdThemingProvider.definePalette('indigo', indigo);
-
   // change default color for warn
-
   $mdThemingProvider.definePalette('red', indigo);
-
   $mdThemingProvider.theme('default').primaryPalette('indigo').warnPalette('red');
-
   // here you change placeholder/foreground color.
   $mdThemingProvider.theme('default').foregroundPalette[3] = "gray";
-
+  // gloabal toastr configuration
   toastr.options.positionClass = "toast-top-full-width";
   toastr.options.showDuration = 500;
  }]);//end of myapp config
 
+nerderyApp.run(function($rootScope, $window, $auth) {
+  if ($auth.isAuthenticated()) {
+    // $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
+  }
+});
 
-myApp.run(function($rootScope, $window, $auth) {
-    if ($auth.isAuthenticated()) {
-      // $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
-    }
-  });
-
-  myApp.run(function(editableOptions) {
+nerderyApp.run(function(editableOptions) {
   editableOptions.theme = 'bs3';
 });
