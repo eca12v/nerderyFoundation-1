@@ -4,17 +4,17 @@ var Schema = mongoose.Schema;
 
 var groupSchema = mongoose.Schema({
   name: {type: String, unique: true, required: true },
-  groupURL: String,
-  groupContact: String,
-  contactEmail: String,
-  description: String,
-  location: String,
+  groupURL: {type: String, unique: true, required: true},
+  groupContact: {type: String, required: true},
+  contactEmail: {type: String, required: true},
+  description: {type: String, required: true},
+  location: {type: String, required: true},
   activities: {type: Array},
-  technologies: {type: Array},
+  technologies: {type: Array, required: true},
   coreTechnologies: {type: Array},
   tags: {type: Array},
   freqOfMeeting: String,
-  sizeOfMeeting: String,
+  sizeOfMeeting: {type: String, required: true},
   affiliations: String,
   affiliationURL: String,
   eventInfo: String,
@@ -22,6 +22,7 @@ var groupSchema = mongoose.Schema({
   photoURL: String,
   approved: {type: Boolean, default: false},
   flags: {type: Number, default: 0},
+  submitterID:  String,
   created: Date,
 });
 

@@ -1,14 +1,19 @@
 angular.module('Authorization', ['satellizer', 'toastr']).
 
-controller('LoginCtrl', ['$scope', '$auth', '$state', '$location', 'toastr',
-  function($scope, $auth, $state, $location, $authProvider, toastr) {
+controller('LoginCtrl', ['$scope', '$auth', '$state', '$location',
+  function($scope, $auth, $state, $location, $authProvider) {
 
-  console.log(toastr);
+  // console.log(toastr);
   $scope.isAuthenticated = $auth.isAuthenticated;
   $scope.currentUser = $auth.getPayload;
 
   $scope.authenticate = function(provider) {
-      $auth.authenticate(provider);
+      $auth.authenticate(provider).then(function(response) {
+          $state.go('home');
+        })
+        .catch(function(response) {
+          toastr.info("Could not login.");
+        });
     };
 
   $scope.signUp = function () {
@@ -28,12 +33,8 @@ controller('LoginCtrl', ['$scope', '$auth', '$state', '$location', 'toastr',
       .login({username: $scope.username, email: $scope.email, password: $scope.password})
       .then(function (response) {
         $auth.setToken(response);
-        $state.go('admin');
-        // toastr.success(
-        //   'Succesfully logined in!',
-        //   {closeButton: true}
-        // );
 
+        $state.go('home');
       })
       .catch(function (response) {
       });

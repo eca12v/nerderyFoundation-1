@@ -11,30 +11,31 @@
 
     <md-content id="add-group" layout-padding>
       <div id="add-group-banner" layout-gt-sm="row">
-        <h1>Add A Group to the Network</h1>
+        <h1 id="add-group-title">Expand The Network</h1>
+        <!-- <p>Add A Group</p> -->
       </div>
       <form name="form">
       <div layout-gt-sm="row">
         <md-input-container class="md-block" flex-gt-sm>
-          <label>Group Name</label>
-          <input ng-model="groupNameIn">
+          <label class="md-required">Group Name</label>
+          <input required name="groupName" ng-model="groupNameIn">
         </md-input-container>
       </div>
 
       <md-input-container class="md-block" flex-gt-sm>
         <label>URL</label>
-        <input ng-model="groupUrlIn">
+        <input required ng-model="groupUrlIn">
       </md-input-container>
       <div layout-gt-sm="row">
 
       <md-input-container class="md-block" flex-gt-xs>
         <label>Contact Name</label>
-        <input ng-model="contactNameIn">
+        <input required ng-model="contactNameIn">
       </md-input-container>
 
       <md-input-container  class="md-block" flex-gt-sm>
         <label>Contact Email</label>
-        <input ng-model="contactEmail" type="email">
+        <input required ng-model="contactEmail" type="email">
       </md-input-container>
 
     </div>
@@ -42,14 +43,14 @@
     <div layout-gt-sm="row">
       <md-input-container  class="md-block" flex-gt-sm>
         <label>Group Description</label>
-        <textarea ng-model="description" md-placeholder="Description"></textarea>
+        <textarea required ng-model="description" md-placeholder="Description"></textarea>
        </md-input-container>
     </div>
 
     <div layout-gt-sm="row">
       <md-input-container class="md-block" flex-gt-sm>
         <label>Location</label>
-        <md-select ng-model="location">
+        <md-select required ng-model="location">
         <md-option ng-repeat="option in locations" value="{{option}}">{{option}}</md-option>
         </md-select>
       </md-input-container>
@@ -118,7 +119,7 @@
 
           <md-input-container class="md-block" flex-gt-sm>
             <label>Typical Meeting Size</label>
-            <md-select ng-model="sizeOfMeeting">
+            <md-select required ng-model="sizeOfMeeting">
             <md-option ng-repeat="option in meetingSizes" value="{{option}}">{{option}}</md-option>
             </md-select>
           </md-input-container>

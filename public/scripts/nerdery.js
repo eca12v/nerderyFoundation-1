@@ -5,7 +5,7 @@ var myApp = angular.module( 'myApp', [
   'Authorization',
   'xeditable',
   'ngFileUpload',
-  'toastr'
+  'ngMessages'
 ]);
 
 /// Routes ///
@@ -59,6 +59,7 @@ function($stateProvider, $urlRouterProvider, $mdIconProvider, $mdThemingProvider
         console.log($auth.isAuthenticated());
         if (!$auth.isAuthenticated()) {
           $state.go('login');
+          toastr.info("Please create a group submitter account to create a group.", {"positionClass": "toast-top-full-width"});
       }
     }]
   }).
@@ -86,27 +87,32 @@ function($stateProvider, $urlRouterProvider, $mdIconProvider, $mdThemingProvider
   $urlRouterProvider.otherwise('home');
 
   $authProvider.google({
-    clientId: '125382478230-3n8qqoeugab70kluqqm1o3hleh6acbcc.apps.googleusercontent.com',
-    redirectUri: 'http://localhost:8080/auth/google'
+    clientId: '125382478230-3n8qqoeugab70kluqqm1o3hleh6acbcc.apps.googleusercontent.com'
+  });
+
+  $authProvider.facebook({
+      clientId: '621280634704305'
   });
 
   $mdIconProvider.icon('md-close', 'img/icons/ic_close_24px.svg', 24);
 
-  //change default color for primary
-  // var indigo = $mdThemingProvider.extendPalette('indigo', {
-  //     '500': '664659'
-  // });
-  // $mdThemingProvider.definePalette('indigo', indigo);
+  // change default color for primary
+  var indigo = $mdThemingProvider.extendPalette('indigo', {
+      '500': '664659'
+  });
+  $mdThemingProvider.definePalette('indigo', indigo);
 
-  //change default color for warn
+  // change default color for warn
 
-  // $mdThemingProvider.definePalette('red', indigo);
-  //
-  // $mdThemingProvider.theme('default').primaryPalette('indigo').warnPalette('red');
+  $mdThemingProvider.definePalette('red', indigo);
 
-  //here you change placeholder/foreground color.
+  $mdThemingProvider.theme('default').primaryPalette('indigo').warnPalette('red');
+
+  // here you change placeholder/foreground color.
   $mdThemingProvider.theme('default').foregroundPalette[3] = "gray";
 
+  toastr.options.positionClass = "toast-top-full-width";
+  toastr.options.showDuration = 500;
  }]);//end of myapp config
 
 
@@ -115,3 +121,7 @@ myApp.run(function($rootScope, $window, $auth) {
       // $rootScope.currentUser = JSON.parse($window.localStorage.currentUser);
     }
   });
+
+  myApp.run(function(editableOptions) {
+  editableOptions.theme = 'bs3';
+});

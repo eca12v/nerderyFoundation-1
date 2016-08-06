@@ -37,42 +37,47 @@
 
      <div layout="column">
 
-     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 6 | limitTo: -6">
+     <md-menu-item>
+       <md-button ng-click="changeOverallTech('')">
+       </md-button>
+     </md-menu-item>
+
+     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 5 | limitTo: -5">
        <md-button ng-click="changeOverallTech(t.Technology)">
          {{t.Technology}}
        </md-button>
      </md-menu-item>
    </div>
    <div layout="column">
-     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 12 | limitTo: -6">
+     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 11 | limitTo: -6">
        <md-button ng-click="changeOverallTech(t.Technology)">
          {{t.Technology}}
        </md-button>
      </md-menu-item>
    </div>
    <div layout="column">
-     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 18 | limitTo: -6">
+     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 17 | limitTo: -6">
        <md-button ng-click="changeOverallTech(t.Technology)">
          {{t.Technology}}
        </md-button>
      </md-menu-item>
    </div>
    <div layout="column">
-     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 24 | limitTo: -6">
+     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 23 | limitTo: -6">
        <md-button ng-click="changeOverallTech(t.Technology)">
          {{t.Technology}}
        </md-button>
      </md-menu-item>
    </div>
    <div layout="column">
-     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 30 | limitTo: -6">
+     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 29 | limitTo: -6">
        <md-button ng-click="changeOverallTech(t.Technology)">
          {{t.Technology}}
        </md-button>
      </md-menu-item>
    </div>
    <div layout="column">
-     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 33 | limitTo: -3">
+     <md-menu-item ng-repeat="t in tech.Technologies | limitTo: 33 | limitTo: -4">
        <md-button ng-click="changeOverallTech(t.Technology)">
          {{t.Technology}}
        </md-button>
@@ -88,8 +93,12 @@
      </md-button>
 
   <md-menu-content width="8">
+    <md-menu-item>
+      <md-button ng-click="changeLocation('')">
+      </md-button>
+    </md-menu-item>
     <md-menu-item ng-repeat="l in location">
-      <md-button ng-click="changeOverallTech(t.Technology)">
+      <md-button ng-click="changeLocation(l)">
         {{l}}
       </md-button>
     </md-menu-item>
@@ -103,6 +112,10 @@
     </md-button>
 
  <md-menu-content width="8">
+   <md-menu-item>
+     <md-button ng-click="changeOverallTech('')">
+     </md-button>
+   </md-menu-item>
    <md-menu-item ng-repeat="s in typicalSize">
      <md-button ng-click="changeOverallTech(t.Technology)">
        {{s}}
@@ -245,14 +258,17 @@
         <div flex="30" flex-sm="50" flex-xs="80" class="md-padding flip" ng-repeat="group in groups | multiWordFilter: techStr | filter: locationStr | filter: sizeStr | filter: filterStr track by $index">
           <!-- <div class="card" ng-class="autoScroll ? 'flipped' : ''"> -->
           <a class="group-link" ng-href="/#/groups/{{group.name}}">
-            <md-card class="group-tile md-whiteframe-6dp face front" ng-mouseenter="description = !description" ng-mouseleave="description = !description" ng-style="{'background-image':'url(../images/code-1486361__340.jpg)', 'background-size':'cover', 'background-position':'center'}" >
+            <md-card class="group-tile md-whiteframe-6dp face front" ng-mouseenter="description = !description" ng-mouseleave="description = !description">
 
-              <md-card-title>
-                <md-card-title-text>
-                  <span class="md-headline">{{group.name}}</span>
-                </md-card-title-text>
+              <md-card-header>
+                <md-card-avatar>
+                  <img class="md-user-avatar" ng-src="{{avatarImage}}" alt="" />
+                </md-card-avatar>
+                <md-card-header-text>
+                  <span class="md-title">{{group.name}}</span>
+                </md-card-header-text>
                   <!-- <div class="md-media-sm card-media"> -->
-              </md-card-title>
+              </md-card-header>
               <md-card-content ng-show="description">
                 <p>
                   {{group.description}}
@@ -275,7 +291,7 @@
 
         <!-- </div> -->
       </div>
-        <!-- <h3 ng-show="(groups| multiWordFilter: techStr | filter: locationStr | filter: sizeStr | filter: filterStr).length == 0">Unfortunately, no local tech user groups fit your current criteria!</h3> -->
+        <h3 ng-show="(groups| multiWordFilter: techStr | filter: locationStr | filter: sizeStr | filter: filterStr).length == 0">Unfortunately, no local tech user groups fit your current criteria!</h3>
       </md-content>
     </div>
 

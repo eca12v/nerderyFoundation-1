@@ -1,4 +1,7 @@
-myApp.controller( 'AddGroupController',  [ 'Upload', 'groupFactory', '$scope', '$http', '$location', '$rootScope', '$state',   function( Upload, groupFactory, $scope,  $http, $location, $authProvider, $state, $rootScope  ){
+myApp.controller( 'AddGroupController',  [ 'Upload', 'groupFactory', '$scope', '$http', '$state', '$rootScope', '$auth', function( Upload, groupFactory, $scope, $http, $state, $rootScope, $auth ){
+
+  $scope.isAuthenticated = $auth.isAuthenticated;
+  $scope.currentUser = $auth.getPayload;
 
   var self = this;
   self.readonly = false;
@@ -146,7 +149,6 @@ $scope.submit = function(){
     // $scope.postGroup();
   }else{$scope.postGroup();}
 
-  swal("Submitted for Approval!");
 
 }; //end submit function
 
@@ -172,10 +174,12 @@ $scope.upload = function(file){
       affiliations: $scope.affiliations,
       affiliationURL: $scope.affiliationURL,
       eventInfo: $scope.eventInfo,
-      sizeOfMembership: $scope.sizeOfMembership
+      sizeOfMembership: $scope.sizeOfMembership,
+      submitterID: $scope.currentUser()._id
     }
   }).then(function (resp) {
             console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
+            toastr.info("Your group was creating and is awaiting admin approval.");
         }, function (resp) {
             console.log('Error status: ' + resp.status);
         }, function (evt) {
@@ -206,7 +210,8 @@ console.log('in postgroup');
     affiliations: $scope.affiliations,
     affiliationURL: $scope.affiliationURL,
     eventInfo: $scope.eventInfo,
-    sizeOfMembership: $scope.sizeOfMembership
+    sizeOfMembership: $scope.sizeOfMembership,
+    submitterID: $scope.currentUser()._id
 
   };
   console.log( 'group submitted: ', newGroup);
@@ -217,8 +222,8 @@ console.log('in postgroup');
     // console.log( 'group submitted: ', newGroup);
     console.log('response: ', response.data);
     $scope.groups.push(response.data);
-
     $state.go('home');
+    toastr.info("Your group was created and is awaiting admin approval.");
     }, function(error){
     $scope.status = 'swing and a miss';
 

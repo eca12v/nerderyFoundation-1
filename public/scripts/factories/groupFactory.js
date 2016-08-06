@@ -4,10 +4,10 @@ myApp.factory( 'groupFactory', ['$http', function($http) {
   };
 
   groups.editGroup = function ( id, updatedGroup ) {
-    console.log( 'inside editGroup Factory, id ', updatedGroup.name );
+    console.log( 'inside editGroup Factory, groupURL ', updatedGroup.groupURL );
     console.log( 'inside editGroup Factory, updatedGroup ', updatedGroup);
     return $http.put('groups/editGroup/' + id, updatedGroup ).success(function(data) {
-    console.log('editGroup ', data);
+    console.log('returning editGroup ', data.groupURL);
     });
   };
 
