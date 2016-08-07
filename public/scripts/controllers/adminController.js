@@ -1,49 +1,38 @@
-myApp.controller( 'AdminController', ['$scope', '$http', '$location', '$rootScope', 'groupFactory', '$mdDialog', '$mdMedia', function( $scope, $http, $location, $rootScope, groupFactory, $mdDialog, $mdMedia ){
-console.log( 'loaded AdminController');
-
-  $scope.unapprovedGroups = groupFactory.getUnapprovedGroups();
-  console.log($scope.unapprovedGroups);
-
+nerderyApp.controller( 'AdminController', ['$scope', '$http', 'groupFactory', '$mdDialog', '$mdMedia', function( $scope, $http, groupFactory, $mdDialog, $mdMedia ){
+  // populate unapproved groups queue
   groupFactory.getUnapprovedGroups().then(function(response) {
 		$scope.groups = response.data;
-    console.log($scope.groups);
 	});
-
+  // populate flagged groups queue
   groupFactory.getFlaggedGroups().then(function(response) {
     $scope.flaggedGroups = response.data;
-    console.log($scope.flaggedGroups);
   });
-
+  // approve a group and remove from unapproved queue
   $scope.approve = function(id, index) {
-    console.log(id);
     groupFactory.approveGroup(id);
     $scope.groups.splice(index, 1);
   };
-
+  // unflag a group and remove from flagged queue
   $scope.unFlag = function(id, index) {
-    console.log(id);
     groupFactory.unFlagGroup(id);
     $scope.flaggedGroups.splice(index, 1);
   };
-
+  // delete a group
   $scope.delete = function(id, index, panel){
-    console.log( 'delete clicked, index: ', id );
     groupFactory.deleteGroup( id ).then(function(response){
-      console.log('Succesfully deleted');
+      // if group was in the flagged queue remove it from that queue
       if (panel == 'flagged') {
         $scope.flaggedGroups.splice(index, 1);
       } else {
+        // if the group was in the unapproved queue remove it from that queue
         $scope.groups.splice(index, 1);
       }
     });
   };
-
+  // pop up alert helper method
   $scope.status = '  ';
   $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
   $scope.showAlert = function(ev) {
-    // Appending dialog to document.body to cover sidenav in docs app
-    // Modal dialogs should fully cover application
-    // to prevent interaction outside of dialog
     $mdDialog.show(
       $mdDialog.alert()
         .parent(angular.element(document.querySelector('#popupContainer')))
@@ -55,9 +44,8 @@ console.log( 'loaded AdminController');
         .targetEvent(ev)
     );
   };
-
+  // comfirmation pop up for approving/unflagging/deleting
   $scope.showConfirm = function(ev, action, actionDesc, id, index) {
-   // Appending dialog to document.body to cover sidenav in docs app
    var confirm = $mdDialog.confirm()
          .title('Would you like to ' + actionDesc + ' this group?')
          .textContent()
@@ -82,8 +70,6 @@ console.log( 'loaded AdminController');
        });
      }
    }, function() {
-    //  $scope.status = 'You have not approved this group yet';
    });
  };
-
 }]); //end adminController

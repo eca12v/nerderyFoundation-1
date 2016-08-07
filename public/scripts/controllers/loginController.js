@@ -1,48 +1,27 @@
-angular.module('Authorization', ['satellizer', 'toastr']).
-
-controller('LoginCtrl', ['$scope', '$auth', '$state', '$location',
-  function($scope, $auth, $state, $location, $authProvider) {
-
-  // console.log(toastr);
+nerderyApp.controller('LoginCtrl', ['$scope', '$auth', '$state', '$location',
+function($scope, $auth, $state, $location, $authProvider) {
+  // authorization methods
   $scope.isAuthenticated = $auth.isAuthenticated;
   $scope.currentUser = $auth.getPayload;
-
+  // oauth/sateillzer methods
   $scope.authenticate = function(provider) {
-      $auth.authenticate(provider).then(function(response) {
-          $state.go('home');
-        })
-        .catch(function(response) {
-          toastr.info("Could not login.");
-        });
-    };
-
-  $scope.signUp = function () {
-    $auth
-      .signup({username: $scope.username, email: $scope.email, password: $scope.password})
-      .then(function (response) {
-        $auth.setToken(response);
-        $state.go('home');
-
-      })
-      .catch(function (response) {
-      });
+    $auth.authenticate(provider).then(function(response) {
+      $state.go('home');
+    }).catch(function(response) {
+      toastr.info("Could not login.");
+    });
   };
-
+  // admin login function
   $scope.login = function () {
-    $auth
-      .login({username: $scope.username, email: $scope.email, password: $scope.password})
-      .then(function (response) {
-        $auth.setToken(response);
-
-        $state.go('home');
-      })
-      .catch(function (response) {
-      });
+    $auth.login({username: $scope.username, email: $scope.email, password: $scope.password}).then(function (response) {
+      $auth.setToken(response);
+      $state.go('home');
+    }).catch(function (response) {
+    });
   };
-
+  // logout function
   $scope.logout = function () {
     $auth.logout();
     $state.go('home');
   };
-}
-]);
+}]);

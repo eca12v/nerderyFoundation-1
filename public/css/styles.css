@@ -25,9 +25,9 @@ md-dialog md-dialog-content:not([layout=row]) > *:first-child:not(.md-subheader)
   color: black;
   }
 
-md-sidenav{
-  width: 500px;
-  line-height: 1.2;
+  md-sidenav{
+    width: 500px;
+    line-height: 1.2;
   }
 
   /*md-content{
@@ -166,7 +166,24 @@ jumbo-home {
   height: 100%;
 }*/
 
-/*Group Tiles*******************************************************************/
+/*Group Tiles*/
+
+#filter-column {
+  padding-right: 0;
+}
+
+#groups-column {
+  padding-left: 0;
+}
+
+#groups-container {
+  margin-top: 0;
+}
+  .cardsContainer {
+    /*background-image: url('http://thecodeplayer.com/uploads/media/pxpat.png');*/
+    height: 100%
+  }
+
 
 .cardsContainer {
   background-image: url('http://thecodeplayer.com/uploads/media/pxpat.png');
@@ -181,20 +198,52 @@ md-card-title-text .md-headline {
 
 md-card.face {
   /*background-image: url("../images/code-1486361__340.jpg");*/
+<<<<<<< HEAD
   border: 1px solid #664659;
   border-radius: 7px;
   opacity: 0.9;
-  background-color:#664659;
+  /*background-color:#664659;*/
   background-color: rgba(102, 70, 89, 0.9);
+  height: 300px;
+
+  /*border: 1px solid #664659;
+  border-radius: 7px;*/
+  position: relative;
+  background: rgba(102, 70, 89, 0.9); /* For browsers that do not support gradients */
+  background: radial-gradient(rgba(102, 70, 89, 0.9), rgba(102, 70, 89, 0.7));
   height: 300px;
   color: white;
   transition: transform .2s ease-in;
   z-index: 1;
 }
 
+.md-user-avatar {
+  height: 150px;
+  width: 150px;
+  border: 2px solid white;
+  border-radius: 100%;
+  position: absolute;
+  top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  box-shadow: 1px 1px 2px #aba8a8;
+}
+
+#no-results {
+  text-align: center;
+  margin: auto;
+  padding: 50px;
+}
+
+md-card-footer p {
+  color: #aba8a8;
+}
+
 md-card.face:hover {
-  border: 1px solid #664659;
-  border-radius: 7px;
+  /*border: 1px solid #664659;
+  border-radius: 7px;*/
   color: white;
   height: auto;
   min-height: 300px;
@@ -315,10 +364,13 @@ padding-left: 15px;
 .navbar-default .navbar-nav>li>a:hover {
   color: #E2DE00;
 }
-/*Search and Filter on Main****************************************************/
-main-search {
-  width: 75%;
+
+
+#main-search {
+  width: 100%;
   display: inline-block;
+  padding: 0;
+  margin: auto;
 }
 
 filterBar {
@@ -327,12 +379,33 @@ filterBar {
   vertical-align: middle;
 }
 
-searchBar {
+
+#filter-box {
+  margin-top: 0;
+  padding-bottom: 50px;
+}
+
+.filter-button {
+  width:100%;
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+#filter-title,
+#clear-filter {
+  color: gray;
+}
+
+#filter-heading {
+  padding-left: 20px;
+}
+
+#searchBar {
   display: inline-block;
-  /*float: left;*/
-  width: 50%;
+  width: 100%;
   vertical-align: middle;
-  margin-left: 10px;
+  padding: 0 8px;
+  text-align: center;
 }
 
 sortBar {
@@ -349,7 +422,12 @@ non-home {
   margin-bottom: 15px;
 }
 
-non-home-group {
+#filterSide {
+  background-color: #efede7;
+}
+
+#non-home-group {
+
   height: auto;
 }
 
@@ -639,7 +717,7 @@ md-card-title-text .md-headline {
 }
 
 #group-jumbo {
-  background: url('../img/techmeetup.jpeg') no-repeat center center scroll;
+  background: url('../images/techmeetup.jpeg') no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -714,7 +792,7 @@ md-dialog md-dialog-content:not([layout=row]) > *:first-child:not(.md-subheader)
 /*.text-center login-title{
   color: black;*/
 
-}
+/*}*/
 .editGroup {
   float: left;
 }

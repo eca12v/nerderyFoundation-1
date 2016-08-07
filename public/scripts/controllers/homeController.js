@@ -1,115 +1,109 @@
-myApp.controller( 'HomeController', ['$scope', '$http', '$location', 'groupFactory', '$auth',
+nerderyApp.controller( 'HomeController', ['$scope', '$http', '$location', 'groupFactory', '$auth',
 function( $scope, $http, $location, groupFactory, $auth){
-console.log( 'loaded homeController');
-
-$scope.isAuthenticated = $auth.isAuthenticated;
-$scope.currentUser = $auth.getPayload;
-
-groupFactory.getApprovedGroups().then(function(response) {
-  $scope.groups = response.data;
-  if($scope.groups.photoURL){
-    $scope.avatarImage = $scope.groups.photoURL;
-  }else{
-    $scope.avatarImage = "../images/imgres copy.jpg";
-  }
-  console.log($scope.groups);
-});
-
-$http({
-  method: "GET",
-  url: '/tech.json',
-})
-.then(function (response) {
-  $scope.tech = response.data;
-  console.log($scope.tech);
-}, function myError(response) {
-  $scope.tech = response.statusText;
-});//End of http call
-
-$scope.selectedTech = '';
-$scope.selectedSubTech = '';
-$scope.techStr = '';
-$scope.overallTechStr = '';
-
-$scope.changeOverallTech = function(tech) {
-  console.log('overallchangeTech hit');
-  console.log(tech);
-  $scope.selectedTech = tech;
-  // console.log(tech.Skills);
-  if ($scope.techStr) {
+  // authorization methods
+  $scope.isAuthenticated = $auth.isAuthenticated;
+  $scope.currentUser = $auth.getPayload;
+  // poopulate group display with all approved groups
+  groupFactory.getApprovedGroups().then(function(response) {
+    $scope.groups = response.data;
+    // if photo associated with group, use that else use default
+    if($scope.groups.photoURL){
+      $scope.avatarImage = $scope.groups.photoURL;
+    }else{
+      $scope.avatarImage = "../images/imgres copy.jpg";
+    }
+  });
+  // retrieve techList to populate filtering options
+  $http({
+    method: "GET",
+    url: '/tech.json',
+  })
+  .then(function (response) {
+    $scope.tech = response.data;
+  }, function myError(response) {
+    $scope.tech = response.statusText;
+  });//End of http call
+  // filtering strings
+  $scope.selectedTech = '';
+  $scope.selectedSubTech = '';
+  $scope.techStr = '';
+  $scope.overallTechStr = '';
+  // select main tech branch
+  $scope.changeOverallTech = function(tech) {
+    $scope.selectedTech = tech;
+    // if existing filtering string clear and add new selection
+    if ($scope.techStr) {
+      $scope.techStr = '';
+      $scope.techStr += tech + ' ';
+    } else {
+      // add selected tech to filtering string
+      $scope.techStr += tech + ' ';
+    }
+  };
+  // add subTech to filtering string
+  $scope.changeTechStr =  function(tech) {
+    // index of tech
+    var sub = $scope.techStr.indexOf(tech);
+    // if not present add in
+    if (sub == -1) {
+      $scope.selectedSubTech = tech;
+      $scope.techStr += ' ' + tech + ' ';
+    } else {
+      // replace subtech with new selection
+      $scope.selectedSubTech = '';
+      var newStr = $scope.techStr.replace(tech, "");
+      $scope.techStr = newStr;
+    }
+  };
+  // add third tier sub tech to search string
+  $scope.changeSubTechStr =  function(tech) {
+    var sub = $scope.techStr.indexOf(tech);
+    // if not present add in
+    if (sub == -1) {
+      $scope.techStr += ' ' + tech + ' ';
+    } else {
+      // replace third tier subtech with new selection
+      var newStr = $scope.techStr.replace(tech, "");
+      $scope.techStr = newStr;
+    }
+  };
+  // change filter location str
+  $scope.changeLocation =  function(location) {
+    $scope.locationStr = location;
+  };
+  // change filter size str
+  $scope.changeSize =  function(size) {
+    $scope.sizeStr = size;
+  };
+  // arrays to populate filter drop down menus
+  $scope.location = [
+    "Minneapolis - St. Paul",
+    "Duluth - Superior",
+    "Fargo - Valley City, ND",
+    "Sioux Falls(Mitchell), SD",
+    "Mankato",
+    "Rochester - Mason City - Austin, MN - IA",
+    "La Crosse - Eau Claire, WI"
+  ];
+  $scope.typicalSize = [
+    '0-25', '25-50', '50-100', '100-500'
+  ];
+  // clears all the filters
+  $scope.clearAllFilters = function() {
     $scope.techStr = '';
-    $scope.techStr += tech + ' ';
-  } else {
-    $scope.techStr += tech + ' ';
-  }
-};
-
-$scope.changeTechStr =  function(tech) {
-  console.log('changeTech hit');
-  console.log(tech);
-  // console.log(tech.Skills);
-  var sub = $scope.techStr.indexOf(tech);
-  console.log(sub);
-  if (sub == -1) {
-    $scope.selectedSubTech = tech;
-    $scope.techStr += ' ' + tech + ' ';
-  } else {
+    $scope.selectedTech = '';
     $scope.selectedSubTech = '';
-    var newStr = $scope.techStr.replace(tech, "");
-    console.log(newStr);
-    $scope.techStr = newStr;
-  }
-};
-
-$scope.changeSubTechStr =  function(tech) {
-  console.log('changeTech hit');
-  console.log(tech);
-  var sub = $scope.techStr.indexOf(tech);
-  console.log(sub);
-  if (sub == -1) {
-    $scope.techStr += ' ' + tech + ' ';
-  } else {
-    var newStr = $scope.techStr.replace(tech, "");
-    console.log(newStr);
-    $scope.techStr = newStr;
-  }
-};
-$scope.typicalSize = ['0-25', '25-50', '50-100', '100-500'];
-
-$scope.changeLocation =  function(location) {
-  console.log('changeLocation hit');
-  console.log(location);
-  var sub = $scope.techStr.indexOf(location);
-  console.log(sub);
-  if (sub == -1) {
-    $scope.techStr += ' ' + location + ' ';
-  } else {
-    var newStr = $scope.techStr.replace(location, "");
-    console.log(newStr);
-    $scope.techStr = newStr;
-  }
-};
-
-$scope.location = [
-  "Minneapolis - St. Paul",
-  "Duluth - Superior",
-  "Fargo - Valley City, ND",
-  "Sioux Falls(Mitchell), SD",
-  "Mankato",
-  "Rochester - Mason City - Austin, MN - IA",
-  "La Crosse - Eau Claire, WI"
-];
-
+    $scope.locationStr = '';
+    $scope.sizeStr = '';
+  };
+  // menu helper functions
   var originatorEv;
   $scope.openMenu = function($mdOpenMenu, ev) {
     originatorEv = ev;
     $mdOpenMenu(ev);
   };
-
-
-
 }]) //end homeController
-
+// custom filter to allow for search words in same string, separated by space
 .filter("multiWordFilter", function($filter){
     return function(inputArray, searchText){
         var wordArray = searchText ? searchText.toLowerCase().split(/\s+/) : [];

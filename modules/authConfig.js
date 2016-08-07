@@ -1,5 +1,4 @@
 module.exports = {
-
   TOKEN_SECRET: process.env.TOKEN_SECRET || 'SECRET',
 
   FACEBOOK_SECRET: process.env.FACEBOOK_SECRET || 'a8fa21e754f6ad0f21ab615c4c101d02',
