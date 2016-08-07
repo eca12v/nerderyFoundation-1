@@ -105,23 +105,38 @@ nerderyApp.controller( 'GroupController', ['$scope', '$http', 'groupFactory', '$
 	    $scope.close();
 	  });
 	};//end of editGroup
+
+
 	// DELETES GROUP AFTER SHOW CONFIRM, REDIRECTS BACK TO HOME
-	$scope.confirmDelete = function(ev, id, index ) {
-    var confirm = $mdDialog.confirm()
-          .title('Are you sure?')
-          .textContent('This cannot be undone')
-          .ariaLabel('Lucky day')
-          .targetEvent(ev)
-          .ok('I am sure I want to delete')
-          .cancel('Never mind, take me back to group page');
-    $mdDialog.show(confirm).then(function() {
-      $scope.delete(id, index);
-    }, function() {
-      $scope.close();
-      $state.go('group');
-    });
-  };
+	$scope.confirmDelete = function( id, index ) {
+		console.log( 'confirmDelete clicked');
+		swal({
+		 title: "Are you sure?",
+		 text: "You will not be able to recover this imaginary file!",
+		 type: "warning",
+		 showCancelButton: true,
+		 confirmButtonColor: "#3F51B5",
+		 confirmButtonText: "Yes, delete it!",
+		 closeOnConfirm: false,
+		 closeOnCancel: false
+	 },
+		function(isConfirm){
+			if(isConfirm){
+			$scope.delete( id, index );
+			console.log( 'after $scope.delete, id: ', id);
+			$scope.close();
+			swal("Deleted!", "Your imaginary file has been deleted.", "success");
+			$state.go('home');
+
+		} else {
+			swal("Cancelled");
+		}
+		}
+	);
+	};
+
   $scope.delete = function(id, index){
+		console.log( 'delete clicked, id: ', id);
 		// send delete request to the factory
     groupFactory.deleteGroup( id ).then(function(response){
       $state.go('home');

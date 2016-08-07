@@ -1,5 +1,6 @@
 nerderyApp.controller('LoginCtrl', ['$scope', '$auth', '$state', '$location',
 function($scope, $auth, $state, $location, $authProvider) {
+
   // authorization methods
   $scope.isAuthenticated = $auth.isAuthenticated;
   $scope.currentUser = $auth.getPayload;
@@ -11,6 +12,8 @@ function($scope, $auth, $state, $location, $authProvider) {
       toastr.info("Could not login.");
     });
   };
+
+
   // admin login function
   $scope.login = function () {
     $auth.login({username: $scope.username, email: $scope.email, password: $scope.password}).then(function (response) {
@@ -24,4 +27,5 @@ function($scope, $auth, $state, $location, $authProvider) {
     $auth.logout();
     $state.go('home');
   };
+  $scope.show=false;
 }]);

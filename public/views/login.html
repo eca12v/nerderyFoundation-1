@@ -9,6 +9,7 @@
 <!-- login -->
 
 <div class="container">
+<<<<<<< HEAD
     <div class="row row-centered">
       <div class="col-md-6 col-md-offset-3"></div>
        <form class="form-signin">
@@ -52,4 +53,69 @@
 </div>
 </form>
 </div>
+=======
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div id="group-contact-login" class="panel panel-default">
+        <div class="panel-heading">
+
+          <div class="panel-title"><h1>Add Your Group to The Network!</h1>
+
+          <h5>Log in with Google, Facebook, or Github
+          to submit a group for approval.
+
+        </h5></div>
+
+
+          <div class="panel-body">
+
+          <!-- <input class="btn btn-lg btn-facebook btn-block" type="submit" value="Login via facebook"> -->
+          <a class="btn btn-block btn-social btn-lg active btn-google" ng-click="authenticate('google')">
+            <span class="fa fa-google"></span>
+              Google
+          </a>
+          <a class="btn btn-block btn-social btn-lg active btn-facebook" ng-click="authenticate('facebook')">
+            <span class="fa fa-facebook"></span>
+            Facebook
+          </a>
+
+          <a class="btn btn-block  btn-social btn-lg active btn-github" ng-click="">
+            <span class="fa fa-github"></span>
+            Git Hub
+          </a>
+<div class="clr"><hr /></div>
+<div class="form-group">
+  <div class="checkbox-text">
+
+
+<h5>Admin for this Site?</h5><input type="checkbox" ng-model="admin">
+  <i class="fa fa-lock" aria-hidden="true"></i></div>
+
+  <div ng-show="admin">
+
+<!-- ADMIN PART ____________________________________________________________ -->
+
+<form class="admin-signin">
+  <div class="clr"><hr /></div>
+    <div class="admin-text"></div>
+      <input type="text" class="form-control" placeholder="Username" autofocus ng-model="username"><br />
+
+      <input type="text" class="form-control"  placeholder="Email" autofocus ng-model="email"><br />
+
+      <input type="password" class="form-control" placeholder="Password" autofocus ng-model="password"><br />
+
+      <md-button class="btn md-button btn-info btn-block md-ink-ripple" ng-click="login()">Login</md-button>
+  </form>
+</div>
+</div>
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+>>>>>>> b3058fe9146d9b2c03cfe95c79a424536a088db9
 </div>

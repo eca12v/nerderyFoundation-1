@@ -14,15 +14,70 @@ body {
 md-input-container{
   padding-right: 30px;
   width: 200px;
+
+  header {
+      background: url('http://techanddesign.ca/wp-content/uploads/2016/01/technetwork.jpg') no-repeat center center scroll;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      background-size: cover;
+      -o-background-size: cover;
+      position:relative;
+      padding-bottom: 30px;
+
+      position: relative;
+      height: 400px;
+      width: 100%;
+      box-shadow: 2px 2px 3px gray;
+
   }
+
+    #jumbo-home {
+        display: block;
+        height:auto;
+        width: 100%;
+        background: none;
+        text-align: center;
+    }
+    .jumbotron h2{
+      font-weight: bold;
+      color:#FFFF66;
+      text-shadow: 1px 1px 2px black;
+    }
+    .jumbotron h1{
+      color:#fff;
+      text-shadow: 1px 1px 2px black;
+    }
+  /*Search Bar*/
+  container-fluid ng-scope{
+    background-color: #664659
+
+  }
+
+
+  /*page-container {
+      background-color: #664659;
+    }Makes whole page background plum*/
+
+    page-container {
+      padding-bottom: 50px;
+      padding-left: 0;
+      padding-right: 0;
+
+    }
+
 
 md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
   background-color: #664659;
   }
 
 
+
 md-dialog md-dialog-content:not([layout=row]) > *:first-child:not(.md-subheader) {
   color: black;
+
+  !md-dialog md-dialog-content:not([layout=row]) > *:first-child:not(.md-subheader) {
+      color: black;
+
   }
 
   md-sidenav{
@@ -30,11 +85,43 @@ md-dialog md-dialog-content:not([layout=row]) > *:first-child:not(.md-subheader)
     line-height: 1.2;
   }
 
+
   /*md-content{
     /*padding-right: 50px;*/
   /*}*/
 
-.confirmDeleteClass {
+
+
+
+  md-content{
+    padding-right: 50px;
+
+  md-card-title-media{
+    height: 10px
+  }
+
+  !md-card md-card-title {
+    padding: 24px 16px 16px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    /* display: flex; */
+    /* -webkit-flex: 1; */
+    -ms-flex: 1;
+    /* flex: 1; */
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+  md-card-content,
+  md-card md-card-title md-card-title-text {
+    color: black;
+
+  }
+
+/*-----------------------------*/
+  .confirmDeleteClass {
+
     position: relative;
     background-color: black;
   }
@@ -66,6 +153,7 @@ add-group-banner {
   padding-left: 10px;
   color: white;
 }
+
 
 page-container {
   padding-bottom: 50px;
@@ -112,7 +200,8 @@ jumbo-home {
   }
 */
 
-/*Landing Page*/
+
+/*Landing Page and GROUP page*************************************************/
 .flex {
   -webkit-flex: 1 1 0;
       -ms-flex: 1 1 0;
@@ -193,6 +282,7 @@ jumbo-home {
 md-card-title-text .md-headline {
   text-align: center;
 }
+
 
 /*ng-style="{'background-image':'url({{group.photoURL}})', 'background-size':'cover', 'background-position':'center'}"*/
 
@@ -336,7 +426,7 @@ padding-left: 15px;
 }
 
 .navbar-default .navbar-brand {
-  color:#E2DE00;
+  color:#FFFF66;
   font-size: 18px;
 }
 
@@ -362,7 +452,7 @@ padding-left: 15px;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
-  color: #E2DE00;
+  color: #FFFF66;
 }
 
 
@@ -371,6 +461,7 @@ padding-left: 15px;
   display: inline-block;
   padding: 0;
   margin: auto;
+  text-transform: none;
 }
 
 filterBar {
@@ -400,7 +491,7 @@ filterBar {
   padding-left: 20px;
 }
 
-#searchBar {
+.searchBar {
   display: inline-block;
   width: 100%;
   vertical-align: middle;
@@ -436,7 +527,6 @@ md-input-container.md-default-theme label,
     color:red;
 }
 
-/*admin page*******************************************************************/
 
 
 /*group-contact-login*/
@@ -459,6 +549,11 @@ md-input-container.md-default-theme label,
   margin-bottom: 25px;
   font-size: 44px;
 
+
+.panel-title {
+	font-weight:bold;
+  text-align:center;
+
 }
 .panel-body a{
   display: inline-block;
@@ -467,12 +562,17 @@ md-input-container.md-default-theme label,
 }
 text-center login-title{
   color: black;
+}
+.form-control{
+  width: 90%;
+  margin:auto;
 
 }
-/*.panel-title {
-  color: #353535;
-}*/
+checkbox-text{
+  display:inline-block;
+}
 /*admin buttons*/
+
 
 .row {
     margin-right: -15px;
@@ -494,138 +594,6 @@ text-center login-title{
 color:#fff;
 }
 
-#google-icon{
-  /*display: inline-block;*/
-  text-align: center;
-  vertical-align: middle;
-	width: 160px;
-	height:40px;
-  border-radius: 8px;
-  background: rgba(226, 102, 62, .99);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(226, 102, 62, .99)), to(rgba(226, 102, 62, .99)));
-  background: -moz-linear-gradient(top, rgba(226, 102, 62, .99), rgba(226, 102, 62, .99));
-  background: linear-gradient(to bottom, rgba(226, 102, 62, .99), rgba(226, 102, 62, .99));
-  font-family: 'Open Sans', sans-serif;
-	font-weight:700;
-  color: #fff;
-  text-decoration: none;
-	margin-right: 10px;
-}
-#google-icon:hover,
-#google-icon:focus {
-    background: rgba(226, 102, 62, .75);
-    color: #fff;
-    text-decoration: none;
-}
-#google-icon:active {
-    background: rgba(226, 102, 62, .75);
-}
-#google-icon:before{
-  /*display: inline-block;*/
-  height: 50px;
-  line-height: 24px;
-  margin: 0 4px -6px -4px;
-  position: relative;
-  top: -10px;
-  left: -21px;
-
-	-webkit-border-radius: 8px 0 0 8px;
-	-moz-border-radius: 8px 0 0 8px;
-	-o-border-radius: 8px 0 0 8px;
-	-ms-border-radius: 8px 0 0 8px;
-	border-radius: 8px 0 0 8px;
-}
-
-/*facebook button*/
-#facebook-icon{
-  /*display: inline-block;*/
-  color: #fff;
-  text-align: center;
-  vertical-align: middle;
-	width: 160px;
-	height:40px;
-  border-radius: 8px;
-  background: #3b5998;
-  background: -webkit-gradient(linear, left top, left bottom, from(#3b5998), to(#3b5998);
-  background: -moz-linear-gradient(top, #3b5998, #3b5998);
-  background: linear-gradient(to bottom, #3b5998, #3b5998);
-  font-family: 'Open Sans', sans-serif;
-	font-weight:700;
-  text-decoration: none;
-	margin-right: 10px;
-}
-#facebook-icon:hover,
-#facebook-icon:focus {
-  color: #fff;
-    background: #37528c;
-
-    text-decoration: none;
-}
-#facebook-icon:active {
-  color:#fff;
-    background: #1ca4d6;
-
-}
-#facebook-icon:before{
-  color: #fff;
-  display: inline-block;
-  height: 50px;
-  line-height: 24px;
-  margin: 0 4px -6px -4px;
-  position: relative;
-  top: -10px;
-  left: -21px;
-
-	-webkit-border-radius: 8px 0 0 8px;
-	-moz-border-radius: 8px 0 0 8px;
-	-o-border-radius: 8px 0 0 8px;
-	-ms-border-radius: 8px 0 0 8px;
-	border-radius: 8px 0 0 8px;
-}
-
-#github-icon{
-  /*display: inline-block;*/
-  color: #fff !important;
-  text-align: center;
-  vertical-align: middle;
-	width: 160px;
-	height:40px;
-  border-radius: 8px;
-  background-color: black;
-  background: -webkit-gradient(linear, left top, left bottom, from(#3b5998), to(#3b5998));
-  background: -moz-linear-gradient(top, black, black);
-  background: linear-gradient(to bottom, black, black);
-  font-family: 'Open Sans', sans-serif;
-	font-weight:700;
-  text-decoration: none;
-	margin-right: 10px;
-}
-#github-icon:hover,
-#github-icon:focus {
-    background: gray;
-    color: #fff;
-    text-decoration: none;
-}
-#github-icon:active {
-    background: gray;
-    color:#fff;
-}
-#github-icon:before{
-  color:#fff !important;
-  display: inline-block;
-  height: 50px;
-  line-height: 24px;
-  margin: 0 4px -6px -4px;
-  position: relative;
-  top: -10px;
-  left: -21px;
-
-	-webkit-border-radius: 8px 0 0 8px;
-	-moz-border-radius: 8px 0 0 8px;
-	-o-border-radius: 8px 0 0 8px;
-	-ms-border-radius: 8px 0 0 8px;
-	border-radius: 8px 0 0 8px;
-}
 
 /*admin field part *****************************************************************/
 .clr hr {
@@ -648,7 +616,6 @@ color:#fff;
 	   margin-bottom: 15px;
 }
 .forms input:focus {
-
     -o-box-shadow: 0 0 5px rgba(48, 168, 218, 1);
     -webkit-box-shadow: 0 0 5px rgba(48, 168, 218, 1);
     -moz-box-shadow: 0 0 5px rgba(48, 168, 218, 1);
@@ -672,6 +639,7 @@ color:#fff;
 }
 
 /*ADMIN APPROVAL or DELETE ICONS*/
+
 .md-success {
   background-color: rgba(77, 152, 77, .7) !important;
   color: white !important;
@@ -690,14 +658,12 @@ color:#fff;
   color: white;
 }
 
+
 md-card-title-text .md-headline {
   text-align: left;
-  color: rgba(244, 247, 80, .8);
+  color: #FFFF66;
   text-shadow: 1px 1px 2px black;
 }
-
-/*.admin-card {
-}*/
 
 .sort-icon {
   color: gray;
@@ -710,12 +676,14 @@ md-card-title-text .md-headline {
   background: white;
   color: black;
 }
-
 #md-card-content,
 #md-card md-card-title md-card-title-text {
   color: black;
 }
-
+md-card-title-text .md-headline {
+  text-align: center;
+  /*margin: 0px;*/
+}
 #group-jumbo {
   background: url('../images/techmeetup.jpeg') no-repeat center center scroll;
   -webkit-background-size: cover;
@@ -766,7 +734,7 @@ a.md-button.md-default-theme.md-primary, a.md-button.md-primary, .md-button.md-d
 }
 
 md-dialog md-dialog-content:not([layout=row]) > *:first-child:not(.md-subheader) {
-  color: #E2DE00;
+  color: #FFFF66;
 }
 /*social buttons*/
 /*.btn-social {
