@@ -1,4 +1,5 @@
 myApp.controller( 'GroupController', ['$scope', '$http', '$location', '$rootScope', 'groupFactory', '$state', '$stateParams', '$mdSidenav', '$log', '$auth', '$mdDialog', '$mdMedia', '$filter', function( $scope, $http, $location, $rootScope, groupFactory, $state, $stateParams, $mdSidenav, $log, $auth, $mdDialog, $mdMedia, $filter ){
+	// BootstrapLayout.sidebarToggle.init(element)
 
 $scope.isAuthenticated = $auth.isAuthenticated;
 $scope.currentUser = $auth.getPayload;
@@ -207,23 +208,47 @@ $scope.edit = function(id, index){
 
 
 // DELETES GROUP AFTER SHOW CONFIRM, REDIRECTS BACK TO HOME
-$scope.confirmDelete = function(ev, id, index ) {
+$scope.confirmDelete = function( id, index ) {
 	console.log( 'confirmDelete clicked');
+	swal({
+	 title: "Are you sure?",
+	 text: "You will not be able to recover this imaginary file!",
+	 type: "warning",
+	 showCancelButton: true,
+	 confirmButtonColor: "#DD6B55",
+	 confirmButtonText: "Yes, delete it!",
+	 closeOnConfirm: false,
+	 closeOnCancel: false
+ },
+	function(isConfirm){
+		if(isConfirm){
+
+
+		$scope.delete(id, index);
+		$scope.close();
+		$state.go('group');
+		swal("Deleted!", "Your imaginary file has been deleted.", "success");
+	} else {
+		swal("Cancelled");
+	}
+	}
+);
+};
+
+
+
     // Appending dialog to document.body to cover sidenav in docs app
-    var confirm = $mdDialog.confirm()
-          .title('Are you sure?')
-          .textContent('This cannot be undone')
-          .ariaLabel('Lucky day')
-          .targetEvent(ev)
-          .ok('I am sure I want to delete')
-          .cancel('Never mind, take me back to group page');
-    $mdDialog.show(confirm).then(function() {
-      $scope.delete(id, index);
-    }, function() {
-      $scope.close();
-      $state.go('group');
-    });
-  };
+    // var confirm = $mdDialog.confirm()
+    //       .title('Are you sure?')
+    //       .textContent('This cannot be undone')
+    //       .ariaLabel('Lucky day')
+    //       .targetEvent(ev)
+    //       .ok('I am sure I want to delete')
+    //       .cancel('Never mind, take me back to group page');
+    // $mdDialog.show(confirm).then(function() {
+
+
+
   $scope.delete = function(id, index){
     console.log( 'delete clicked, index: ', id );
     groupFactory.deleteGroup( id ).then(function(response){

@@ -57,6 +57,7 @@ console.log( 'loaded AdminController');
   };
 
   $scope.showConfirm = function(ev, action, actionDesc, id, index) {
+    
    // Appending dialog to document.body to cover sidenav in docs app
    var confirm = $mdDialog.confirm()
          .title('Would you like to ' + actionDesc + ' this group?')
