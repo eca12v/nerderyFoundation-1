@@ -122,19 +122,21 @@ nerderyApp.controller( 'GroupController', ['$scope', '$http', 'groupFactory', '$
 	 },
 		function(isConfirm){
 			if(isConfirm){
-
-
-			$scope.delete(id, index);
+			$scope.delete( id, index );
+			console.log( 'after $scope.delete, id: ', id);
 			$scope.close();
-			$state.go('group');
 			swal("Deleted!", "Your imaginary file has been deleted.", "success");
+			$state.go('home');
+
 		} else {
 			swal("Cancelled");
 		}
 		}
 	);
 	};
+
   $scope.delete = function(id, index){
+		console.log( 'delete clicked, id: ', id);
 		// send delete request to the factory
     groupFactory.deleteGroup( id ).then(function(response){
       $state.go('home');
