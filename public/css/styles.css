@@ -45,15 +45,21 @@ body {
     }
   /*Search Bar*/
   container-fluid ng-scope{
-    /*background-color: #664659*/
+    background-color: #664659
+
   }
-    #page-container {
-      /*background-color: #664659;*/
+
+
+  /*page-container {
+      background-color: #664659;
+    }Makes whole page background plum*/
+
+    page-container {
+      padding-bottom: 50px;
+      padding-left: 0;
+      padding-right: 0;
+
     }
-
-
-
-
 
   md-input-container{
     padding-right: 30px;
@@ -131,11 +137,6 @@ body {
   color: white;
 }
 
-#page-container {
-  padding-bottom: 50px;
-  padding-left: 0px;
-  padding-right: 0px;
-}
 
 
 /*Landing Page and GROUP page*************************************************/
@@ -414,7 +415,7 @@ padding-left: 15px;
   padding-left: 20px;
 }
 
-#searchBar {
+.searchBar {
   display: inline-block;
   width: 100%;
   vertical-align: middle;
