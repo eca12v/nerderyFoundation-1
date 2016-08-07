@@ -355,6 +355,7 @@ padding-left: 15px;
   display: inline-block;
   padding: 0;
   margin: auto;
+  text-transform: none;
 }
 
 #filterBar {
