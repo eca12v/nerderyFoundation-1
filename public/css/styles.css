@@ -11,7 +11,6 @@ body {
   height:auto;
   }
 
-
   header {
       background: url('http://techanddesign.ca/wp-content/uploads/2016/01/technetwork.jpg') no-repeat center center scroll;
       -webkit-background-size: cover;
@@ -440,6 +439,7 @@ md-input-container.md-default-theme label,
 }
 .panel-title {
 	font-weight:bold;
+  text-align:center;
 }
 .panel-body a{
   display: inline-block;
@@ -449,8 +449,16 @@ md-input-container.md-default-theme label,
 text-center login-title{
   color: black;
 }
+.form-control{
+  width: 90%;
+  margin:auto;
 
+}
+checkbox-text{
+  display:inline-block;
+}
 /*admin buttons*/
+
 .md-success {
   background-color: rgba(77, 152, 77, .7) !important;
   color: white !important;
@@ -473,9 +481,6 @@ md-card-title-text .md-headline {
   text-align: left;
   color: #FFFF66;
   text-shadow: 1px 1px 2px black;
-}
-
-.admin-card {
 }
 
 .sort-icon {
