@@ -92,13 +92,13 @@ jumbo-home {
   text-align: center;
 }
 /*h2*/
-.jumbotron {
+.jumbotron h2{
   font-weight: bold;
   color:#E2DE00;
   text-shadow: 1px 1px 2px black;
 }
 /*h1*/
-.jumbotron {
+.jumbotron h1{
   color:#fff;
   text-shadow: 1px 1px 2px black;
 }
@@ -198,10 +198,10 @@ md-card-title-text .md-headline {
 
 md-card.face {
   /*background-image: url("../images/code-1486361__340.jpg");*/
-<<<<<<< HEAD
+
   border: 1px solid #664659;
   border-radius: 7px;
-  opacity: 0.9;
+  /*opacity: 0.9;*/
   /*background-color:#664659;*/
   background-color: rgba(102, 70, 89, 0.9);
   height: 300px;
@@ -314,8 +314,8 @@ padding-left: 15px;
 }*/
 
 .layerBack {
-    opacity: .5;
-    background-color:#664659;
+    /*opacity: .8;*/
+    /*background-color:#664659;*/
     background-color: rgba(102, 70, 89, 0.5);
     position: absolute;
     top: 0;
@@ -325,8 +325,8 @@ padding-left: 15px;
 }
 
 .layerBackGroup {
-    opacity: .66;
-    background-color: grey;
+    /*opacity: .66;*/
+    /*background-color: grey;*/
     background-color: rgba(46, 47, 49, 0.66);
     position: absolute;
     top: 0;
