@@ -175,6 +175,7 @@ nerderyApp.controller( 'AddGroupController',  [ 'Upload', 'groupFactory', '$scop
     groupFactory.submit( newGroup ).then(function(response){
       $scope.groups.push(response.data);
       $state.go('home');
+      swal("Your group was created and is awaiting admin approval");
       toastr.info("Your group was created and is awaiting admin approval.");
       }, function(error){
       $scope.status = 'swing and a miss';
