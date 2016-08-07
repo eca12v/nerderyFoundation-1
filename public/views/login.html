@@ -9,77 +9,47 @@
 <!-- login -->
 
 <div class="container">
-  <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-      <div id="group-contact-login" class="panel panel-default">
-        <div class="panel-heading">
-          <h1 class="panel-title">Add Your Group to The Network!</h1>
-          <h5>
-          It's easy... Anyone can log in with Google, Facebook, or Github <br />
-          and submit a group for approval. <br />
-          <br />
-          Give it a try!</h5>
-        </div>
+    <div class="row row-centered">
+      <div class="col-md-6 col-md-offset-3"></div>
+       <form class="form-signin">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="panel-title">
+      		    <h1>Add Your Group to The Network!</h1>
+            <p>
+            Anyone can log in with Google, Facebook, or Github <br />
+            and submit a group for approval. <br /></p>
+            <br />
+              <a class="btn btn-social btn-google-plus" id="google-icon" ng-click="authenticate('google')">
+                <i class="fa fa-google-plus"></i>
+                  Google
+              </a>
+              <a class="btn btn-social btn-github" id="github-icon" ng-click="authenticate('github')">
+                <i class="fa fa-github"></i>
+                GitHub</a>
+              <a class="btn btn-social btn-facebook" id="facebook-icon" ng-click="authenticate('facebook')">
+                <i class="fa fa-facebook"></i>Facebook</a>
+
         <div class="panel-body">
-          <!-- <input class="btn btn-lg btn-facebook btn-block" type="submit" value="Login via facebook"> -->
-          <a class="btn btn-block btn-social btn-lg btn-google full-width" ng-click="authenticate('google')">
-            <span class="fa fa-google"></span>
-              Sign in with Google
-          </a>
-          <a class="btn btn-block btn-social btn-lg btn-facebook" ng-click="authenticate('facebook')">
-            <span class="fa fa-facebook"></span>
-              Sign in with Facebook
-          </a>
-
-          <a class="btn btn-block btn-social btn-lg btn-github" ng-click="">
-            <span class="fa fa-github"></span>
-              Sign in with Git Hub
-          </a>
     </div>
+<!--ADMIN LOGIN IN _____________________________________  -->
+<div class="clr"><hr /></div>
 
+<div id="admin-login" class="login-panel">
+  <form class="admin-signin">
+    <div class="mail-text">Administrator Sign In</div>
+		<!-- old code for admin fields <md-input-container class="md-block" flex-gt-sm> -->
+<input type="text" class="form-control" placeholder="Username" autofocus ng-model="username"><br />
+<input type="text" class="form-control"  placeholder="Email" autofocus ng-model="email"><br />
+<input type="password" class="form-control" placeholder="Password" autofocus ng-model="password"><br />
+<md-button class="btn md-raised md-button md-ink-ripple" ng-click="login()">Login</md-button>
 
-          <div id="admin-login" class="login-panel">
-            <h2 class="text-center login-title">Administrative Use Only</h2>
-
-<!-- stuck some stuff here -->
-
-            <form accept-charset="UTF-8" role="form">
-              <fieldset>
-                <div class="form-group">
-
-                </div>
-              </fieldset>
-            <form name="form">
-
-              <md-input-container class="md-block" flex-gt-sm>
-                <label>Username</label>
-                <input type="text" ng-model="username">
-              </md-input-container>
-
-
-              <md-input-container class="md-block" flex-gt-sm>
-                <label>Email</label>
-                <input type="text" ng-model="email">
-              </md-input-container>
-
-              <md-input-container class="md-block" flex-gt-sm>
-                <label>Password</label>
-                <input type="password" ng-model="password">
-              </md-input-container>
-
-            <!-- <input type="text" ng-model="username" placeholder="Username" class="form-control">
-            <input type="text" ng-model="email" placeholder="Email" class="form-control">
-            <input type="password" ng-model="password" placeholder="Password" class="form-control"> -->
-
-            <md-button class="md-raised md-button md-ink-ripple" ng-click="login()">Login</md-button>
-
-        </form>
-
-      </div>
-
+  </form>
   </div>
 
 </div>
 </div>
-
+</div>
+</form>
+</div>
 </div>
