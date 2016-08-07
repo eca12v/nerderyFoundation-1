@@ -44,68 +44,33 @@ nerderyApp.controller( 'AdminController', ['$scope', '$http', 'groupFactory', '$
         .targetEvent(ev)
     );
   };
-//   $scope.showConfirm = function( action, actionDesc, id, index ) {
-//     console.log( 'approve clicked');
-//     swal({
-//      title: "Are you sure?",
-//      text: "You can edit or delete group later, too",
-//      type: "warning",
-//      showCancelButton: true,
-//      confirmButtonColor: "#3F51B5",
-//      confirmButtonText: "Yes, approve it!",
-//      closeOnConfirm: true,
-//      closeOnCancel: false
-//    },
-//     function(isConfirm){
-//       if(isConfirm){
-//         groupFactory.approveGroup(id);
-//         $scope.groups.splice(index, 1);
-//        } else if (action == "deleteApprove") {
-//         groupFactory.deleteGroup( id ).then(function(response){
-//           $scope.groups.splice(index, 1);
-//           swal("Cancelled");
-//         });
-//        } else if (action == 'unFlagGroup') {
-//         groupFactory.unFlagGroup(id);
-//         $scope.flaggedGroups.splice(index, 1);
-//         swal("Success");
-//        } else if (action == 'deleteFlag') {
-//         groupFactory.deleteGroup( id ).then(function(response){
-//           $scope.flaggedGroups.splice(index, 1);
-//           swal("success");
-//         });
-//        }
-// });
-// };
 
 
-
-  // comfirmation pop up for approving/unflagging/deleting
   $scope.showConfirm = function(ev, action, actionDesc, id, index) {
-   var confirm = $mdDialog.confirm()
-         .title('Would you like to ' + actionDesc + ' this group?')
-         .textContent()
-         .ariaLabel()
-         .targetEvent(ev)
-         .ok('Yes')
-         .cancel('No');
-   $mdDialog.show(confirm).then(function() {
-     if (action == 'Approve') {
-       groupFactory.approveGroup(id);
+ var confirm = $mdDialog.confirm()
+       .title('Would you like to ' + actionDesc + ' this group?')
+       .textContent()
+       .ariaLabel()
+       .targetEvent(ev)
+       .ok('Yes')
+       .cancel('No');
+ $mdDialog.show(confirm).then(function() {
+   if (action == 'Approve') {
+     groupFactory.approveGroup(id);
+     $scope.groups.splice(index, 1);
+   } else if (action == "deleteApprove") {
+     groupFactory.deleteGroup( id ).then(function(response){
        $scope.groups.splice(index, 1);
-     } else if (action == "deleteApprove") {
-       groupFactory.deleteGroup( id ).then(function(response){
-         $scope.groups.splice(index, 1);
-       });
-     } else if (action == 'unFlagGroup') {
-       groupFactory.unFlagGroup(id);
+     });
+   } else if (action == 'unFlagGroup') {
+     groupFactory.unFlagGroup(id);
+     $scope.flaggedGroups.splice(index, 1);
+   } else if (action == 'deleteFlag') {
+     groupFactory.deleteGroup( id ).then(function(response){
        $scope.flaggedGroups.splice(index, 1);
-     } else if (action == 'deleteFlag') {
-       groupFactory.deleteGroup( id ).then(function(response){
-         $scope.flaggedGroups.splice(index, 1);
-       });
-     }
-   }, function() {
-   });
- };
+     });
+   }
+ }, function() {
+ });
+};
 }]); //end adminController

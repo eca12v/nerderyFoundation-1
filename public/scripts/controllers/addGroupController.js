@@ -12,7 +12,7 @@ nerderyApp.controller( 'AddGroupController',  [ 'Upload', 'groupFactory', '$scop
   self.roSelectedTech = angular.copy(self.selectedTech);
   self.autocompleteDemoRequireMatch = true;
   self.transformChip = transformChip;
-  self.tagNames = [];
+  self.tagNames = ['Beer', 'Pizza'];
   self.roTagNames = angular.copy(self.tagNames);
   // inject techList object into controller
   $http({
@@ -175,8 +175,8 @@ nerderyApp.controller( 'AddGroupController',  [ 'Upload', 'groupFactory', '$scop
     groupFactory.submit( newGroup ).then(function(response){
       $scope.groups.push(response.data);
       $state.go('home');
-      swal("Your group was created and is awaiting admin approval");
-      toastr.info("Your group was created and is awaiting admin approval.");
+
+      swal("Your group was created and is awaiting admin approval.");
       }, function(error){
       $scope.status = 'swing and a miss';
     });

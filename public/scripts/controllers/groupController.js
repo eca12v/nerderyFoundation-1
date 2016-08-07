@@ -112,7 +112,7 @@ nerderyApp.controller( 'GroupController', ['$scope', '$http', 'groupFactory', '$
 		console.log( 'confirmDelete clicked');
 		swal({
 		 title: "Are you sure?",
-		 text: "You will not be able to recover this imaginary file!",
+		 text: "This cannot be undone!",
 		 type: "warning",
 		 showCancelButton: true,
 		 confirmButtonColor: "#3F51B5",
@@ -125,7 +125,7 @@ nerderyApp.controller( 'GroupController', ['$scope', '$http', 'groupFactory', '$
 			$scope.delete( id, index );
 			console.log( 'after $scope.delete, id: ', id);
 			$scope.close();
-			swal("Deleted!", "Your imaginary file has been deleted.", "success");
+			swal("Your group has been deleted");
 			$state.go('home');
 
 		} else {
