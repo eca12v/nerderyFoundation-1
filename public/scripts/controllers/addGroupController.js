@@ -167,7 +167,9 @@ $scope.upload = function(file){
     }
   }).then(function (resp) {
             console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
-            toastr.info("Your group was creating and is awaiting admin approval.");
+            // toastr.info("Your group was creating and is awaiting admin approval.");
+            swal("Your group was created and is awaiting approval from the administrator!", "success");
+
         }, function (resp) {
             console.log('Error status: ' + resp.status);
         }, function (evt) {
@@ -207,17 +209,16 @@ console.log('in postgroup');
 //
   groupFactory.submit( newGroup )
   .then(function(response){
-    // console.log( 'group submitted: ', newGroup);
     console.log('response: ', response.data);
     $scope.groups.push(response.data);
     $state.go('home');
-    toastr.info("Your group was created and is awaiting admin approval.");
-    }, function(error){
-    $scope.status = 'swing and a miss';
-
-  });
+    swal("Your group has been created and is awaiting approval from the administrator", "success");
+});
 
 
-};//end of postGroup
+}; //end of post group
+
+
+//end of postGroup
 
 }]); //end adminController

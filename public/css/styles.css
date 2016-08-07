@@ -11,6 +11,9 @@ body {
   height:auto;
   }
 
+.confirm{
+      background-color: red;
+  }
   md-input-container{
     padding-right: 30px;
     width: 200px;
@@ -26,7 +29,7 @@ body {
   }
   md-sidenav{
     width: 500px;
-    line-height: 1.2;  
+    line-height: 1.2;
   }
 
   md-content{

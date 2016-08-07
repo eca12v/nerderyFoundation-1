@@ -57,34 +57,53 @@ console.log( 'loaded AdminController');
   };
 
   $scope.showConfirm = function(ev, action, actionDesc, id, index) {
-    
+
    // Appending dialog to document.body to cover sidenav in docs app
-   var confirm = $mdDialog.confirm()
-         .title('Would you like to ' + actionDesc + ' this group?')
-         .textContent()
-         .ariaLabel()
-         .targetEvent(ev)
-         .ok('Yes')
-         .cancel('No');
-   $mdDialog.show(confirm).then(function() {
-     if (action == 'Approve') {
+   swal({
+ 	 title: "Do you want to approve this group",
+ 	 text: "You will be able to monitor changes or delete group in the future",
+ 	 type: "warning",
+ 	 showCancelButton: true,
+ 	 confirmButtonColor: "#DD6B55",
+ 	 confirmButtonText: "Yes, I want to approve it!",
+ 	 closeOnConfirm: false,
+ 	 closeOnCancel: false
+  },
+ 	function(isConfirm){
+ 		if(isConfirm){
        groupFactory.approveGroup(id);
        $scope.groups.splice(index, 1);
+       swal("Approved!", "success");
+
      } else if (action == "deleteApprove") {
+       swal({
+        title: "Are you sure you want to delete this pending group?",
+        text: "You cannot undo this!",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Yes, delete it!",
+        closeOnConfirm: true,
+        closeOnCancel: true
+       },
+       function(isConfirm){
+         if(isConfirm){
        groupFactory.deleteGroup( id ).then(function(response){
          $scope.groups.splice(index, 1);
+         swal("Deleted!", "success");
        });
      } else if (action == 'unFlagGroup') {
        groupFactory.unFlagGroup(id);
        $scope.flaggedGroups.splice(index, 1);
-     } else if (action == 'deleteFlag') {
-       groupFactory.deleteGroup( id ).then(function(response){
-         $scope.flaggedGroups.splice(index, 1);
-       });
+       swal("Cancelled");
      }
    }, function() {
+     $state.go('admin');
+
     //  $scope.status = 'You have not approved this group yet';
    });
+ }
+ });
  };
 
 }]); //end adminController

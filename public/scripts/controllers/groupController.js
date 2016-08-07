@@ -215,7 +215,7 @@ $scope.confirmDelete = function( id, index ) {
 	 text: "You will not be able to recover this imaginary file!",
 	 type: "warning",
 	 showCancelButton: true,
-	 confirmButtonColor: "#DD6B55",
+	 confirmButtonColor: "#3F51B5",
 	 confirmButtonText: "Yes, delete it!",
 	 closeOnConfirm: false,
 	 closeOnCancel: false
