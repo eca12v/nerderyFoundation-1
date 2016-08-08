@@ -12,7 +12,7 @@ nerderyApp.controller( 'AddGroupController',  [ 'Upload', 'groupFactory', '$scop
   self.roSelectedTech = angular.copy(self.selectedTech);
   self.autocompleteDemoRequireMatch = true;
   self.transformChip = transformChip;
-  self.tagNames = ['Beer', 'Pizza'];
+  self.tagNames = [];
   self.roTagNames = angular.copy(self.tagNames);
   // inject techList object into controller
   $http({
