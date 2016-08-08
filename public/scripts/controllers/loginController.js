@@ -7,7 +7,7 @@ function($scope, $auth, $state, $location, $authProvider) {
   // oauth/sateillzer methods
   $scope.authenticate = function(provider) {
     $auth.authenticate(provider).then(function(response) {
-      $state.go('home');
+      $state.go('addGroup');
     }).catch(function(response) {
       toastr.info("Could not login.");
     });
@@ -18,7 +18,7 @@ function($scope, $auth, $state, $location, $authProvider) {
   $scope.login = function () {
     $auth.login({username: $scope.username, email: $scope.email, password: $scope.password}).then(function (response) {
       $auth.setToken(response);
-      $state.go('home');
+      $state.go('admin');
     }).catch(function (response) {
     });
   };

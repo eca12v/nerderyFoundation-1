@@ -36,18 +36,23 @@
         <md-card class="group-card">
           <md-card-title>
             <md-card-title-text>
-              <span class="md-headline">Who We Are</span>
+              <span class="md-headline group-border">Who We Are</span>
+              <hr>
+              <p class="md-subhead"><span class="group-category">Website: </span><a ng-href="{{group.groupURL}}"> {{group.groupURL}}</a></p>
+              <p class="md-subhead"><span class="group-category">Description: </span> {{group.description}}</p>
+              <p class="md-subhead"><span class="group-category">Group Contact: </span> {{group.groupContact}}</p>
+              <p class="md-subhead"><span class="group-category">Email: </span> {{group.contactEmail}}</p>
               <!-- <span class="md-subhead">{{group.name}}</span> -->
             </md-card-title-text>
           </md-card-title>
-          <md-card-content>
+          <!-- <md-card-content>
             <p>Website:<a ng-href="{{group.groupURL}}"> {{group.groupURL}}</a></p>
             <p>Description: {{group.description}}</p>
             <p>Group Contact: {{group.groupContact}}</p>
             <p>Email: {{group.contactEmail}}</p>
             <p ng-hide="group.affiliations == null">Affiliations: {{group.affiliations}}</p>
             <p ng-hide="group.affiliationURL == null">Affiliation : {{group.affiliationURL}}</p>
-          </md-card-content>
+          </md-card-content> -->
         </md-card>
 
       </div>
@@ -56,44 +61,48 @@
         <md-card class="group-card">
           <md-card-title>
             <md-card-title-text>
-              <span class="md-headline">What We Do</span>
+              <span class="md-headline group-border">What We Do</span>
+              <hr>
+              <p ng-hide="group.activities == null"><span class="group-category md-subhead">Activities: </span> {{group.activities[0]}} </p>
+              <p><span class="group-category md-subhead">Descriptive Tags: </span></p>
+              <md-chips ng-model="group.tags" readonly="true">
+                <md-chip ng-repeat="t in group.tags">{{t}}</md-chip>
+              </md-chips>
+              <br>
+              <p><span class="group-category md-subhead">Technologies: </span></p>
+              <md-chips ng-model="group.technologies" readonly="true">
+                <md-chip ng-repeat="t in group.technologies">{{t}}</md-chip>
+              </md-chips>
             </md-card-title-text>
-            <md-card-title-media>
-              <div class="md-media-sm card-media"></div>
-            </md-card-title-media>
           </md-card-title>
           <md-card-content>
-            <p ng-hide="group.activities == null">Activities: {{group.activities[0]}} </p>
-            <p>Descriptive Tags: </p>
-            <md-chips>
-              <md-chip ng-repeat="t in group.tags">{{t}}</md-chip>
-            </md-chips>
-            <br>
-            <p>Technologies: </p>
-            <md-chips>
-              <md-chip ng-repeat="t in group.technologies">{{t}}</md-chip>
-            </md-chips>
             <!-- <p>Technologies: {{group.technologies}}</p> -->
           </md-card-content>
       </md-card>
       </div>
 
+
       <div class="col-md-4">
         <md-card class="group-card">
           <md-card-title>
             <md-card-title-text>
-              <span class="md-headline">Where We Meet</span>
+              <span class="md-headline group-border">Where We Meet</span>
+              <hr>
+              <p class="md-subhead"><span class="group-category">Meeting Location: </span> {{group.location}}</p>
+              <p class="md-subhead"><span class="group-category">Meeting Frequency: </span> {{group.freqOfMeeting}}</p>
+              <p class="md-subhead"><span class="group-category">Typical Meeting Size: </span> {{group.sizeOfMeeting}}</p>
+              <p class="md-subhead"><span class="group-category">Membership Size: </span> {{group.sizeOfMembership}}</p>
             </md-card-title-text>
-            <md-card-title-media>
+            <!-- <md-card-title-media>
               <div class="md-media-sm card-media"></div>
-            </md-card-title-media>
+            </md-card-title-media> -->
            </md-card-title>
-          <md-card-content>
+          <!-- <md-card-content>
             <p>Meeting Location: {{group.location}}</p>
             <p>Meeting Frequency: {{group.freqOfMeeting}}</p>
             <p>Typical Meeting Size: {{group.sizeOfMeeting}}</p>
             <p>Membership Size: {{group.sizeOfMembership}}</p>
-          </md-card-content>
+          </md-card-content> -->
       </md-card>
 
       </div>

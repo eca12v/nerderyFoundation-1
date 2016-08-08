@@ -38,7 +38,13 @@ function($stateProvider, $urlRouterProvider, $mdIconProvider, $mdThemingProvider
           }
         });
       }
-    ]
+    ],
+    resolve : {
+      group : ['$state', '$stateParams', 'groupFactory',
+      function($state, $stateParams, groupFactory) {
+        return groupFactory.getGroup($stateParams.groupName);
+      }]
+    }
   }).
   state('addGroup', {
     url: '/addGroup',
