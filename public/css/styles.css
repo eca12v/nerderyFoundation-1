@@ -69,7 +69,7 @@ body {
 }
 .jumbotron h2{
   font-weight: bold;
-  color:#FFFF66;
+  color:##ffe866;
   text-shadow: 1px 1px 2px black;
 }
 .jumbotron h1{
@@ -370,7 +370,7 @@ padding-left: 15px;
 }
 
 .navbar-default .navbar-brand {
-  color:#FFFF66;
+  color:##ffe866;
   font-size: 18px;
 }
 
@@ -396,7 +396,7 @@ padding-left: 15px;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
-  color: #FFFF66;
+  color: ##ffe866;
 }
 
 #main-search {
@@ -592,7 +592,7 @@ a.md-button.md-default-theme.md-primary, a.md-button.md-primary, .md-button.md-d
 }
 
 md-dialog md-dialog-content:not([layout=row]) > *:first-child:not(.md-subheader) {
-  color: #FFFF66;
+  color: ##ffe866;
 }
 /*social buttons*/
 .btn-social {
