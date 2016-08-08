@@ -46,7 +46,7 @@ body {
 
   }*/
   header {
-    background: url('http://techanddesign.ca/wp-content/uploads/2016/01/technetwork.jpg') no-repeat center center scroll;
+    background: url('../images/diversity _wired.jpg') no-repeat 0% 30% scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -77,10 +77,9 @@ body {
   text-shadow: 1px 1px 2px black;
 }
 
-  container-fluid ng-scope{
-    background-color: #664659
-
-  }
+container-fluid ng-scope{
+  background-color: #664659;
+}
 
 #page-container {
   padding-bottom: 50px;
@@ -627,4 +626,18 @@ md-dialog md-dialog-content:not([layout=row]) > *:first-child:not(.md-subheader)
 .admin-title {
   padding-left: 15px;
   margin-top: 10px;
+}
+
+#tech-chips md-chips-wrap,
+#desc-chips md-chips-wrap {
+  padding-top: 8px;
+  padding-bottom: 12px;
+}
+
+#desc-chips md-chips-wrap {
+  margin-bottom: 30px;
+}
+
+md-select {
+  font-size: 16px;
 }
