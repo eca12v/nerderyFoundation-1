@@ -12,7 +12,7 @@ nerderyApp.controller( 'AddGroupController',  [ 'Upload', 'groupFactory', '$scop
   self.roSelectedTech = angular.copy(self.selectedTech);
   self.autocompleteDemoRequireMatch = true;
   self.transformChip = transformChip;
-  self.tagNames = ['Beer', 'Pizza'];
+  self.tagNames = [];
   self.roTagNames = angular.copy(self.tagNames);
   // inject techList object into controller
   $http({
@@ -97,8 +97,11 @@ nerderyApp.controller( 'AddGroupController',  [ 'Upload', 'groupFactory', '$scop
   //global for uploading functions
   $scope.file = '';
   $scope.uploads = [];
+  $scope.setFile = function() {
+    console.log($scope.file);
+  };
   //submit function to add group
-  $scope.submit = function(){
+  $scope.submit = function() {
     // create arrays to contain tech tag info
     $scope.techList = [];
     $scope.coreTech = [];
@@ -108,9 +111,9 @@ nerderyApp.controller( 'AddGroupController',  [ 'Upload', 'groupFactory', '$scop
       $scope.coreTech.push(self.selectedTech[each].coreTechnologies);
     }
     // if a file is uploaded call upload else call postGroup
-    if($scope.form.file.$valid && $scope.file){
+    if ($scope.form.file.$valid && $scope.file) {
       $scope.upload($scope.file);
-    }else{
+    } else {
       $scope.postGroup();
     }
   }; //end submit function
