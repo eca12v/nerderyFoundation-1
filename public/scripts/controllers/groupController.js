@@ -1,19 +1,17 @@
-nerderyApp.controller( 'GroupController', ['$scope', '$http', 'groupFactory', '$state', '$stateParams', '$mdSidenav', '$log', '$auth', '$mdDialog', '$mdMedia', '$filter', function( $scope, $http, groupFactory, $state, $stateParams, $mdSidenav, $log, $auth, $mdDialog, $mdMedia, $filter ){
+nerderyApp.controller( 'GroupController', ['$scope', '$http', 'groupFactory', '$state', '$stateParams', '$mdSidenav', '$log', '$auth', '$mdDialog', '$mdMedia', '$filter', 'group', function( $scope, $http, groupFactory, $state, $stateParams, $mdSidenav, $log, $auth, $mdDialog, $mdMedia, $filter, group ){
 	// authorization methods
 	$scope.isAuthenticated = $auth.isAuthenticated;
 	$scope.currentUser = $auth.getPayload;
 	// get group info from stateparamtere
-	groupFactory.getGroup($stateParams.groupName).then(function(response) {
-			$scope.group = response.data;
-			console.log($scope.group);
-			// if group has a photo associated with it
-			if($scope.group.photoURL) {
-				$scope.titleImage = $scope.group.photoURL;
-			} else {
-				// use a default image
-				$scope.titleImage = '../images/startup-photos-medium.jpg';
-			}
-  });
+	// console.log(group);
+	$scope.group = group.data;
+	console.log($scope.group);
+	if($scope.group.photoURL) {
+		$scope.titleImage = $scope.group.photoURL;
+	} else {
+		// use a default image
+		$scope.titleImage = '../images/startup-photos-medium.jpg';
+	}
 	// sidebar stuff
 	$scope.toggleLeft = buildDelayedToggler('left');
 	$scope.toggleRight = buildToggler('right');

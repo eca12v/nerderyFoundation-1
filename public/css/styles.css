@@ -630,6 +630,7 @@ md-dialog md-dialog-content:not([layout=row]) > *:first-child:not(.md-subheader)
 .admin-title {
   padding-left: 15px;
   margin-top: 10px;
+  color: white;
 }
 
 #tech-chips md-chips-wrap,
@@ -653,4 +654,17 @@ md-select {
     margin: auto;
     text-align: center;
     font-size: 20px;
+}
+
+.group-category {
+  font-weight: bold;
+}
+
+.group-border {
+  border-bottom: 1px solid #d8d8d8;
+  padding-bottom: 5px;
+}
+
+.admin-title-container {
+  background-color: #664659;
 }
