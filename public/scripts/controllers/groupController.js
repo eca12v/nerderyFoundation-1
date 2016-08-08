@@ -5,6 +5,7 @@ nerderyApp.controller( 'GroupController', ['$scope', '$http', 'groupFactory', '$
 	// get group info from stateparamtere
 	groupFactory.getGroup($stateParams.groupName).then(function(response) {
 			$scope.group = response.data;
+			console.log($scope.group);
 			// if group has a photo associated with it
 			if($scope.group.photoURL) {
 				$scope.titleImage = $scope.group.photoURL;

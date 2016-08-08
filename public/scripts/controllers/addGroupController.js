@@ -132,7 +132,7 @@ nerderyApp.controller( 'AddGroupController',  [ 'Upload', 'groupFactory', '$scop
         activities:$scope.activities,
         technologies: $scope.techList,
         coreTechnologies: $scope.coreTech,
-        tags: $scope.tags,
+        tags: self.roTagNames,
         freqOfMeeting: $scope.freqOfMeeting,
         sizeOfMeeting: $scope.sizeOfMeeting,
         affiliations: $scope.affiliations,
@@ -144,7 +144,7 @@ nerderyApp.controller( 'AddGroupController',  [ 'Upload', 'groupFactory', '$scop
     }).then(function (resp) {
               console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
               $state.go('home');
-              swal("Your group was creating and is awaiting admin approval.");
+              swal("Your group was created and is awaiting admin approval.");
           }, function (resp) {
               console.log('Error status: ' + resp.status);
           }, function (evt) {
@@ -174,6 +174,7 @@ nerderyApp.controller( 'AddGroupController',  [ 'Upload', 'groupFactory', '$scop
       sizeOfMembership: $scope.sizeOfMembership,
       submitterID: $scope.currentUser()._id
     };
+    console.log(newGroup);
     // send new group object to factory
     groupFactory.submit( newGroup ).then(function(response){
       $scope.groups.push(response.data);
