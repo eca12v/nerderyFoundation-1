@@ -286,10 +286,8 @@ md-card.face:hover {
   height: auto;
   min-height: 300px;
   width: auto;
-  min-width: 350px;
   z-index: 999;
   transform: scale(1.1);
-
 }
 
 .group-tile {
