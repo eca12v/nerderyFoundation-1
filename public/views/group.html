@@ -37,17 +37,21 @@
           <md-card-title>
             <md-card-title-text>
               <span class="md-headline">Who We Are</span>
+              <p class="md-subhead">Website:<a ng-href="{{group.groupURL}}"> {{group.groupURL}}</a></p>
+              <p class="md-subhead">Description: {{group.description}}</p>
+              <p class="md-subhead">Group Contact: {{group.groupContact}}</p>
+              <p class="md-subhead">Email: {{group.contactEmail}}</p>
               <!-- <span class="md-subhead">{{group.name}}</span> -->
             </md-card-title-text>
           </md-card-title>
-          <md-card-content>
+          <!-- <md-card-content>
             <p>Website:<a ng-href="{{group.groupURL}}"> {{group.groupURL}}</a></p>
             <p>Description: {{group.description}}</p>
             <p>Group Contact: {{group.groupContact}}</p>
             <p>Email: {{group.contactEmail}}</p>
             <p ng-hide="group.affiliations == null">Affiliations: {{group.affiliations}}</p>
             <p ng-hide="group.affiliationURL == null">Affiliation : {{group.affiliationURL}}</p>
-          </md-card-content>
+          </md-card-content> -->
         </md-card>
 
       </div>
@@ -58,9 +62,6 @@
             <md-card-title-text>
               <span class="md-headline">What We Do</span>
             </md-card-title-text>
-            <md-card-title-media>
-              <div class="md-media-sm card-media"></div>
-            </md-card-title-media>
           </md-card-title>
           <md-card-content>
             <p ng-hide="group.activities == null">Activities: {{group.activities[0]}} </p>
