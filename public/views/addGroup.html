@@ -11,7 +11,7 @@
 
     <md-content id="add-group" layout-padding>
       <div id="add-group-banner" layout-gt-sm="row">
-        <h1 id="add-group-title">Expand The Network</h1>
+        <h1 id="add-group-title">Expand The Network - Add Your Group</h1>
         <!-- <p>Add A Group</p> -->
       </div>
       <form name="form">
@@ -64,7 +64,7 @@
         </md-input-container>
       </div>
 
-      <md-chips ng-model="ctrl.selectedTech" md-autocomplete-snap
+      <md-chips id="tech-chips" ng-model="ctrl.selectedTech" md-autocomplete-snap
           md-transform-chip="ctrl.transformChip($chip)"
           md-require-match="ctrl.autocompleteDemoRequireMatch">
         <md-autocomplete
@@ -83,7 +83,7 @@
       </md-chips>
 
 
-      <md-chips ng-model="ctrl.roTagNames" name="tagName" readonly="ctrl.readonly" md-max-chips="5" placeholder="Add A Descriptive Tag" secondary-placeholder="New Tag">>
+      <md-chips id="desc-chips" ng-model="ctrl.roTagNames" name="tagName" readonly="ctrl.readonly" md-max-chips="5" placeholder="Add A Descriptive Tag" secondary-placeholder="New Tag">>
         <md-chip-template>
           <strong>{{$chip}}</strong>
         </md-chip-template>
@@ -127,13 +127,12 @@
         <div layout-gt-sm="row">
             <md-input-container flex-gt-sm>
               <md-button class="md-primary md-raised" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
-            ngf-accept="'image/*'" ngf-max-size="2MB"
+            ngf-accept="'image/*'" ngf-max-size="2MB" ng-click="testClick()"
             >Select An Image</md-button>
-            <span>{{file.$ngfName}}</span>
             </md-input-container>
           </div>
 
-          <md-button class="md-primary md-raised" type="button" name="button" ng-click=submit() >Submit Group</md-button>
+          <md-button id="submit-button" class="md-primary md-raised" type="button" name="button" ng-click=submit() >Submit Group</md-button>
         </div>
         </form>
       </md-content>
