@@ -10,7 +10,10 @@
   <div class="row">
     <div class="col-sm-12">
 
-      <h2 class="admin-title">Groups Awaiting Approval: </h2>
+
+      <md-card>
+        <h2 class="admin-title">Groups Awaiting Approval: </h2>
+      </md-card>
 
       <div class="row">
         <div ng-repeat="group in groups" class="col-sm-6">
@@ -40,7 +43,9 @@
         <h3 ng-hide="groups">No groups are currently awaiting approval.</h3>
       </div>
 
-      <h2 class="admin-title">Flagged Groups: </h2>
+      <md-card>
+        <h2 class="admin-title">Flagged Groups: </h2>
+      </md-card>
 
       <div class="row">
         <div ng-repeat="group in flaggedGroups" class="col-sm-6">

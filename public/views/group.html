@@ -41,7 +41,7 @@
             </md-card-title-text>
           </md-card-title>
           <md-card-content>
-            <p>Website:<a ng-href="{{group.groupURL}}">{{group.groupURL}}</a></p>
+            <p>Website:<a ng-href="{{group.groupURL}}"> {{group.groupURL}}</a></p>
             <p>Description: {{group.description}}</p>
             <p>Group Contact: {{group.groupContact}}</p>
             <p>Email: {{group.contactEmail}}</p>
@@ -63,7 +63,7 @@
             </md-card-title-media>
           </md-card-title>
           <md-card-content>
-            <p ng-hide="group.activities == null">Activities: {{group.activities}} </p>
+            <p ng-hide="group.activities == null">Activities: {{group.activities[0]}} </p>
             <p>Descriptive Tags: </p>
             <md-chips>
               <md-chip ng-repeat="t in group.tags">{{t}}</md-chip>

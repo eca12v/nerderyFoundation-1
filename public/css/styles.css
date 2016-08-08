@@ -6,14 +6,36 @@
 
 body {
   background-color: #efede7;
-  color: #fff; /*white*/
+  /*color: #fff; /*white*/*/
   min-height:100%;
   height:auto;
   }
+  md-dialog-content{
+      color: black;
+  }
+
+  /*MONDAY MORNING CHANGE: fixing the font height and right hand margin on the upper right hand side nav bar*/
+  .navbar-default .navbar-nav>li>a {
+      color: #777;
+      font-size: 14px;
+      margin-right: 20px;
+  }
+
+
+/*MONDAY MORNING CHANGE: making the search bar width and height */
+  .btn-block {
+      display: block;
+      width: 100%;
+      /*height: 60px;*/
+      margin-top: 20px;
+  }
+
 
 md-input-container{
   padding-right: 30px;
   width: 200px;
+
+
 
   header {
       background: url('http://techanddesign.ca/wp-content/uploads/2016/01/technetwork.jpg') no-repeat center center scroll;
@@ -23,35 +45,53 @@ md-input-container{
       -o-background-size: cover;
       position:relative;
       padding-bottom: 30px;
-
       position: relative;
       height: 400px;
       width: 100%;
       box-shadow: 2px 2px 3px gray;
 
   }
+  header {
+    background: url('http://techanddesign.ca/wp-content/uploads/2016/01/technetwork.jpg') no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    position:relative;
+    padding-bottom: 30px;
+    position: relative;
+    height: 400px;
+    width: 100%;
+    box-shadow: 2px 2px 3px gray;
 
-    #jumbo-home {
-        display: block;
-        height:auto;
-        width: 100%;
-        background: none;
-        text-align: center;
-    }
-    .jumbotron h2{
-      font-weight: bold;
-      color:#FFFF66;
-      text-shadow: 1px 1px 2px black;
-    }
-    .jumbotron h1{
-      color:#fff;
-      text-shadow: 1px 1px 2px black;
-    }
-  /*Search Bar*/
+}
+
+#jumbo-home {
+    display: block;
+    height:auto;
+    width: 100%;
+    background: none;
+    text-align: center;
+}
+.jumbotron h2{
+  font-weight: bold;
+  color:#FFFF66;
+  text-shadow: 1px 1px 2px black;
+}
+.jumbotron h1{
+  color:#fff;
+  text-shadow: 1px 1px 2px black;
+}
+
   container-fluid ng-scope{
     background-color: #664659
 
   }
+
+#page-container {
+  padding-bottom: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
 
 
   /*page-container {
@@ -86,6 +126,23 @@ md-dialog md-dialog-content:not([layout=row]) > *:first-child:not(.md-subheader)
   }
 
 
+
+md-input-container {
+  padding-right: 30px;
+  width: 200px;
+}
+
+md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
+  background-color: #664659;
+}
+>>>>>>> 7837783e1928d888775716ab1a389c597ea266c8
+
+md-sidenav{
+  width: 500px;
+  line-height: 1.2;
+}
+
+
   /*md-content{
     /*padding-right: 50px;*/
   /*}*/
@@ -96,28 +153,32 @@ md-dialog md-dialog-content:not([layout=row]) > *:first-child:not(.md-subheader)
   md-content{
     padding-right: 50px;
 
-  md-card-title-media{
-    height: 10px
-  }
 
-  !md-card md-card-title {
-    padding: 24px 16px 16px;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    /* display: flex; */
-    /* -webkit-flex: 1; */
-    -ms-flex: 1;
-    /* flex: 1; */
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
+md-content{
+  /*padding-right: 50px;*/
 }
 
-  md-card-content,
-  md-card md-card-title md-card-title-text {
-    color: black;
+md-card-title-media{
+  height: 10px
+}
 
-  }
+md-card md-card-title {
+  padding: 24px 16px 16px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  /* display: flex; */
+  /* -webkit-flex: 1; */
+  -ms-flex: 1;
+  /* flex: 1; */
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+md-card-content,
+md-card md-card-title md-card-title-text {
+  color: black;
+}
 
 /*-----------------------------*/
   .confirmDeleteClass {
@@ -251,9 +312,9 @@ jumbo-home {
   max-height: calc(200% / 3);
 }
 
-/*filter-box {
-  height: 100%;
-}*/
+
+
+
 
 /*Group Tiles*/
 
@@ -332,25 +393,29 @@ md-card-footer p {
 }
 
 md-card.face:hover {
-  /*border: 1px solid #664659;
-  border-radius: 7px;*/
+  border: 1px solid #664659;
+  border-radius: 7px;
   color: white;
   height: auto;
   min-height: 300px;
-  /*width: auto;
-  min-width: 350px;*/
+  width: auto;
+  min-width: 350px;
   z-index: 999;
   transform: scale(1.1);
 
 }
 
-/*.group-tile {
+.group-tile {
   height: 300px;
   margin-left: 0;
   margin-right: 0;
   color: white;
+<<<<<<< HEAD
 }*/
 
+=======
+}
+>>>>>>> 7837783e1928d888775716ab1a389c597ea266c8
 /*checkboxes*/
 md-checkbox {
   display: block;
@@ -658,6 +723,7 @@ color:#fff;
   color: white;
 }
 
+<<<<<<< HEAD
 
 md-card-title-text .md-headline {
   text-align: left;
@@ -665,6 +731,8 @@ md-card-title-text .md-headline {
   text-shadow: 1px 1px 2px black;
 }
 
+=======
+>>>>>>> 7837783e1928d888775716ab1a389c597ea266c8
 .sort-icon {
   color: gray;
   vertical-align: middle;
@@ -763,4 +831,9 @@ md-dialog md-dialog-content:not([layout=row]) > *:first-child:not(.md-subheader)
 /*}*/
 .editGroup {
   float: left;
+}
+
+.admin-title {
+  padding-left: 15px;
+  margin-top: 10px;
 }
