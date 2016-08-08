@@ -592,7 +592,7 @@ a.md-button.md-default-theme.md-primary, a.md-button.md-primary, .md-button.md-d
 }
 
 md-dialog md-dialog-content:not([layout=row]) > *:first-child:not(.md-subheader) {
-  color: #FFFF66;
+  color: black;
 }
 /*social buttons*/
 .btn-social {
@@ -640,4 +640,13 @@ md-dialog md-dialog-content:not([layout=row]) > *:first-child:not(.md-subheader)
 
 md-select {
   font-size: 16px;
+}
+
+#submit-button {
+  width: 100%;
+    line-height: 50px;
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-size: 20px;
 }
